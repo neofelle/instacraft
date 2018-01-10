@@ -6,6 +6,12 @@
 	-moz-box-sizing:border-box;
 	box-sizing:border-box;
 }
+.add-btn{
+    width: 25px;
+    position: relative;
+    top: 6px;
+    margin-left: 10px;
+}
 * {
 	margin:0;
 	padding:0;
@@ -700,7 +706,6 @@ span.cust-name {
 }
 .row-1{
     width: 45%;
-    margin-right: 10px;
     float: left;
 }
 .row-2{

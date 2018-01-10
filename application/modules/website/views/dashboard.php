@@ -56,8 +56,8 @@
                         <div class="row-1">
                             <table class="time" style="width: 100%;">
                                 <tr>
-                                    <td style="width: 30%;"><span class="table-tr-header">Date</span></td>
-                                    <td style="width: 70%;"><span class="table-tr-header">Time</span></td>
+                                    <td style="width: 20%;"><span class="table-tr-header">Date</span></td>
+                                    <td style="width: 80%;"><span class="table-tr-header">Time</span></td>
                                 </tr>
                                 <tr>
                                     <td>                            
@@ -73,6 +73,41 @@
                                             <span class="from-date">
                                                 <input type="text" placeholder="00:00" name="toTime" class="timepicker2" value="<?php if($dashboradChecks['to_time']){echo $dashboradChecks['to_time'];}  ?>" />
                                             </span>
+                                            <img class="add-btn" src="<?php echo base_url() ?>assets/img/add.png">
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>                            
+
+                                    </td>
+                                    <td>
+                                        <div class="time-select">
+                                            <span class="from-date">
+                                                <input type="text" placeholder="00:00" name="fromTime" class="timepicker" value="<?php if($dashboradChecks['from_time']){echo $dashboradChecks['from_time'];}  ?>" />
+                                            </span>
+                                            <strong>to</strong>
+                                            <span class="from-date">
+                                                <input type="text" placeholder="00:00" name="toTime" class="timepicker2" value="<?php if($dashboradChecks['to_time']){echo $dashboradChecks['to_time'];}  ?>" />
+                                            </span>
+                                            <img class="add-btn" src="<?php echo base_url() ?>assets/img/remove.png">
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>                            
+
+                                    </td>
+                                    <td>
+                                        <div class="time-select">
+                                            <span class="from-date">
+                                                <input type="text" placeholder="00:00" name="fromTime" class="timepicker" value="<?php if($dashboradChecks['from_time']){echo $dashboradChecks['from_time'];}  ?>" />
+                                            </span>
+                                            <strong>to</strong>
+                                            <span class="from-date">
+                                                <input type="text" placeholder="00:00" name="toTime" class="timepicker2" value="<?php if($dashboradChecks['to_time']){echo $dashboradChecks['to_time'];}  ?>" />
+                                            </span>
+                                            <img class="add-btn" src="<?php echo base_url() ?>assets/img/remove.png">
                                         </div>
                                     </td>
                                 </tr>
@@ -90,6 +125,24 @@
                                             <span class="from-date">
                                                 <input type="text" placeholder="00:00" name="toTime" class="timepicker2" value="<?php if($dashboradChecks['to_time']){echo $dashboradChecks['to_time'];}  ?>" />
                                             </span>
+                                            <img class="add-btn" src="<?php echo base_url() ?>assets/img/add.png">
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>                            
+
+                                    </td>
+                                    <td>
+                                        <div class="time-select">
+                                            <span class="from-date">
+                                                <input type="text" placeholder="00:00" name="fromTime" class="timepicker" value="<?php if($dashboradChecks['from_time']){echo $dashboradChecks['from_time'];}  ?>" />
+                                            </span>
+                                            <strong>to</strong>
+                                            <span class="from-date">
+                                                <input type="text" placeholder="00:00" name="toTime" class="timepicker2" value="<?php if($dashboradChecks['to_time']){echo $dashboradChecks['to_time'];}  ?>" />
+                                            </span>
+                                            <img class="add-btn" src="<?php echo base_url() ?>assets/img/remove.png">
                                         </div>
                                     </td>
                                 </tr>
@@ -107,6 +160,7 @@
                                             <span class="from-date">
                                                 <input type="text" placeholder="00:00" name="toTime" class="timepicker2" value="<?php if($dashboradChecks['to_time']){echo $dashboradChecks['to_time'];}  ?>" />
                                             </span>
+                                            <img class="add-btn" src="<?php echo base_url() ?>assets/img/add.png">
                                         </div>
                                     </td>
                                 </tr>
@@ -124,6 +178,7 @@
                                             <span class="from-date">
                                                 <input type="text" placeholder="00:00" name="toTime" class="timepicker2" value="<?php if($dashboradChecks['to_time']){echo $dashboradChecks['to_time'];}  ?>" />
                                             </span>
+                                            <img class="add-btn" src="<?php echo base_url() ?>assets/img/add.png">
                                         </div>
                                     </td>
                                 </tr>
@@ -132,8 +187,8 @@
                         <div class="row-2">
                          <table class="time" style="width: 100%;">
                                 <tr class="mobile-r">
-                                    <td style="width: 30%;"><span class="table-tr-header">Date</span></td>
-                                    <td style="width: 70%;"><span class="table-tr-header">Time</span></td>
+                                    <td style="width: 20%;"><span class="table-tr-header">Date</span></td>
+                                    <td style="width: 80%;"><span class="table-tr-header">Time</span></td>
                                 </tr>
                                 <tr>
                                     <td style="width: 30%;">                            
@@ -149,6 +204,7 @@
                                             <span class="from-date">
                                                 <input type="text" placeholder="00:00" name="toTime" class="timepicker2" value="<?php if($dashboradChecks['to_time']){echo $dashboradChecks['to_time'];}  ?>" />
                                             </span>
+                                            <img class="add-btn" src="<?php echo base_url() ?>assets/img/add.png">
                                         </div>
                                     </td>
                                 </tr>
@@ -166,6 +222,7 @@
                                             <span class="from-date">
                                                 <input type="text" placeholder="00:00" name="toTime" class="timepicker2" value="<?php if($dashboradChecks['to_time']){echo $dashboradChecks['to_time'];}  ?>" />
                                             </span>
+                                            <img class="add-btn" src="<?php echo base_url() ?>assets/img/add.png">
                                         </div>
                                     </td>
                                 </tr>
@@ -183,6 +240,7 @@
                                             <span class="from-date">
                                                 <input type="text" placeholder="00:00" name="toTime" class="timepicker2" value="<?php if($dashboradChecks['to_time']){echo $dashboradChecks['to_time'];}  ?>" />
                                             </span>
+                                            <img class="add-btn" src="<?php echo base_url() ?>assets/img/add.png">  
                                         </div>
                                     </td>
                                 </tr>
