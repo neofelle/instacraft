@@ -54,7 +54,7 @@ class Doctor extends MX_Controller {
         
     }
     
-    public function updateDaysAndTime() {
+    public function updateDaysAndTime() {                
         $webObj = new Doctor_model();
         //check entry is availble or not if available then update else make new entry
         $hasDoctor = $webObj->notemptyChecker($this->session->userdata('doctor_id'));

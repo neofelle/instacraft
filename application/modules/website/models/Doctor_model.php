@@ -119,8 +119,9 @@ function setSearch($search) {
     }
     
     public function updateAvailTbl(){
+        $time_slot = array();
         if($_POST['mon']){
-            $mon = '1'; 
+            $mon = '1';         
         }else{
             $mon = '0';
         }

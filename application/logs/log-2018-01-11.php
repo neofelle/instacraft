@@ -13527,3 +13527,2422 @@ DEBUG - 2018-01-11 11:44:21 --> File loaded: C:\xampp\htdocs\farris\git\instacra
 INFO - 2018-01-11 11:44:21 --> Model Class Initialized
 DEBUG - 2018-01-11 11:44:21 --> S3 Class Initialized
 INFO - 2018-01-11 11:44:21 --> Model Class Initialized
+INFO - 2018-01-11 11:44:23 --> Config Class Initialized
+INFO - 2018-01-11 11:44:23 --> Hooks Class Initialized
+DEBUG - 2018-01-11 11:44:23 --> UTF-8 Support Enabled
+INFO - 2018-01-11 11:44:23 --> Utf8 Class Initialized
+INFO - 2018-01-11 11:44:23 --> URI Class Initialized
+INFO - 2018-01-11 11:44:23 --> Router Class Initialized
+INFO - 2018-01-11 11:44:23 --> Output Class Initialized
+INFO - 2018-01-11 11:44:23 --> Security Class Initialized
+DEBUG - 2018-01-11 11:44:23 --> Global POST, GET and COOKIE data sanitized
+INFO - 2018-01-11 11:44:23 --> Input Class Initialized
+INFO - 2018-01-11 11:44:23 --> Language Class Initialized
+INFO - 2018-01-11 11:44:23 --> Language Class Initialized
+INFO - 2018-01-11 11:44:23 --> Config Class Initialized
+INFO - 2018-01-11 11:44:23 --> Loader Class Initialized
+INFO - 2018-01-11 11:44:23 --> Helper loaded: url_helper
+INFO - 2018-01-11 11:44:23 --> Helper loaded: file_helper
+INFO - 2018-01-11 11:44:23 --> Helper loaded: user_helper
+INFO - 2018-01-11 11:44:23 --> Helper loaded: json_helper
+INFO - 2018-01-11 11:44:23 --> Helper loaded: admin_helper
+INFO - 2018-01-11 11:44:23 --> Helper loaded: driver_helper
+INFO - 2018-01-11 11:44:23 --> Helper loaded: cookie_helper
+INFO - 2018-01-11 11:44:23 --> Helper loaded: common_helper
+INFO - 2018-01-11 11:44:23 --> Language file loaded: language/english/en_lang.php
+INFO - 2018-01-11 11:44:23 --> Database Driver Class Initialized
+DEBUG - 2018-01-11 11:44:23 --> Email Class Initialized
+DEBUG - 2018-01-11 11:44:23 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2018-01-11 11:44:23 --> Session: Class initialized using 'files' driver.
+INFO - 2018-01-11 11:44:23 --> Helper loaded: form_helper
+INFO - 2018-01-11 11:44:23 --> Form Validation Class Initialized
+INFO - 2018-01-11 11:44:23 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2018-01-11 11:44:23 --> Pagination Class Initialized
+INFO - 2018-01-11 11:44:23 --> User Agent Class Initialized
+INFO - 2018-01-11 11:44:23 --> Controller Class Initialized
+DEBUG - 2018-01-11 11:44:23 --> Doctor MX_Controller Initialized
+INFO - 2018-01-11 11:44:23 --> Model Class Initialized
+DEBUG - 2018-01-11 11:44:23 --> File loaded: C:\xampp\htdocs\farris\git\instacraft\application\modules/website/models/Doctor_model.php
+INFO - 2018-01-11 11:44:23 --> Model Class Initialized
+DEBUG - 2018-01-11 11:44:23 --> File loaded: C:\xampp\htdocs\farris\git\instacraft\application\modules/website/models/Login_model.php
+INFO - 2018-01-11 11:44:23 --> Model Class Initialized
+DEBUG - 2018-01-11 11:44:23 --> S3 Class Initialized
+INFO - 2018-01-11 11:44:23 --> Model Class Initialized
+INFO - 2018-01-11 11:44:31 --> Config Class Initialized
+INFO - 2018-01-11 11:44:31 --> Hooks Class Initialized
+DEBUG - 2018-01-11 11:44:31 --> UTF-8 Support Enabled
+INFO - 2018-01-11 11:44:31 --> Utf8 Class Initialized
+INFO - 2018-01-11 11:44:31 --> URI Class Initialized
+INFO - 2018-01-11 11:44:31 --> Router Class Initialized
+INFO - 2018-01-11 11:44:31 --> Output Class Initialized
+INFO - 2018-01-11 11:44:31 --> Security Class Initialized
+DEBUG - 2018-01-11 11:44:31 --> Global POST, GET and COOKIE data sanitized
+INFO - 2018-01-11 11:44:31 --> Input Class Initialized
+INFO - 2018-01-11 11:44:31 --> Language Class Initialized
+INFO - 2018-01-11 11:44:31 --> Language Class Initialized
+INFO - 2018-01-11 11:44:31 --> Config Class Initialized
+INFO - 2018-01-11 11:44:31 --> Loader Class Initialized
+INFO - 2018-01-11 11:44:31 --> Helper loaded: url_helper
+INFO - 2018-01-11 11:44:31 --> Helper loaded: file_helper
+INFO - 2018-01-11 11:44:31 --> Helper loaded: user_helper
+INFO - 2018-01-11 11:44:31 --> Helper loaded: json_helper
+INFO - 2018-01-11 11:44:31 --> Helper loaded: admin_helper
+INFO - 2018-01-11 11:44:31 --> Helper loaded: driver_helper
+INFO - 2018-01-11 11:44:31 --> Helper loaded: cookie_helper
+INFO - 2018-01-11 11:44:31 --> Helper loaded: common_helper
+INFO - 2018-01-11 11:44:31 --> Language file loaded: language/english/en_lang.php
+INFO - 2018-01-11 11:44:31 --> Database Driver Class Initialized
+DEBUG - 2018-01-11 11:44:31 --> Email Class Initialized
+DEBUG - 2018-01-11 11:44:31 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2018-01-11 11:44:31 --> Session: Class initialized using 'files' driver.
+INFO - 2018-01-11 11:44:31 --> Helper loaded: form_helper
+INFO - 2018-01-11 11:44:31 --> Form Validation Class Initialized
+INFO - 2018-01-11 11:44:31 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2018-01-11 11:44:31 --> Pagination Class Initialized
+INFO - 2018-01-11 11:44:31 --> User Agent Class Initialized
+INFO - 2018-01-11 11:44:31 --> Controller Class Initialized
+DEBUG - 2018-01-11 11:44:31 --> Doctor MX_Controller Initialized
+INFO - 2018-01-11 11:44:31 --> Model Class Initialized
+DEBUG - 2018-01-11 11:44:31 --> File loaded: C:\xampp\htdocs\farris\git\instacraft\application\modules/website/models/Doctor_model.php
+INFO - 2018-01-11 11:44:31 --> Model Class Initialized
+DEBUG - 2018-01-11 11:44:31 --> File loaded: C:\xampp\htdocs\farris\git\instacraft\application\modules/website/models/Login_model.php
+INFO - 2018-01-11 11:44:31 --> Model Class Initialized
+DEBUG - 2018-01-11 11:44:31 --> S3 Class Initialized
+INFO - 2018-01-11 11:44:31 --> Model Class Initialized
+INFO - 2018-01-11 11:44:33 --> Config Class Initialized
+INFO - 2018-01-11 11:44:33 --> Hooks Class Initialized
+DEBUG - 2018-01-11 11:44:33 --> UTF-8 Support Enabled
+INFO - 2018-01-11 11:44:33 --> Utf8 Class Initialized
+INFO - 2018-01-11 11:44:33 --> URI Class Initialized
+INFO - 2018-01-11 11:44:33 --> Router Class Initialized
+INFO - 2018-01-11 11:44:33 --> Output Class Initialized
+INFO - 2018-01-11 11:44:33 --> Security Class Initialized
+DEBUG - 2018-01-11 11:44:33 --> Global POST, GET and COOKIE data sanitized
+INFO - 2018-01-11 11:44:33 --> Input Class Initialized
+INFO - 2018-01-11 11:44:33 --> Language Class Initialized
+INFO - 2018-01-11 11:44:33 --> Language Class Initialized
+INFO - 2018-01-11 11:44:33 --> Config Class Initialized
+INFO - 2018-01-11 11:44:33 --> Loader Class Initialized
+INFO - 2018-01-11 11:44:33 --> Helper loaded: url_helper
+INFO - 2018-01-11 11:44:33 --> Helper loaded: file_helper
+INFO - 2018-01-11 11:44:33 --> Helper loaded: user_helper
+INFO - 2018-01-11 11:44:33 --> Helper loaded: json_helper
+INFO - 2018-01-11 11:44:33 --> Helper loaded: admin_helper
+INFO - 2018-01-11 11:44:33 --> Helper loaded: driver_helper
+INFO - 2018-01-11 11:44:33 --> Helper loaded: cookie_helper
+INFO - 2018-01-11 11:44:33 --> Helper loaded: common_helper
+INFO - 2018-01-11 11:44:33 --> Language file loaded: language/english/en_lang.php
+INFO - 2018-01-11 11:44:33 --> Database Driver Class Initialized
+DEBUG - 2018-01-11 11:44:33 --> Email Class Initialized
+DEBUG - 2018-01-11 11:44:33 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2018-01-11 11:44:33 --> Session: Class initialized using 'files' driver.
+INFO - 2018-01-11 11:44:33 --> Helper loaded: form_helper
+INFO - 2018-01-11 11:44:33 --> Form Validation Class Initialized
+INFO - 2018-01-11 11:44:33 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2018-01-11 11:44:33 --> Pagination Class Initialized
+INFO - 2018-01-11 11:44:33 --> User Agent Class Initialized
+INFO - 2018-01-11 11:44:33 --> Controller Class Initialized
+DEBUG - 2018-01-11 11:44:33 --> Doctor MX_Controller Initialized
+INFO - 2018-01-11 11:44:33 --> Model Class Initialized
+DEBUG - 2018-01-11 11:44:33 --> File loaded: C:\xampp\htdocs\farris\git\instacraft\application\modules/website/models/Doctor_model.php
+INFO - 2018-01-11 11:44:33 --> Model Class Initialized
+DEBUG - 2018-01-11 11:44:33 --> File loaded: C:\xampp\htdocs\farris\git\instacraft\application\modules/website/models/Login_model.php
+INFO - 2018-01-11 11:44:33 --> Model Class Initialized
+DEBUG - 2018-01-11 11:44:33 --> S3 Class Initialized
+INFO - 2018-01-11 11:44:33 --> Model Class Initialized
+INFO - 2018-01-11 11:44:41 --> Config Class Initialized
+INFO - 2018-01-11 11:44:41 --> Hooks Class Initialized
+DEBUG - 2018-01-11 11:44:41 --> UTF-8 Support Enabled
+INFO - 2018-01-11 11:44:41 --> Utf8 Class Initialized
+INFO - 2018-01-11 11:44:41 --> URI Class Initialized
+INFO - 2018-01-11 11:44:41 --> Router Class Initialized
+INFO - 2018-01-11 11:44:41 --> Output Class Initialized
+INFO - 2018-01-11 11:44:41 --> Security Class Initialized
+DEBUG - 2018-01-11 11:44:41 --> Global POST, GET and COOKIE data sanitized
+INFO - 2018-01-11 11:44:41 --> Input Class Initialized
+INFO - 2018-01-11 11:44:41 --> Language Class Initialized
+INFO - 2018-01-11 11:44:41 --> Language Class Initialized
+INFO - 2018-01-11 11:44:41 --> Config Class Initialized
+INFO - 2018-01-11 11:44:41 --> Loader Class Initialized
+INFO - 2018-01-11 11:44:41 --> Helper loaded: url_helper
+INFO - 2018-01-11 11:44:41 --> Helper loaded: file_helper
+INFO - 2018-01-11 11:44:41 --> Helper loaded: user_helper
+INFO - 2018-01-11 11:44:41 --> Helper loaded: json_helper
+INFO - 2018-01-11 11:44:41 --> Helper loaded: admin_helper
+INFO - 2018-01-11 11:44:41 --> Helper loaded: driver_helper
+INFO - 2018-01-11 11:44:41 --> Helper loaded: cookie_helper
+INFO - 2018-01-11 11:44:41 --> Helper loaded: common_helper
+INFO - 2018-01-11 11:44:41 --> Language file loaded: language/english/en_lang.php
+INFO - 2018-01-11 11:44:41 --> Database Driver Class Initialized
+DEBUG - 2018-01-11 11:44:41 --> Email Class Initialized
+DEBUG - 2018-01-11 11:44:41 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2018-01-11 11:44:41 --> Session: Class initialized using 'files' driver.
+INFO - 2018-01-11 11:44:41 --> Helper loaded: form_helper
+INFO - 2018-01-11 11:44:41 --> Form Validation Class Initialized
+INFO - 2018-01-11 11:44:41 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2018-01-11 11:44:41 --> Pagination Class Initialized
+INFO - 2018-01-11 11:44:41 --> User Agent Class Initialized
+INFO - 2018-01-11 11:44:41 --> Controller Class Initialized
+DEBUG - 2018-01-11 11:44:41 --> Doctor MX_Controller Initialized
+INFO - 2018-01-11 11:44:41 --> Model Class Initialized
+DEBUG - 2018-01-11 11:44:41 --> File loaded: C:\xampp\htdocs\farris\git\instacraft\application\modules/website/models/Doctor_model.php
+INFO - 2018-01-11 11:44:41 --> Model Class Initialized
+DEBUG - 2018-01-11 11:44:41 --> File loaded: C:\xampp\htdocs\farris\git\instacraft\application\modules/website/models/Login_model.php
+INFO - 2018-01-11 11:44:41 --> Model Class Initialized
+DEBUG - 2018-01-11 11:44:41 --> S3 Class Initialized
+INFO - 2018-01-11 11:44:41 --> Model Class Initialized
+INFO - 2018-01-11 11:44:43 --> Config Class Initialized
+INFO - 2018-01-11 11:44:43 --> Hooks Class Initialized
+DEBUG - 2018-01-11 11:44:43 --> UTF-8 Support Enabled
+INFO - 2018-01-11 11:44:43 --> Utf8 Class Initialized
+INFO - 2018-01-11 11:44:43 --> URI Class Initialized
+INFO - 2018-01-11 11:44:43 --> Router Class Initialized
+INFO - 2018-01-11 11:44:43 --> Output Class Initialized
+INFO - 2018-01-11 11:44:43 --> Security Class Initialized
+DEBUG - 2018-01-11 11:44:43 --> Global POST, GET and COOKIE data sanitized
+INFO - 2018-01-11 11:44:43 --> Input Class Initialized
+INFO - 2018-01-11 11:44:43 --> Language Class Initialized
+INFO - 2018-01-11 11:44:43 --> Language Class Initialized
+INFO - 2018-01-11 11:44:43 --> Config Class Initialized
+INFO - 2018-01-11 11:44:43 --> Loader Class Initialized
+INFO - 2018-01-11 11:44:43 --> Helper loaded: url_helper
+INFO - 2018-01-11 11:44:43 --> Helper loaded: file_helper
+INFO - 2018-01-11 11:44:43 --> Helper loaded: user_helper
+INFO - 2018-01-11 11:44:43 --> Helper loaded: json_helper
+INFO - 2018-01-11 11:44:43 --> Helper loaded: admin_helper
+INFO - 2018-01-11 11:44:43 --> Helper loaded: driver_helper
+INFO - 2018-01-11 11:44:43 --> Helper loaded: cookie_helper
+INFO - 2018-01-11 11:44:43 --> Helper loaded: common_helper
+INFO - 2018-01-11 11:44:43 --> Language file loaded: language/english/en_lang.php
+INFO - 2018-01-11 11:44:43 --> Database Driver Class Initialized
+DEBUG - 2018-01-11 11:44:43 --> Email Class Initialized
+DEBUG - 2018-01-11 11:44:43 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2018-01-11 11:44:43 --> Session: Class initialized using 'files' driver.
+INFO - 2018-01-11 11:44:43 --> Helper loaded: form_helper
+INFO - 2018-01-11 11:44:43 --> Form Validation Class Initialized
+INFO - 2018-01-11 11:44:43 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2018-01-11 11:44:43 --> Pagination Class Initialized
+INFO - 2018-01-11 11:44:43 --> User Agent Class Initialized
+INFO - 2018-01-11 11:44:43 --> Controller Class Initialized
+DEBUG - 2018-01-11 11:44:43 --> Doctor MX_Controller Initialized
+INFO - 2018-01-11 11:44:43 --> Model Class Initialized
+DEBUG - 2018-01-11 11:44:43 --> File loaded: C:\xampp\htdocs\farris\git\instacraft\application\modules/website/models/Doctor_model.php
+INFO - 2018-01-11 11:44:43 --> Model Class Initialized
+DEBUG - 2018-01-11 11:44:43 --> File loaded: C:\xampp\htdocs\farris\git\instacraft\application\modules/website/models/Login_model.php
+INFO - 2018-01-11 11:44:43 --> Model Class Initialized
+DEBUG - 2018-01-11 11:44:43 --> S3 Class Initialized
+INFO - 2018-01-11 11:44:43 --> Model Class Initialized
+INFO - 2018-01-11 11:44:51 --> Config Class Initialized
+INFO - 2018-01-11 11:44:51 --> Hooks Class Initialized
+DEBUG - 2018-01-11 11:44:51 --> UTF-8 Support Enabled
+INFO - 2018-01-11 11:44:51 --> Utf8 Class Initialized
+INFO - 2018-01-11 11:44:51 --> URI Class Initialized
+INFO - 2018-01-11 11:44:51 --> Router Class Initialized
+INFO - 2018-01-11 11:44:51 --> Output Class Initialized
+INFO - 2018-01-11 11:44:51 --> Security Class Initialized
+DEBUG - 2018-01-11 11:44:51 --> Global POST, GET and COOKIE data sanitized
+INFO - 2018-01-11 11:44:51 --> Input Class Initialized
+INFO - 2018-01-11 11:44:51 --> Language Class Initialized
+INFO - 2018-01-11 11:44:51 --> Language Class Initialized
+INFO - 2018-01-11 11:44:51 --> Config Class Initialized
+INFO - 2018-01-11 11:44:51 --> Loader Class Initialized
+INFO - 2018-01-11 11:44:51 --> Helper loaded: url_helper
+INFO - 2018-01-11 11:44:51 --> Helper loaded: file_helper
+INFO - 2018-01-11 11:44:51 --> Helper loaded: user_helper
+INFO - 2018-01-11 11:44:51 --> Helper loaded: json_helper
+INFO - 2018-01-11 11:44:51 --> Helper loaded: admin_helper
+INFO - 2018-01-11 11:44:51 --> Helper loaded: driver_helper
+INFO - 2018-01-11 11:44:51 --> Helper loaded: cookie_helper
+INFO - 2018-01-11 11:44:51 --> Helper loaded: common_helper
+INFO - 2018-01-11 11:44:51 --> Language file loaded: language/english/en_lang.php
+INFO - 2018-01-11 11:44:51 --> Database Driver Class Initialized
+DEBUG - 2018-01-11 11:44:51 --> Email Class Initialized
+DEBUG - 2018-01-11 11:44:51 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2018-01-11 11:44:51 --> Session: Class initialized using 'files' driver.
+INFO - 2018-01-11 11:44:51 --> Helper loaded: form_helper
+INFO - 2018-01-11 11:44:51 --> Form Validation Class Initialized
+INFO - 2018-01-11 11:44:51 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2018-01-11 11:44:51 --> Pagination Class Initialized
+INFO - 2018-01-11 11:44:51 --> User Agent Class Initialized
+INFO - 2018-01-11 11:44:51 --> Controller Class Initialized
+DEBUG - 2018-01-11 11:44:51 --> Doctor MX_Controller Initialized
+INFO - 2018-01-11 11:44:51 --> Model Class Initialized
+DEBUG - 2018-01-11 11:44:51 --> File loaded: C:\xampp\htdocs\farris\git\instacraft\application\modules/website/models/Doctor_model.php
+INFO - 2018-01-11 11:44:51 --> Model Class Initialized
+DEBUG - 2018-01-11 11:44:51 --> File loaded: C:\xampp\htdocs\farris\git\instacraft\application\modules/website/models/Login_model.php
+INFO - 2018-01-11 11:44:51 --> Model Class Initialized
+DEBUG - 2018-01-11 11:44:51 --> S3 Class Initialized
+INFO - 2018-01-11 11:44:51 --> Model Class Initialized
+INFO - 2018-01-11 11:44:53 --> Config Class Initialized
+INFO - 2018-01-11 11:44:53 --> Hooks Class Initialized
+DEBUG - 2018-01-11 11:44:53 --> UTF-8 Support Enabled
+INFO - 2018-01-11 11:44:53 --> Utf8 Class Initialized
+INFO - 2018-01-11 11:44:53 --> URI Class Initialized
+INFO - 2018-01-11 11:44:53 --> Router Class Initialized
+INFO - 2018-01-11 11:44:53 --> Output Class Initialized
+INFO - 2018-01-11 11:44:53 --> Security Class Initialized
+DEBUG - 2018-01-11 11:44:53 --> Global POST, GET and COOKIE data sanitized
+INFO - 2018-01-11 11:44:53 --> Input Class Initialized
+INFO - 2018-01-11 11:44:53 --> Language Class Initialized
+INFO - 2018-01-11 11:44:53 --> Language Class Initialized
+INFO - 2018-01-11 11:44:53 --> Config Class Initialized
+INFO - 2018-01-11 11:44:53 --> Loader Class Initialized
+INFO - 2018-01-11 11:44:53 --> Helper loaded: url_helper
+INFO - 2018-01-11 11:44:53 --> Helper loaded: file_helper
+INFO - 2018-01-11 11:44:53 --> Helper loaded: user_helper
+INFO - 2018-01-11 11:44:53 --> Helper loaded: json_helper
+INFO - 2018-01-11 11:44:53 --> Helper loaded: admin_helper
+INFO - 2018-01-11 11:44:53 --> Helper loaded: driver_helper
+INFO - 2018-01-11 11:44:53 --> Helper loaded: cookie_helper
+INFO - 2018-01-11 11:44:53 --> Helper loaded: common_helper
+INFO - 2018-01-11 11:44:53 --> Language file loaded: language/english/en_lang.php
+INFO - 2018-01-11 11:44:53 --> Database Driver Class Initialized
+DEBUG - 2018-01-11 11:44:53 --> Email Class Initialized
+DEBUG - 2018-01-11 11:44:53 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2018-01-11 11:44:53 --> Session: Class initialized using 'files' driver.
+INFO - 2018-01-11 11:44:53 --> Helper loaded: form_helper
+INFO - 2018-01-11 11:44:53 --> Form Validation Class Initialized
+INFO - 2018-01-11 11:44:53 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2018-01-11 11:44:53 --> Pagination Class Initialized
+INFO - 2018-01-11 11:44:53 --> User Agent Class Initialized
+INFO - 2018-01-11 11:44:53 --> Controller Class Initialized
+DEBUG - 2018-01-11 11:44:53 --> Doctor MX_Controller Initialized
+INFO - 2018-01-11 11:44:53 --> Model Class Initialized
+DEBUG - 2018-01-11 11:44:53 --> File loaded: C:\xampp\htdocs\farris\git\instacraft\application\modules/website/models/Doctor_model.php
+INFO - 2018-01-11 11:44:53 --> Model Class Initialized
+DEBUG - 2018-01-11 11:44:53 --> File loaded: C:\xampp\htdocs\farris\git\instacraft\application\modules/website/models/Login_model.php
+INFO - 2018-01-11 11:44:53 --> Model Class Initialized
+DEBUG - 2018-01-11 11:44:53 --> S3 Class Initialized
+INFO - 2018-01-11 11:44:53 --> Model Class Initialized
+INFO - 2018-01-11 11:45:01 --> Config Class Initialized
+INFO - 2018-01-11 11:45:01 --> Hooks Class Initialized
+DEBUG - 2018-01-11 11:45:01 --> UTF-8 Support Enabled
+INFO - 2018-01-11 11:45:01 --> Utf8 Class Initialized
+INFO - 2018-01-11 11:45:01 --> URI Class Initialized
+INFO - 2018-01-11 11:45:01 --> Router Class Initialized
+INFO - 2018-01-11 11:45:01 --> Output Class Initialized
+INFO - 2018-01-11 11:45:01 --> Security Class Initialized
+DEBUG - 2018-01-11 11:45:01 --> Global POST, GET and COOKIE data sanitized
+INFO - 2018-01-11 11:45:01 --> Input Class Initialized
+INFO - 2018-01-11 11:45:01 --> Language Class Initialized
+INFO - 2018-01-11 11:45:01 --> Language Class Initialized
+INFO - 2018-01-11 11:45:01 --> Config Class Initialized
+INFO - 2018-01-11 11:45:01 --> Loader Class Initialized
+INFO - 2018-01-11 11:45:01 --> Helper loaded: url_helper
+INFO - 2018-01-11 11:45:01 --> Helper loaded: file_helper
+INFO - 2018-01-11 11:45:01 --> Helper loaded: user_helper
+INFO - 2018-01-11 11:45:01 --> Helper loaded: json_helper
+INFO - 2018-01-11 11:45:01 --> Helper loaded: admin_helper
+INFO - 2018-01-11 11:45:01 --> Helper loaded: driver_helper
+INFO - 2018-01-11 11:45:01 --> Helper loaded: cookie_helper
+INFO - 2018-01-11 11:45:01 --> Helper loaded: common_helper
+INFO - 2018-01-11 11:45:01 --> Language file loaded: language/english/en_lang.php
+INFO - 2018-01-11 11:45:01 --> Database Driver Class Initialized
+DEBUG - 2018-01-11 11:45:01 --> Email Class Initialized
+DEBUG - 2018-01-11 11:45:01 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2018-01-11 11:45:01 --> Session: Class initialized using 'files' driver.
+INFO - 2018-01-11 11:45:01 --> Helper loaded: form_helper
+INFO - 2018-01-11 11:45:01 --> Form Validation Class Initialized
+INFO - 2018-01-11 11:45:01 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2018-01-11 11:45:01 --> Pagination Class Initialized
+INFO - 2018-01-11 11:45:01 --> User Agent Class Initialized
+INFO - 2018-01-11 11:45:01 --> Controller Class Initialized
+DEBUG - 2018-01-11 11:45:01 --> Doctor MX_Controller Initialized
+INFO - 2018-01-11 11:45:01 --> Model Class Initialized
+DEBUG - 2018-01-11 11:45:01 --> File loaded: C:\xampp\htdocs\farris\git\instacraft\application\modules/website/models/Doctor_model.php
+INFO - 2018-01-11 11:45:01 --> Model Class Initialized
+DEBUG - 2018-01-11 11:45:01 --> File loaded: C:\xampp\htdocs\farris\git\instacraft\application\modules/website/models/Login_model.php
+INFO - 2018-01-11 11:45:01 --> Model Class Initialized
+DEBUG - 2018-01-11 11:45:01 --> S3 Class Initialized
+INFO - 2018-01-11 11:45:01 --> Model Class Initialized
+INFO - 2018-01-11 11:45:03 --> Config Class Initialized
+INFO - 2018-01-11 11:45:03 --> Hooks Class Initialized
+DEBUG - 2018-01-11 11:45:03 --> UTF-8 Support Enabled
+INFO - 2018-01-11 11:45:03 --> Utf8 Class Initialized
+INFO - 2018-01-11 11:45:03 --> URI Class Initialized
+INFO - 2018-01-11 11:45:03 --> Router Class Initialized
+INFO - 2018-01-11 11:45:03 --> Output Class Initialized
+INFO - 2018-01-11 11:45:03 --> Security Class Initialized
+DEBUG - 2018-01-11 11:45:03 --> Global POST, GET and COOKIE data sanitized
+INFO - 2018-01-11 11:45:03 --> Input Class Initialized
+INFO - 2018-01-11 11:45:03 --> Language Class Initialized
+INFO - 2018-01-11 11:45:03 --> Language Class Initialized
+INFO - 2018-01-11 11:45:03 --> Config Class Initialized
+INFO - 2018-01-11 11:45:03 --> Loader Class Initialized
+INFO - 2018-01-11 11:45:03 --> Helper loaded: url_helper
+INFO - 2018-01-11 11:45:03 --> Helper loaded: file_helper
+INFO - 2018-01-11 11:45:03 --> Helper loaded: user_helper
+INFO - 2018-01-11 11:45:03 --> Helper loaded: json_helper
+INFO - 2018-01-11 11:45:03 --> Helper loaded: admin_helper
+INFO - 2018-01-11 11:45:03 --> Helper loaded: driver_helper
+INFO - 2018-01-11 11:45:03 --> Helper loaded: cookie_helper
+INFO - 2018-01-11 11:45:03 --> Helper loaded: common_helper
+INFO - 2018-01-11 11:45:03 --> Language file loaded: language/english/en_lang.php
+INFO - 2018-01-11 11:45:03 --> Database Driver Class Initialized
+DEBUG - 2018-01-11 11:45:03 --> Email Class Initialized
+DEBUG - 2018-01-11 11:45:03 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2018-01-11 11:45:03 --> Session: Class initialized using 'files' driver.
+INFO - 2018-01-11 11:45:03 --> Helper loaded: form_helper
+INFO - 2018-01-11 11:45:03 --> Form Validation Class Initialized
+INFO - 2018-01-11 11:45:03 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2018-01-11 11:45:03 --> Pagination Class Initialized
+INFO - 2018-01-11 11:45:03 --> User Agent Class Initialized
+INFO - 2018-01-11 11:45:03 --> Controller Class Initialized
+DEBUG - 2018-01-11 11:45:03 --> Doctor MX_Controller Initialized
+INFO - 2018-01-11 11:45:03 --> Model Class Initialized
+DEBUG - 2018-01-11 11:45:03 --> File loaded: C:\xampp\htdocs\farris\git\instacraft\application\modules/website/models/Doctor_model.php
+INFO - 2018-01-11 11:45:03 --> Model Class Initialized
+DEBUG - 2018-01-11 11:45:03 --> File loaded: C:\xampp\htdocs\farris\git\instacraft\application\modules/website/models/Login_model.php
+INFO - 2018-01-11 11:45:03 --> Model Class Initialized
+DEBUG - 2018-01-11 11:45:03 --> S3 Class Initialized
+INFO - 2018-01-11 11:45:03 --> Model Class Initialized
+INFO - 2018-01-11 11:45:11 --> Config Class Initialized
+INFO - 2018-01-11 11:45:11 --> Hooks Class Initialized
+DEBUG - 2018-01-11 11:45:11 --> UTF-8 Support Enabled
+INFO - 2018-01-11 11:45:11 --> Utf8 Class Initialized
+INFO - 2018-01-11 11:45:11 --> URI Class Initialized
+INFO - 2018-01-11 11:45:11 --> Router Class Initialized
+INFO - 2018-01-11 11:45:11 --> Output Class Initialized
+INFO - 2018-01-11 11:45:11 --> Security Class Initialized
+DEBUG - 2018-01-11 11:45:11 --> Global POST, GET and COOKIE data sanitized
+INFO - 2018-01-11 11:45:11 --> Input Class Initialized
+INFO - 2018-01-11 11:45:11 --> Language Class Initialized
+INFO - 2018-01-11 11:45:11 --> Language Class Initialized
+INFO - 2018-01-11 11:45:11 --> Config Class Initialized
+INFO - 2018-01-11 11:45:11 --> Loader Class Initialized
+INFO - 2018-01-11 11:45:11 --> Helper loaded: url_helper
+INFO - 2018-01-11 11:45:11 --> Helper loaded: file_helper
+INFO - 2018-01-11 11:45:11 --> Helper loaded: user_helper
+INFO - 2018-01-11 11:45:11 --> Helper loaded: json_helper
+INFO - 2018-01-11 11:45:11 --> Helper loaded: admin_helper
+INFO - 2018-01-11 11:45:11 --> Helper loaded: driver_helper
+INFO - 2018-01-11 11:45:11 --> Helper loaded: cookie_helper
+INFO - 2018-01-11 11:45:11 --> Helper loaded: common_helper
+INFO - 2018-01-11 11:45:11 --> Language file loaded: language/english/en_lang.php
+INFO - 2018-01-11 11:45:11 --> Database Driver Class Initialized
+DEBUG - 2018-01-11 11:45:11 --> Email Class Initialized
+DEBUG - 2018-01-11 11:45:11 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2018-01-11 11:45:11 --> Session: Class initialized using 'files' driver.
+INFO - 2018-01-11 11:45:11 --> Helper loaded: form_helper
+INFO - 2018-01-11 11:45:11 --> Form Validation Class Initialized
+INFO - 2018-01-11 11:45:11 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2018-01-11 11:45:11 --> Pagination Class Initialized
+INFO - 2018-01-11 11:45:11 --> User Agent Class Initialized
+INFO - 2018-01-11 11:45:11 --> Controller Class Initialized
+DEBUG - 2018-01-11 11:45:11 --> Doctor MX_Controller Initialized
+INFO - 2018-01-11 11:45:11 --> Model Class Initialized
+DEBUG - 2018-01-11 11:45:11 --> File loaded: C:\xampp\htdocs\farris\git\instacraft\application\modules/website/models/Doctor_model.php
+INFO - 2018-01-11 11:45:11 --> Model Class Initialized
+DEBUG - 2018-01-11 11:45:11 --> File loaded: C:\xampp\htdocs\farris\git\instacraft\application\modules/website/models/Login_model.php
+INFO - 2018-01-11 11:45:11 --> Model Class Initialized
+DEBUG - 2018-01-11 11:45:11 --> S3 Class Initialized
+INFO - 2018-01-11 11:45:11 --> Model Class Initialized
+INFO - 2018-01-11 11:45:13 --> Config Class Initialized
+INFO - 2018-01-11 11:45:13 --> Hooks Class Initialized
+DEBUG - 2018-01-11 11:45:13 --> UTF-8 Support Enabled
+INFO - 2018-01-11 11:45:13 --> Utf8 Class Initialized
+INFO - 2018-01-11 11:45:13 --> URI Class Initialized
+INFO - 2018-01-11 11:45:13 --> Router Class Initialized
+INFO - 2018-01-11 11:45:13 --> Output Class Initialized
+INFO - 2018-01-11 11:45:13 --> Security Class Initialized
+DEBUG - 2018-01-11 11:45:13 --> Global POST, GET and COOKIE data sanitized
+INFO - 2018-01-11 11:45:13 --> Input Class Initialized
+INFO - 2018-01-11 11:45:13 --> Language Class Initialized
+INFO - 2018-01-11 11:45:13 --> Language Class Initialized
+INFO - 2018-01-11 11:45:13 --> Config Class Initialized
+INFO - 2018-01-11 11:45:13 --> Loader Class Initialized
+INFO - 2018-01-11 11:45:13 --> Helper loaded: url_helper
+INFO - 2018-01-11 11:45:13 --> Helper loaded: file_helper
+INFO - 2018-01-11 11:45:13 --> Helper loaded: user_helper
+INFO - 2018-01-11 11:45:13 --> Helper loaded: json_helper
+INFO - 2018-01-11 11:45:13 --> Helper loaded: admin_helper
+INFO - 2018-01-11 11:45:13 --> Helper loaded: driver_helper
+INFO - 2018-01-11 11:45:13 --> Helper loaded: cookie_helper
+INFO - 2018-01-11 11:45:13 --> Helper loaded: common_helper
+INFO - 2018-01-11 11:45:13 --> Language file loaded: language/english/en_lang.php
+INFO - 2018-01-11 11:45:13 --> Database Driver Class Initialized
+DEBUG - 2018-01-11 11:45:13 --> Email Class Initialized
+DEBUG - 2018-01-11 11:45:13 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2018-01-11 11:45:13 --> Session: Class initialized using 'files' driver.
+INFO - 2018-01-11 11:45:13 --> Helper loaded: form_helper
+INFO - 2018-01-11 11:45:13 --> Form Validation Class Initialized
+INFO - 2018-01-11 11:45:13 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2018-01-11 11:45:13 --> Pagination Class Initialized
+INFO - 2018-01-11 11:45:13 --> User Agent Class Initialized
+INFO - 2018-01-11 11:45:13 --> Controller Class Initialized
+DEBUG - 2018-01-11 11:45:13 --> Doctor MX_Controller Initialized
+INFO - 2018-01-11 11:45:13 --> Model Class Initialized
+DEBUG - 2018-01-11 11:45:13 --> File loaded: C:\xampp\htdocs\farris\git\instacraft\application\modules/website/models/Doctor_model.php
+INFO - 2018-01-11 11:45:13 --> Model Class Initialized
+DEBUG - 2018-01-11 11:45:13 --> File loaded: C:\xampp\htdocs\farris\git\instacraft\application\modules/website/models/Login_model.php
+INFO - 2018-01-11 11:45:13 --> Model Class Initialized
+DEBUG - 2018-01-11 11:45:13 --> S3 Class Initialized
+INFO - 2018-01-11 11:45:13 --> Model Class Initialized
+INFO - 2018-01-11 11:45:21 --> Config Class Initialized
+INFO - 2018-01-11 11:45:21 --> Hooks Class Initialized
+DEBUG - 2018-01-11 11:45:21 --> UTF-8 Support Enabled
+INFO - 2018-01-11 11:45:21 --> Utf8 Class Initialized
+INFO - 2018-01-11 11:45:21 --> URI Class Initialized
+INFO - 2018-01-11 11:45:21 --> Router Class Initialized
+INFO - 2018-01-11 11:45:21 --> Output Class Initialized
+INFO - 2018-01-11 11:45:21 --> Security Class Initialized
+DEBUG - 2018-01-11 11:45:21 --> Global POST, GET and COOKIE data sanitized
+INFO - 2018-01-11 11:45:21 --> Input Class Initialized
+INFO - 2018-01-11 11:45:21 --> Language Class Initialized
+INFO - 2018-01-11 11:45:21 --> Language Class Initialized
+INFO - 2018-01-11 11:45:21 --> Config Class Initialized
+INFO - 2018-01-11 11:45:21 --> Loader Class Initialized
+INFO - 2018-01-11 11:45:21 --> Helper loaded: url_helper
+INFO - 2018-01-11 11:45:21 --> Helper loaded: file_helper
+INFO - 2018-01-11 11:45:21 --> Helper loaded: user_helper
+INFO - 2018-01-11 11:45:21 --> Helper loaded: json_helper
+INFO - 2018-01-11 11:45:21 --> Helper loaded: admin_helper
+INFO - 2018-01-11 11:45:21 --> Helper loaded: driver_helper
+INFO - 2018-01-11 11:45:21 --> Helper loaded: cookie_helper
+INFO - 2018-01-11 11:45:21 --> Helper loaded: common_helper
+INFO - 2018-01-11 11:45:21 --> Language file loaded: language/english/en_lang.php
+INFO - 2018-01-11 11:45:21 --> Database Driver Class Initialized
+DEBUG - 2018-01-11 11:45:21 --> Email Class Initialized
+DEBUG - 2018-01-11 11:45:21 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2018-01-11 11:45:21 --> Session: Class initialized using 'files' driver.
+INFO - 2018-01-11 11:45:21 --> Helper loaded: form_helper
+INFO - 2018-01-11 11:45:21 --> Form Validation Class Initialized
+INFO - 2018-01-11 11:45:21 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2018-01-11 11:45:21 --> Pagination Class Initialized
+INFO - 2018-01-11 11:45:21 --> User Agent Class Initialized
+INFO - 2018-01-11 11:45:21 --> Controller Class Initialized
+DEBUG - 2018-01-11 11:45:21 --> Doctor MX_Controller Initialized
+INFO - 2018-01-11 11:45:21 --> Model Class Initialized
+DEBUG - 2018-01-11 11:45:21 --> File loaded: C:\xampp\htdocs\farris\git\instacraft\application\modules/website/models/Doctor_model.php
+INFO - 2018-01-11 11:45:21 --> Model Class Initialized
+DEBUG - 2018-01-11 11:45:21 --> File loaded: C:\xampp\htdocs\farris\git\instacraft\application\modules/website/models/Login_model.php
+INFO - 2018-01-11 11:45:21 --> Model Class Initialized
+DEBUG - 2018-01-11 11:45:21 --> S3 Class Initialized
+INFO - 2018-01-11 11:45:21 --> Model Class Initialized
+INFO - 2018-01-11 11:45:23 --> Config Class Initialized
+INFO - 2018-01-11 11:45:23 --> Hooks Class Initialized
+DEBUG - 2018-01-11 11:45:23 --> UTF-8 Support Enabled
+INFO - 2018-01-11 11:45:23 --> Utf8 Class Initialized
+INFO - 2018-01-11 11:45:23 --> URI Class Initialized
+INFO - 2018-01-11 11:45:23 --> Router Class Initialized
+INFO - 2018-01-11 11:45:23 --> Output Class Initialized
+INFO - 2018-01-11 11:45:23 --> Security Class Initialized
+DEBUG - 2018-01-11 11:45:23 --> Global POST, GET and COOKIE data sanitized
+INFO - 2018-01-11 11:45:23 --> Input Class Initialized
+INFO - 2018-01-11 11:45:23 --> Language Class Initialized
+INFO - 2018-01-11 11:45:23 --> Language Class Initialized
+INFO - 2018-01-11 11:45:23 --> Config Class Initialized
+INFO - 2018-01-11 11:45:23 --> Loader Class Initialized
+INFO - 2018-01-11 11:45:23 --> Helper loaded: url_helper
+INFO - 2018-01-11 11:45:23 --> Helper loaded: file_helper
+INFO - 2018-01-11 11:45:23 --> Helper loaded: user_helper
+INFO - 2018-01-11 11:45:23 --> Helper loaded: json_helper
+INFO - 2018-01-11 11:45:23 --> Helper loaded: admin_helper
+INFO - 2018-01-11 11:45:23 --> Helper loaded: driver_helper
+INFO - 2018-01-11 11:45:23 --> Helper loaded: cookie_helper
+INFO - 2018-01-11 11:45:23 --> Helper loaded: common_helper
+INFO - 2018-01-11 11:45:23 --> Language file loaded: language/english/en_lang.php
+INFO - 2018-01-11 11:45:23 --> Database Driver Class Initialized
+DEBUG - 2018-01-11 11:45:23 --> Email Class Initialized
+DEBUG - 2018-01-11 11:45:23 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2018-01-11 11:45:23 --> Session: Class initialized using 'files' driver.
+INFO - 2018-01-11 11:45:23 --> Helper loaded: form_helper
+INFO - 2018-01-11 11:45:23 --> Form Validation Class Initialized
+INFO - 2018-01-11 11:45:23 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2018-01-11 11:45:23 --> Pagination Class Initialized
+INFO - 2018-01-11 11:45:23 --> User Agent Class Initialized
+INFO - 2018-01-11 11:45:23 --> Controller Class Initialized
+DEBUG - 2018-01-11 11:45:23 --> Doctor MX_Controller Initialized
+INFO - 2018-01-11 11:45:23 --> Model Class Initialized
+DEBUG - 2018-01-11 11:45:23 --> File loaded: C:\xampp\htdocs\farris\git\instacraft\application\modules/website/models/Doctor_model.php
+INFO - 2018-01-11 11:45:23 --> Model Class Initialized
+DEBUG - 2018-01-11 11:45:23 --> File loaded: C:\xampp\htdocs\farris\git\instacraft\application\modules/website/models/Login_model.php
+INFO - 2018-01-11 11:45:23 --> Model Class Initialized
+DEBUG - 2018-01-11 11:45:23 --> S3 Class Initialized
+INFO - 2018-01-11 11:45:23 --> Model Class Initialized
+INFO - 2018-01-11 11:45:31 --> Config Class Initialized
+INFO - 2018-01-11 11:45:31 --> Hooks Class Initialized
+DEBUG - 2018-01-11 11:45:31 --> UTF-8 Support Enabled
+INFO - 2018-01-11 11:45:31 --> Utf8 Class Initialized
+INFO - 2018-01-11 11:45:31 --> URI Class Initialized
+INFO - 2018-01-11 11:45:31 --> Router Class Initialized
+INFO - 2018-01-11 11:45:31 --> Output Class Initialized
+INFO - 2018-01-11 11:45:31 --> Security Class Initialized
+DEBUG - 2018-01-11 11:45:31 --> Global POST, GET and COOKIE data sanitized
+INFO - 2018-01-11 11:45:31 --> Input Class Initialized
+INFO - 2018-01-11 11:45:31 --> Language Class Initialized
+INFO - 2018-01-11 11:45:31 --> Language Class Initialized
+INFO - 2018-01-11 11:45:31 --> Config Class Initialized
+INFO - 2018-01-11 11:45:31 --> Loader Class Initialized
+INFO - 2018-01-11 11:45:31 --> Helper loaded: url_helper
+INFO - 2018-01-11 11:45:31 --> Helper loaded: file_helper
+INFO - 2018-01-11 11:45:31 --> Helper loaded: user_helper
+INFO - 2018-01-11 11:45:31 --> Helper loaded: json_helper
+INFO - 2018-01-11 11:45:31 --> Helper loaded: admin_helper
+INFO - 2018-01-11 11:45:31 --> Helper loaded: driver_helper
+INFO - 2018-01-11 11:45:31 --> Helper loaded: cookie_helper
+INFO - 2018-01-11 11:45:31 --> Helper loaded: common_helper
+INFO - 2018-01-11 11:45:31 --> Language file loaded: language/english/en_lang.php
+INFO - 2018-01-11 11:45:31 --> Database Driver Class Initialized
+DEBUG - 2018-01-11 11:45:31 --> Email Class Initialized
+DEBUG - 2018-01-11 11:45:31 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2018-01-11 11:45:31 --> Session: Class initialized using 'files' driver.
+INFO - 2018-01-11 11:45:31 --> Helper loaded: form_helper
+INFO - 2018-01-11 11:45:31 --> Form Validation Class Initialized
+INFO - 2018-01-11 11:45:31 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2018-01-11 11:45:31 --> Pagination Class Initialized
+INFO - 2018-01-11 11:45:31 --> User Agent Class Initialized
+INFO - 2018-01-11 11:45:31 --> Controller Class Initialized
+DEBUG - 2018-01-11 11:45:31 --> Doctor MX_Controller Initialized
+INFO - 2018-01-11 11:45:31 --> Model Class Initialized
+DEBUG - 2018-01-11 11:45:31 --> File loaded: C:\xampp\htdocs\farris\git\instacraft\application\modules/website/models/Doctor_model.php
+INFO - 2018-01-11 11:45:31 --> Model Class Initialized
+DEBUG - 2018-01-11 11:45:31 --> File loaded: C:\xampp\htdocs\farris\git\instacraft\application\modules/website/models/Login_model.php
+INFO - 2018-01-11 11:45:31 --> Model Class Initialized
+DEBUG - 2018-01-11 11:45:31 --> S3 Class Initialized
+INFO - 2018-01-11 11:45:31 --> Model Class Initialized
+INFO - 2018-01-11 11:45:33 --> Config Class Initialized
+INFO - 2018-01-11 11:45:33 --> Hooks Class Initialized
+DEBUG - 2018-01-11 11:45:33 --> UTF-8 Support Enabled
+INFO - 2018-01-11 11:45:33 --> Utf8 Class Initialized
+INFO - 2018-01-11 11:45:33 --> URI Class Initialized
+INFO - 2018-01-11 11:45:33 --> Router Class Initialized
+INFO - 2018-01-11 11:45:33 --> Output Class Initialized
+INFO - 2018-01-11 11:45:33 --> Security Class Initialized
+DEBUG - 2018-01-11 11:45:33 --> Global POST, GET and COOKIE data sanitized
+INFO - 2018-01-11 11:45:33 --> Input Class Initialized
+INFO - 2018-01-11 11:45:33 --> Language Class Initialized
+INFO - 2018-01-11 11:45:33 --> Language Class Initialized
+INFO - 2018-01-11 11:45:33 --> Config Class Initialized
+INFO - 2018-01-11 11:45:33 --> Loader Class Initialized
+INFO - 2018-01-11 11:45:33 --> Helper loaded: url_helper
+INFO - 2018-01-11 11:45:33 --> Helper loaded: file_helper
+INFO - 2018-01-11 11:45:33 --> Helper loaded: user_helper
+INFO - 2018-01-11 11:45:33 --> Helper loaded: json_helper
+INFO - 2018-01-11 11:45:33 --> Helper loaded: admin_helper
+INFO - 2018-01-11 11:45:33 --> Helper loaded: driver_helper
+INFO - 2018-01-11 11:45:33 --> Helper loaded: cookie_helper
+INFO - 2018-01-11 11:45:33 --> Helper loaded: common_helper
+INFO - 2018-01-11 11:45:33 --> Language file loaded: language/english/en_lang.php
+INFO - 2018-01-11 11:45:33 --> Database Driver Class Initialized
+DEBUG - 2018-01-11 11:45:33 --> Email Class Initialized
+DEBUG - 2018-01-11 11:45:33 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2018-01-11 11:45:33 --> Session: Class initialized using 'files' driver.
+INFO - 2018-01-11 11:45:33 --> Helper loaded: form_helper
+INFO - 2018-01-11 11:45:33 --> Form Validation Class Initialized
+INFO - 2018-01-11 11:45:33 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2018-01-11 11:45:33 --> Pagination Class Initialized
+INFO - 2018-01-11 11:45:33 --> User Agent Class Initialized
+INFO - 2018-01-11 11:45:33 --> Controller Class Initialized
+DEBUG - 2018-01-11 11:45:33 --> Doctor MX_Controller Initialized
+INFO - 2018-01-11 11:45:33 --> Model Class Initialized
+DEBUG - 2018-01-11 11:45:33 --> File loaded: C:\xampp\htdocs\farris\git\instacraft\application\modules/website/models/Doctor_model.php
+INFO - 2018-01-11 11:45:33 --> Model Class Initialized
+DEBUG - 2018-01-11 11:45:33 --> File loaded: C:\xampp\htdocs\farris\git\instacraft\application\modules/website/models/Login_model.php
+INFO - 2018-01-11 11:45:33 --> Model Class Initialized
+DEBUG - 2018-01-11 11:45:33 --> S3 Class Initialized
+INFO - 2018-01-11 11:45:33 --> Model Class Initialized
+INFO - 2018-01-11 11:45:41 --> Config Class Initialized
+INFO - 2018-01-11 11:45:41 --> Hooks Class Initialized
+DEBUG - 2018-01-11 11:45:41 --> UTF-8 Support Enabled
+INFO - 2018-01-11 11:45:41 --> Utf8 Class Initialized
+INFO - 2018-01-11 11:45:41 --> URI Class Initialized
+INFO - 2018-01-11 11:45:41 --> Router Class Initialized
+INFO - 2018-01-11 11:45:41 --> Output Class Initialized
+INFO - 2018-01-11 11:45:41 --> Security Class Initialized
+DEBUG - 2018-01-11 11:45:41 --> Global POST, GET and COOKIE data sanitized
+INFO - 2018-01-11 11:45:41 --> Input Class Initialized
+INFO - 2018-01-11 11:45:41 --> Language Class Initialized
+INFO - 2018-01-11 11:45:41 --> Language Class Initialized
+INFO - 2018-01-11 11:45:41 --> Config Class Initialized
+INFO - 2018-01-11 11:45:41 --> Loader Class Initialized
+INFO - 2018-01-11 11:45:41 --> Helper loaded: url_helper
+INFO - 2018-01-11 11:45:41 --> Helper loaded: file_helper
+INFO - 2018-01-11 11:45:41 --> Helper loaded: user_helper
+INFO - 2018-01-11 11:45:41 --> Helper loaded: json_helper
+INFO - 2018-01-11 11:45:41 --> Helper loaded: admin_helper
+INFO - 2018-01-11 11:45:41 --> Helper loaded: driver_helper
+INFO - 2018-01-11 11:45:41 --> Helper loaded: cookie_helper
+INFO - 2018-01-11 11:45:41 --> Helper loaded: common_helper
+INFO - 2018-01-11 11:45:41 --> Language file loaded: language/english/en_lang.php
+INFO - 2018-01-11 11:45:41 --> Database Driver Class Initialized
+DEBUG - 2018-01-11 11:45:41 --> Email Class Initialized
+DEBUG - 2018-01-11 11:45:41 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2018-01-11 11:45:41 --> Session: Class initialized using 'files' driver.
+INFO - 2018-01-11 11:45:41 --> Helper loaded: form_helper
+INFO - 2018-01-11 11:45:41 --> Form Validation Class Initialized
+INFO - 2018-01-11 11:45:41 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2018-01-11 11:45:41 --> Pagination Class Initialized
+INFO - 2018-01-11 11:45:41 --> User Agent Class Initialized
+INFO - 2018-01-11 11:45:41 --> Controller Class Initialized
+DEBUG - 2018-01-11 11:45:41 --> Doctor MX_Controller Initialized
+INFO - 2018-01-11 11:45:41 --> Model Class Initialized
+DEBUG - 2018-01-11 11:45:41 --> File loaded: C:\xampp\htdocs\farris\git\instacraft\application\modules/website/models/Doctor_model.php
+INFO - 2018-01-11 11:45:41 --> Model Class Initialized
+DEBUG - 2018-01-11 11:45:41 --> File loaded: C:\xampp\htdocs\farris\git\instacraft\application\modules/website/models/Login_model.php
+INFO - 2018-01-11 11:45:41 --> Model Class Initialized
+DEBUG - 2018-01-11 11:45:41 --> S3 Class Initialized
+INFO - 2018-01-11 11:45:41 --> Model Class Initialized
+INFO - 2018-01-11 11:45:43 --> Config Class Initialized
+INFO - 2018-01-11 11:45:43 --> Hooks Class Initialized
+DEBUG - 2018-01-11 11:45:43 --> UTF-8 Support Enabled
+INFO - 2018-01-11 11:45:43 --> Utf8 Class Initialized
+INFO - 2018-01-11 11:45:43 --> URI Class Initialized
+INFO - 2018-01-11 11:45:43 --> Router Class Initialized
+INFO - 2018-01-11 11:45:43 --> Output Class Initialized
+INFO - 2018-01-11 11:45:43 --> Security Class Initialized
+DEBUG - 2018-01-11 11:45:43 --> Global POST, GET and COOKIE data sanitized
+INFO - 2018-01-11 11:45:43 --> Input Class Initialized
+INFO - 2018-01-11 11:45:43 --> Language Class Initialized
+INFO - 2018-01-11 11:45:43 --> Language Class Initialized
+INFO - 2018-01-11 11:45:43 --> Config Class Initialized
+INFO - 2018-01-11 11:45:43 --> Loader Class Initialized
+INFO - 2018-01-11 11:45:43 --> Helper loaded: url_helper
+INFO - 2018-01-11 11:45:43 --> Helper loaded: file_helper
+INFO - 2018-01-11 11:45:43 --> Helper loaded: user_helper
+INFO - 2018-01-11 11:45:43 --> Helper loaded: json_helper
+INFO - 2018-01-11 11:45:43 --> Helper loaded: admin_helper
+INFO - 2018-01-11 11:45:43 --> Helper loaded: driver_helper
+INFO - 2018-01-11 11:45:43 --> Helper loaded: cookie_helper
+INFO - 2018-01-11 11:45:43 --> Helper loaded: common_helper
+INFO - 2018-01-11 11:45:43 --> Language file loaded: language/english/en_lang.php
+INFO - 2018-01-11 11:45:43 --> Database Driver Class Initialized
+DEBUG - 2018-01-11 11:45:43 --> Email Class Initialized
+DEBUG - 2018-01-11 11:45:43 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2018-01-11 11:45:43 --> Session: Class initialized using 'files' driver.
+INFO - 2018-01-11 11:45:43 --> Helper loaded: form_helper
+INFO - 2018-01-11 11:45:43 --> Form Validation Class Initialized
+INFO - 2018-01-11 11:45:43 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2018-01-11 11:45:43 --> Pagination Class Initialized
+INFO - 2018-01-11 11:45:43 --> User Agent Class Initialized
+INFO - 2018-01-11 11:45:43 --> Controller Class Initialized
+DEBUG - 2018-01-11 11:45:43 --> Doctor MX_Controller Initialized
+INFO - 2018-01-11 11:45:43 --> Model Class Initialized
+DEBUG - 2018-01-11 11:45:43 --> File loaded: C:\xampp\htdocs\farris\git\instacraft\application\modules/website/models/Doctor_model.php
+INFO - 2018-01-11 11:45:43 --> Model Class Initialized
+DEBUG - 2018-01-11 11:45:43 --> File loaded: C:\xampp\htdocs\farris\git\instacraft\application\modules/website/models/Login_model.php
+INFO - 2018-01-11 11:45:43 --> Model Class Initialized
+DEBUG - 2018-01-11 11:45:43 --> S3 Class Initialized
+INFO - 2018-01-11 11:45:43 --> Model Class Initialized
+INFO - 2018-01-11 11:45:51 --> Config Class Initialized
+INFO - 2018-01-11 11:45:51 --> Hooks Class Initialized
+DEBUG - 2018-01-11 11:45:51 --> UTF-8 Support Enabled
+INFO - 2018-01-11 11:45:51 --> Utf8 Class Initialized
+INFO - 2018-01-11 11:45:51 --> URI Class Initialized
+INFO - 2018-01-11 11:45:51 --> Router Class Initialized
+INFO - 2018-01-11 11:45:51 --> Output Class Initialized
+INFO - 2018-01-11 11:45:51 --> Security Class Initialized
+DEBUG - 2018-01-11 11:45:51 --> Global POST, GET and COOKIE data sanitized
+INFO - 2018-01-11 11:45:51 --> Input Class Initialized
+INFO - 2018-01-11 11:45:51 --> Language Class Initialized
+INFO - 2018-01-11 11:45:51 --> Language Class Initialized
+INFO - 2018-01-11 11:45:51 --> Config Class Initialized
+INFO - 2018-01-11 11:45:51 --> Loader Class Initialized
+INFO - 2018-01-11 11:45:51 --> Helper loaded: url_helper
+INFO - 2018-01-11 11:45:51 --> Helper loaded: file_helper
+INFO - 2018-01-11 11:45:51 --> Helper loaded: user_helper
+INFO - 2018-01-11 11:45:51 --> Helper loaded: json_helper
+INFO - 2018-01-11 11:45:51 --> Helper loaded: admin_helper
+INFO - 2018-01-11 11:45:51 --> Helper loaded: driver_helper
+INFO - 2018-01-11 11:45:51 --> Helper loaded: cookie_helper
+INFO - 2018-01-11 11:45:51 --> Helper loaded: common_helper
+INFO - 2018-01-11 11:45:51 --> Language file loaded: language/english/en_lang.php
+INFO - 2018-01-11 11:45:51 --> Database Driver Class Initialized
+DEBUG - 2018-01-11 11:45:51 --> Email Class Initialized
+DEBUG - 2018-01-11 11:45:51 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2018-01-11 11:45:51 --> Session: Class initialized using 'files' driver.
+INFO - 2018-01-11 11:45:51 --> Helper loaded: form_helper
+INFO - 2018-01-11 11:45:51 --> Form Validation Class Initialized
+INFO - 2018-01-11 11:45:51 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2018-01-11 11:45:51 --> Pagination Class Initialized
+INFO - 2018-01-11 11:45:51 --> User Agent Class Initialized
+INFO - 2018-01-11 11:45:51 --> Controller Class Initialized
+DEBUG - 2018-01-11 11:45:51 --> Doctor MX_Controller Initialized
+INFO - 2018-01-11 11:45:51 --> Model Class Initialized
+DEBUG - 2018-01-11 11:45:51 --> File loaded: C:\xampp\htdocs\farris\git\instacraft\application\modules/website/models/Doctor_model.php
+INFO - 2018-01-11 11:45:51 --> Model Class Initialized
+DEBUG - 2018-01-11 11:45:51 --> File loaded: C:\xampp\htdocs\farris\git\instacraft\application\modules/website/models/Login_model.php
+INFO - 2018-01-11 11:45:51 --> Model Class Initialized
+DEBUG - 2018-01-11 11:45:51 --> S3 Class Initialized
+INFO - 2018-01-11 11:45:51 --> Model Class Initialized
+INFO - 2018-01-11 11:45:53 --> Config Class Initialized
+INFO - 2018-01-11 11:45:53 --> Hooks Class Initialized
+DEBUG - 2018-01-11 11:45:53 --> UTF-8 Support Enabled
+INFO - 2018-01-11 11:45:53 --> Utf8 Class Initialized
+INFO - 2018-01-11 11:45:53 --> URI Class Initialized
+INFO - 2018-01-11 11:45:53 --> Router Class Initialized
+INFO - 2018-01-11 11:45:53 --> Output Class Initialized
+INFO - 2018-01-11 11:45:53 --> Security Class Initialized
+DEBUG - 2018-01-11 11:45:53 --> Global POST, GET and COOKIE data sanitized
+INFO - 2018-01-11 11:45:53 --> Input Class Initialized
+INFO - 2018-01-11 11:45:53 --> Language Class Initialized
+INFO - 2018-01-11 11:45:53 --> Language Class Initialized
+INFO - 2018-01-11 11:45:53 --> Config Class Initialized
+INFO - 2018-01-11 11:45:53 --> Loader Class Initialized
+INFO - 2018-01-11 11:45:53 --> Helper loaded: url_helper
+INFO - 2018-01-11 11:45:53 --> Helper loaded: file_helper
+INFO - 2018-01-11 11:45:53 --> Helper loaded: user_helper
+INFO - 2018-01-11 11:45:53 --> Helper loaded: json_helper
+INFO - 2018-01-11 11:45:53 --> Helper loaded: admin_helper
+INFO - 2018-01-11 11:45:53 --> Helper loaded: driver_helper
+INFO - 2018-01-11 11:45:53 --> Helper loaded: cookie_helper
+INFO - 2018-01-11 11:45:53 --> Helper loaded: common_helper
+INFO - 2018-01-11 11:45:53 --> Language file loaded: language/english/en_lang.php
+INFO - 2018-01-11 11:45:53 --> Database Driver Class Initialized
+DEBUG - 2018-01-11 11:45:53 --> Email Class Initialized
+DEBUG - 2018-01-11 11:45:53 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2018-01-11 11:45:53 --> Session: Class initialized using 'files' driver.
+INFO - 2018-01-11 11:45:53 --> Helper loaded: form_helper
+INFO - 2018-01-11 11:45:53 --> Form Validation Class Initialized
+INFO - 2018-01-11 11:45:53 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2018-01-11 11:45:53 --> Pagination Class Initialized
+INFO - 2018-01-11 11:45:53 --> User Agent Class Initialized
+INFO - 2018-01-11 11:45:53 --> Controller Class Initialized
+DEBUG - 2018-01-11 11:45:53 --> Doctor MX_Controller Initialized
+INFO - 2018-01-11 11:45:53 --> Model Class Initialized
+DEBUG - 2018-01-11 11:45:53 --> File loaded: C:\xampp\htdocs\farris\git\instacraft\application\modules/website/models/Doctor_model.php
+INFO - 2018-01-11 11:45:53 --> Model Class Initialized
+DEBUG - 2018-01-11 11:45:53 --> File loaded: C:\xampp\htdocs\farris\git\instacraft\application\modules/website/models/Login_model.php
+INFO - 2018-01-11 11:45:53 --> Model Class Initialized
+DEBUG - 2018-01-11 11:45:53 --> S3 Class Initialized
+INFO - 2018-01-11 11:45:53 --> Model Class Initialized
+INFO - 2018-01-11 11:46:01 --> Config Class Initialized
+INFO - 2018-01-11 11:46:01 --> Hooks Class Initialized
+DEBUG - 2018-01-11 11:46:01 --> UTF-8 Support Enabled
+INFO - 2018-01-11 11:46:01 --> Utf8 Class Initialized
+INFO - 2018-01-11 11:46:01 --> URI Class Initialized
+INFO - 2018-01-11 11:46:01 --> Router Class Initialized
+INFO - 2018-01-11 11:46:01 --> Output Class Initialized
+INFO - 2018-01-11 11:46:01 --> Security Class Initialized
+DEBUG - 2018-01-11 11:46:01 --> Global POST, GET and COOKIE data sanitized
+INFO - 2018-01-11 11:46:01 --> Input Class Initialized
+INFO - 2018-01-11 11:46:01 --> Language Class Initialized
+INFO - 2018-01-11 11:46:01 --> Language Class Initialized
+INFO - 2018-01-11 11:46:01 --> Config Class Initialized
+INFO - 2018-01-11 11:46:01 --> Loader Class Initialized
+INFO - 2018-01-11 11:46:01 --> Helper loaded: url_helper
+INFO - 2018-01-11 11:46:01 --> Helper loaded: file_helper
+INFO - 2018-01-11 11:46:01 --> Helper loaded: user_helper
+INFO - 2018-01-11 11:46:01 --> Helper loaded: json_helper
+INFO - 2018-01-11 11:46:01 --> Helper loaded: admin_helper
+INFO - 2018-01-11 11:46:01 --> Helper loaded: driver_helper
+INFO - 2018-01-11 11:46:01 --> Helper loaded: cookie_helper
+INFO - 2018-01-11 11:46:01 --> Helper loaded: common_helper
+INFO - 2018-01-11 11:46:01 --> Language file loaded: language/english/en_lang.php
+INFO - 2018-01-11 11:46:01 --> Database Driver Class Initialized
+DEBUG - 2018-01-11 11:46:01 --> Email Class Initialized
+DEBUG - 2018-01-11 11:46:01 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2018-01-11 11:46:01 --> Session: Class initialized using 'files' driver.
+INFO - 2018-01-11 11:46:01 --> Helper loaded: form_helper
+INFO - 2018-01-11 11:46:01 --> Form Validation Class Initialized
+INFO - 2018-01-11 11:46:01 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2018-01-11 11:46:01 --> Pagination Class Initialized
+INFO - 2018-01-11 11:46:01 --> User Agent Class Initialized
+INFO - 2018-01-11 11:46:01 --> Controller Class Initialized
+DEBUG - 2018-01-11 11:46:01 --> Doctor MX_Controller Initialized
+INFO - 2018-01-11 11:46:01 --> Model Class Initialized
+DEBUG - 2018-01-11 11:46:01 --> File loaded: C:\xampp\htdocs\farris\git\instacraft\application\modules/website/models/Doctor_model.php
+INFO - 2018-01-11 11:46:01 --> Model Class Initialized
+DEBUG - 2018-01-11 11:46:01 --> File loaded: C:\xampp\htdocs\farris\git\instacraft\application\modules/website/models/Login_model.php
+INFO - 2018-01-11 11:46:01 --> Model Class Initialized
+DEBUG - 2018-01-11 11:46:01 --> S3 Class Initialized
+INFO - 2018-01-11 11:46:01 --> Model Class Initialized
+INFO - 2018-01-11 11:46:03 --> Config Class Initialized
+INFO - 2018-01-11 11:46:03 --> Hooks Class Initialized
+DEBUG - 2018-01-11 11:46:03 --> UTF-8 Support Enabled
+INFO - 2018-01-11 11:46:03 --> Utf8 Class Initialized
+INFO - 2018-01-11 11:46:03 --> URI Class Initialized
+INFO - 2018-01-11 11:46:03 --> Router Class Initialized
+INFO - 2018-01-11 11:46:03 --> Output Class Initialized
+INFO - 2018-01-11 11:46:03 --> Security Class Initialized
+DEBUG - 2018-01-11 11:46:03 --> Global POST, GET and COOKIE data sanitized
+INFO - 2018-01-11 11:46:03 --> Input Class Initialized
+INFO - 2018-01-11 11:46:03 --> Language Class Initialized
+INFO - 2018-01-11 11:46:03 --> Language Class Initialized
+INFO - 2018-01-11 11:46:03 --> Config Class Initialized
+INFO - 2018-01-11 11:46:03 --> Loader Class Initialized
+INFO - 2018-01-11 11:46:03 --> Helper loaded: url_helper
+INFO - 2018-01-11 11:46:03 --> Helper loaded: file_helper
+INFO - 2018-01-11 11:46:03 --> Helper loaded: user_helper
+INFO - 2018-01-11 11:46:03 --> Helper loaded: json_helper
+INFO - 2018-01-11 11:46:03 --> Helper loaded: admin_helper
+INFO - 2018-01-11 11:46:03 --> Helper loaded: driver_helper
+INFO - 2018-01-11 11:46:03 --> Helper loaded: cookie_helper
+INFO - 2018-01-11 11:46:03 --> Helper loaded: common_helper
+INFO - 2018-01-11 11:46:03 --> Language file loaded: language/english/en_lang.php
+INFO - 2018-01-11 11:46:03 --> Database Driver Class Initialized
+DEBUG - 2018-01-11 11:46:03 --> Email Class Initialized
+DEBUG - 2018-01-11 11:46:03 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2018-01-11 11:46:03 --> Session: Class initialized using 'files' driver.
+INFO - 2018-01-11 11:46:03 --> Helper loaded: form_helper
+INFO - 2018-01-11 11:46:03 --> Form Validation Class Initialized
+INFO - 2018-01-11 11:46:03 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2018-01-11 11:46:03 --> Pagination Class Initialized
+INFO - 2018-01-11 11:46:03 --> User Agent Class Initialized
+INFO - 2018-01-11 11:46:03 --> Controller Class Initialized
+DEBUG - 2018-01-11 11:46:03 --> Doctor MX_Controller Initialized
+INFO - 2018-01-11 11:46:03 --> Model Class Initialized
+DEBUG - 2018-01-11 11:46:03 --> File loaded: C:\xampp\htdocs\farris\git\instacraft\application\modules/website/models/Doctor_model.php
+INFO - 2018-01-11 11:46:03 --> Model Class Initialized
+DEBUG - 2018-01-11 11:46:03 --> File loaded: C:\xampp\htdocs\farris\git\instacraft\application\modules/website/models/Login_model.php
+INFO - 2018-01-11 11:46:03 --> Model Class Initialized
+DEBUG - 2018-01-11 11:46:03 --> S3 Class Initialized
+INFO - 2018-01-11 11:46:03 --> Model Class Initialized
+INFO - 2018-01-11 11:46:11 --> Config Class Initialized
+INFO - 2018-01-11 11:46:11 --> Hooks Class Initialized
+DEBUG - 2018-01-11 11:46:11 --> UTF-8 Support Enabled
+INFO - 2018-01-11 11:46:11 --> Utf8 Class Initialized
+INFO - 2018-01-11 11:46:11 --> URI Class Initialized
+INFO - 2018-01-11 11:46:11 --> Router Class Initialized
+INFO - 2018-01-11 11:46:11 --> Output Class Initialized
+INFO - 2018-01-11 11:46:11 --> Security Class Initialized
+DEBUG - 2018-01-11 11:46:11 --> Global POST, GET and COOKIE data sanitized
+INFO - 2018-01-11 11:46:11 --> Input Class Initialized
+INFO - 2018-01-11 11:46:11 --> Language Class Initialized
+INFO - 2018-01-11 11:46:11 --> Language Class Initialized
+INFO - 2018-01-11 11:46:11 --> Config Class Initialized
+INFO - 2018-01-11 11:46:11 --> Loader Class Initialized
+INFO - 2018-01-11 11:46:11 --> Helper loaded: url_helper
+INFO - 2018-01-11 11:46:11 --> Helper loaded: file_helper
+INFO - 2018-01-11 11:46:11 --> Helper loaded: user_helper
+INFO - 2018-01-11 11:46:11 --> Helper loaded: json_helper
+INFO - 2018-01-11 11:46:11 --> Helper loaded: admin_helper
+INFO - 2018-01-11 11:46:11 --> Helper loaded: driver_helper
+INFO - 2018-01-11 11:46:11 --> Helper loaded: cookie_helper
+INFO - 2018-01-11 11:46:11 --> Helper loaded: common_helper
+INFO - 2018-01-11 11:46:11 --> Language file loaded: language/english/en_lang.php
+INFO - 2018-01-11 11:46:11 --> Database Driver Class Initialized
+DEBUG - 2018-01-11 11:46:11 --> Email Class Initialized
+DEBUG - 2018-01-11 11:46:11 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2018-01-11 11:46:11 --> Session: Class initialized using 'files' driver.
+INFO - 2018-01-11 11:46:11 --> Helper loaded: form_helper
+INFO - 2018-01-11 11:46:11 --> Form Validation Class Initialized
+INFO - 2018-01-11 11:46:11 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2018-01-11 11:46:11 --> Pagination Class Initialized
+INFO - 2018-01-11 11:46:11 --> User Agent Class Initialized
+INFO - 2018-01-11 11:46:11 --> Controller Class Initialized
+DEBUG - 2018-01-11 11:46:11 --> Doctor MX_Controller Initialized
+INFO - 2018-01-11 11:46:11 --> Model Class Initialized
+DEBUG - 2018-01-11 11:46:11 --> File loaded: C:\xampp\htdocs\farris\git\instacraft\application\modules/website/models/Doctor_model.php
+INFO - 2018-01-11 11:46:11 --> Model Class Initialized
+DEBUG - 2018-01-11 11:46:11 --> File loaded: C:\xampp\htdocs\farris\git\instacraft\application\modules/website/models/Login_model.php
+INFO - 2018-01-11 11:46:11 --> Model Class Initialized
+DEBUG - 2018-01-11 11:46:11 --> S3 Class Initialized
+INFO - 2018-01-11 11:46:11 --> Model Class Initialized
+INFO - 2018-01-11 11:46:13 --> Config Class Initialized
+INFO - 2018-01-11 11:46:13 --> Hooks Class Initialized
+DEBUG - 2018-01-11 11:46:13 --> UTF-8 Support Enabled
+INFO - 2018-01-11 11:46:13 --> Utf8 Class Initialized
+INFO - 2018-01-11 11:46:13 --> URI Class Initialized
+INFO - 2018-01-11 11:46:13 --> Router Class Initialized
+INFO - 2018-01-11 11:46:13 --> Output Class Initialized
+INFO - 2018-01-11 11:46:13 --> Security Class Initialized
+DEBUG - 2018-01-11 11:46:13 --> Global POST, GET and COOKIE data sanitized
+INFO - 2018-01-11 11:46:13 --> Input Class Initialized
+INFO - 2018-01-11 11:46:13 --> Language Class Initialized
+INFO - 2018-01-11 11:46:13 --> Language Class Initialized
+INFO - 2018-01-11 11:46:13 --> Config Class Initialized
+INFO - 2018-01-11 11:46:13 --> Loader Class Initialized
+INFO - 2018-01-11 11:46:13 --> Helper loaded: url_helper
+INFO - 2018-01-11 11:46:13 --> Helper loaded: file_helper
+INFO - 2018-01-11 11:46:13 --> Helper loaded: user_helper
+INFO - 2018-01-11 11:46:13 --> Helper loaded: json_helper
+INFO - 2018-01-11 11:46:13 --> Helper loaded: admin_helper
+INFO - 2018-01-11 11:46:13 --> Helper loaded: driver_helper
+INFO - 2018-01-11 11:46:13 --> Helper loaded: cookie_helper
+INFO - 2018-01-11 11:46:13 --> Helper loaded: common_helper
+INFO - 2018-01-11 11:46:13 --> Language file loaded: language/english/en_lang.php
+INFO - 2018-01-11 11:46:13 --> Database Driver Class Initialized
+DEBUG - 2018-01-11 11:46:13 --> Email Class Initialized
+DEBUG - 2018-01-11 11:46:13 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2018-01-11 11:46:13 --> Session: Class initialized using 'files' driver.
+INFO - 2018-01-11 11:46:13 --> Helper loaded: form_helper
+INFO - 2018-01-11 11:46:13 --> Form Validation Class Initialized
+INFO - 2018-01-11 11:46:13 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2018-01-11 11:46:13 --> Pagination Class Initialized
+INFO - 2018-01-11 11:46:13 --> User Agent Class Initialized
+INFO - 2018-01-11 11:46:13 --> Controller Class Initialized
+DEBUG - 2018-01-11 11:46:13 --> Doctor MX_Controller Initialized
+INFO - 2018-01-11 11:46:13 --> Model Class Initialized
+DEBUG - 2018-01-11 11:46:13 --> File loaded: C:\xampp\htdocs\farris\git\instacraft\application\modules/website/models/Doctor_model.php
+INFO - 2018-01-11 11:46:13 --> Model Class Initialized
+DEBUG - 2018-01-11 11:46:13 --> File loaded: C:\xampp\htdocs\farris\git\instacraft\application\modules/website/models/Login_model.php
+INFO - 2018-01-11 11:46:13 --> Model Class Initialized
+DEBUG - 2018-01-11 11:46:13 --> S3 Class Initialized
+INFO - 2018-01-11 11:46:13 --> Model Class Initialized
+INFO - 2018-01-11 11:46:21 --> Config Class Initialized
+INFO - 2018-01-11 11:46:21 --> Hooks Class Initialized
+DEBUG - 2018-01-11 11:46:21 --> UTF-8 Support Enabled
+INFO - 2018-01-11 11:46:21 --> Utf8 Class Initialized
+INFO - 2018-01-11 11:46:21 --> URI Class Initialized
+INFO - 2018-01-11 11:46:21 --> Router Class Initialized
+INFO - 2018-01-11 11:46:21 --> Output Class Initialized
+INFO - 2018-01-11 11:46:21 --> Security Class Initialized
+DEBUG - 2018-01-11 11:46:21 --> Global POST, GET and COOKIE data sanitized
+INFO - 2018-01-11 11:46:21 --> Input Class Initialized
+INFO - 2018-01-11 11:46:21 --> Language Class Initialized
+INFO - 2018-01-11 11:46:21 --> Language Class Initialized
+INFO - 2018-01-11 11:46:21 --> Config Class Initialized
+INFO - 2018-01-11 11:46:21 --> Loader Class Initialized
+INFO - 2018-01-11 11:46:21 --> Helper loaded: url_helper
+INFO - 2018-01-11 11:46:21 --> Helper loaded: file_helper
+INFO - 2018-01-11 11:46:21 --> Helper loaded: user_helper
+INFO - 2018-01-11 11:46:21 --> Helper loaded: json_helper
+INFO - 2018-01-11 11:46:21 --> Helper loaded: admin_helper
+INFO - 2018-01-11 11:46:21 --> Helper loaded: driver_helper
+INFO - 2018-01-11 11:46:21 --> Helper loaded: cookie_helper
+INFO - 2018-01-11 11:46:21 --> Helper loaded: common_helper
+INFO - 2018-01-11 11:46:21 --> Language file loaded: language/english/en_lang.php
+INFO - 2018-01-11 11:46:21 --> Database Driver Class Initialized
+DEBUG - 2018-01-11 11:46:21 --> Email Class Initialized
+DEBUG - 2018-01-11 11:46:21 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2018-01-11 11:46:21 --> Session: Class initialized using 'files' driver.
+INFO - 2018-01-11 11:46:21 --> Helper loaded: form_helper
+INFO - 2018-01-11 11:46:21 --> Form Validation Class Initialized
+INFO - 2018-01-11 11:46:21 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2018-01-11 11:46:21 --> Pagination Class Initialized
+INFO - 2018-01-11 11:46:21 --> User Agent Class Initialized
+INFO - 2018-01-11 11:46:21 --> Controller Class Initialized
+DEBUG - 2018-01-11 11:46:21 --> Doctor MX_Controller Initialized
+INFO - 2018-01-11 11:46:21 --> Model Class Initialized
+DEBUG - 2018-01-11 11:46:21 --> File loaded: C:\xampp\htdocs\farris\git\instacraft\application\modules/website/models/Doctor_model.php
+INFO - 2018-01-11 11:46:21 --> Model Class Initialized
+DEBUG - 2018-01-11 11:46:21 --> File loaded: C:\xampp\htdocs\farris\git\instacraft\application\modules/website/models/Login_model.php
+INFO - 2018-01-11 11:46:21 --> Model Class Initialized
+DEBUG - 2018-01-11 11:46:21 --> S3 Class Initialized
+INFO - 2018-01-11 11:46:21 --> Model Class Initialized
+INFO - 2018-01-11 11:46:23 --> Config Class Initialized
+INFO - 2018-01-11 11:46:23 --> Hooks Class Initialized
+DEBUG - 2018-01-11 11:46:23 --> UTF-8 Support Enabled
+INFO - 2018-01-11 11:46:23 --> Utf8 Class Initialized
+INFO - 2018-01-11 11:46:23 --> URI Class Initialized
+INFO - 2018-01-11 11:46:23 --> Router Class Initialized
+INFO - 2018-01-11 11:46:23 --> Output Class Initialized
+INFO - 2018-01-11 11:46:23 --> Security Class Initialized
+DEBUG - 2018-01-11 11:46:23 --> Global POST, GET and COOKIE data sanitized
+INFO - 2018-01-11 11:46:23 --> Input Class Initialized
+INFO - 2018-01-11 11:46:23 --> Language Class Initialized
+INFO - 2018-01-11 11:46:23 --> Language Class Initialized
+INFO - 2018-01-11 11:46:23 --> Config Class Initialized
+INFO - 2018-01-11 11:46:23 --> Loader Class Initialized
+INFO - 2018-01-11 11:46:23 --> Helper loaded: url_helper
+INFO - 2018-01-11 11:46:23 --> Helper loaded: file_helper
+INFO - 2018-01-11 11:46:23 --> Helper loaded: user_helper
+INFO - 2018-01-11 11:46:23 --> Helper loaded: json_helper
+INFO - 2018-01-11 11:46:23 --> Helper loaded: admin_helper
+INFO - 2018-01-11 11:46:23 --> Helper loaded: driver_helper
+INFO - 2018-01-11 11:46:23 --> Helper loaded: cookie_helper
+INFO - 2018-01-11 11:46:23 --> Helper loaded: common_helper
+INFO - 2018-01-11 11:46:23 --> Language file loaded: language/english/en_lang.php
+INFO - 2018-01-11 11:46:23 --> Database Driver Class Initialized
+DEBUG - 2018-01-11 11:46:23 --> Email Class Initialized
+DEBUG - 2018-01-11 11:46:23 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2018-01-11 11:46:23 --> Session: Class initialized using 'files' driver.
+INFO - 2018-01-11 11:46:23 --> Helper loaded: form_helper
+INFO - 2018-01-11 11:46:23 --> Form Validation Class Initialized
+INFO - 2018-01-11 11:46:23 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2018-01-11 11:46:23 --> Pagination Class Initialized
+INFO - 2018-01-11 11:46:23 --> User Agent Class Initialized
+INFO - 2018-01-11 11:46:23 --> Controller Class Initialized
+DEBUG - 2018-01-11 11:46:23 --> Doctor MX_Controller Initialized
+INFO - 2018-01-11 11:46:23 --> Model Class Initialized
+DEBUG - 2018-01-11 11:46:23 --> File loaded: C:\xampp\htdocs\farris\git\instacraft\application\modules/website/models/Doctor_model.php
+INFO - 2018-01-11 11:46:23 --> Model Class Initialized
+DEBUG - 2018-01-11 11:46:23 --> File loaded: C:\xampp\htdocs\farris\git\instacraft\application\modules/website/models/Login_model.php
+INFO - 2018-01-11 11:46:23 --> Model Class Initialized
+DEBUG - 2018-01-11 11:46:23 --> S3 Class Initialized
+INFO - 2018-01-11 11:46:23 --> Model Class Initialized
+INFO - 2018-01-11 11:46:31 --> Config Class Initialized
+INFO - 2018-01-11 11:46:31 --> Hooks Class Initialized
+DEBUG - 2018-01-11 11:46:31 --> UTF-8 Support Enabled
+INFO - 2018-01-11 11:46:31 --> Utf8 Class Initialized
+INFO - 2018-01-11 11:46:31 --> URI Class Initialized
+INFO - 2018-01-11 11:46:31 --> Router Class Initialized
+INFO - 2018-01-11 11:46:31 --> Output Class Initialized
+INFO - 2018-01-11 11:46:31 --> Security Class Initialized
+DEBUG - 2018-01-11 11:46:31 --> Global POST, GET and COOKIE data sanitized
+INFO - 2018-01-11 11:46:31 --> Input Class Initialized
+INFO - 2018-01-11 11:46:31 --> Language Class Initialized
+INFO - 2018-01-11 11:46:31 --> Language Class Initialized
+INFO - 2018-01-11 11:46:31 --> Config Class Initialized
+INFO - 2018-01-11 11:46:31 --> Loader Class Initialized
+INFO - 2018-01-11 11:46:31 --> Helper loaded: url_helper
+INFO - 2018-01-11 11:46:31 --> Helper loaded: file_helper
+INFO - 2018-01-11 11:46:31 --> Helper loaded: user_helper
+INFO - 2018-01-11 11:46:31 --> Helper loaded: json_helper
+INFO - 2018-01-11 11:46:31 --> Helper loaded: admin_helper
+INFO - 2018-01-11 11:46:31 --> Helper loaded: driver_helper
+INFO - 2018-01-11 11:46:31 --> Helper loaded: cookie_helper
+INFO - 2018-01-11 11:46:31 --> Helper loaded: common_helper
+INFO - 2018-01-11 11:46:31 --> Language file loaded: language/english/en_lang.php
+INFO - 2018-01-11 11:46:31 --> Database Driver Class Initialized
+DEBUG - 2018-01-11 11:46:31 --> Email Class Initialized
+DEBUG - 2018-01-11 11:46:31 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2018-01-11 11:46:31 --> Session: Class initialized using 'files' driver.
+INFO - 2018-01-11 11:46:31 --> Helper loaded: form_helper
+INFO - 2018-01-11 11:46:31 --> Form Validation Class Initialized
+INFO - 2018-01-11 11:46:31 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2018-01-11 11:46:31 --> Pagination Class Initialized
+INFO - 2018-01-11 11:46:31 --> User Agent Class Initialized
+INFO - 2018-01-11 11:46:31 --> Controller Class Initialized
+DEBUG - 2018-01-11 11:46:31 --> Doctor MX_Controller Initialized
+INFO - 2018-01-11 11:46:31 --> Model Class Initialized
+DEBUG - 2018-01-11 11:46:31 --> File loaded: C:\xampp\htdocs\farris\git\instacraft\application\modules/website/models/Doctor_model.php
+INFO - 2018-01-11 11:46:31 --> Model Class Initialized
+DEBUG - 2018-01-11 11:46:31 --> File loaded: C:\xampp\htdocs\farris\git\instacraft\application\modules/website/models/Login_model.php
+INFO - 2018-01-11 11:46:31 --> Model Class Initialized
+DEBUG - 2018-01-11 11:46:31 --> S3 Class Initialized
+INFO - 2018-01-11 11:46:31 --> Model Class Initialized
+INFO - 2018-01-11 11:46:33 --> Config Class Initialized
+INFO - 2018-01-11 11:46:33 --> Hooks Class Initialized
+DEBUG - 2018-01-11 11:46:33 --> UTF-8 Support Enabled
+INFO - 2018-01-11 11:46:33 --> Utf8 Class Initialized
+INFO - 2018-01-11 11:46:33 --> URI Class Initialized
+INFO - 2018-01-11 11:46:33 --> Router Class Initialized
+INFO - 2018-01-11 11:46:33 --> Output Class Initialized
+INFO - 2018-01-11 11:46:33 --> Security Class Initialized
+DEBUG - 2018-01-11 11:46:33 --> Global POST, GET and COOKIE data sanitized
+INFO - 2018-01-11 11:46:33 --> Input Class Initialized
+INFO - 2018-01-11 11:46:33 --> Language Class Initialized
+INFO - 2018-01-11 11:46:33 --> Language Class Initialized
+INFO - 2018-01-11 11:46:33 --> Config Class Initialized
+INFO - 2018-01-11 11:46:33 --> Loader Class Initialized
+INFO - 2018-01-11 11:46:33 --> Helper loaded: url_helper
+INFO - 2018-01-11 11:46:33 --> Helper loaded: file_helper
+INFO - 2018-01-11 11:46:33 --> Helper loaded: user_helper
+INFO - 2018-01-11 11:46:33 --> Helper loaded: json_helper
+INFO - 2018-01-11 11:46:33 --> Helper loaded: admin_helper
+INFO - 2018-01-11 11:46:33 --> Helper loaded: driver_helper
+INFO - 2018-01-11 11:46:33 --> Helper loaded: cookie_helper
+INFO - 2018-01-11 11:46:33 --> Helper loaded: common_helper
+INFO - 2018-01-11 11:46:33 --> Language file loaded: language/english/en_lang.php
+INFO - 2018-01-11 11:46:33 --> Database Driver Class Initialized
+DEBUG - 2018-01-11 11:46:33 --> Email Class Initialized
+DEBUG - 2018-01-11 11:46:33 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2018-01-11 11:46:33 --> Session: Class initialized using 'files' driver.
+INFO - 2018-01-11 11:46:33 --> Helper loaded: form_helper
+INFO - 2018-01-11 11:46:33 --> Form Validation Class Initialized
+INFO - 2018-01-11 11:46:33 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2018-01-11 11:46:33 --> Pagination Class Initialized
+INFO - 2018-01-11 11:46:33 --> User Agent Class Initialized
+INFO - 2018-01-11 11:46:33 --> Controller Class Initialized
+DEBUG - 2018-01-11 11:46:33 --> Doctor MX_Controller Initialized
+INFO - 2018-01-11 11:46:33 --> Model Class Initialized
+DEBUG - 2018-01-11 11:46:33 --> File loaded: C:\xampp\htdocs\farris\git\instacraft\application\modules/website/models/Doctor_model.php
+INFO - 2018-01-11 11:46:33 --> Model Class Initialized
+DEBUG - 2018-01-11 11:46:33 --> File loaded: C:\xampp\htdocs\farris\git\instacraft\application\modules/website/models/Login_model.php
+INFO - 2018-01-11 11:46:33 --> Model Class Initialized
+DEBUG - 2018-01-11 11:46:33 --> S3 Class Initialized
+INFO - 2018-01-11 11:46:33 --> Model Class Initialized
+INFO - 2018-01-11 11:46:41 --> Config Class Initialized
+INFO - 2018-01-11 11:46:41 --> Hooks Class Initialized
+DEBUG - 2018-01-11 11:46:41 --> UTF-8 Support Enabled
+INFO - 2018-01-11 11:46:41 --> Utf8 Class Initialized
+INFO - 2018-01-11 11:46:41 --> URI Class Initialized
+INFO - 2018-01-11 11:46:41 --> Router Class Initialized
+INFO - 2018-01-11 11:46:41 --> Output Class Initialized
+INFO - 2018-01-11 11:46:41 --> Security Class Initialized
+DEBUG - 2018-01-11 11:46:41 --> Global POST, GET and COOKIE data sanitized
+INFO - 2018-01-11 11:46:41 --> Input Class Initialized
+INFO - 2018-01-11 11:46:41 --> Language Class Initialized
+INFO - 2018-01-11 11:46:41 --> Language Class Initialized
+INFO - 2018-01-11 11:46:41 --> Config Class Initialized
+INFO - 2018-01-11 11:46:41 --> Loader Class Initialized
+INFO - 2018-01-11 11:46:41 --> Helper loaded: url_helper
+INFO - 2018-01-11 11:46:41 --> Helper loaded: file_helper
+INFO - 2018-01-11 11:46:41 --> Helper loaded: user_helper
+INFO - 2018-01-11 11:46:41 --> Helper loaded: json_helper
+INFO - 2018-01-11 11:46:41 --> Helper loaded: admin_helper
+INFO - 2018-01-11 11:46:41 --> Helper loaded: driver_helper
+INFO - 2018-01-11 11:46:41 --> Helper loaded: cookie_helper
+INFO - 2018-01-11 11:46:41 --> Helper loaded: common_helper
+INFO - 2018-01-11 11:46:41 --> Language file loaded: language/english/en_lang.php
+INFO - 2018-01-11 11:46:41 --> Database Driver Class Initialized
+DEBUG - 2018-01-11 11:46:41 --> Email Class Initialized
+DEBUG - 2018-01-11 11:46:41 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2018-01-11 11:46:41 --> Session: Class initialized using 'files' driver.
+INFO - 2018-01-11 11:46:41 --> Helper loaded: form_helper
+INFO - 2018-01-11 11:46:41 --> Form Validation Class Initialized
+INFO - 2018-01-11 11:46:41 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2018-01-11 11:46:41 --> Pagination Class Initialized
+INFO - 2018-01-11 11:46:41 --> User Agent Class Initialized
+INFO - 2018-01-11 11:46:41 --> Controller Class Initialized
+DEBUG - 2018-01-11 11:46:41 --> Doctor MX_Controller Initialized
+INFO - 2018-01-11 11:46:41 --> Model Class Initialized
+DEBUG - 2018-01-11 11:46:41 --> File loaded: C:\xampp\htdocs\farris\git\instacraft\application\modules/website/models/Doctor_model.php
+INFO - 2018-01-11 11:46:41 --> Model Class Initialized
+DEBUG - 2018-01-11 11:46:41 --> File loaded: C:\xampp\htdocs\farris\git\instacraft\application\modules/website/models/Login_model.php
+INFO - 2018-01-11 11:46:41 --> Model Class Initialized
+DEBUG - 2018-01-11 11:46:41 --> S3 Class Initialized
+INFO - 2018-01-11 11:46:41 --> Model Class Initialized
+INFO - 2018-01-11 11:46:43 --> Config Class Initialized
+INFO - 2018-01-11 11:46:43 --> Hooks Class Initialized
+DEBUG - 2018-01-11 11:46:43 --> UTF-8 Support Enabled
+INFO - 2018-01-11 11:46:43 --> Utf8 Class Initialized
+INFO - 2018-01-11 11:46:43 --> URI Class Initialized
+INFO - 2018-01-11 11:46:43 --> Router Class Initialized
+INFO - 2018-01-11 11:46:43 --> Output Class Initialized
+INFO - 2018-01-11 11:46:43 --> Security Class Initialized
+DEBUG - 2018-01-11 11:46:43 --> Global POST, GET and COOKIE data sanitized
+INFO - 2018-01-11 11:46:43 --> Input Class Initialized
+INFO - 2018-01-11 11:46:43 --> Language Class Initialized
+INFO - 2018-01-11 11:46:43 --> Language Class Initialized
+INFO - 2018-01-11 11:46:43 --> Config Class Initialized
+INFO - 2018-01-11 11:46:43 --> Loader Class Initialized
+INFO - 2018-01-11 11:46:43 --> Helper loaded: url_helper
+INFO - 2018-01-11 11:46:43 --> Helper loaded: file_helper
+INFO - 2018-01-11 11:46:43 --> Helper loaded: user_helper
+INFO - 2018-01-11 11:46:43 --> Helper loaded: json_helper
+INFO - 2018-01-11 11:46:43 --> Helper loaded: admin_helper
+INFO - 2018-01-11 11:46:43 --> Helper loaded: driver_helper
+INFO - 2018-01-11 11:46:43 --> Helper loaded: cookie_helper
+INFO - 2018-01-11 11:46:43 --> Helper loaded: common_helper
+INFO - 2018-01-11 11:46:43 --> Language file loaded: language/english/en_lang.php
+INFO - 2018-01-11 11:46:43 --> Database Driver Class Initialized
+DEBUG - 2018-01-11 11:46:43 --> Email Class Initialized
+DEBUG - 2018-01-11 11:46:43 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2018-01-11 11:46:43 --> Session: Class initialized using 'files' driver.
+INFO - 2018-01-11 11:46:43 --> Helper loaded: form_helper
+INFO - 2018-01-11 11:46:43 --> Form Validation Class Initialized
+INFO - 2018-01-11 11:46:43 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2018-01-11 11:46:43 --> Pagination Class Initialized
+INFO - 2018-01-11 11:46:43 --> User Agent Class Initialized
+INFO - 2018-01-11 11:46:43 --> Controller Class Initialized
+DEBUG - 2018-01-11 11:46:43 --> Doctor MX_Controller Initialized
+INFO - 2018-01-11 11:46:43 --> Model Class Initialized
+DEBUG - 2018-01-11 11:46:43 --> File loaded: C:\xampp\htdocs\farris\git\instacraft\application\modules/website/models/Doctor_model.php
+INFO - 2018-01-11 11:46:43 --> Model Class Initialized
+DEBUG - 2018-01-11 11:46:43 --> File loaded: C:\xampp\htdocs\farris\git\instacraft\application\modules/website/models/Login_model.php
+INFO - 2018-01-11 11:46:43 --> Model Class Initialized
+DEBUG - 2018-01-11 11:46:43 --> S3 Class Initialized
+INFO - 2018-01-11 11:46:43 --> Model Class Initialized
+INFO - 2018-01-11 11:46:51 --> Config Class Initialized
+INFO - 2018-01-11 11:46:51 --> Hooks Class Initialized
+DEBUG - 2018-01-11 11:46:51 --> UTF-8 Support Enabled
+INFO - 2018-01-11 11:46:51 --> Utf8 Class Initialized
+INFO - 2018-01-11 11:46:51 --> URI Class Initialized
+INFO - 2018-01-11 11:46:51 --> Router Class Initialized
+INFO - 2018-01-11 11:46:51 --> Output Class Initialized
+INFO - 2018-01-11 11:46:51 --> Security Class Initialized
+DEBUG - 2018-01-11 11:46:51 --> Global POST, GET and COOKIE data sanitized
+INFO - 2018-01-11 11:46:51 --> Input Class Initialized
+INFO - 2018-01-11 11:46:51 --> Language Class Initialized
+INFO - 2018-01-11 11:46:51 --> Language Class Initialized
+INFO - 2018-01-11 11:46:51 --> Config Class Initialized
+INFO - 2018-01-11 11:46:51 --> Loader Class Initialized
+INFO - 2018-01-11 11:46:51 --> Helper loaded: url_helper
+INFO - 2018-01-11 11:46:51 --> Helper loaded: file_helper
+INFO - 2018-01-11 11:46:51 --> Helper loaded: user_helper
+INFO - 2018-01-11 11:46:51 --> Helper loaded: json_helper
+INFO - 2018-01-11 11:46:51 --> Helper loaded: admin_helper
+INFO - 2018-01-11 11:46:51 --> Helper loaded: driver_helper
+INFO - 2018-01-11 11:46:51 --> Helper loaded: cookie_helper
+INFO - 2018-01-11 11:46:51 --> Helper loaded: common_helper
+INFO - 2018-01-11 11:46:51 --> Language file loaded: language/english/en_lang.php
+INFO - 2018-01-11 11:46:51 --> Database Driver Class Initialized
+DEBUG - 2018-01-11 11:46:51 --> Email Class Initialized
+DEBUG - 2018-01-11 11:46:51 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2018-01-11 11:46:51 --> Session: Class initialized using 'files' driver.
+INFO - 2018-01-11 11:46:51 --> Helper loaded: form_helper
+INFO - 2018-01-11 11:46:51 --> Form Validation Class Initialized
+INFO - 2018-01-11 11:46:51 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2018-01-11 11:46:51 --> Pagination Class Initialized
+INFO - 2018-01-11 11:46:51 --> User Agent Class Initialized
+INFO - 2018-01-11 11:46:51 --> Controller Class Initialized
+DEBUG - 2018-01-11 11:46:51 --> Doctor MX_Controller Initialized
+INFO - 2018-01-11 11:46:51 --> Model Class Initialized
+DEBUG - 2018-01-11 11:46:51 --> File loaded: C:\xampp\htdocs\farris\git\instacraft\application\modules/website/models/Doctor_model.php
+INFO - 2018-01-11 11:46:51 --> Model Class Initialized
+DEBUG - 2018-01-11 11:46:51 --> File loaded: C:\xampp\htdocs\farris\git\instacraft\application\modules/website/models/Login_model.php
+INFO - 2018-01-11 11:46:51 --> Model Class Initialized
+DEBUG - 2018-01-11 11:46:51 --> S3 Class Initialized
+INFO - 2018-01-11 11:46:51 --> Model Class Initialized
+INFO - 2018-01-11 11:46:53 --> Config Class Initialized
+INFO - 2018-01-11 11:46:53 --> Hooks Class Initialized
+DEBUG - 2018-01-11 11:46:53 --> UTF-8 Support Enabled
+INFO - 2018-01-11 11:46:53 --> Utf8 Class Initialized
+INFO - 2018-01-11 11:46:53 --> URI Class Initialized
+INFO - 2018-01-11 11:46:53 --> Router Class Initialized
+INFO - 2018-01-11 11:46:53 --> Output Class Initialized
+INFO - 2018-01-11 11:46:53 --> Security Class Initialized
+DEBUG - 2018-01-11 11:46:53 --> Global POST, GET and COOKIE data sanitized
+INFO - 2018-01-11 11:46:53 --> Input Class Initialized
+INFO - 2018-01-11 11:46:53 --> Language Class Initialized
+INFO - 2018-01-11 11:46:53 --> Language Class Initialized
+INFO - 2018-01-11 11:46:53 --> Config Class Initialized
+INFO - 2018-01-11 11:46:53 --> Loader Class Initialized
+INFO - 2018-01-11 11:46:53 --> Helper loaded: url_helper
+INFO - 2018-01-11 11:46:53 --> Helper loaded: file_helper
+INFO - 2018-01-11 11:46:53 --> Helper loaded: user_helper
+INFO - 2018-01-11 11:46:53 --> Helper loaded: json_helper
+INFO - 2018-01-11 11:46:53 --> Helper loaded: admin_helper
+INFO - 2018-01-11 11:46:53 --> Helper loaded: driver_helper
+INFO - 2018-01-11 11:46:53 --> Helper loaded: cookie_helper
+INFO - 2018-01-11 11:46:53 --> Helper loaded: common_helper
+INFO - 2018-01-11 11:46:53 --> Language file loaded: language/english/en_lang.php
+INFO - 2018-01-11 11:46:53 --> Database Driver Class Initialized
+DEBUG - 2018-01-11 11:46:53 --> Email Class Initialized
+DEBUG - 2018-01-11 11:46:53 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2018-01-11 11:46:53 --> Session: Class initialized using 'files' driver.
+INFO - 2018-01-11 11:46:53 --> Helper loaded: form_helper
+INFO - 2018-01-11 11:46:53 --> Form Validation Class Initialized
+INFO - 2018-01-11 11:46:53 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2018-01-11 11:46:53 --> Pagination Class Initialized
+INFO - 2018-01-11 11:46:53 --> User Agent Class Initialized
+INFO - 2018-01-11 11:46:53 --> Controller Class Initialized
+DEBUG - 2018-01-11 11:46:53 --> Doctor MX_Controller Initialized
+INFO - 2018-01-11 11:46:53 --> Model Class Initialized
+DEBUG - 2018-01-11 11:46:53 --> File loaded: C:\xampp\htdocs\farris\git\instacraft\application\modules/website/models/Doctor_model.php
+INFO - 2018-01-11 11:46:53 --> Model Class Initialized
+DEBUG - 2018-01-11 11:46:53 --> File loaded: C:\xampp\htdocs\farris\git\instacraft\application\modules/website/models/Login_model.php
+INFO - 2018-01-11 11:46:53 --> Model Class Initialized
+DEBUG - 2018-01-11 11:46:53 --> S3 Class Initialized
+INFO - 2018-01-11 11:46:53 --> Model Class Initialized
+INFO - 2018-01-11 11:47:01 --> Config Class Initialized
+INFO - 2018-01-11 11:47:01 --> Hooks Class Initialized
+DEBUG - 2018-01-11 11:47:01 --> UTF-8 Support Enabled
+INFO - 2018-01-11 11:47:01 --> Utf8 Class Initialized
+INFO - 2018-01-11 11:47:01 --> URI Class Initialized
+INFO - 2018-01-11 11:47:01 --> Router Class Initialized
+INFO - 2018-01-11 11:47:01 --> Output Class Initialized
+INFO - 2018-01-11 11:47:01 --> Security Class Initialized
+DEBUG - 2018-01-11 11:47:01 --> Global POST, GET and COOKIE data sanitized
+INFO - 2018-01-11 11:47:01 --> Input Class Initialized
+INFO - 2018-01-11 11:47:01 --> Language Class Initialized
+INFO - 2018-01-11 11:47:01 --> Language Class Initialized
+INFO - 2018-01-11 11:47:01 --> Config Class Initialized
+INFO - 2018-01-11 11:47:01 --> Loader Class Initialized
+INFO - 2018-01-11 11:47:01 --> Helper loaded: url_helper
+INFO - 2018-01-11 11:47:01 --> Helper loaded: file_helper
+INFO - 2018-01-11 11:47:01 --> Helper loaded: user_helper
+INFO - 2018-01-11 11:47:01 --> Helper loaded: json_helper
+INFO - 2018-01-11 11:47:01 --> Helper loaded: admin_helper
+INFO - 2018-01-11 11:47:01 --> Helper loaded: driver_helper
+INFO - 2018-01-11 11:47:01 --> Helper loaded: cookie_helper
+INFO - 2018-01-11 11:47:01 --> Helper loaded: common_helper
+INFO - 2018-01-11 11:47:01 --> Language file loaded: language/english/en_lang.php
+INFO - 2018-01-11 11:47:01 --> Database Driver Class Initialized
+DEBUG - 2018-01-11 11:47:01 --> Email Class Initialized
+DEBUG - 2018-01-11 11:47:01 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2018-01-11 11:47:01 --> Session: Class initialized using 'files' driver.
+INFO - 2018-01-11 11:47:01 --> Helper loaded: form_helper
+INFO - 2018-01-11 11:47:01 --> Form Validation Class Initialized
+INFO - 2018-01-11 11:47:01 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2018-01-11 11:47:01 --> Pagination Class Initialized
+INFO - 2018-01-11 11:47:01 --> User Agent Class Initialized
+INFO - 2018-01-11 11:47:01 --> Controller Class Initialized
+DEBUG - 2018-01-11 11:47:01 --> Doctor MX_Controller Initialized
+INFO - 2018-01-11 11:47:01 --> Model Class Initialized
+DEBUG - 2018-01-11 11:47:01 --> File loaded: C:\xampp\htdocs\farris\git\instacraft\application\modules/website/models/Doctor_model.php
+INFO - 2018-01-11 11:47:01 --> Model Class Initialized
+DEBUG - 2018-01-11 11:47:01 --> File loaded: C:\xampp\htdocs\farris\git\instacraft\application\modules/website/models/Login_model.php
+INFO - 2018-01-11 11:47:01 --> Model Class Initialized
+DEBUG - 2018-01-11 11:47:01 --> S3 Class Initialized
+INFO - 2018-01-11 11:47:01 --> Model Class Initialized
+INFO - 2018-01-11 11:47:03 --> Config Class Initialized
+INFO - 2018-01-11 11:47:03 --> Hooks Class Initialized
+DEBUG - 2018-01-11 11:47:03 --> UTF-8 Support Enabled
+INFO - 2018-01-11 11:47:03 --> Utf8 Class Initialized
+INFO - 2018-01-11 11:47:03 --> URI Class Initialized
+INFO - 2018-01-11 11:47:03 --> Router Class Initialized
+INFO - 2018-01-11 11:47:03 --> Output Class Initialized
+INFO - 2018-01-11 11:47:03 --> Security Class Initialized
+DEBUG - 2018-01-11 11:47:03 --> Global POST, GET and COOKIE data sanitized
+INFO - 2018-01-11 11:47:03 --> Input Class Initialized
+INFO - 2018-01-11 11:47:03 --> Language Class Initialized
+INFO - 2018-01-11 11:47:03 --> Language Class Initialized
+INFO - 2018-01-11 11:47:03 --> Config Class Initialized
+INFO - 2018-01-11 11:47:03 --> Loader Class Initialized
+INFO - 2018-01-11 11:47:03 --> Helper loaded: url_helper
+INFO - 2018-01-11 11:47:03 --> Helper loaded: file_helper
+INFO - 2018-01-11 11:47:03 --> Helper loaded: user_helper
+INFO - 2018-01-11 11:47:03 --> Helper loaded: json_helper
+INFO - 2018-01-11 11:47:03 --> Helper loaded: admin_helper
+INFO - 2018-01-11 11:47:03 --> Helper loaded: driver_helper
+INFO - 2018-01-11 11:47:03 --> Helper loaded: cookie_helper
+INFO - 2018-01-11 11:47:03 --> Helper loaded: common_helper
+INFO - 2018-01-11 11:47:03 --> Language file loaded: language/english/en_lang.php
+INFO - 2018-01-11 11:47:03 --> Database Driver Class Initialized
+DEBUG - 2018-01-11 11:47:03 --> Email Class Initialized
+DEBUG - 2018-01-11 11:47:03 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2018-01-11 11:47:03 --> Session: Class initialized using 'files' driver.
+INFO - 2018-01-11 11:47:03 --> Helper loaded: form_helper
+INFO - 2018-01-11 11:47:03 --> Form Validation Class Initialized
+INFO - 2018-01-11 11:47:03 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2018-01-11 11:47:03 --> Pagination Class Initialized
+INFO - 2018-01-11 11:47:03 --> User Agent Class Initialized
+INFO - 2018-01-11 11:47:03 --> Controller Class Initialized
+DEBUG - 2018-01-11 11:47:03 --> Doctor MX_Controller Initialized
+INFO - 2018-01-11 11:47:03 --> Model Class Initialized
+DEBUG - 2018-01-11 11:47:03 --> File loaded: C:\xampp\htdocs\farris\git\instacraft\application\modules/website/models/Doctor_model.php
+INFO - 2018-01-11 11:47:03 --> Model Class Initialized
+DEBUG - 2018-01-11 11:47:03 --> File loaded: C:\xampp\htdocs\farris\git\instacraft\application\modules/website/models/Login_model.php
+INFO - 2018-01-11 11:47:03 --> Model Class Initialized
+DEBUG - 2018-01-11 11:47:03 --> S3 Class Initialized
+INFO - 2018-01-11 11:47:03 --> Model Class Initialized
+INFO - 2018-01-11 11:47:11 --> Config Class Initialized
+INFO - 2018-01-11 11:47:11 --> Hooks Class Initialized
+DEBUG - 2018-01-11 11:47:11 --> UTF-8 Support Enabled
+INFO - 2018-01-11 11:47:11 --> Utf8 Class Initialized
+INFO - 2018-01-11 11:47:11 --> URI Class Initialized
+INFO - 2018-01-11 11:47:11 --> Router Class Initialized
+INFO - 2018-01-11 11:47:11 --> Output Class Initialized
+INFO - 2018-01-11 11:47:11 --> Security Class Initialized
+DEBUG - 2018-01-11 11:47:11 --> Global POST, GET and COOKIE data sanitized
+INFO - 2018-01-11 11:47:11 --> Input Class Initialized
+INFO - 2018-01-11 11:47:11 --> Language Class Initialized
+INFO - 2018-01-11 11:47:11 --> Language Class Initialized
+INFO - 2018-01-11 11:47:11 --> Config Class Initialized
+INFO - 2018-01-11 11:47:11 --> Loader Class Initialized
+INFO - 2018-01-11 11:47:11 --> Helper loaded: url_helper
+INFO - 2018-01-11 11:47:11 --> Helper loaded: file_helper
+INFO - 2018-01-11 11:47:11 --> Helper loaded: user_helper
+INFO - 2018-01-11 11:47:11 --> Helper loaded: json_helper
+INFO - 2018-01-11 11:47:11 --> Helper loaded: admin_helper
+INFO - 2018-01-11 11:47:11 --> Helper loaded: driver_helper
+INFO - 2018-01-11 11:47:11 --> Helper loaded: cookie_helper
+INFO - 2018-01-11 11:47:11 --> Helper loaded: common_helper
+INFO - 2018-01-11 11:47:11 --> Language file loaded: language/english/en_lang.php
+INFO - 2018-01-11 11:47:11 --> Database Driver Class Initialized
+DEBUG - 2018-01-11 11:47:11 --> Email Class Initialized
+DEBUG - 2018-01-11 11:47:11 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2018-01-11 11:47:11 --> Session: Class initialized using 'files' driver.
+INFO - 2018-01-11 11:47:11 --> Helper loaded: form_helper
+INFO - 2018-01-11 11:47:11 --> Form Validation Class Initialized
+INFO - 2018-01-11 11:47:11 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2018-01-11 11:47:11 --> Pagination Class Initialized
+INFO - 2018-01-11 11:47:11 --> User Agent Class Initialized
+INFO - 2018-01-11 11:47:11 --> Controller Class Initialized
+DEBUG - 2018-01-11 11:47:11 --> Doctor MX_Controller Initialized
+INFO - 2018-01-11 11:47:11 --> Model Class Initialized
+DEBUG - 2018-01-11 11:47:11 --> File loaded: C:\xampp\htdocs\farris\git\instacraft\application\modules/website/models/Doctor_model.php
+INFO - 2018-01-11 11:47:11 --> Model Class Initialized
+DEBUG - 2018-01-11 11:47:11 --> File loaded: C:\xampp\htdocs\farris\git\instacraft\application\modules/website/models/Login_model.php
+INFO - 2018-01-11 11:47:11 --> Model Class Initialized
+DEBUG - 2018-01-11 11:47:11 --> S3 Class Initialized
+INFO - 2018-01-11 11:47:11 --> Model Class Initialized
+INFO - 2018-01-11 11:47:13 --> Config Class Initialized
+INFO - 2018-01-11 11:47:13 --> Hooks Class Initialized
+DEBUG - 2018-01-11 11:47:13 --> UTF-8 Support Enabled
+INFO - 2018-01-11 11:47:13 --> Utf8 Class Initialized
+INFO - 2018-01-11 11:47:13 --> URI Class Initialized
+INFO - 2018-01-11 11:47:13 --> Router Class Initialized
+INFO - 2018-01-11 11:47:13 --> Output Class Initialized
+INFO - 2018-01-11 11:47:13 --> Security Class Initialized
+DEBUG - 2018-01-11 11:47:13 --> Global POST, GET and COOKIE data sanitized
+INFO - 2018-01-11 11:47:13 --> Input Class Initialized
+INFO - 2018-01-11 11:47:13 --> Language Class Initialized
+INFO - 2018-01-11 11:47:13 --> Language Class Initialized
+INFO - 2018-01-11 11:47:13 --> Config Class Initialized
+INFO - 2018-01-11 11:47:13 --> Loader Class Initialized
+INFO - 2018-01-11 11:47:13 --> Helper loaded: url_helper
+INFO - 2018-01-11 11:47:13 --> Helper loaded: file_helper
+INFO - 2018-01-11 11:47:13 --> Helper loaded: user_helper
+INFO - 2018-01-11 11:47:13 --> Helper loaded: json_helper
+INFO - 2018-01-11 11:47:13 --> Helper loaded: admin_helper
+INFO - 2018-01-11 11:47:13 --> Helper loaded: driver_helper
+INFO - 2018-01-11 11:47:13 --> Helper loaded: cookie_helper
+INFO - 2018-01-11 11:47:13 --> Helper loaded: common_helper
+INFO - 2018-01-11 11:47:13 --> Language file loaded: language/english/en_lang.php
+INFO - 2018-01-11 11:47:13 --> Database Driver Class Initialized
+DEBUG - 2018-01-11 11:47:13 --> Email Class Initialized
+DEBUG - 2018-01-11 11:47:13 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2018-01-11 11:47:13 --> Session: Class initialized using 'files' driver.
+INFO - 2018-01-11 11:47:13 --> Helper loaded: form_helper
+INFO - 2018-01-11 11:47:13 --> Form Validation Class Initialized
+INFO - 2018-01-11 11:47:13 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2018-01-11 11:47:13 --> Pagination Class Initialized
+INFO - 2018-01-11 11:47:13 --> User Agent Class Initialized
+INFO - 2018-01-11 11:47:13 --> Controller Class Initialized
+DEBUG - 2018-01-11 11:47:13 --> Doctor MX_Controller Initialized
+INFO - 2018-01-11 11:47:13 --> Model Class Initialized
+DEBUG - 2018-01-11 11:47:13 --> File loaded: C:\xampp\htdocs\farris\git\instacraft\application\modules/website/models/Doctor_model.php
+INFO - 2018-01-11 11:47:13 --> Model Class Initialized
+DEBUG - 2018-01-11 11:47:13 --> File loaded: C:\xampp\htdocs\farris\git\instacraft\application\modules/website/models/Login_model.php
+INFO - 2018-01-11 11:47:13 --> Model Class Initialized
+DEBUG - 2018-01-11 11:47:13 --> S3 Class Initialized
+INFO - 2018-01-11 11:47:13 --> Model Class Initialized
+INFO - 2018-01-11 11:47:21 --> Config Class Initialized
+INFO - 2018-01-11 11:47:21 --> Hooks Class Initialized
+DEBUG - 2018-01-11 11:47:21 --> UTF-8 Support Enabled
+INFO - 2018-01-11 11:47:21 --> Utf8 Class Initialized
+INFO - 2018-01-11 11:47:21 --> URI Class Initialized
+INFO - 2018-01-11 11:47:21 --> Router Class Initialized
+INFO - 2018-01-11 11:47:21 --> Output Class Initialized
+INFO - 2018-01-11 11:47:21 --> Security Class Initialized
+DEBUG - 2018-01-11 11:47:21 --> Global POST, GET and COOKIE data sanitized
+INFO - 2018-01-11 11:47:21 --> Input Class Initialized
+INFO - 2018-01-11 11:47:21 --> Language Class Initialized
+INFO - 2018-01-11 11:47:21 --> Language Class Initialized
+INFO - 2018-01-11 11:47:21 --> Config Class Initialized
+INFO - 2018-01-11 11:47:21 --> Loader Class Initialized
+INFO - 2018-01-11 11:47:21 --> Helper loaded: url_helper
+INFO - 2018-01-11 11:47:21 --> Helper loaded: file_helper
+INFO - 2018-01-11 11:47:21 --> Helper loaded: user_helper
+INFO - 2018-01-11 11:47:21 --> Helper loaded: json_helper
+INFO - 2018-01-11 11:47:21 --> Helper loaded: admin_helper
+INFO - 2018-01-11 11:47:21 --> Helper loaded: driver_helper
+INFO - 2018-01-11 11:47:21 --> Helper loaded: cookie_helper
+INFO - 2018-01-11 11:47:21 --> Helper loaded: common_helper
+INFO - 2018-01-11 11:47:21 --> Language file loaded: language/english/en_lang.php
+INFO - 2018-01-11 11:47:21 --> Database Driver Class Initialized
+DEBUG - 2018-01-11 11:47:21 --> Email Class Initialized
+DEBUG - 2018-01-11 11:47:21 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2018-01-11 11:47:21 --> Session: Class initialized using 'files' driver.
+INFO - 2018-01-11 11:47:21 --> Helper loaded: form_helper
+INFO - 2018-01-11 11:47:21 --> Form Validation Class Initialized
+INFO - 2018-01-11 11:47:21 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2018-01-11 11:47:21 --> Pagination Class Initialized
+INFO - 2018-01-11 11:47:21 --> User Agent Class Initialized
+INFO - 2018-01-11 11:47:21 --> Controller Class Initialized
+DEBUG - 2018-01-11 11:47:21 --> Doctor MX_Controller Initialized
+INFO - 2018-01-11 11:47:21 --> Model Class Initialized
+DEBUG - 2018-01-11 11:47:21 --> File loaded: C:\xampp\htdocs\farris\git\instacraft\application\modules/website/models/Doctor_model.php
+INFO - 2018-01-11 11:47:21 --> Model Class Initialized
+DEBUG - 2018-01-11 11:47:21 --> File loaded: C:\xampp\htdocs\farris\git\instacraft\application\modules/website/models/Login_model.php
+INFO - 2018-01-11 11:47:21 --> Model Class Initialized
+DEBUG - 2018-01-11 11:47:21 --> S3 Class Initialized
+INFO - 2018-01-11 11:47:21 --> Model Class Initialized
+INFO - 2018-01-11 11:47:23 --> Config Class Initialized
+INFO - 2018-01-11 11:47:23 --> Hooks Class Initialized
+DEBUG - 2018-01-11 11:47:23 --> UTF-8 Support Enabled
+INFO - 2018-01-11 11:47:23 --> Utf8 Class Initialized
+INFO - 2018-01-11 11:47:23 --> URI Class Initialized
+INFO - 2018-01-11 11:47:23 --> Router Class Initialized
+INFO - 2018-01-11 11:47:23 --> Output Class Initialized
+INFO - 2018-01-11 11:47:23 --> Security Class Initialized
+DEBUG - 2018-01-11 11:47:23 --> Global POST, GET and COOKIE data sanitized
+INFO - 2018-01-11 11:47:23 --> Input Class Initialized
+INFO - 2018-01-11 11:47:23 --> Language Class Initialized
+INFO - 2018-01-11 11:47:23 --> Language Class Initialized
+INFO - 2018-01-11 11:47:23 --> Config Class Initialized
+INFO - 2018-01-11 11:47:23 --> Loader Class Initialized
+INFO - 2018-01-11 11:47:23 --> Helper loaded: url_helper
+INFO - 2018-01-11 11:47:23 --> Helper loaded: file_helper
+INFO - 2018-01-11 11:47:23 --> Helper loaded: user_helper
+INFO - 2018-01-11 11:47:23 --> Helper loaded: json_helper
+INFO - 2018-01-11 11:47:23 --> Helper loaded: admin_helper
+INFO - 2018-01-11 11:47:23 --> Helper loaded: driver_helper
+INFO - 2018-01-11 11:47:23 --> Helper loaded: cookie_helper
+INFO - 2018-01-11 11:47:23 --> Helper loaded: common_helper
+INFO - 2018-01-11 11:47:23 --> Language file loaded: language/english/en_lang.php
+INFO - 2018-01-11 11:47:23 --> Database Driver Class Initialized
+DEBUG - 2018-01-11 11:47:23 --> Email Class Initialized
+DEBUG - 2018-01-11 11:47:23 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2018-01-11 11:47:23 --> Session: Class initialized using 'files' driver.
+INFO - 2018-01-11 11:47:23 --> Helper loaded: form_helper
+INFO - 2018-01-11 11:47:23 --> Form Validation Class Initialized
+INFO - 2018-01-11 11:47:23 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2018-01-11 11:47:23 --> Pagination Class Initialized
+INFO - 2018-01-11 11:47:23 --> User Agent Class Initialized
+INFO - 2018-01-11 11:47:23 --> Controller Class Initialized
+DEBUG - 2018-01-11 11:47:23 --> Doctor MX_Controller Initialized
+INFO - 2018-01-11 11:47:23 --> Model Class Initialized
+DEBUG - 2018-01-11 11:47:23 --> File loaded: C:\xampp\htdocs\farris\git\instacraft\application\modules/website/models/Doctor_model.php
+INFO - 2018-01-11 11:47:23 --> Model Class Initialized
+DEBUG - 2018-01-11 11:47:23 --> File loaded: C:\xampp\htdocs\farris\git\instacraft\application\modules/website/models/Login_model.php
+INFO - 2018-01-11 11:47:23 --> Model Class Initialized
+DEBUG - 2018-01-11 11:47:23 --> S3 Class Initialized
+INFO - 2018-01-11 11:47:23 --> Model Class Initialized
+INFO - 2018-01-11 11:47:31 --> Config Class Initialized
+INFO - 2018-01-11 11:47:31 --> Hooks Class Initialized
+DEBUG - 2018-01-11 11:47:31 --> UTF-8 Support Enabled
+INFO - 2018-01-11 11:47:31 --> Utf8 Class Initialized
+INFO - 2018-01-11 11:47:31 --> URI Class Initialized
+INFO - 2018-01-11 11:47:31 --> Router Class Initialized
+INFO - 2018-01-11 11:47:31 --> Output Class Initialized
+INFO - 2018-01-11 11:47:31 --> Security Class Initialized
+DEBUG - 2018-01-11 11:47:31 --> Global POST, GET and COOKIE data sanitized
+INFO - 2018-01-11 11:47:31 --> Input Class Initialized
+INFO - 2018-01-11 11:47:31 --> Language Class Initialized
+INFO - 2018-01-11 11:47:31 --> Language Class Initialized
+INFO - 2018-01-11 11:47:31 --> Config Class Initialized
+INFO - 2018-01-11 11:47:31 --> Loader Class Initialized
+INFO - 2018-01-11 11:47:31 --> Helper loaded: url_helper
+INFO - 2018-01-11 11:47:31 --> Helper loaded: file_helper
+INFO - 2018-01-11 11:47:31 --> Helper loaded: user_helper
+INFO - 2018-01-11 11:47:31 --> Helper loaded: json_helper
+INFO - 2018-01-11 11:47:31 --> Helper loaded: admin_helper
+INFO - 2018-01-11 11:47:31 --> Helper loaded: driver_helper
+INFO - 2018-01-11 11:47:31 --> Helper loaded: cookie_helper
+INFO - 2018-01-11 11:47:31 --> Helper loaded: common_helper
+INFO - 2018-01-11 11:47:31 --> Language file loaded: language/english/en_lang.php
+INFO - 2018-01-11 11:47:31 --> Database Driver Class Initialized
+DEBUG - 2018-01-11 11:47:31 --> Email Class Initialized
+DEBUG - 2018-01-11 11:47:31 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2018-01-11 11:47:31 --> Session: Class initialized using 'files' driver.
+INFO - 2018-01-11 11:47:31 --> Helper loaded: form_helper
+INFO - 2018-01-11 11:47:31 --> Form Validation Class Initialized
+INFO - 2018-01-11 11:47:31 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2018-01-11 11:47:31 --> Pagination Class Initialized
+INFO - 2018-01-11 11:47:31 --> User Agent Class Initialized
+INFO - 2018-01-11 11:47:31 --> Controller Class Initialized
+DEBUG - 2018-01-11 11:47:31 --> Doctor MX_Controller Initialized
+INFO - 2018-01-11 11:47:31 --> Model Class Initialized
+DEBUG - 2018-01-11 11:47:31 --> File loaded: C:\xampp\htdocs\farris\git\instacraft\application\modules/website/models/Doctor_model.php
+INFO - 2018-01-11 11:47:31 --> Model Class Initialized
+DEBUG - 2018-01-11 11:47:31 --> File loaded: C:\xampp\htdocs\farris\git\instacraft\application\modules/website/models/Login_model.php
+INFO - 2018-01-11 11:47:31 --> Model Class Initialized
+DEBUG - 2018-01-11 11:47:31 --> S3 Class Initialized
+INFO - 2018-01-11 11:47:31 --> Model Class Initialized
+INFO - 2018-01-11 11:47:33 --> Config Class Initialized
+INFO - 2018-01-11 11:47:33 --> Hooks Class Initialized
+DEBUG - 2018-01-11 11:47:33 --> UTF-8 Support Enabled
+INFO - 2018-01-11 11:47:33 --> Utf8 Class Initialized
+INFO - 2018-01-11 11:47:33 --> URI Class Initialized
+INFO - 2018-01-11 11:47:33 --> Router Class Initialized
+INFO - 2018-01-11 11:47:33 --> Output Class Initialized
+INFO - 2018-01-11 11:47:33 --> Security Class Initialized
+DEBUG - 2018-01-11 11:47:33 --> Global POST, GET and COOKIE data sanitized
+INFO - 2018-01-11 11:47:33 --> Input Class Initialized
+INFO - 2018-01-11 11:47:33 --> Language Class Initialized
+INFO - 2018-01-11 11:47:33 --> Language Class Initialized
+INFO - 2018-01-11 11:47:33 --> Config Class Initialized
+INFO - 2018-01-11 11:47:33 --> Loader Class Initialized
+INFO - 2018-01-11 11:47:33 --> Helper loaded: url_helper
+INFO - 2018-01-11 11:47:33 --> Helper loaded: file_helper
+INFO - 2018-01-11 11:47:33 --> Helper loaded: user_helper
+INFO - 2018-01-11 11:47:33 --> Helper loaded: json_helper
+INFO - 2018-01-11 11:47:33 --> Helper loaded: admin_helper
+INFO - 2018-01-11 11:47:33 --> Helper loaded: driver_helper
+INFO - 2018-01-11 11:47:33 --> Helper loaded: cookie_helper
+INFO - 2018-01-11 11:47:33 --> Helper loaded: common_helper
+INFO - 2018-01-11 11:47:33 --> Language file loaded: language/english/en_lang.php
+INFO - 2018-01-11 11:47:33 --> Database Driver Class Initialized
+DEBUG - 2018-01-11 11:47:33 --> Email Class Initialized
+DEBUG - 2018-01-11 11:47:33 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2018-01-11 11:47:33 --> Session: Class initialized using 'files' driver.
+INFO - 2018-01-11 11:47:33 --> Helper loaded: form_helper
+INFO - 2018-01-11 11:47:33 --> Form Validation Class Initialized
+INFO - 2018-01-11 11:47:33 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2018-01-11 11:47:33 --> Pagination Class Initialized
+INFO - 2018-01-11 11:47:33 --> User Agent Class Initialized
+INFO - 2018-01-11 11:47:33 --> Controller Class Initialized
+DEBUG - 2018-01-11 11:47:33 --> Doctor MX_Controller Initialized
+INFO - 2018-01-11 11:47:33 --> Model Class Initialized
+DEBUG - 2018-01-11 11:47:33 --> File loaded: C:\xampp\htdocs\farris\git\instacraft\application\modules/website/models/Doctor_model.php
+INFO - 2018-01-11 11:47:33 --> Model Class Initialized
+DEBUG - 2018-01-11 11:47:33 --> File loaded: C:\xampp\htdocs\farris\git\instacraft\application\modules/website/models/Login_model.php
+INFO - 2018-01-11 11:47:33 --> Model Class Initialized
+DEBUG - 2018-01-11 11:47:33 --> S3 Class Initialized
+INFO - 2018-01-11 11:47:33 --> Model Class Initialized
+INFO - 2018-01-11 11:47:41 --> Config Class Initialized
+INFO - 2018-01-11 11:47:41 --> Hooks Class Initialized
+DEBUG - 2018-01-11 11:47:41 --> UTF-8 Support Enabled
+INFO - 2018-01-11 11:47:41 --> Utf8 Class Initialized
+INFO - 2018-01-11 11:47:41 --> URI Class Initialized
+INFO - 2018-01-11 11:47:41 --> Router Class Initialized
+INFO - 2018-01-11 11:47:41 --> Output Class Initialized
+INFO - 2018-01-11 11:47:41 --> Security Class Initialized
+DEBUG - 2018-01-11 11:47:41 --> Global POST, GET and COOKIE data sanitized
+INFO - 2018-01-11 11:47:41 --> Input Class Initialized
+INFO - 2018-01-11 11:47:41 --> Language Class Initialized
+INFO - 2018-01-11 11:47:41 --> Language Class Initialized
+INFO - 2018-01-11 11:47:41 --> Config Class Initialized
+INFO - 2018-01-11 11:47:41 --> Loader Class Initialized
+INFO - 2018-01-11 11:47:41 --> Helper loaded: url_helper
+INFO - 2018-01-11 11:47:41 --> Helper loaded: file_helper
+INFO - 2018-01-11 11:47:41 --> Helper loaded: user_helper
+INFO - 2018-01-11 11:47:41 --> Helper loaded: json_helper
+INFO - 2018-01-11 11:47:41 --> Helper loaded: admin_helper
+INFO - 2018-01-11 11:47:41 --> Helper loaded: driver_helper
+INFO - 2018-01-11 11:47:41 --> Helper loaded: cookie_helper
+INFO - 2018-01-11 11:47:41 --> Helper loaded: common_helper
+INFO - 2018-01-11 11:47:41 --> Language file loaded: language/english/en_lang.php
+INFO - 2018-01-11 11:47:41 --> Database Driver Class Initialized
+DEBUG - 2018-01-11 11:47:41 --> Email Class Initialized
+DEBUG - 2018-01-11 11:47:41 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2018-01-11 11:47:41 --> Session: Class initialized using 'files' driver.
+INFO - 2018-01-11 11:47:41 --> Helper loaded: form_helper
+INFO - 2018-01-11 11:47:41 --> Form Validation Class Initialized
+INFO - 2018-01-11 11:47:41 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2018-01-11 11:47:41 --> Pagination Class Initialized
+INFO - 2018-01-11 11:47:41 --> User Agent Class Initialized
+INFO - 2018-01-11 11:47:41 --> Controller Class Initialized
+DEBUG - 2018-01-11 11:47:41 --> Doctor MX_Controller Initialized
+INFO - 2018-01-11 11:47:41 --> Model Class Initialized
+DEBUG - 2018-01-11 11:47:41 --> File loaded: C:\xampp\htdocs\farris\git\instacraft\application\modules/website/models/Doctor_model.php
+INFO - 2018-01-11 11:47:41 --> Model Class Initialized
+DEBUG - 2018-01-11 11:47:41 --> File loaded: C:\xampp\htdocs\farris\git\instacraft\application\modules/website/models/Login_model.php
+INFO - 2018-01-11 11:47:41 --> Model Class Initialized
+DEBUG - 2018-01-11 11:47:41 --> S3 Class Initialized
+INFO - 2018-01-11 11:47:41 --> Model Class Initialized
+INFO - 2018-01-11 11:47:43 --> Config Class Initialized
+INFO - 2018-01-11 11:47:43 --> Hooks Class Initialized
+DEBUG - 2018-01-11 11:47:43 --> UTF-8 Support Enabled
+INFO - 2018-01-11 11:47:43 --> Utf8 Class Initialized
+INFO - 2018-01-11 11:47:43 --> URI Class Initialized
+INFO - 2018-01-11 11:47:43 --> Router Class Initialized
+INFO - 2018-01-11 11:47:43 --> Output Class Initialized
+INFO - 2018-01-11 11:47:43 --> Security Class Initialized
+DEBUG - 2018-01-11 11:47:43 --> Global POST, GET and COOKIE data sanitized
+INFO - 2018-01-11 11:47:43 --> Input Class Initialized
+INFO - 2018-01-11 11:47:43 --> Language Class Initialized
+INFO - 2018-01-11 11:47:43 --> Language Class Initialized
+INFO - 2018-01-11 11:47:43 --> Config Class Initialized
+INFO - 2018-01-11 11:47:43 --> Loader Class Initialized
+INFO - 2018-01-11 11:47:43 --> Helper loaded: url_helper
+INFO - 2018-01-11 11:47:43 --> Helper loaded: file_helper
+INFO - 2018-01-11 11:47:43 --> Helper loaded: user_helper
+INFO - 2018-01-11 11:47:43 --> Helper loaded: json_helper
+INFO - 2018-01-11 11:47:43 --> Helper loaded: admin_helper
+INFO - 2018-01-11 11:47:43 --> Helper loaded: driver_helper
+INFO - 2018-01-11 11:47:43 --> Helper loaded: cookie_helper
+INFO - 2018-01-11 11:47:43 --> Helper loaded: common_helper
+INFO - 2018-01-11 11:47:43 --> Language file loaded: language/english/en_lang.php
+INFO - 2018-01-11 11:47:43 --> Database Driver Class Initialized
+DEBUG - 2018-01-11 11:47:43 --> Email Class Initialized
+DEBUG - 2018-01-11 11:47:43 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2018-01-11 11:47:43 --> Session: Class initialized using 'files' driver.
+INFO - 2018-01-11 11:47:43 --> Helper loaded: form_helper
+INFO - 2018-01-11 11:47:43 --> Form Validation Class Initialized
+INFO - 2018-01-11 11:47:43 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2018-01-11 11:47:43 --> Pagination Class Initialized
+INFO - 2018-01-11 11:47:43 --> User Agent Class Initialized
+INFO - 2018-01-11 11:47:43 --> Controller Class Initialized
+DEBUG - 2018-01-11 11:47:43 --> Doctor MX_Controller Initialized
+INFO - 2018-01-11 11:47:43 --> Model Class Initialized
+DEBUG - 2018-01-11 11:47:43 --> File loaded: C:\xampp\htdocs\farris\git\instacraft\application\modules/website/models/Doctor_model.php
+INFO - 2018-01-11 11:47:43 --> Model Class Initialized
+DEBUG - 2018-01-11 11:47:43 --> File loaded: C:\xampp\htdocs\farris\git\instacraft\application\modules/website/models/Login_model.php
+INFO - 2018-01-11 11:47:43 --> Model Class Initialized
+DEBUG - 2018-01-11 11:47:43 --> S3 Class Initialized
+INFO - 2018-01-11 11:47:43 --> Model Class Initialized
+INFO - 2018-01-11 11:47:51 --> Config Class Initialized
+INFO - 2018-01-11 11:47:51 --> Hooks Class Initialized
+DEBUG - 2018-01-11 11:47:51 --> UTF-8 Support Enabled
+INFO - 2018-01-11 11:47:51 --> Utf8 Class Initialized
+INFO - 2018-01-11 11:47:51 --> URI Class Initialized
+INFO - 2018-01-11 11:47:51 --> Router Class Initialized
+INFO - 2018-01-11 11:47:51 --> Output Class Initialized
+INFO - 2018-01-11 11:47:51 --> Security Class Initialized
+DEBUG - 2018-01-11 11:47:51 --> Global POST, GET and COOKIE data sanitized
+INFO - 2018-01-11 11:47:51 --> Input Class Initialized
+INFO - 2018-01-11 11:47:51 --> Language Class Initialized
+INFO - 2018-01-11 11:47:51 --> Language Class Initialized
+INFO - 2018-01-11 11:47:51 --> Config Class Initialized
+INFO - 2018-01-11 11:47:51 --> Loader Class Initialized
+INFO - 2018-01-11 11:47:51 --> Helper loaded: url_helper
+INFO - 2018-01-11 11:47:51 --> Helper loaded: file_helper
+INFO - 2018-01-11 11:47:51 --> Helper loaded: user_helper
+INFO - 2018-01-11 11:47:51 --> Helper loaded: json_helper
+INFO - 2018-01-11 11:47:51 --> Helper loaded: admin_helper
+INFO - 2018-01-11 11:47:51 --> Helper loaded: driver_helper
+INFO - 2018-01-11 11:47:51 --> Helper loaded: cookie_helper
+INFO - 2018-01-11 11:47:51 --> Helper loaded: common_helper
+INFO - 2018-01-11 11:47:51 --> Language file loaded: language/english/en_lang.php
+INFO - 2018-01-11 11:47:51 --> Database Driver Class Initialized
+DEBUG - 2018-01-11 11:47:51 --> Email Class Initialized
+DEBUG - 2018-01-11 11:47:51 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2018-01-11 11:47:51 --> Session: Class initialized using 'files' driver.
+INFO - 2018-01-11 11:47:51 --> Helper loaded: form_helper
+INFO - 2018-01-11 11:47:51 --> Form Validation Class Initialized
+INFO - 2018-01-11 11:47:51 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2018-01-11 11:47:51 --> Pagination Class Initialized
+INFO - 2018-01-11 11:47:51 --> User Agent Class Initialized
+INFO - 2018-01-11 11:47:51 --> Controller Class Initialized
+DEBUG - 2018-01-11 11:47:51 --> Doctor MX_Controller Initialized
+INFO - 2018-01-11 11:47:51 --> Model Class Initialized
+DEBUG - 2018-01-11 11:47:51 --> File loaded: C:\xampp\htdocs\farris\git\instacraft\application\modules/website/models/Doctor_model.php
+INFO - 2018-01-11 11:47:51 --> Model Class Initialized
+DEBUG - 2018-01-11 11:47:51 --> File loaded: C:\xampp\htdocs\farris\git\instacraft\application\modules/website/models/Login_model.php
+INFO - 2018-01-11 11:47:51 --> Model Class Initialized
+DEBUG - 2018-01-11 11:47:51 --> S3 Class Initialized
+INFO - 2018-01-11 11:47:51 --> Model Class Initialized
+INFO - 2018-01-11 11:47:53 --> Config Class Initialized
+INFO - 2018-01-11 11:47:53 --> Hooks Class Initialized
+DEBUG - 2018-01-11 11:47:53 --> UTF-8 Support Enabled
+INFO - 2018-01-11 11:47:53 --> Utf8 Class Initialized
+INFO - 2018-01-11 11:47:53 --> URI Class Initialized
+INFO - 2018-01-11 11:47:53 --> Router Class Initialized
+INFO - 2018-01-11 11:47:53 --> Output Class Initialized
+INFO - 2018-01-11 11:47:53 --> Security Class Initialized
+DEBUG - 2018-01-11 11:47:53 --> Global POST, GET and COOKIE data sanitized
+INFO - 2018-01-11 11:47:53 --> Input Class Initialized
+INFO - 2018-01-11 11:47:53 --> Language Class Initialized
+INFO - 2018-01-11 11:47:53 --> Language Class Initialized
+INFO - 2018-01-11 11:47:53 --> Config Class Initialized
+INFO - 2018-01-11 11:47:53 --> Loader Class Initialized
+INFO - 2018-01-11 11:47:53 --> Helper loaded: url_helper
+INFO - 2018-01-11 11:47:53 --> Helper loaded: file_helper
+INFO - 2018-01-11 11:47:53 --> Helper loaded: user_helper
+INFO - 2018-01-11 11:47:53 --> Helper loaded: json_helper
+INFO - 2018-01-11 11:47:53 --> Helper loaded: admin_helper
+INFO - 2018-01-11 11:47:53 --> Helper loaded: driver_helper
+INFO - 2018-01-11 11:47:53 --> Helper loaded: cookie_helper
+INFO - 2018-01-11 11:47:53 --> Helper loaded: common_helper
+INFO - 2018-01-11 11:47:53 --> Language file loaded: language/english/en_lang.php
+INFO - 2018-01-11 11:47:53 --> Database Driver Class Initialized
+DEBUG - 2018-01-11 11:47:53 --> Email Class Initialized
+DEBUG - 2018-01-11 11:47:53 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2018-01-11 11:47:53 --> Session: Class initialized using 'files' driver.
+INFO - 2018-01-11 11:47:53 --> Helper loaded: form_helper
+INFO - 2018-01-11 11:47:53 --> Form Validation Class Initialized
+INFO - 2018-01-11 11:47:53 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2018-01-11 11:47:53 --> Pagination Class Initialized
+INFO - 2018-01-11 11:47:53 --> User Agent Class Initialized
+INFO - 2018-01-11 11:47:53 --> Controller Class Initialized
+DEBUG - 2018-01-11 11:47:53 --> Doctor MX_Controller Initialized
+INFO - 2018-01-11 11:47:53 --> Model Class Initialized
+DEBUG - 2018-01-11 11:47:53 --> File loaded: C:\xampp\htdocs\farris\git\instacraft\application\modules/website/models/Doctor_model.php
+INFO - 2018-01-11 11:47:53 --> Model Class Initialized
+DEBUG - 2018-01-11 11:47:53 --> File loaded: C:\xampp\htdocs\farris\git\instacraft\application\modules/website/models/Login_model.php
+INFO - 2018-01-11 11:47:53 --> Model Class Initialized
+DEBUG - 2018-01-11 11:47:53 --> S3 Class Initialized
+INFO - 2018-01-11 11:47:53 --> Model Class Initialized
+INFO - 2018-01-11 11:48:01 --> Config Class Initialized
+INFO - 2018-01-11 11:48:01 --> Hooks Class Initialized
+DEBUG - 2018-01-11 11:48:01 --> UTF-8 Support Enabled
+INFO - 2018-01-11 11:48:01 --> Utf8 Class Initialized
+INFO - 2018-01-11 11:48:01 --> URI Class Initialized
+INFO - 2018-01-11 11:48:01 --> Router Class Initialized
+INFO - 2018-01-11 11:48:01 --> Output Class Initialized
+INFO - 2018-01-11 11:48:01 --> Security Class Initialized
+DEBUG - 2018-01-11 11:48:01 --> Global POST, GET and COOKIE data sanitized
+INFO - 2018-01-11 11:48:01 --> Input Class Initialized
+INFO - 2018-01-11 11:48:01 --> Language Class Initialized
+INFO - 2018-01-11 11:48:01 --> Language Class Initialized
+INFO - 2018-01-11 11:48:01 --> Config Class Initialized
+INFO - 2018-01-11 11:48:01 --> Loader Class Initialized
+INFO - 2018-01-11 11:48:01 --> Helper loaded: url_helper
+INFO - 2018-01-11 11:48:01 --> Helper loaded: file_helper
+INFO - 2018-01-11 11:48:01 --> Helper loaded: user_helper
+INFO - 2018-01-11 11:48:01 --> Helper loaded: json_helper
+INFO - 2018-01-11 11:48:01 --> Helper loaded: admin_helper
+INFO - 2018-01-11 11:48:01 --> Helper loaded: driver_helper
+INFO - 2018-01-11 11:48:01 --> Helper loaded: cookie_helper
+INFO - 2018-01-11 11:48:01 --> Helper loaded: common_helper
+INFO - 2018-01-11 11:48:01 --> Language file loaded: language/english/en_lang.php
+INFO - 2018-01-11 11:48:01 --> Database Driver Class Initialized
+DEBUG - 2018-01-11 11:48:01 --> Email Class Initialized
+DEBUG - 2018-01-11 11:48:01 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2018-01-11 11:48:01 --> Session: Class initialized using 'files' driver.
+INFO - 2018-01-11 11:48:01 --> Helper loaded: form_helper
+INFO - 2018-01-11 11:48:01 --> Form Validation Class Initialized
+INFO - 2018-01-11 11:48:01 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2018-01-11 11:48:01 --> Pagination Class Initialized
+INFO - 2018-01-11 11:48:01 --> User Agent Class Initialized
+INFO - 2018-01-11 11:48:01 --> Controller Class Initialized
+DEBUG - 2018-01-11 11:48:01 --> Doctor MX_Controller Initialized
+INFO - 2018-01-11 11:48:01 --> Model Class Initialized
+DEBUG - 2018-01-11 11:48:01 --> File loaded: C:\xampp\htdocs\farris\git\instacraft\application\modules/website/models/Doctor_model.php
+INFO - 2018-01-11 11:48:01 --> Model Class Initialized
+DEBUG - 2018-01-11 11:48:01 --> File loaded: C:\xampp\htdocs\farris\git\instacraft\application\modules/website/models/Login_model.php
+INFO - 2018-01-11 11:48:01 --> Model Class Initialized
+DEBUG - 2018-01-11 11:48:01 --> S3 Class Initialized
+INFO - 2018-01-11 11:48:01 --> Model Class Initialized
+INFO - 2018-01-11 11:48:03 --> Config Class Initialized
+INFO - 2018-01-11 11:48:03 --> Hooks Class Initialized
+DEBUG - 2018-01-11 11:48:03 --> UTF-8 Support Enabled
+INFO - 2018-01-11 11:48:03 --> Utf8 Class Initialized
+INFO - 2018-01-11 11:48:03 --> URI Class Initialized
+INFO - 2018-01-11 11:48:03 --> Router Class Initialized
+INFO - 2018-01-11 11:48:03 --> Output Class Initialized
+INFO - 2018-01-11 11:48:03 --> Security Class Initialized
+DEBUG - 2018-01-11 11:48:03 --> Global POST, GET and COOKIE data sanitized
+INFO - 2018-01-11 11:48:03 --> Input Class Initialized
+INFO - 2018-01-11 11:48:03 --> Language Class Initialized
+INFO - 2018-01-11 11:48:03 --> Language Class Initialized
+INFO - 2018-01-11 11:48:03 --> Config Class Initialized
+INFO - 2018-01-11 11:48:03 --> Loader Class Initialized
+INFO - 2018-01-11 11:48:03 --> Helper loaded: url_helper
+INFO - 2018-01-11 11:48:03 --> Helper loaded: file_helper
+INFO - 2018-01-11 11:48:03 --> Helper loaded: user_helper
+INFO - 2018-01-11 11:48:03 --> Helper loaded: json_helper
+INFO - 2018-01-11 11:48:03 --> Helper loaded: admin_helper
+INFO - 2018-01-11 11:48:03 --> Helper loaded: driver_helper
+INFO - 2018-01-11 11:48:03 --> Helper loaded: cookie_helper
+INFO - 2018-01-11 11:48:03 --> Helper loaded: common_helper
+INFO - 2018-01-11 11:48:03 --> Language file loaded: language/english/en_lang.php
+INFO - 2018-01-11 11:48:03 --> Database Driver Class Initialized
+DEBUG - 2018-01-11 11:48:03 --> Email Class Initialized
+DEBUG - 2018-01-11 11:48:03 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2018-01-11 11:48:03 --> Session: Class initialized using 'files' driver.
+INFO - 2018-01-11 11:48:03 --> Helper loaded: form_helper
+INFO - 2018-01-11 11:48:03 --> Form Validation Class Initialized
+INFO - 2018-01-11 11:48:03 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2018-01-11 11:48:03 --> Pagination Class Initialized
+INFO - 2018-01-11 11:48:03 --> User Agent Class Initialized
+INFO - 2018-01-11 11:48:03 --> Controller Class Initialized
+DEBUG - 2018-01-11 11:48:03 --> Doctor MX_Controller Initialized
+INFO - 2018-01-11 11:48:03 --> Model Class Initialized
+DEBUG - 2018-01-11 11:48:03 --> File loaded: C:\xampp\htdocs\farris\git\instacraft\application\modules/website/models/Doctor_model.php
+INFO - 2018-01-11 11:48:03 --> Model Class Initialized
+DEBUG - 2018-01-11 11:48:03 --> File loaded: C:\xampp\htdocs\farris\git\instacraft\application\modules/website/models/Login_model.php
+INFO - 2018-01-11 11:48:03 --> Model Class Initialized
+DEBUG - 2018-01-11 11:48:03 --> S3 Class Initialized
+INFO - 2018-01-11 11:48:03 --> Model Class Initialized
+INFO - 2018-01-11 11:48:11 --> Config Class Initialized
+INFO - 2018-01-11 11:48:11 --> Hooks Class Initialized
+DEBUG - 2018-01-11 11:48:11 --> UTF-8 Support Enabled
+INFO - 2018-01-11 11:48:11 --> Utf8 Class Initialized
+INFO - 2018-01-11 11:48:11 --> URI Class Initialized
+INFO - 2018-01-11 11:48:11 --> Router Class Initialized
+INFO - 2018-01-11 11:48:11 --> Output Class Initialized
+INFO - 2018-01-11 11:48:11 --> Security Class Initialized
+DEBUG - 2018-01-11 11:48:11 --> Global POST, GET and COOKIE data sanitized
+INFO - 2018-01-11 11:48:11 --> Input Class Initialized
+INFO - 2018-01-11 11:48:11 --> Language Class Initialized
+INFO - 2018-01-11 11:48:11 --> Language Class Initialized
+INFO - 2018-01-11 11:48:11 --> Config Class Initialized
+INFO - 2018-01-11 11:48:11 --> Loader Class Initialized
+INFO - 2018-01-11 11:48:11 --> Helper loaded: url_helper
+INFO - 2018-01-11 11:48:11 --> Helper loaded: file_helper
+INFO - 2018-01-11 11:48:11 --> Helper loaded: user_helper
+INFO - 2018-01-11 11:48:11 --> Helper loaded: json_helper
+INFO - 2018-01-11 11:48:11 --> Helper loaded: admin_helper
+INFO - 2018-01-11 11:48:11 --> Helper loaded: driver_helper
+INFO - 2018-01-11 11:48:11 --> Helper loaded: cookie_helper
+INFO - 2018-01-11 11:48:11 --> Helper loaded: common_helper
+INFO - 2018-01-11 11:48:11 --> Language file loaded: language/english/en_lang.php
+INFO - 2018-01-11 11:48:11 --> Database Driver Class Initialized
+DEBUG - 2018-01-11 11:48:11 --> Email Class Initialized
+DEBUG - 2018-01-11 11:48:11 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2018-01-11 11:48:11 --> Session: Class initialized using 'files' driver.
+INFO - 2018-01-11 11:48:11 --> Helper loaded: form_helper
+INFO - 2018-01-11 11:48:11 --> Form Validation Class Initialized
+INFO - 2018-01-11 11:48:11 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2018-01-11 11:48:11 --> Pagination Class Initialized
+INFO - 2018-01-11 11:48:11 --> User Agent Class Initialized
+INFO - 2018-01-11 11:48:11 --> Controller Class Initialized
+DEBUG - 2018-01-11 11:48:11 --> Doctor MX_Controller Initialized
+INFO - 2018-01-11 11:48:11 --> Model Class Initialized
+DEBUG - 2018-01-11 11:48:11 --> File loaded: C:\xampp\htdocs\farris\git\instacraft\application\modules/website/models/Doctor_model.php
+INFO - 2018-01-11 11:48:11 --> Model Class Initialized
+DEBUG - 2018-01-11 11:48:11 --> File loaded: C:\xampp\htdocs\farris\git\instacraft\application\modules/website/models/Login_model.php
+INFO - 2018-01-11 11:48:11 --> Model Class Initialized
+DEBUG - 2018-01-11 11:48:11 --> S3 Class Initialized
+INFO - 2018-01-11 11:48:11 --> Model Class Initialized
+INFO - 2018-01-11 11:48:13 --> Config Class Initialized
+INFO - 2018-01-11 11:48:13 --> Hooks Class Initialized
+DEBUG - 2018-01-11 11:48:13 --> UTF-8 Support Enabled
+INFO - 2018-01-11 11:48:13 --> Utf8 Class Initialized
+INFO - 2018-01-11 11:48:13 --> URI Class Initialized
+INFO - 2018-01-11 11:48:13 --> Router Class Initialized
+INFO - 2018-01-11 11:48:13 --> Output Class Initialized
+INFO - 2018-01-11 11:48:13 --> Security Class Initialized
+DEBUG - 2018-01-11 11:48:13 --> Global POST, GET and COOKIE data sanitized
+INFO - 2018-01-11 11:48:13 --> Input Class Initialized
+INFO - 2018-01-11 11:48:13 --> Language Class Initialized
+INFO - 2018-01-11 11:48:13 --> Language Class Initialized
+INFO - 2018-01-11 11:48:13 --> Config Class Initialized
+INFO - 2018-01-11 11:48:13 --> Loader Class Initialized
+INFO - 2018-01-11 11:48:13 --> Helper loaded: url_helper
+INFO - 2018-01-11 11:48:13 --> Helper loaded: file_helper
+INFO - 2018-01-11 11:48:13 --> Helper loaded: user_helper
+INFO - 2018-01-11 11:48:13 --> Helper loaded: json_helper
+INFO - 2018-01-11 11:48:13 --> Helper loaded: admin_helper
+INFO - 2018-01-11 11:48:13 --> Helper loaded: driver_helper
+INFO - 2018-01-11 11:48:13 --> Helper loaded: cookie_helper
+INFO - 2018-01-11 11:48:13 --> Helper loaded: common_helper
+INFO - 2018-01-11 11:48:13 --> Language file loaded: language/english/en_lang.php
+INFO - 2018-01-11 11:48:13 --> Database Driver Class Initialized
+DEBUG - 2018-01-11 11:48:13 --> Email Class Initialized
+DEBUG - 2018-01-11 11:48:13 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2018-01-11 11:48:13 --> Session: Class initialized using 'files' driver.
+INFO - 2018-01-11 11:48:13 --> Helper loaded: form_helper
+INFO - 2018-01-11 11:48:13 --> Form Validation Class Initialized
+INFO - 2018-01-11 11:48:13 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2018-01-11 11:48:13 --> Pagination Class Initialized
+INFO - 2018-01-11 11:48:13 --> User Agent Class Initialized
+INFO - 2018-01-11 11:48:13 --> Controller Class Initialized
+DEBUG - 2018-01-11 11:48:13 --> Doctor MX_Controller Initialized
+INFO - 2018-01-11 11:48:13 --> Model Class Initialized
+DEBUG - 2018-01-11 11:48:13 --> File loaded: C:\xampp\htdocs\farris\git\instacraft\application\modules/website/models/Doctor_model.php
+INFO - 2018-01-11 11:48:13 --> Model Class Initialized
+DEBUG - 2018-01-11 11:48:13 --> File loaded: C:\xampp\htdocs\farris\git\instacraft\application\modules/website/models/Login_model.php
+INFO - 2018-01-11 11:48:13 --> Model Class Initialized
+DEBUG - 2018-01-11 11:48:13 --> S3 Class Initialized
+INFO - 2018-01-11 11:48:13 --> Model Class Initialized
+INFO - 2018-01-11 11:48:21 --> Config Class Initialized
+INFO - 2018-01-11 11:48:21 --> Hooks Class Initialized
+DEBUG - 2018-01-11 11:48:21 --> UTF-8 Support Enabled
+INFO - 2018-01-11 11:48:21 --> Utf8 Class Initialized
+INFO - 2018-01-11 11:48:21 --> URI Class Initialized
+INFO - 2018-01-11 11:48:21 --> Router Class Initialized
+INFO - 2018-01-11 11:48:21 --> Output Class Initialized
+INFO - 2018-01-11 11:48:21 --> Security Class Initialized
+DEBUG - 2018-01-11 11:48:21 --> Global POST, GET and COOKIE data sanitized
+INFO - 2018-01-11 11:48:21 --> Input Class Initialized
+INFO - 2018-01-11 11:48:21 --> Language Class Initialized
+INFO - 2018-01-11 11:48:21 --> Language Class Initialized
+INFO - 2018-01-11 11:48:21 --> Config Class Initialized
+INFO - 2018-01-11 11:48:21 --> Loader Class Initialized
+INFO - 2018-01-11 11:48:21 --> Helper loaded: url_helper
+INFO - 2018-01-11 11:48:21 --> Helper loaded: file_helper
+INFO - 2018-01-11 11:48:21 --> Helper loaded: user_helper
+INFO - 2018-01-11 11:48:21 --> Helper loaded: json_helper
+INFO - 2018-01-11 11:48:21 --> Helper loaded: admin_helper
+INFO - 2018-01-11 11:48:21 --> Helper loaded: driver_helper
+INFO - 2018-01-11 11:48:21 --> Helper loaded: cookie_helper
+INFO - 2018-01-11 11:48:21 --> Helper loaded: common_helper
+INFO - 2018-01-11 11:48:21 --> Language file loaded: language/english/en_lang.php
+INFO - 2018-01-11 11:48:21 --> Database Driver Class Initialized
+DEBUG - 2018-01-11 11:48:21 --> Email Class Initialized
+DEBUG - 2018-01-11 11:48:21 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2018-01-11 11:48:21 --> Session: Class initialized using 'files' driver.
+INFO - 2018-01-11 11:48:21 --> Helper loaded: form_helper
+INFO - 2018-01-11 11:48:21 --> Form Validation Class Initialized
+INFO - 2018-01-11 11:48:21 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2018-01-11 11:48:21 --> Pagination Class Initialized
+INFO - 2018-01-11 11:48:21 --> User Agent Class Initialized
+INFO - 2018-01-11 11:48:21 --> Controller Class Initialized
+DEBUG - 2018-01-11 11:48:21 --> Doctor MX_Controller Initialized
+INFO - 2018-01-11 11:48:21 --> Model Class Initialized
+DEBUG - 2018-01-11 11:48:21 --> File loaded: C:\xampp\htdocs\farris\git\instacraft\application\modules/website/models/Doctor_model.php
+INFO - 2018-01-11 11:48:21 --> Model Class Initialized
+DEBUG - 2018-01-11 11:48:21 --> File loaded: C:\xampp\htdocs\farris\git\instacraft\application\modules/website/models/Login_model.php
+INFO - 2018-01-11 11:48:21 --> Model Class Initialized
+DEBUG - 2018-01-11 11:48:21 --> S3 Class Initialized
+INFO - 2018-01-11 11:48:21 --> Model Class Initialized
+INFO - 2018-01-11 11:48:23 --> Config Class Initialized
+INFO - 2018-01-11 11:48:23 --> Hooks Class Initialized
+DEBUG - 2018-01-11 11:48:23 --> UTF-8 Support Enabled
+INFO - 2018-01-11 11:48:23 --> Utf8 Class Initialized
+INFO - 2018-01-11 11:48:23 --> URI Class Initialized
+INFO - 2018-01-11 11:48:23 --> Router Class Initialized
+INFO - 2018-01-11 11:48:23 --> Output Class Initialized
+INFO - 2018-01-11 11:48:23 --> Security Class Initialized
+DEBUG - 2018-01-11 11:48:23 --> Global POST, GET and COOKIE data sanitized
+INFO - 2018-01-11 11:48:23 --> Input Class Initialized
+INFO - 2018-01-11 11:48:23 --> Language Class Initialized
+INFO - 2018-01-11 11:48:23 --> Language Class Initialized
+INFO - 2018-01-11 11:48:23 --> Config Class Initialized
+INFO - 2018-01-11 11:48:23 --> Loader Class Initialized
+INFO - 2018-01-11 11:48:23 --> Helper loaded: url_helper
+INFO - 2018-01-11 11:48:23 --> Helper loaded: file_helper
+INFO - 2018-01-11 11:48:23 --> Helper loaded: user_helper
+INFO - 2018-01-11 11:48:23 --> Helper loaded: json_helper
+INFO - 2018-01-11 11:48:23 --> Helper loaded: admin_helper
+INFO - 2018-01-11 11:48:23 --> Helper loaded: driver_helper
+INFO - 2018-01-11 11:48:23 --> Helper loaded: cookie_helper
+INFO - 2018-01-11 11:48:23 --> Helper loaded: common_helper
+INFO - 2018-01-11 11:48:23 --> Language file loaded: language/english/en_lang.php
+INFO - 2018-01-11 11:48:23 --> Database Driver Class Initialized
+DEBUG - 2018-01-11 11:48:23 --> Email Class Initialized
+DEBUG - 2018-01-11 11:48:23 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2018-01-11 11:48:23 --> Session: Class initialized using 'files' driver.
+INFO - 2018-01-11 11:48:23 --> Helper loaded: form_helper
+INFO - 2018-01-11 11:48:23 --> Form Validation Class Initialized
+INFO - 2018-01-11 11:48:23 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2018-01-11 11:48:23 --> Pagination Class Initialized
+INFO - 2018-01-11 11:48:23 --> User Agent Class Initialized
+INFO - 2018-01-11 11:48:23 --> Controller Class Initialized
+DEBUG - 2018-01-11 11:48:23 --> Doctor MX_Controller Initialized
+INFO - 2018-01-11 11:48:23 --> Model Class Initialized
+DEBUG - 2018-01-11 11:48:23 --> File loaded: C:\xampp\htdocs\farris\git\instacraft\application\modules/website/models/Doctor_model.php
+INFO - 2018-01-11 11:48:23 --> Model Class Initialized
+DEBUG - 2018-01-11 11:48:23 --> File loaded: C:\xampp\htdocs\farris\git\instacraft\application\modules/website/models/Login_model.php
+INFO - 2018-01-11 11:48:23 --> Model Class Initialized
+DEBUG - 2018-01-11 11:48:23 --> S3 Class Initialized
+INFO - 2018-01-11 11:48:23 --> Model Class Initialized
+INFO - 2018-01-11 11:48:31 --> Config Class Initialized
+INFO - 2018-01-11 11:48:31 --> Hooks Class Initialized
+DEBUG - 2018-01-11 11:48:31 --> UTF-8 Support Enabled
+INFO - 2018-01-11 11:48:31 --> Utf8 Class Initialized
+INFO - 2018-01-11 11:48:31 --> URI Class Initialized
+INFO - 2018-01-11 11:48:31 --> Router Class Initialized
+INFO - 2018-01-11 11:48:31 --> Output Class Initialized
+INFO - 2018-01-11 11:48:31 --> Security Class Initialized
+DEBUG - 2018-01-11 11:48:31 --> Global POST, GET and COOKIE data sanitized
+INFO - 2018-01-11 11:48:31 --> Input Class Initialized
+INFO - 2018-01-11 11:48:31 --> Language Class Initialized
+INFO - 2018-01-11 11:48:31 --> Language Class Initialized
+INFO - 2018-01-11 11:48:31 --> Config Class Initialized
+INFO - 2018-01-11 11:48:31 --> Loader Class Initialized
+INFO - 2018-01-11 11:48:31 --> Helper loaded: url_helper
+INFO - 2018-01-11 11:48:31 --> Helper loaded: file_helper
+INFO - 2018-01-11 11:48:31 --> Helper loaded: user_helper
+INFO - 2018-01-11 11:48:31 --> Helper loaded: json_helper
+INFO - 2018-01-11 11:48:31 --> Helper loaded: admin_helper
+INFO - 2018-01-11 11:48:31 --> Helper loaded: driver_helper
+INFO - 2018-01-11 11:48:31 --> Helper loaded: cookie_helper
+INFO - 2018-01-11 11:48:31 --> Helper loaded: common_helper
+INFO - 2018-01-11 11:48:31 --> Language file loaded: language/english/en_lang.php
+INFO - 2018-01-11 11:48:31 --> Database Driver Class Initialized
+DEBUG - 2018-01-11 11:48:31 --> Email Class Initialized
+DEBUG - 2018-01-11 11:48:31 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2018-01-11 11:48:31 --> Session: Class initialized using 'files' driver.
+INFO - 2018-01-11 11:48:31 --> Helper loaded: form_helper
+INFO - 2018-01-11 11:48:31 --> Form Validation Class Initialized
+INFO - 2018-01-11 11:48:31 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2018-01-11 11:48:31 --> Pagination Class Initialized
+INFO - 2018-01-11 11:48:31 --> User Agent Class Initialized
+INFO - 2018-01-11 11:48:31 --> Controller Class Initialized
+DEBUG - 2018-01-11 11:48:31 --> Doctor MX_Controller Initialized
+INFO - 2018-01-11 11:48:31 --> Model Class Initialized
+DEBUG - 2018-01-11 11:48:31 --> File loaded: C:\xampp\htdocs\farris\git\instacraft\application\modules/website/models/Doctor_model.php
+INFO - 2018-01-11 11:48:31 --> Model Class Initialized
+DEBUG - 2018-01-11 11:48:31 --> File loaded: C:\xampp\htdocs\farris\git\instacraft\application\modules/website/models/Login_model.php
+INFO - 2018-01-11 11:48:31 --> Model Class Initialized
+DEBUG - 2018-01-11 11:48:31 --> S3 Class Initialized
+INFO - 2018-01-11 11:48:31 --> Model Class Initialized
+INFO - 2018-01-11 11:48:33 --> Config Class Initialized
+INFO - 2018-01-11 11:48:33 --> Hooks Class Initialized
+DEBUG - 2018-01-11 11:48:33 --> UTF-8 Support Enabled
+INFO - 2018-01-11 11:48:33 --> Utf8 Class Initialized
+INFO - 2018-01-11 11:48:33 --> URI Class Initialized
+INFO - 2018-01-11 11:48:33 --> Router Class Initialized
+INFO - 2018-01-11 11:48:33 --> Output Class Initialized
+INFO - 2018-01-11 11:48:33 --> Security Class Initialized
+DEBUG - 2018-01-11 11:48:33 --> Global POST, GET and COOKIE data sanitized
+INFO - 2018-01-11 11:48:33 --> Input Class Initialized
+INFO - 2018-01-11 11:48:33 --> Language Class Initialized
+INFO - 2018-01-11 11:48:33 --> Language Class Initialized
+INFO - 2018-01-11 11:48:33 --> Config Class Initialized
+INFO - 2018-01-11 11:48:33 --> Loader Class Initialized
+INFO - 2018-01-11 11:48:33 --> Helper loaded: url_helper
+INFO - 2018-01-11 11:48:33 --> Helper loaded: file_helper
+INFO - 2018-01-11 11:48:33 --> Helper loaded: user_helper
+INFO - 2018-01-11 11:48:33 --> Helper loaded: json_helper
+INFO - 2018-01-11 11:48:33 --> Helper loaded: admin_helper
+INFO - 2018-01-11 11:48:33 --> Helper loaded: driver_helper
+INFO - 2018-01-11 11:48:33 --> Helper loaded: cookie_helper
+INFO - 2018-01-11 11:48:33 --> Helper loaded: common_helper
+INFO - 2018-01-11 11:48:33 --> Language file loaded: language/english/en_lang.php
+INFO - 2018-01-11 11:48:33 --> Database Driver Class Initialized
+DEBUG - 2018-01-11 11:48:33 --> Email Class Initialized
+DEBUG - 2018-01-11 11:48:33 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2018-01-11 11:48:33 --> Session: Class initialized using 'files' driver.
+INFO - 2018-01-11 11:48:33 --> Helper loaded: form_helper
+INFO - 2018-01-11 11:48:33 --> Form Validation Class Initialized
+INFO - 2018-01-11 11:48:33 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2018-01-11 11:48:33 --> Pagination Class Initialized
+INFO - 2018-01-11 11:48:33 --> User Agent Class Initialized
+INFO - 2018-01-11 11:48:33 --> Controller Class Initialized
+DEBUG - 2018-01-11 11:48:33 --> Doctor MX_Controller Initialized
+INFO - 2018-01-11 11:48:33 --> Model Class Initialized
+DEBUG - 2018-01-11 11:48:33 --> File loaded: C:\xampp\htdocs\farris\git\instacraft\application\modules/website/models/Doctor_model.php
+INFO - 2018-01-11 11:48:33 --> Model Class Initialized
+DEBUG - 2018-01-11 11:48:33 --> File loaded: C:\xampp\htdocs\farris\git\instacraft\application\modules/website/models/Login_model.php
+INFO - 2018-01-11 11:48:33 --> Model Class Initialized
+DEBUG - 2018-01-11 11:48:33 --> S3 Class Initialized
+INFO - 2018-01-11 11:48:33 --> Model Class Initialized
+INFO - 2018-01-11 11:48:41 --> Config Class Initialized
+INFO - 2018-01-11 11:48:41 --> Hooks Class Initialized
+DEBUG - 2018-01-11 11:48:41 --> UTF-8 Support Enabled
+INFO - 2018-01-11 11:48:41 --> Utf8 Class Initialized
+INFO - 2018-01-11 11:48:41 --> URI Class Initialized
+INFO - 2018-01-11 11:48:41 --> Router Class Initialized
+INFO - 2018-01-11 11:48:41 --> Output Class Initialized
+INFO - 2018-01-11 11:48:41 --> Security Class Initialized
+DEBUG - 2018-01-11 11:48:41 --> Global POST, GET and COOKIE data sanitized
+INFO - 2018-01-11 11:48:41 --> Input Class Initialized
+INFO - 2018-01-11 11:48:41 --> Language Class Initialized
+INFO - 2018-01-11 11:48:41 --> Language Class Initialized
+INFO - 2018-01-11 11:48:41 --> Config Class Initialized
+INFO - 2018-01-11 11:48:41 --> Loader Class Initialized
+INFO - 2018-01-11 11:48:41 --> Helper loaded: url_helper
+INFO - 2018-01-11 11:48:41 --> Helper loaded: file_helper
+INFO - 2018-01-11 11:48:41 --> Helper loaded: user_helper
+INFO - 2018-01-11 11:48:41 --> Helper loaded: json_helper
+INFO - 2018-01-11 11:48:41 --> Helper loaded: admin_helper
+INFO - 2018-01-11 11:48:41 --> Helper loaded: driver_helper
+INFO - 2018-01-11 11:48:41 --> Helper loaded: cookie_helper
+INFO - 2018-01-11 11:48:41 --> Helper loaded: common_helper
+INFO - 2018-01-11 11:48:41 --> Language file loaded: language/english/en_lang.php
+INFO - 2018-01-11 11:48:41 --> Database Driver Class Initialized
+DEBUG - 2018-01-11 11:48:41 --> Email Class Initialized
+DEBUG - 2018-01-11 11:48:41 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2018-01-11 11:48:41 --> Session: Class initialized using 'files' driver.
+INFO - 2018-01-11 11:48:41 --> Helper loaded: form_helper
+INFO - 2018-01-11 11:48:41 --> Form Validation Class Initialized
+INFO - 2018-01-11 11:48:41 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2018-01-11 11:48:41 --> Pagination Class Initialized
+INFO - 2018-01-11 11:48:41 --> User Agent Class Initialized
+INFO - 2018-01-11 11:48:41 --> Controller Class Initialized
+DEBUG - 2018-01-11 11:48:41 --> Doctor MX_Controller Initialized
+INFO - 2018-01-11 11:48:41 --> Model Class Initialized
+DEBUG - 2018-01-11 11:48:41 --> File loaded: C:\xampp\htdocs\farris\git\instacraft\application\modules/website/models/Doctor_model.php
+INFO - 2018-01-11 11:48:41 --> Model Class Initialized
+DEBUG - 2018-01-11 11:48:41 --> File loaded: C:\xampp\htdocs\farris\git\instacraft\application\modules/website/models/Login_model.php
+INFO - 2018-01-11 11:48:41 --> Model Class Initialized
+DEBUG - 2018-01-11 11:48:41 --> S3 Class Initialized
+INFO - 2018-01-11 11:48:41 --> Model Class Initialized
+INFO - 2018-01-11 11:48:43 --> Config Class Initialized
+INFO - 2018-01-11 11:48:43 --> Hooks Class Initialized
+DEBUG - 2018-01-11 11:48:43 --> UTF-8 Support Enabled
+INFO - 2018-01-11 11:48:43 --> Utf8 Class Initialized
+INFO - 2018-01-11 11:48:43 --> URI Class Initialized
+INFO - 2018-01-11 11:48:43 --> Router Class Initialized
+INFO - 2018-01-11 11:48:43 --> Output Class Initialized
+INFO - 2018-01-11 11:48:43 --> Security Class Initialized
+DEBUG - 2018-01-11 11:48:43 --> Global POST, GET and COOKIE data sanitized
+INFO - 2018-01-11 11:48:43 --> Input Class Initialized
+INFO - 2018-01-11 11:48:43 --> Language Class Initialized
+INFO - 2018-01-11 11:48:43 --> Language Class Initialized
+INFO - 2018-01-11 11:48:43 --> Config Class Initialized
+INFO - 2018-01-11 11:48:43 --> Loader Class Initialized
+INFO - 2018-01-11 11:48:43 --> Helper loaded: url_helper
+INFO - 2018-01-11 11:48:43 --> Helper loaded: file_helper
+INFO - 2018-01-11 11:48:43 --> Helper loaded: user_helper
+INFO - 2018-01-11 11:48:43 --> Helper loaded: json_helper
+INFO - 2018-01-11 11:48:43 --> Helper loaded: admin_helper
+INFO - 2018-01-11 11:48:43 --> Helper loaded: driver_helper
+INFO - 2018-01-11 11:48:43 --> Helper loaded: cookie_helper
+INFO - 2018-01-11 11:48:43 --> Helper loaded: common_helper
+INFO - 2018-01-11 11:48:43 --> Language file loaded: language/english/en_lang.php
+INFO - 2018-01-11 11:48:43 --> Database Driver Class Initialized
+DEBUG - 2018-01-11 11:48:43 --> Email Class Initialized
+DEBUG - 2018-01-11 11:48:43 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2018-01-11 11:48:43 --> Session: Class initialized using 'files' driver.
+INFO - 2018-01-11 11:48:43 --> Helper loaded: form_helper
+INFO - 2018-01-11 11:48:43 --> Form Validation Class Initialized
+INFO - 2018-01-11 11:48:43 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2018-01-11 11:48:43 --> Pagination Class Initialized
+INFO - 2018-01-11 11:48:43 --> User Agent Class Initialized
+INFO - 2018-01-11 11:48:43 --> Controller Class Initialized
+DEBUG - 2018-01-11 11:48:43 --> Doctor MX_Controller Initialized
+INFO - 2018-01-11 11:48:43 --> Model Class Initialized
+DEBUG - 2018-01-11 11:48:43 --> File loaded: C:\xampp\htdocs\farris\git\instacraft\application\modules/website/models/Doctor_model.php
+INFO - 2018-01-11 11:48:43 --> Model Class Initialized
+DEBUG - 2018-01-11 11:48:43 --> File loaded: C:\xampp\htdocs\farris\git\instacraft\application\modules/website/models/Login_model.php
+INFO - 2018-01-11 11:48:43 --> Model Class Initialized
+DEBUG - 2018-01-11 11:48:43 --> S3 Class Initialized
+INFO - 2018-01-11 11:48:43 --> Model Class Initialized
+INFO - 2018-01-11 11:48:51 --> Config Class Initialized
+INFO - 2018-01-11 11:48:51 --> Hooks Class Initialized
+DEBUG - 2018-01-11 11:48:51 --> UTF-8 Support Enabled
+INFO - 2018-01-11 11:48:51 --> Utf8 Class Initialized
+INFO - 2018-01-11 11:48:51 --> URI Class Initialized
+INFO - 2018-01-11 11:48:51 --> Router Class Initialized
+INFO - 2018-01-11 11:48:51 --> Output Class Initialized
+INFO - 2018-01-11 11:48:51 --> Security Class Initialized
+DEBUG - 2018-01-11 11:48:51 --> Global POST, GET and COOKIE data sanitized
+INFO - 2018-01-11 11:48:51 --> Input Class Initialized
+INFO - 2018-01-11 11:48:51 --> Language Class Initialized
+INFO - 2018-01-11 11:48:51 --> Language Class Initialized
+INFO - 2018-01-11 11:48:51 --> Config Class Initialized
+INFO - 2018-01-11 11:48:51 --> Loader Class Initialized
+INFO - 2018-01-11 11:48:51 --> Helper loaded: url_helper
+INFO - 2018-01-11 11:48:51 --> Helper loaded: file_helper
+INFO - 2018-01-11 11:48:51 --> Helper loaded: user_helper
+INFO - 2018-01-11 11:48:51 --> Helper loaded: json_helper
+INFO - 2018-01-11 11:48:51 --> Helper loaded: admin_helper
+INFO - 2018-01-11 11:48:51 --> Helper loaded: driver_helper
+INFO - 2018-01-11 11:48:51 --> Helper loaded: cookie_helper
+INFO - 2018-01-11 11:48:51 --> Helper loaded: common_helper
+INFO - 2018-01-11 11:48:51 --> Language file loaded: language/english/en_lang.php
+INFO - 2018-01-11 11:48:51 --> Database Driver Class Initialized
+DEBUG - 2018-01-11 11:48:51 --> Email Class Initialized
+DEBUG - 2018-01-11 11:48:51 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2018-01-11 11:48:51 --> Session: Class initialized using 'files' driver.
+INFO - 2018-01-11 11:48:51 --> Helper loaded: form_helper
+INFO - 2018-01-11 11:48:51 --> Form Validation Class Initialized
+INFO - 2018-01-11 11:48:51 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2018-01-11 11:48:51 --> Pagination Class Initialized
+INFO - 2018-01-11 11:48:51 --> User Agent Class Initialized
+INFO - 2018-01-11 11:48:51 --> Controller Class Initialized
+DEBUG - 2018-01-11 11:48:51 --> Doctor MX_Controller Initialized
+INFO - 2018-01-11 11:48:51 --> Model Class Initialized
+DEBUG - 2018-01-11 11:48:51 --> File loaded: C:\xampp\htdocs\farris\git\instacraft\application\modules/website/models/Doctor_model.php
+INFO - 2018-01-11 11:48:51 --> Model Class Initialized
+DEBUG - 2018-01-11 11:48:51 --> File loaded: C:\xampp\htdocs\farris\git\instacraft\application\modules/website/models/Login_model.php
+INFO - 2018-01-11 11:48:51 --> Model Class Initialized
+DEBUG - 2018-01-11 11:48:51 --> S3 Class Initialized
+INFO - 2018-01-11 11:48:51 --> Model Class Initialized
+INFO - 2018-01-11 11:48:53 --> Config Class Initialized
+INFO - 2018-01-11 11:48:53 --> Hooks Class Initialized
+DEBUG - 2018-01-11 11:48:53 --> UTF-8 Support Enabled
+INFO - 2018-01-11 11:48:53 --> Utf8 Class Initialized
+INFO - 2018-01-11 11:48:53 --> URI Class Initialized
+INFO - 2018-01-11 11:48:53 --> Router Class Initialized
+INFO - 2018-01-11 11:48:53 --> Output Class Initialized
+INFO - 2018-01-11 11:48:53 --> Security Class Initialized
+DEBUG - 2018-01-11 11:48:53 --> Global POST, GET and COOKIE data sanitized
+INFO - 2018-01-11 11:48:53 --> Input Class Initialized
+INFO - 2018-01-11 11:48:53 --> Language Class Initialized
+INFO - 2018-01-11 11:48:53 --> Language Class Initialized
+INFO - 2018-01-11 11:48:53 --> Config Class Initialized
+INFO - 2018-01-11 11:48:53 --> Loader Class Initialized
+INFO - 2018-01-11 11:48:53 --> Helper loaded: url_helper
+INFO - 2018-01-11 11:48:53 --> Helper loaded: file_helper
+INFO - 2018-01-11 11:48:53 --> Helper loaded: user_helper
+INFO - 2018-01-11 11:48:53 --> Helper loaded: json_helper
+INFO - 2018-01-11 11:48:53 --> Helper loaded: admin_helper
+INFO - 2018-01-11 11:48:53 --> Helper loaded: driver_helper
+INFO - 2018-01-11 11:48:53 --> Helper loaded: cookie_helper
+INFO - 2018-01-11 11:48:53 --> Helper loaded: common_helper
+INFO - 2018-01-11 11:48:53 --> Language file loaded: language/english/en_lang.php
+INFO - 2018-01-11 11:48:53 --> Database Driver Class Initialized
+DEBUG - 2018-01-11 11:48:53 --> Email Class Initialized
+DEBUG - 2018-01-11 11:48:53 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2018-01-11 11:48:53 --> Session: Class initialized using 'files' driver.
+INFO - 2018-01-11 11:48:53 --> Helper loaded: form_helper
+INFO - 2018-01-11 11:48:53 --> Form Validation Class Initialized
+INFO - 2018-01-11 11:48:53 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2018-01-11 11:48:53 --> Pagination Class Initialized
+INFO - 2018-01-11 11:48:53 --> User Agent Class Initialized
+INFO - 2018-01-11 11:48:53 --> Controller Class Initialized
+DEBUG - 2018-01-11 11:48:53 --> Doctor MX_Controller Initialized
+INFO - 2018-01-11 11:48:53 --> Model Class Initialized
+DEBUG - 2018-01-11 11:48:53 --> File loaded: C:\xampp\htdocs\farris\git\instacraft\application\modules/website/models/Doctor_model.php
+INFO - 2018-01-11 11:48:53 --> Model Class Initialized
+DEBUG - 2018-01-11 11:48:53 --> File loaded: C:\xampp\htdocs\farris\git\instacraft\application\modules/website/models/Login_model.php
+INFO - 2018-01-11 11:48:53 --> Model Class Initialized
+DEBUG - 2018-01-11 11:48:53 --> S3 Class Initialized
+INFO - 2018-01-11 11:48:53 --> Model Class Initialized
+INFO - 2018-01-11 11:49:01 --> Config Class Initialized
+INFO - 2018-01-11 11:49:01 --> Hooks Class Initialized
+DEBUG - 2018-01-11 11:49:01 --> UTF-8 Support Enabled
+INFO - 2018-01-11 11:49:01 --> Utf8 Class Initialized
+INFO - 2018-01-11 11:49:01 --> URI Class Initialized
+INFO - 2018-01-11 11:49:01 --> Router Class Initialized
+INFO - 2018-01-11 11:49:01 --> Output Class Initialized
+INFO - 2018-01-11 11:49:01 --> Security Class Initialized
+DEBUG - 2018-01-11 11:49:01 --> Global POST, GET and COOKIE data sanitized
+INFO - 2018-01-11 11:49:01 --> Input Class Initialized
+INFO - 2018-01-11 11:49:01 --> Language Class Initialized
+INFO - 2018-01-11 11:49:01 --> Language Class Initialized
+INFO - 2018-01-11 11:49:01 --> Config Class Initialized
+INFO - 2018-01-11 11:49:01 --> Loader Class Initialized
+INFO - 2018-01-11 11:49:01 --> Helper loaded: url_helper
+INFO - 2018-01-11 11:49:01 --> Helper loaded: file_helper
+INFO - 2018-01-11 11:49:01 --> Helper loaded: user_helper
+INFO - 2018-01-11 11:49:01 --> Helper loaded: json_helper
+INFO - 2018-01-11 11:49:01 --> Helper loaded: admin_helper
+INFO - 2018-01-11 11:49:01 --> Helper loaded: driver_helper
+INFO - 2018-01-11 11:49:01 --> Helper loaded: cookie_helper
+INFO - 2018-01-11 11:49:01 --> Helper loaded: common_helper
+INFO - 2018-01-11 11:49:01 --> Language file loaded: language/english/en_lang.php
+INFO - 2018-01-11 11:49:01 --> Database Driver Class Initialized
+DEBUG - 2018-01-11 11:49:01 --> Email Class Initialized
+DEBUG - 2018-01-11 11:49:01 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2018-01-11 11:49:01 --> Session: Class initialized using 'files' driver.
+INFO - 2018-01-11 11:49:01 --> Helper loaded: form_helper
+INFO - 2018-01-11 11:49:01 --> Form Validation Class Initialized
+INFO - 2018-01-11 11:49:01 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2018-01-11 11:49:01 --> Pagination Class Initialized
+INFO - 2018-01-11 11:49:01 --> User Agent Class Initialized
+INFO - 2018-01-11 11:49:01 --> Controller Class Initialized
+DEBUG - 2018-01-11 11:49:01 --> Doctor MX_Controller Initialized
+INFO - 2018-01-11 11:49:01 --> Model Class Initialized
+DEBUG - 2018-01-11 11:49:01 --> File loaded: C:\xampp\htdocs\farris\git\instacraft\application\modules/website/models/Doctor_model.php
+INFO - 2018-01-11 11:49:01 --> Model Class Initialized
+DEBUG - 2018-01-11 11:49:01 --> File loaded: C:\xampp\htdocs\farris\git\instacraft\application\modules/website/models/Login_model.php
+INFO - 2018-01-11 11:49:01 --> Model Class Initialized
+DEBUG - 2018-01-11 11:49:01 --> S3 Class Initialized
+INFO - 2018-01-11 11:49:01 --> Model Class Initialized
+INFO - 2018-01-11 11:49:03 --> Config Class Initialized
+INFO - 2018-01-11 11:49:03 --> Hooks Class Initialized
+DEBUG - 2018-01-11 11:49:03 --> UTF-8 Support Enabled
+INFO - 2018-01-11 11:49:03 --> Utf8 Class Initialized
+INFO - 2018-01-11 11:49:03 --> URI Class Initialized
+INFO - 2018-01-11 11:49:03 --> Router Class Initialized
+INFO - 2018-01-11 11:49:03 --> Output Class Initialized
+INFO - 2018-01-11 11:49:03 --> Security Class Initialized
+DEBUG - 2018-01-11 11:49:03 --> Global POST, GET and COOKIE data sanitized
+INFO - 2018-01-11 11:49:03 --> Input Class Initialized
+INFO - 2018-01-11 11:49:03 --> Language Class Initialized
+INFO - 2018-01-11 11:49:03 --> Language Class Initialized
+INFO - 2018-01-11 11:49:03 --> Config Class Initialized
+INFO - 2018-01-11 11:49:03 --> Loader Class Initialized
+INFO - 2018-01-11 11:49:03 --> Helper loaded: url_helper
+INFO - 2018-01-11 11:49:03 --> Helper loaded: file_helper
+INFO - 2018-01-11 11:49:03 --> Helper loaded: user_helper
+INFO - 2018-01-11 11:49:03 --> Helper loaded: json_helper
+INFO - 2018-01-11 11:49:03 --> Helper loaded: admin_helper
+INFO - 2018-01-11 11:49:03 --> Helper loaded: driver_helper
+INFO - 2018-01-11 11:49:03 --> Helper loaded: cookie_helper
+INFO - 2018-01-11 11:49:03 --> Helper loaded: common_helper
+INFO - 2018-01-11 11:49:03 --> Language file loaded: language/english/en_lang.php
+INFO - 2018-01-11 11:49:03 --> Database Driver Class Initialized
+DEBUG - 2018-01-11 11:49:03 --> Email Class Initialized
+DEBUG - 2018-01-11 11:49:03 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2018-01-11 11:49:03 --> Session: Class initialized using 'files' driver.
+INFO - 2018-01-11 11:49:03 --> Helper loaded: form_helper
+INFO - 2018-01-11 11:49:03 --> Form Validation Class Initialized
+INFO - 2018-01-11 11:49:03 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2018-01-11 11:49:03 --> Pagination Class Initialized
+INFO - 2018-01-11 11:49:03 --> User Agent Class Initialized
+INFO - 2018-01-11 11:49:03 --> Controller Class Initialized
+DEBUG - 2018-01-11 11:49:03 --> Doctor MX_Controller Initialized
+INFO - 2018-01-11 11:49:03 --> Model Class Initialized
+DEBUG - 2018-01-11 11:49:03 --> File loaded: C:\xampp\htdocs\farris\git\instacraft\application\modules/website/models/Doctor_model.php
+INFO - 2018-01-11 11:49:03 --> Model Class Initialized
+DEBUG - 2018-01-11 11:49:03 --> File loaded: C:\xampp\htdocs\farris\git\instacraft\application\modules/website/models/Login_model.php
+INFO - 2018-01-11 11:49:03 --> Model Class Initialized
+DEBUG - 2018-01-11 11:49:03 --> S3 Class Initialized
+INFO - 2018-01-11 11:49:03 --> Model Class Initialized
+INFO - 2018-01-11 11:49:11 --> Config Class Initialized
+INFO - 2018-01-11 11:49:11 --> Hooks Class Initialized
+DEBUG - 2018-01-11 11:49:11 --> UTF-8 Support Enabled
+INFO - 2018-01-11 11:49:11 --> Utf8 Class Initialized
+INFO - 2018-01-11 11:49:11 --> URI Class Initialized
+INFO - 2018-01-11 11:49:11 --> Router Class Initialized
+INFO - 2018-01-11 11:49:11 --> Output Class Initialized
+INFO - 2018-01-11 11:49:11 --> Security Class Initialized
+DEBUG - 2018-01-11 11:49:11 --> Global POST, GET and COOKIE data sanitized
+INFO - 2018-01-11 11:49:11 --> Input Class Initialized
+INFO - 2018-01-11 11:49:11 --> Language Class Initialized
+INFO - 2018-01-11 11:49:11 --> Language Class Initialized
+INFO - 2018-01-11 11:49:11 --> Config Class Initialized
+INFO - 2018-01-11 11:49:11 --> Loader Class Initialized
+INFO - 2018-01-11 11:49:11 --> Helper loaded: url_helper
+INFO - 2018-01-11 11:49:11 --> Helper loaded: file_helper
+INFO - 2018-01-11 11:49:11 --> Helper loaded: user_helper
+INFO - 2018-01-11 11:49:11 --> Helper loaded: json_helper
+INFO - 2018-01-11 11:49:11 --> Helper loaded: admin_helper
+INFO - 2018-01-11 11:49:11 --> Helper loaded: driver_helper
+INFO - 2018-01-11 11:49:11 --> Helper loaded: cookie_helper
+INFO - 2018-01-11 11:49:11 --> Helper loaded: common_helper
+INFO - 2018-01-11 11:49:11 --> Language file loaded: language/english/en_lang.php
+INFO - 2018-01-11 11:49:11 --> Database Driver Class Initialized
+DEBUG - 2018-01-11 11:49:11 --> Email Class Initialized
+DEBUG - 2018-01-11 11:49:11 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2018-01-11 11:49:11 --> Session: Class initialized using 'files' driver.
+INFO - 2018-01-11 11:49:11 --> Helper loaded: form_helper
+INFO - 2018-01-11 11:49:11 --> Form Validation Class Initialized
+INFO - 2018-01-11 11:49:11 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2018-01-11 11:49:11 --> Pagination Class Initialized
+INFO - 2018-01-11 11:49:11 --> User Agent Class Initialized
+INFO - 2018-01-11 11:49:11 --> Controller Class Initialized
+DEBUG - 2018-01-11 11:49:11 --> Doctor MX_Controller Initialized
+INFO - 2018-01-11 11:49:11 --> Model Class Initialized
+DEBUG - 2018-01-11 11:49:11 --> File loaded: C:\xampp\htdocs\farris\git\instacraft\application\modules/website/models/Doctor_model.php
+INFO - 2018-01-11 11:49:11 --> Model Class Initialized
+DEBUG - 2018-01-11 11:49:11 --> File loaded: C:\xampp\htdocs\farris\git\instacraft\application\modules/website/models/Login_model.php
+INFO - 2018-01-11 11:49:11 --> Model Class Initialized
+DEBUG - 2018-01-11 11:49:11 --> S3 Class Initialized
+INFO - 2018-01-11 11:49:11 --> Model Class Initialized
+INFO - 2018-01-11 11:49:13 --> Config Class Initialized
+INFO - 2018-01-11 11:49:13 --> Hooks Class Initialized
+DEBUG - 2018-01-11 11:49:13 --> UTF-8 Support Enabled
+INFO - 2018-01-11 11:49:13 --> Utf8 Class Initialized
+INFO - 2018-01-11 11:49:13 --> URI Class Initialized
+INFO - 2018-01-11 11:49:13 --> Router Class Initialized
+INFO - 2018-01-11 11:49:13 --> Output Class Initialized
+INFO - 2018-01-11 11:49:13 --> Security Class Initialized
+DEBUG - 2018-01-11 11:49:13 --> Global POST, GET and COOKIE data sanitized
+INFO - 2018-01-11 11:49:13 --> Input Class Initialized
+INFO - 2018-01-11 11:49:13 --> Language Class Initialized
+INFO - 2018-01-11 11:49:13 --> Language Class Initialized
+INFO - 2018-01-11 11:49:13 --> Config Class Initialized
+INFO - 2018-01-11 11:49:13 --> Loader Class Initialized
+INFO - 2018-01-11 11:49:13 --> Helper loaded: url_helper
+INFO - 2018-01-11 11:49:13 --> Helper loaded: file_helper
+INFO - 2018-01-11 11:49:13 --> Helper loaded: user_helper
+INFO - 2018-01-11 11:49:13 --> Helper loaded: json_helper
+INFO - 2018-01-11 11:49:13 --> Helper loaded: admin_helper
+INFO - 2018-01-11 11:49:13 --> Helper loaded: driver_helper
+INFO - 2018-01-11 11:49:13 --> Helper loaded: cookie_helper
+INFO - 2018-01-11 11:49:13 --> Helper loaded: common_helper
+INFO - 2018-01-11 11:49:13 --> Language file loaded: language/english/en_lang.php
+INFO - 2018-01-11 11:49:13 --> Database Driver Class Initialized
+DEBUG - 2018-01-11 11:49:13 --> Email Class Initialized
+DEBUG - 2018-01-11 11:49:13 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2018-01-11 11:49:13 --> Session: Class initialized using 'files' driver.
+INFO - 2018-01-11 11:49:13 --> Helper loaded: form_helper
+INFO - 2018-01-11 11:49:13 --> Form Validation Class Initialized
+INFO - 2018-01-11 11:49:13 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2018-01-11 11:49:13 --> Pagination Class Initialized
+INFO - 2018-01-11 11:49:13 --> User Agent Class Initialized
+INFO - 2018-01-11 11:49:13 --> Controller Class Initialized
+DEBUG - 2018-01-11 11:49:13 --> Doctor MX_Controller Initialized
+INFO - 2018-01-11 11:49:13 --> Model Class Initialized
+DEBUG - 2018-01-11 11:49:13 --> File loaded: C:\xampp\htdocs\farris\git\instacraft\application\modules/website/models/Doctor_model.php
+INFO - 2018-01-11 11:49:13 --> Model Class Initialized
+DEBUG - 2018-01-11 11:49:13 --> File loaded: C:\xampp\htdocs\farris\git\instacraft\application\modules/website/models/Login_model.php
+INFO - 2018-01-11 11:49:13 --> Model Class Initialized
+DEBUG - 2018-01-11 11:49:13 --> S3 Class Initialized
+INFO - 2018-01-11 11:49:13 --> Model Class Initialized
