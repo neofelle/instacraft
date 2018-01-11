@@ -226,7 +226,7 @@ function setSearch($search) {
         } 
         return $data;
     }
-    
+
     public function detailsByClient($clientId){
         $query = $this->db->select('users.*, appointment_details.id as appointment_id, appointment_details.appointment_date, appointment_details.appointment_time, appointment_details.consultation_for, appointment_details.status')
                             ->from('users')
@@ -415,6 +415,18 @@ function setSearch($search) {
         if ($userDetail->num_rows() > 0) {
             return $userDetail->row();
         }
+    }
+
+    public function getDoctorAppointmentsByDate($date) {        
+        $appointments = $this->db->select('ad.appointment_time,CONCAT(u.first_name, " ", u.last_name)AS name')
+            ->from('appointment_details as ad')
+            ->join('users as u', 'ad.user_id=u.id')
+            ->where('ad.doctor_id',$this->session->userdata('doctor_id'))
+            ->where('ad.appointment_date',date("Y-m-d",strtotime($date)))        
+            ->get()
+        ;
+        $results    =   $appointments->result();        
+        return $results;
     }
 
 

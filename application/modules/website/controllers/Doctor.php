@@ -24,6 +24,28 @@ class Doctor extends MX_Controller {
     public function dashboard() {
         $this->load->view('dashboard.php');
     }
+
+    public function analysis() {        
+        $webObj = new Doctor_model();
+
+        $date = date("Y-m-d");        
+        $ts   = strtotime($date);        
+        $dow  = date('w', $ts);
+        $offset = $dow - 1;
+        if ($offset < 0) {
+            $offset = 6;
+        }
+        
+        $ts = $ts - $offset*86400;     
+        $appointments = array();   
+        for ($i = 0; $i < 7; $i++, $ts += 86400){
+            $date = date("Y-m-d", $ts);
+            $appointments[$date] = $webObj->getDoctorAppointmentsByDate($date);
+        }
+
+        $result['appointments'] = $appointments;
+        $this->load->view('analysis.php', $result);
+    }
     
     public function updateStatus() {
         $webObj = new Doctor_model();

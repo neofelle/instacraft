@@ -79,33 +79,7 @@ $db['default'] = array(
 	'hostname' => 'localhost',
 	'username' => 'root',
 	//'password' => 'Ev@s!0n#zO16',
-	'password' => '',
-	'database' => 'instacraft_db',
-	'dbdriver' => 'mysqli',
-	'dbprefix' => '',
-	'pconnect' => FALSE,
-	'db_debug' => FALSE,
-	'cache_on' => FALSE,
-	'cachedir' => '',
-	'char_set' => 'utf8',
-	'dbcollat' => 'utf8_general_ci',
-	'swap_pre' => '',
-	'encrypt' => FALSE,
-	'compress' => FALSE,
-	'stricton' => FALSE,
-	'failover' => array(),
-	'save_queries' => TRUE
-);
-
-/*
-
-$db['default'] = array(
-	'dsn'	=> '',
-	//'hostname' => '203.123.36.134',
-	'hostname' => 'instacraftdb.c7mkioq7chm7.us-west-2.rds.amazonaws.com',
-	'username' => 'instacraftdb',
-	//'password' => 'Ev@s!0n#zO16',
-	'password' => 'Hd5Kgj2wfS3',
+	'password' => 'p@ssw0rd',
 	'database' => 'instacraft',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
@@ -122,4 +96,3 @@ $db['default'] = array(
 	'failover' => array(),
 	'save_queries' => TRUE
 );
-*/

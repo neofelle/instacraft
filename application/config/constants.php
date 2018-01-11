@@ -30,7 +30,7 @@ define('FILE_READ_MODE', 0644);
 define('FILE_WRITE_MODE', 0666);
 define('DIR_READ_MODE', 0755);
 define('DIR_WRITE_MODE', 0755);
-define("ADMIN_EMAIL","sonakshi.srivastav@techaheadcorp.com");
+//define("ADMIN_EMAIL","sonakshi.srivastav@techaheadcorp.com");
 define('TOWING_PUSH_TYPE',"8");
 define('BATTERY_SERVICE_TYPE',"9");
 define('JOB_ASSIGNED',"7");

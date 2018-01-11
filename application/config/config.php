@@ -24,7 +24,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 $url = "instacraft";
-$config['base_url'] = 'http://localhost/instacraft/'; //$config['base_url'] = "https://".$_SERVER["HTTP_HOST"]."/$url/";
+$config['base_url'] = ""; //$config['base_url'] = "https://".$_SERVER["HTTP_HOST"]."/$url/";
 $config['customer']	= 'customer';
 $config['customerassets']	= $config['base_url'].'assets/'.$config['customer'].'/';
 
@@ -42,7 +42,7 @@ $config['flashPhonerAssets']	= $config['base_url'].'assets/'.$config['flashPhone
 | variable so that it is blank.
 |
 */
-$config['index_page'] = 'index.php';
+$config['index_page'] = '';
 
 /*
 |--------------------------------------------------------------------------
@@ -221,7 +221,7 @@ $config['directory_trigger'] = 'd';
 | your log files will fill up very fast.
 |
 */
-$config['log_threshold'] = 0;
+$config['log_threshold'] = 4;
 
 /*
 |--------------------------------------------------------------------------
@@ -383,6 +383,7 @@ $config['sess_match_ip'] = FALSE;
 $config['sess_time_to_update'] = 300;
 $config['sess_regenerate_destroy'] = FALSE;
 $config['sess_use_database'] = FALSE;
+
 /*
 |--------------------------------------------------------------------------
 | Cookie Related Variables

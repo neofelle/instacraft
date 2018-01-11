@@ -65,6 +65,7 @@
             <li><a href="<?php echo base_url() ?>dashboard">DashBoard</a></li>
             <li><a href="<?php echo base_url() ?>appointments">My Appointments</a></li>
             <li><a href="<?php echo base_url() ?>prescriptions">Prescriptions</a></li>
+            <li><a href="<?php echo base_url() ?>analysis">Analysis</a></li>
             <li><a href="<?php echo base_url() ?>profile">Profile</a></li>
         </ul>
     </div>

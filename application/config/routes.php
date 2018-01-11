@@ -192,6 +192,7 @@ $route['updateStatus']      = 'website/Doctor/updateStatus';//update doctor avai
 $route['updateDaysAndTime'] = 'website/Doctor/updateDaysAndTime';//update days and time of doctor
 $route['appointments']      = 'website/Doctor/appointments';//appointments of doctor
 $route['prescriptions']     = 'website/Doctor/prescriptions';//prescriptions of doctor
+$route['analysis']          = 'website/Doctor/analysis';//prescriptions of doctor
 $route['generatePdf']       = 'website/Doctor/generatePdf';//generate Pdf
 $route['changePassword']    = 'website/Login/Changepwd';//change password of doctor
 //$route['clientCall/(:any)']      = 'website/Doctor/clientDetailedPage/$1';//client detailed page
