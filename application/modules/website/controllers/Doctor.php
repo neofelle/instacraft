@@ -22,7 +22,22 @@ class Doctor extends MX_Controller {
     }
     
     public function dashboard() {
-        $this->load->view('dashboard.php');
+        $webObj = new Doctor_model();
+        $timeSlots   = $webObj->getTimeSlots();
+        $a_timeslots = array();
+        foreach( $timeSlots as $t ){
+            $a_timeslots[] = date("g:i A", strtotime($t->time));
+        }
+
+        $schedules       = $webObj->getDoctorTimeSchedules();
+        $group_schedules = array();
+        foreach($schedules as $s){
+            $group_schedules[$s->day][] = array('from' => $s->from_time, 'to' => $s->to_time);
+        }
+                
+        $result['schedules'] = $group_schedules;
+        $result['timeslots'] = $a_timeslots;
+        $this->load->view('dashboard.php', $result);
     }
 
     public function analysis() {        
@@ -66,6 +81,12 @@ class Doctor extends MX_Controller {
             redirect('dashboard');
         }
         $data = $webObj->updateAvailDaysTime($availableTime);
+    }
+
+    public function updateDoctorSchedules() {
+        $webObj = new Doctor_model();
+        $result = $webObj->addDoctorSchedules();
+        redirect('dashboard');
     }
     
     public function appointments() {

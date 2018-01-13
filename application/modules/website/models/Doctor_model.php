@@ -430,5 +430,72 @@ function setSearch($search) {
         return $results;
     }
 
+    public function getTimeSlots() {
+        $timeSlots = $this->db->select('time')
+            ->from('time_slots')
+            ->get()
+        ;
+
+        $results = $timeSlots->result();
+        return $results;
+    }
+
+    public function addDoctorSchedules() {        
+        $return = false;
+        $time   = $_POST['time'];
+        $valid_schedules = array();
+        if($_POST['mon']){
+            $valid_schedules['mon'] = $time['mon'];
+        }
+        if($_POST['tue']){
+            $valid_schedules['tue'] = $time['tue'];
+        }
+        if($_POST['wed']){
+            $valid_schedules['wed'] = $time['wed'];
+        }
+        if($_POST['thu']){
+            $valid_schedules['thu'] = $time['thu'];
+        }
+        if($_POST['fri']){
+            $valid_schedules['fri'] = $time['fri'];
+        }
+        if($_POST['sat']){
+            $valid_schedules['sat'] = $time['sat'];
+        }
+        if($_POST['sun']){
+            $valid_schedules['sun'] = $time['sun'];
+        }
+
+        if( !empty( $valid_schedules ) ){
+            //Delete all current sched will recreate new set
+            $this->db->where('doctor_id', $this->session->userdata('doctor_id'));
+            $this->db->delete('doctor_schedules');
+            foreach( $valid_schedules as $key => $schedules ){
+                foreach( $schedules as $s ){                    
+                    $data = array(
+                        'doctor_id' => $this->session->userdata('doctor_id'),
+                        'day' => $key,
+                        'from_time' => $s['from'],
+                        'to_time' => $s['to']
+                    );
+                    $result = $this->db->insert('doctor_schedules', $data);
+                    print_r($result);
+                    $return = true;
+                }                
+            }
+        }
+        return $return;
+    }
+
+    public function getDoctorTimeSchedules(){
+        $schedules = $this->db->select('day,from_time,to_time')
+            ->from('doctor_schedules')
+            ->where('doctor_id', $this->session->userdata('doctor_id'))
+            ->get()
+        ;
+        $results = $schedules->result();
+        return $results;
+    }
+
 
 }

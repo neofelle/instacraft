@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>Instacraft</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <link href="<?php echo base_url() ?>assets/css/instastyle.css" rel="stylesheet" />
     <link href="<?php echo base_url() ?>assets/css/developer.css" rel="stylesheet" />
     <link href="<?php echo base_url() ?>assets/css/mobile.css" rel="stylesheet" />
@@ -20,10 +20,8 @@
                 <div class="menu-container js_nav-item">
                 </div>
                 <!-- HAMBURGUER MENU ICON -->
-                <span class="profile" style="position: absolute;left: 20px;top: 22px;">
+                <span class="profile" style="position: absolute;top: 22px;">
                     <img class="profile-snap" src="<?php echo base_url() ?>assets/images/prof.jpg" />
-                    <span class="profile-pik"></span>
-                    <strong style="color:white;">Doctor profile</strong>
                  </span>
                 <input type="checkbox" name="toggle" id="toggle"/>
                 <label for="toggle"  class="hamburger"></label>

@@ -16,7 +16,7 @@
                 <form action="<?php echo base_url(); ?>prescriptions" method="GET" >
                 <div class="Search"><input type="text" placeholder="Search" name="search" /></div>
                 <div class="Combo" style="display: none;">
-                    <select name="status">
+                    <select name="status" class="mozkit-fix">
                         <option value="">All</option>
                     </select>
                     <span class="btn-bk"></span>
