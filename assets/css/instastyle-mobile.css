@@ -99,9 +99,8 @@ body {
  .note-u {
     float: right;
     width: 67%;
-    margin-top: 30px;
+    margin-top: 0px;
     padding: 12px 0;
-    box-shadow: 0 0px 19px 4px rgba(0, 0, 0, 0.16);
 }
 input#datepicker::-webkit-input-placeholder {
     font-size: 12px;
@@ -121,11 +120,13 @@ input#datepicker::-webkit-input-placeholder {
  }
  .note-u textarea {
     border: 1px solid #e3e3e3;
-    width: 91%;
+    width: 100%;
     margin: 28px auto;
     display: block;
     padding: 12px 25px;
+    font-family: unset;
     min-height: 170px;
+    font-size: 15px;
 }
  .no-shadow{
     box-shadow:none !important;
@@ -157,6 +158,12 @@ input#datepicker::-webkit-input-placeholder {
    padding: 18px 0 0 0;
     border-bottom: 1px solid #ebebeb;
 }
+.container-profile-mobile{
+    width: 100%;
+    background-color: #f5f5f5;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
 .dp h1 {
     background: #817ae7;
     color: #fff;
@@ -171,6 +178,57 @@ img.profile-snap{
     border-radius: 50%;
     float: left;
     margin-right: 20px;
+}
+.txt-name{
+    font-size: 26px;
+}
+.img-back{
+    position: relative;
+    width: 45px;
+    left: 15px;
+}
+.call-icon{
+    position: relative;
+    width: 80px;
+    left: 53.2%;
+    top: 60%;
+    -webkit-transform: translateY(-43%);
+    -ms-transform: translateY(-43%);
+    transform: translateY(-43%);
+}
+.description-pr-details > h3{
+    font-size: 20px;
+    color:#8c77f2;
+    font-weight: 400;
+}
+.description-pr-details > h2{
+    font-size: 17px;
+    font-weight: 600;
+}
+.vertical-center{
+    top: 43%;
+    -webkit-transform: translateY(-43%);
+    -ms-transform: translateY(-43%);
+    transform: translateY(-43%);
+}
+.description-pr-details{
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+.mobile-prescription-prof-img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 180px;
+    border-radius: 100px;
+}
+.center{
+    display: block;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 .right{float:right;}
 .left{float:left;}
@@ -832,9 +890,7 @@ span.cust-id {
     width: 100%;
 }
 .info-box {
-    float: left;
     width: 100%;
-    padding: 17px 29px;
 }
     .info-box label {
         padding: 0px 10px;

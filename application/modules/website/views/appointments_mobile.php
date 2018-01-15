@@ -1,10 +1,8 @@
 <?php include('templates/header-mobile.php')  ?>
-<!--
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   <link rel="stylesheet" href="/resources/demos/style.css">
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
--->
   <script>
   $( function() {
     $("#datepicker").datepicker();        
@@ -82,11 +80,10 @@
             }else if($values['status'] == '3'){
                 echo "<span class='txt-mobile cancelled'>Cancelled</span>";
             }else{
-                
           } 
         ?>
       </div>
-      <div class="col-2 left">
+      <div class="col-2 left" style="padding-right: 10px;">
         <span class="txt-mobile"><?php echo $values['appointment_time']; ?></span>
       </div>
       <br style="clear:both;">
