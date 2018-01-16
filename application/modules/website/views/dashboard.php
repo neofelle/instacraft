@@ -55,15 +55,15 @@
                         <div class="row-1">
                         <table class="time" style="width: 100%;">
                             <tr>
-                                <td style="width: 20%;"><span class="table-tr-header">Date</span></td>
-                                <td style="width: 80%;"><span class="table-tr-header">Time</span></td>
+                                <td class="f1"><span class="table-tr-header">Date</span></td>
+                                <td class="f2"><span class="table-tr-header">Time</span></td>
                             </tr>
                             <tr>
-                                <td>                            
+                                <td class="d1">                            
                                     <input id="mon" type="checkbox" name="mon" <?php if(isset($schedules['mon'])){echo "checked";} ?> >
-                                    <label for="mon" class="side-label"><span class="week-day">Mon</span></label>
+                                    <label for="mon" class="side-label-box"><span class="week-day">Mon</span></label>
                                 </td>
-                                <td>
+                                <td class="d2">
                                     <?php if( isset($schedules['mon']) ){ ?>
                                         <?php $counter = 0; foreach( $schedules['mon'] as $s ){ ?>
                                             <?php 
@@ -120,11 +120,11 @@
                                 </td>
                             </tr>                                                                
                             <tr>
-                                <td>                            
+                                <td class="d1">                            
                                     <input id="tue" type="checkbox" name="tue" <?php if(isset($schedules['tue'])){echo "checked";} ?> >
-                                    <label for="tue" class="side-label"><span class="week-day">Tue</span></label>
+                                    <label for="tue" class="side-label-box"><span class="week-day">Tue</span></label>
                                 </td>
-                                <td>
+                                <td class="d2">
                                     <?php if( isset($schedules['tue']) ){ ?>
                                         <?php $counter = 0; foreach( $schedules['tue'] as $s ){ ?>
                                             <?php 
@@ -181,11 +181,11 @@
                                 </td>
                             </tr>                                
                             <tr>
-                                <td>                            
+                                <td class="d1">                            
                                     <input id="wed" type="checkbox" name="wed" <?php if(isset($schedules['wed'])){echo "checked";} ?> >
-                                    <label for="wed" class="side-label"><span class="week-day">Wed</span></label>
+                                    <label for="wed" class="side-label-box"><span class="week-day">Wed</span></label>
                                 </td>
-                                <td>
+                                <td class="d2">
                                     <?php if( isset($schedules['wed']) ){ ?>
                                         <?php $counter = 0; foreach( $schedules['wed'] as $s ){ ?>
                                             <?php 
@@ -242,11 +242,11 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>                            
+                                <td class="d1">                            
                                     <input id="thu" type="checkbox" name="thu" <?php if(isset($schedules['thu'])){echo "checked";} ?> >
-                                    <label for="thu" class="side-label"><span class="week-day">Thu</span></label>
+                                    <label for="thu" class="side-label-box"><span class="week-day">Thu</span></label>
                                 </td>
-                                <td>
+                                <td class="d2">
                                     <?php if( isset($schedules['thu']) ){ ?>
                                         <?php $counter = 0; foreach( $schedules['thu'] as $s ){ ?>
                                             <?php 
@@ -307,15 +307,15 @@
                     <div class="row-2">
                      <table class="time" style="width: 100%;">
                             <tr class="mobile-r">
-                                <td style="width: 20%;"><span class="table-tr-header">Date</span></td>
-                                <td style="width: 80%;"><span class="table-tr-header">Time</span></td>
+                                <td class="f1"><span class="table-tr-header">Date</span></td>
+                                <td class="f2"><span class="table-tr-header">Time</span></td>
                             </tr>
                             <tr>
-                                <td style="width: 20%;">                            
+                                <td class="d1">                            
                                     <input id="fri" type="checkbox" name="fri" <?php if(isset($schedules['fri'])){echo "checked";} ?> >
-                                    <label for="fri" class="side-label"><span class="week-day">Fri</span></label>
+                                    <label for="fri" class="side-label-box"><span class="week-day">Fri</span></label>
                                 </td>
-                                <td style="width: 80%;">
+                                <td class="d2">
                                     <?php if( isset($schedules['fri']) ){ ?>
                                         <?php $counter = 0; foreach( $schedules['fri'] as $s ){ ?>
                                             <?php 
@@ -372,11 +372,11 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>                            
+                                <td class="d1">                            
                                     <input id="sat" type="checkbox" name="sat" <?php if(isset($schedules['sat'])){echo "checked";} ?> >
-                                    <label for="sat" class="side-label"><span class="week-day">Sat</span></label>
+                                    <label for="sat" class="side-label-box"><span class="week-day">Sat</span></label>
                                 </td>
-                                <td>
+                                <td class="d2">
                                     <?php if( isset($schedules['sat']) ){ ?>
                                         <?php $counter = 0; foreach( $schedules['sat'] as $s ){ ?>
                                             <?php 
@@ -433,11 +433,11 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>                            
+                                <td class="d1">                            
                                     <input id="sun" type="checkbox" name="sun" <?php if(isset($schedules['sun'])){echo "checked";} ?> >
-                                    <label for="sun" class="side-label"><span class="week-day">Sun</span></label>
+                                    <label for="sun" class="side-label-box"><span class="week-day">Sun</span></label>
                                 </td>
-                                <td>
+                                <td class="d2">
                                     <?php if( isset($schedules['sun']) ){ ?>
                                         <?php $counter = 0; foreach( $schedules['sun'] as $s ){ ?>
                                             <?php 
