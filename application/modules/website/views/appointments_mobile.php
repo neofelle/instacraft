@@ -62,32 +62,34 @@
           foreach($appointments as $key=>$values){
               $data = getUsers($values['user_id']);
     ?>
-    <div class="container-appointments">
-      <div class="col-2 left">
-        <img class="mobile-profile-img" src="<?php echo $data['profile_pic'];?>" />     
-      </div> 
-      <div class="col-8 left" style="padding-left:5px;">
-        <span class="txt-mobile"><?php echo $data['first_name'].' '. $data['last_name']; ?></span><br/>
-        <span class="txt-mobile"><?php echo "Recovery" ?></span>
-        <br/><br/>
-        <?php 
-          if($values['status'] == '0'){
-                echo "<span class='txt-mobile cancelled'>Pending</span>";
-            }else if($values['status'] == '1'){
-                echo "<span class='txt-mobile confirmed'>Confirmed</span>";
-            }else if($values['status'] == '2'){
-                echo "<span class='txt-mobile pending'>Re-Schedule</span>";
-            }else if($values['status'] == '3'){
-                echo "<span class='txt-mobile cancelled'>Cancelled</span>";
-            }else{
-          } 
-        ?>
+    <a href="<?php echo base_url(); ?>clientDetail/<?php echo $values['user_id']; ?>">
+      <div class="container-appointments">
+        <div class="col-2 left">
+          <img class="mobile-profile-img" src="<?php echo $data['profile_pic'];?>" />     
+        </div> 
+        <div class="col-8 left" style="padding-left:5px;">
+          <span class="txt-mobile"><?php echo $data['first_name'].' '. $data['last_name']; ?></span><br/>
+          <span class="txt-mobile"><?php echo "Recovery" ?></span>
+          <br/><br/>
+          <?php 
+            if($values['status'] == '0'){
+                  echo "<span class='txt-mobile cancelled'>Pending</span>";
+              }else if($values['status'] == '1'){
+                  echo "<span class='txt-mobile confirmed'>Confirmed</span>";
+              }else if($values['status'] == '2'){
+                  echo "<span class='txt-mobile pending'>Re-Schedule</span>";
+              }else if($values['status'] == '3'){
+                  echo "<span class='txt-mobile cancelled'>Cancelled</span>";
+              }else{
+            } 
+          ?>
+        </div>
+        <div class="col-2 left" style="padding-right: 10px;">
+          <span class="txt-mobile"><?php echo $values['appointment_time']; ?></span>
+        </div>
+        <br style="clear:both;">
       </div>
-      <div class="col-2 left" style="padding-right: 10px;">
-        <span class="txt-mobile"><?php echo $values['appointment_time']; ?></span>
-      </div>
-      <br style="clear:both;">
-    </div>
+    </a>
    <?php  } }else{ ?>
          <span class="txt-mobile">No Data Found</span>
    <?php } ?>

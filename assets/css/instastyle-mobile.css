@@ -158,6 +158,12 @@ input#datepicker::-webkit-input-placeholder {
    padding: 18px 0 0 0;
     border-bottom: 1px solid #ebebeb;
 }
+.container-profile-mobile-client{
+    width: 100%;
+    background-color: #f5f5f5;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
 .container-profile-mobile{
     width: 100%;
     background-color: #f5f5f5;
@@ -182,6 +188,11 @@ img.profile-snap{
 .txt-name{
     font-size: 26px;
 }
+.img-back-appointment{
+    position: relative;
+    width: 30px;
+    left: 15px;
+}
 .img-back{
     position: relative;
     width: 45px;
@@ -205,6 +216,15 @@ img.profile-snap{
     font-size: 17px;
     font-weight: 600;
 }
+.description-ap-details > h3{
+    font-size: 15px;
+    color:#8c77f2;
+    font-weight: 400;
+}
+.description-ap-details > h2{
+    font-size: 16px;
+    font-weight: 600;
+}
 .vertical-center{
     top: 43%;
     -webkit-transform: translateY(-43%);
@@ -217,11 +237,55 @@ img.profile-snap{
     padding-top: 40px;
     padding-bottom: 40px;
 }
+.description-ap-details{
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.appointment-txt-mobile{
+    font-size: 20px;
+    text-align: left !important;
+}
+.appointment-txt-mobile-small{
+    font-size: 3.2vw;
+    text-align: left !important;
+}
 .mobile-prescription-prof-img{
     display: block;
     margin-left: auto;
     margin-right: auto;
     width: 180px;
+    border-radius: 100px;
+}
+.purple-button-mobile{
+    background-color: #8c77f2;
+    color: white;
+    text-align: center;
+    margin: 0 auto;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 22px; 
+    cursor: pointer;
+}
+.green-button-mobile{
+    background-color: #72d64c;
+    color: white;
+    text-align: center;
+    margin: 0 auto;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 22px; 
+}
+.mobile-appointment-prof-img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 95px;
     border-radius: 100px;
 }
 .center{

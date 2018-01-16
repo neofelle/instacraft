@@ -1,10 +1,34 @@
 <?php include('templates/header.php')  ?>
 <script src="<?php echo base_url() ?>assets/js/dcalendar.picker.js"></script>
 <link href="<?php echo base_url() ?>assets/css/dcalendar.picker.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
+<!-- jQuery library -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<style>
+    .ap_save_btn {
+    background: #8381ef;
+    color: #fff;
+    padding: 19px 88px;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin: 0 auto;
+    display: table;
+    letter-spacing: 2px;
+    box-shadow: 0 0 61px 6px rgba(131, 129, 239, 0.61);
+    border-radius: 42px;
+}
+</style>
 <section class="main-body">
         <div class="ground-elements">
             <a href="<?php echo base_url() ?>appointments" class="action-back"><span class="icon-back"></span><span class="redi-txt">Back</span></a>
+            <?php if($appointment_id != '' && $room != '') {?>
+                <div class="profile-sec">
+                    <iframe height="300" width="200" src='<?= $call_url?>'></iframe>
+                </div>
+            <?php }?>
             <div class="profile-sec">
                 <div class="dp">
                     <?php if($client['profile_pic']){ ?>
@@ -17,7 +41,7 @@
                 
                 <div class="pro-details">
                     <div class="pro-header">
-                        <span class="cust-name"><?php echo ucfirst($client['first_name'].''.$client['last_name']);  ?></span>
+                        <span class="cust-name"><?php echo ucfirst($client['first_name'].' '.$client['last_name']);  ?></span>
                         <span class="cust-id"><span class="icon-mail"><span class="id-txt"><?php echo $client['email'];  ?></span></span></span>
                         <div class="row">
                             <div class="ano right-an">
@@ -58,8 +82,8 @@
                     </div>
                 </div>
             </div>
-            <div class="down-action" style="width: 100%;margin-left: 0px;margin-right: 0px;margin-top: 40px;margin-bottom: 40px;padding-left: 40px;padding-right: 40px;">
-<!--                <div class="btn-bg-grad">
+            <div style="background: #fff;-webkit-box-shadow: 0 0px 51px 6px rgb(230, 230, 230);width: 98%;float: left;margin: 57px 1.5666666666%;padding-left: 50px;padding-right: 50px;padding-top: 50px;padding-bottom: 50px;-moz-box-shadow: 0 0px 51px 6px rgb(230, 230, 230);-ms-box-shadow: 0 0px 51px 6px rgb(230, 230, 230);-o-box-shadow: 0 0px 51px 6px rgb(230, 230, 230);">
+                <div class="btn-bg-grad">
                     <?php if($client['status'] == '3'){ ?>
                         <a id="cancelAppointmentStatus" class="btn-insta-fade"  >Cancelled</a>
                         <a id="cancelAppointmentPop" data-attribute="cancel" class="btn-insta" style="display:none" >Cancel</a>
@@ -86,14 +110,13 @@
                         </label>
                     </span>
 
-                </div>-->
+                </div>
                 <form action="<?php echo base_url(); ?>generatePdf" method="POST" >
                 <div class="info-box note-u">
-                    <textarea placeholder="Write your notes here...." name="notes"><?php echo $client['notes']; ?></textarea>
+                    <textarea placeholder="Write your notes here...." name="notes"></textarea>
                 </div>
-                    <iframe src="<?php echo $client['prescription_front_image']; ?>" style="width:900px; height:10px;" frameborder="0"></iframe>
-                <embed src="pdfFiles/interfaces.pdf" width="600" height="10" alt="pdf" pluginspage="<?php echo $client['prescriptions']; ?>">
-<!--                <div class="down-action select-opt">
+                
+                <div class="down-action select-opt" style="width: 100%;margin-left: 0px !important;margin-right: 0px !important;margin-top: 40px !important;margin-bottom: 40px !important;">
                 <p class="top-note">
                     <strong>
                         Please read the following information carefully. Check off each box as you’ve read them. This page will go home
@@ -230,15 +253,16 @@
                     </li>
                 </ul>
                 
+                <input type="hidden" name="appointmentId" value="<?php echo  $client['appointment_id']; ?>" />
                 <input type="hidden" name="userId" value="<?php echo $this->uri->segment('2'); ?>" />
-                <input type="submit" id="" class="" value="Download"  />
+                <input type="submit" id="" class="ap_save_btn" value="Save"  />
                 
                 
-            </div>-->
+            </div>
                 
             </form>
-            
-            <div class="noifications" style="margin-bottom: 65px;">
+           
+            <div class="noifications">
                 <h1>Which Cannabinoids are best for your symptoms?</h1>
                 <img src="<?php echo base_url() ?>assets/images/table.jpg" />
             </div>
@@ -246,7 +270,8 @@
 
         </div>
     </section>
-<!--    <div class="insta-pop" data-pop="re-appoint">
+    <iframe name="videoFrame"></iframe>
+    <div class="insta-pop" data-pop="re-appoint">
         <div class="inner-insta-pop">
         <h1>Reschedule Appointment</h1>
         <label class="pop-lab bob">Current Details</label>
@@ -326,9 +351,9 @@
             Appointment rescheduled successfully
         </div>
         <span class="close close_model"><i class="icon-cross"></i></span>
-    </div>-->
+    </div>
 
-
+    
 <?php include('templates/footer.php')  ?>
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css">
 <script src="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>
@@ -416,7 +441,16 @@
             scrollbar: true
     });
     
-    
+    $(document).ready(function(){
+      // window.open("<?= $call_url?>"); 
+        var appointment_id  =   '<?php echo $appointment_id?>';
+        var room  =   '<?php echo $room?>';
+        if(appointment_id != '' && room != ''){
+            var left = 200;
+            var top = 200;
+            //window.open("<?= $call_url?>", 'Video call', 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width='+500+', height='+500+', top='+top+', left='+left);
+        }
+    });
     
     
 </script>
