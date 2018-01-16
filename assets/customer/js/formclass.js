@@ -21,7 +21,7 @@ $(document).ready(function () {
 
             success: function (response) {
                 
-                $(formClass).find('#jGrowl .jGrowl-notification').removeClass('alert-success').removeClass('alert-error');
+                $(formClass).find('#jGrowl .jGrowl-notification').removeClass('alert-success').removeClass('alert-danger');
                 $('.wait-div').hide();
                 $(formClass).find('#jGrowl').fadeIn(600);
                 

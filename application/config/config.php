@@ -24,7 +24,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 $url = "instacraft";
-$config['base_url'] = ""; //$config['base_url'] = "https://".$_SERVER["HTTP_HOST"]."/$url/";
+//$config['base_url'] = ""; 
+$config['base_url'] = "http://localhost/farris/git/instacraft/"; 
+//$config['base_url'] = "https://".$_SERVER["HTTP_HOST"]."/$url/";
 $config['customer']	= 'customer';
 $config['customerassets']	= $config['base_url'].'assets/'.$config['customer'].'/';
 
