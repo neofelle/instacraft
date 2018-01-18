@@ -309,8 +309,14 @@ a.btn-insta.save {
 
 
 input[type="checkbox"], input[type="radio"] {
-  position: absolute;
-  left: -9999px;
+  position: relative;
+  top: 15px;
+  left: 14px;
+}
+.hide-chk {
+    position: absolute !important;
+    top: -9999px !important;
+    left: -9999px !important;
 }
 
 .side-label, .side-label-box {

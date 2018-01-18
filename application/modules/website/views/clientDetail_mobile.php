@@ -77,83 +77,75 @@
     <div class="insta-pop" data-pop="re-appoint">
         <div class="inner-insta-pop">
         <h1>Reschedule Appointment</h1>
-        <label class="pop-lab bob">Current Details</label>
-        <ul class="pog details">
-            <li>
-                <h1><?php echo date("d-m-Y",strtotime($client['appointment_date']));  ?></h1>
-                <p>Date</p>
-            </li>
-            <li>
-                <h1><?php echo $client['appointment_time'];  ?></h1>
-                <p>Time</p>
-            </li>
-            <li>
-                <h1>
-                    <?php 
-                        if($client['status'] == '0'){ 
-                            echo "Pending";                        
-                        }elseif($client['status'] == '1'){
-                            echo "Confirm";
-                        }elseif($client['status'] == '2'){
-                            echo "Re-schedule";
-                        }elseif($client['status'] == '3'){
-                            echo "Cancel";
-                        }else{
-                            
-                        }
-                    ?>
+        <div class="content-modal">
+            <label class="pop-lab bob">Current Details</label>
+            <br style="clear: both;" /><br/>
+            <span class="color-purple modal-default-text caps">Appointment Date</span>
+            <span class="modal-default-text"><?php echo date("d-m-Y",strtotime($client['appointment_date'])).', '.$client['appointment_time'];  ?></span>
+            <br style="clear:both;">
+            <span class="color-purple modal-default-text caps">Status</span>
+            <label class="pop-lab bob">                    
+                <?php 
+                    if($client['status'] == '0'){ 
+                        echo "Pending";                        
+                    }elseif($client['status'] == '1'){
+                        echo "Confirm";
+                    }elseif($client['status'] == '2'){
+                        echo "Re-schedule";
+                    }elseif($client['status'] == '3'){
+                        echo "Cancel";
+                    }else{
+                        
+                    }
+                ?>    
+            </label>
+            <label class="pop-lab">Reschedule appointment</label>
+            <ul class="pog reschedule">
+                <li>
+                    <div class="datepiker">
+                        <input class="form-control pickerDate" type="text" placeholder="MM/DD/YY" id="demo" >
+                        <span class="btn-bk cal"></span>
+                    </div>
+                </li>
+                <li>
+                    <div class="datepiker from-date">
+                        <input class="timepicker" type="text" placeholder="HH:MM" id="pickerTime" value="<?php echo $client['appointment_time'];  ?>">
+                        <span class="btn-bk cal"></span>
+                    </div>
                     
-                </h1>
-                <p>Status</p>
-            </li>
-        
-        </ul>
-        <label class="pop-lab">Reschedule appointment</label>
-        <ul class="pog reschedule">
-            <li>
-                <div class="datepiker">
-                    <input class="form-control pickerDate" type="text" placeholder="MM/DD/YY" id="demo" >
-                    <span class="btn-bk cal"></span>
-                </div>
-            </li>
-            <li>
-                <div class="datepiker from-date">
-                    <input class="timepicker" type="text" placeholder="HH:MM" id="pickerTime" value="<?php echo $client['appointment_time'];  ?>">
-                    <span class="btn-bk cal"></span>
-                </div>
+                </li>
+            </ul>
+            <label class="pop-lab" style="text-transform: uppercase;">Reason For rescheduling the appointment</label>
+            <textarea placeholder="Type here...." id="reschedulePopText"></textarea>
+            <div class="btn-bg-grad">
                 
-            </li>
-        </ul>
-        <label class="pop-lab">Resaon For reschedule the appointment</label>
-        <textarea placeholder="Type here...." id="reschedulePopText"></textarea>
-        <div class="btn-bg-grad">
-            
-            <a href="#" id="reschedulePop" data-attribute="cancel" class="btn-insta">Re-Schedule</a>
-            <div class="alert alert-Success"  style="display:none">      
-                Appointment cancelled successfully
+                <a href="#" id="cancelAppointment" data-attribute="cancel" class="btn-insta-sub" style="display: block;text-align: center;padding-left: 38px !important;padding-right: 38px !important;padding-top: 8px !important;padding-bottom: 8px !important;">Re-Schedule</a>
+                <div class="alert alert-Success"  style="display:none">      
+                    Appointment cancelled successfully
+                </div>
             </div>
+            <ul>
+                <li>
+                    <p></p>
+                </li>
+            </ul>
+            <span class="close close_model"><i class="icon-cross"></i></span>
         </div>
-        <ul>
-            <li>
-                <p></p>
-            </li>
-        </ul>
-        <span class="close close_model"><i class="icon-cross"></i></span>
     </div>
         </div>
     <div class="insta-pop" data-pop="cancel">
         <h1>Cancel Appointment</h1>
-        <label class="pop-lab">Resaon For reschedule the appointment</label>
-        <textarea placeholder="Type here...." id="cancelReasonText"></textarea>
-        <div class="btn-bg-grad">
-            <a href="#" id="cancelAppointment" data-attribute="cancel" class="btn-insta">Cancel</a>
-                
-                
+        <div class="content-modal">
+            <label class="pop-lab" style="text-transform: uppercase;">Reason For cancellation of the appointment</label>
+            <textarea placeholder="Type here...." id="cancelReasonText"></textarea>
+            <div class="btn-bg-grad">
+                <a href="#" id="cancelAppointment" data-attribute="cancel" class="btn-insta-sub" style="display: block;text-align: center;padding-left: 38px !important;padding-right: 38px !important;padding-top: 8px !important;padding-bottom: 8px !important;">Cancel</a>
+            </div>
+            <div class="alert alert-Success"  style="display:none">      
+                Appointment rescheduled successfully
+            </div>
+            <span class="close close_model"><i class="icon-cross"></i></span>
         </div>
-        <div class="alert alert-Success"  style="display:none">      
-            Appointment rescheduled successfully
-        </div>
-        <span class="close close_model"><i class="icon-cross"></i></span>
     </div>
 
 </section>

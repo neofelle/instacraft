@@ -32,6 +32,8 @@ body{
 }
 .d1{
     width: 20%;
+    display: -webkit-inline-box;
+    padding-top: 15px;
 }
 .d2{
     width: 80%;
@@ -83,6 +85,13 @@ body,html,html a{-webkit-font-smoothing:antialiased}
 span.profile {
     z-index: 1 !important;
     cursor: pointer;
+}
+@media screen and (max-width: 1390px) {
+    .d1{
+        width: 20%;
+        display: -webkit-inline-box;
+        padding-top: 32px;
+    }
 }
 @media screen and (max-width: 1150px) {
     .top-action-bar {

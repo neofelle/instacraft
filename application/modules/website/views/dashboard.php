@@ -43,7 +43,7 @@
                         <input type="text" id="textbox1" value="" />
                         <div class="avl">
                             <span class="status" style="color:white;">
-                                <span class="switch"><input id="aval" type="checkbox" class="checker" value="true" name="onoffswitch" <?php echo $checked; ?>  >
+                                <span class="switch"><input id="aval" type="checkbox" class="checker hide-chk" value="true" name="onoffswitch" <?php echo $checked; ?>  >
                                     <label for="aval" class="side-label avali"></label>
                                 </span>
                             </span>
@@ -60,7 +60,7 @@
                             </tr>
                             <tr>
                                 <td class="d1">                            
-                                    <input id="mon" type="checkbox" name="mon" <?php if(isset($schedules['mon'])){echo "checked";} ?> >
+                                    <input class="hide-chk" id="mon" type="checkbox" name="mon" <?php if(isset($schedules['mon'])){echo "checked";} ?> >
                                     <label for="mon" class="side-label-box"><span class="week-day">Mon</span></label>
                                 </td>
                                 <td class="d2">
@@ -121,7 +121,7 @@
                             </tr>                                                                
                             <tr>
                                 <td class="d1">                            
-                                    <input id="tue" type="checkbox" name="tue" <?php if(isset($schedules['tue'])){echo "checked";} ?> >
+                                    <input class="hide-chk" id="tue" type="checkbox" name="tue" <?php if(isset($schedules['tue'])){echo "checked";} ?> >
                                     <label for="tue" class="side-label-box"><span class="week-day">Tue</span></label>
                                 </td>
                                 <td class="d2">
@@ -182,7 +182,7 @@
                             </tr>                                
                             <tr>
                                 <td class="d1">                            
-                                    <input id="wed" type="checkbox" name="wed" <?php if(isset($schedules['wed'])){echo "checked";} ?> >
+                                    <input class="hide-chk" id="wed" type="checkbox" name="wed" <?php if(isset($schedules['wed'])){echo "checked";} ?> >
                                     <label for="wed" class="side-label-box"><span class="week-day">Wed</span></label>
                                 </td>
                                 <td class="d2">
@@ -243,7 +243,7 @@
                             </tr>
                             <tr>
                                 <td class="d1">                            
-                                    <input id="thu" type="checkbox" name="thu" <?php if(isset($schedules['thu'])){echo "checked";} ?> >
+                                    <input class="hide-chk" id="thu" type="checkbox" name="thu" <?php if(isset($schedules['thu'])){echo "checked";} ?> >
                                     <label for="thu" class="side-label-box"><span class="week-day">Thu</span></label>
                                 </td>
                                 <td class="d2">
@@ -312,7 +312,7 @@
                             </tr>
                             <tr>
                                 <td class="d1">                            
-                                    <input id="fri" type="checkbox" name="fri" <?php if(isset($schedules['fri'])){echo "checked";} ?> >
+                                    <input class="hide-chk" id="fri" type="checkbox" name="fri" <?php if(isset($schedules['fri'])){echo "checked";} ?> >
                                     <label for="fri" class="side-label-box"><span class="week-day">Fri</span></label>
                                 </td>
                                 <td class="d2">
@@ -373,7 +373,7 @@
                             </tr>
                             <tr>
                                 <td class="d1">                            
-                                    <input id="sat" type="checkbox" name="sat" <?php if(isset($schedules['sat'])){echo "checked";} ?> >
+                                    <input class="hide-chk" id="sat" type="checkbox" name="sat" <?php if(isset($schedules['sat'])){echo "checked";} ?> >
                                     <label for="sat" class="side-label-box"><span class="week-day">Sat</span></label>
                                 </td>
                                 <td class="d2">
@@ -434,7 +434,7 @@
                             </tr>
                             <tr>
                                 <td class="d1">                            
-                                    <input id="sun" type="checkbox" name="sun" <?php if(isset($schedules['sun'])){echo "checked";} ?> >
+                                    <input class="hide-chk" id="sun" type="checkbox" name="sun" <?php if(isset($schedules['sun'])){echo "checked";} ?> >
                                     <label for="sun" class="side-label-box"><span class="week-day">Sun</span></label>
                                 </td>
                                 <td class="d2">
