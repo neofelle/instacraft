@@ -83,196 +83,32 @@
                 </div>
             </div>
             <div style="background: #fff;-webkit-box-shadow: 0 0px 51px 6px rgb(230, 230, 230);width: 98%;float: left;margin: 57px 1.5666666666%;padding-left: 50px;padding-right: 50px;padding-top: 50px;padding-bottom: 50px;-moz-box-shadow: 0 0px 51px 6px rgb(230, 230, 230);-ms-box-shadow: 0 0px 51px 6px rgb(230, 230, 230);-o-box-shadow: 0 0px 51px 6px rgb(230, 230, 230);">
-                <div class="btn-bg-grad">
-                    <?php if($client['status'] == '3'){ ?>
-                        <a id="cancelAppointmentStatus" class="btn-insta-fade"  >Cancelled</a>
-                        <a id="cancelAppointmentPop" data-attribute="cancel" class="btn-insta" style="display:none" >Cancel</a>
-                    <?php }else{ ?>
-                        <a id="cancelAppointmentPop" data-attribute="cancel" class="btn-insta" >Cancel</a>
-                        <a id="cancelAppointmentStatus" class="btn-insta-fade" style="display:none;" >Cancelled</a>
-                    <?php } ?>
-                </div>
-                <div class="btn-bg-grad">
-                    <a href="<?php echo base_url().'clientDetail/recommendation/'.$client['id']; ?>" class="btn-insta">Call</a>
-                </div>
-                <div class="btn-bg-grad">
-                          <a href="#" data-attribute="re-appoint" class="btn-insta">Reschedule</a>
-                </div><div class="btn-bg-grad">
-                    <?php if($client['status'] == '1'){ ?>
-                        <a id="confirmedAppointmentStatus" class="btn-insta-fade" >Confirmed</a>   
-                        <a id="confirmAppointment" class="btn-insta" style="display:none;" >Confirm</a>
-                    <?php }else{ ?>
-                        <a id="confirmAppointment" class="btn-insta" >Confirm</a>
-                        <a id="confirmedAppointmentStatus" class="btn-insta-fade" style="display:none;" >Confirmed</a>
-                    <?php } ?>
 
-
-                    
-                </div>
                 <div class="info-box">
                     <span class="left">
                         <i class="icon-info"></i><label>
-                            The patient system allows you only a small number of reschedules per year. Rescheduling an appointment is inconvenient for
-                            patients and should only be done in case of emergency.
+                            <h3>Recommendation</h3>
                         </label>
                     </span>
 
                 </div>
                 <form action="<?php echo base_url(); ?>generatePdf" method="POST" >
-                <div class="info-box note-u">
-                    <textarea placeholder="Write your notes here...." name="notes"></textarea>
-                </div>
-                
-                <div class="down-action select-opt" style="width: 100%;margin-left: 0px !important;margin-right: 0px !important;margin-top: 40px !important;margin-bottom: 40px !important;">
-                <p class="top-note">
-                    <strong>
-                        Please read the following information carefully. Check off each box as you’ve read them. This page will go home
-                        with you in your file, upon qualifications.
-                    </strong>
-                </p>
-                <ul class="preception-detail">
-                    <li><label class="head">Possession</label></li>
-                    <li>
-                        <span>
-                            <input id="p1" type="checkbox" name="possesion1">
-                            <label for="p1" class="side-label"></label>
-                        </span>
-                        <p> Patient may possess up to two and one half (2.5) ounces of prepared marijuna in a 15 day period.</p>
-                    </li>
-                    <li>
-                        <span>
-                            <input id="p2" type="checkbox"  name="possesion2">
-                            <label for="p2" class="side-label"></label>
-                        </span>
-                        <p>No smoking in public.</p>
-                    </li>
-                    <li>
-                        <span>
-                            <input id="p3" type="checkbox"  name="possesion3">
-                            <label for="p3" class="side-label"></label>
-                        </span>
-                        <p>No smoking in cars, or other motorized vehicles.</p>
-                    </li>
-                </ul>
-                <ul class="preception-detail">
-                    <li><label class="head">Caregivers</label></li>
-                    <li>
-                        <span>
-                            <input id="c1" type="checkbox" name="caregivers1">
-                            <label for="c1" class="side-label"></label>
-                        </span>
-                        <p>A caregiver is a person providing care for a qualifying patient.</p>
-                    </li>
-                    <li>
-                        <span>
-                            <input id="c2" type="checkbox" name="caregivers2">
-                            <label for="c2" class="side-label"></label>
-                        </span>
-                        <p>Must be 21 years of age or older,  and can never have been convicted of a disqualifying dry offense.</p>
-                    </li>
-                    <li>
-                        <span>
-                            <input id="c3" type="checkbox" name="caregivers3">
-                            <label for="c3" class="side-label"></label>
-                        </span>
-                        <p>
-                            Patients may name one or two primary caregivers (only one person may be allowd to cultivate marijuna for a
-                            patient, who is determined based solely on the qualifying patient’s preference.
-                        </p>
-                    </li>
-                    <li>
-                        <span>
-                            <input id="c4" type="checkbox" name="caregivers4">
-                            <label for="c4" class="side-label"></label>
-                        </span>
-                        <p>
-                            Caregivers must register with the state unless the qualifying patient is a member of the household of that
-                            primary caregivers.
-                        </p>
-                    </li>
-                    <li>
-                        <span>
-                            <input id="c5" type="checkbox" name="caregivers5">
-                            <label for="c5" class="side-label"></label>
-                        </span>
-                        <p>Assist no more than 5 patients at any one time with their medical use of marijuna.</p>
-                    </li>
-                </ul>
-                <ul class="preception-detail">
-                    <li><label class="head">State Licensed Dispensaries</label></li>
-                    <li>
-                        <span>
-                            <input id="d1" type="checkbox" name="dispensaries1">
-                            <label for="d1" class="side-label"></label>
-                        </span>
-                        <p>
-                            A Dispensary is a business licensed by the state to produce medical marijuna and provide it to qualifying
-                            patients.
-                        </p>
-                    </li>
-                    <li>
-                        <span>
-                            <input id="d2" type="checkbox" name="dispensaries2">
-                            <label for="d2" class="side-label"></label>
-                        </span>
-                        <p>A Dispensary can be appointed as  your primary caregiver.</p>
-                    </li>
-                </ul>
-                <ul class="preception-detail">
-                    <li><label class="head">Cultivation</label></li>
-                    <li>
-                        <span>
-                            <input id="cu1" type="checkbox" name="cultivation1">
-                            <label for="cu1" class="side-label"></label>
-                        </span>
-                        <p>Maine state law allows a patient (or their primary caregiver) home cultivation.</p>
-                    </li>
-                    <li>
-                        <span>
-                            <input id="cu2" type="checkbox" name="cultivation2">
-                            <label for="cu2" class="side-label"></label>
-                        </span>
-                        <p>
-                            A patient (or their primary caregiver) may possess no more than six mature marijuna plants at one time.
-                        </p>
-                    </li>
-                    <li>
-                        <span>
-                            <input id="cu3" type="checkbox" name="cultivation3">
-                            <label for="cu3" class="side-label"></label>
-                        </span>
-                        <p>
-
-                            A patient who elects to cultivate marijuna plants must keep the plants in an enclosed, locked facility.
-                        </p>
-                    </li>
-                    <li>
-                        <span>
-                            <input id="cu4" type="checkbox" name="cultivation4">
-                            <label for="cu4" class="side-label"></label>
-                        </span>
-                        <p>
-                            In addition to the marijuna plants otherwise authorized under this paragraph, aprimary caregiver may have
-                            harvested marijuna plants in varying stages of processing in order to ensure the primary caregiver is able to
-                            meet the needs of the primary’s caregiver qualifying patients. As a guideline: 6 mature plants/ 12 in
-                            vegetative state.
-                        </p>
-                    </li>
-                </ul>
-                
-                <input type="hidden" name="appointmentId" value="<?php echo  $client['appointment_id']; ?>" />
-                <input type="hidden" name="userId" value="<?php echo $this->uri->segment('2'); ?>" />
-                <input type="submit" id="" class="ap_save_btn" value="Save"  />
-                
-                
-            </div>
-                
-            </form>
+                    <div class="note-u-recommend">
+                        <textarea placeholder="Write your recommendation here...." name="notes"></textarea>
+                    </div>
+                    <br style="clear: both;">              
+                   
+                    
+                    <input type="hidden" name="appointmentId" value="<?php echo  $client['appointment_id']; ?>" />
+                    <input type="hidden" name="userId" value="<?php echo $this->uri->segment('2'); ?>" />
+                    <input type="submit" id="" class="ap_save_btn" value="Save"  />
+                    
+                    
+                    </div>
+                    
+                </form>
            
-            <div class="noifications">
-                <h1>Which Cannabinoids are best for your symptoms?</h1>
-                <img src="<?php echo base_url() ?>assets/images/table.jpg" />
-            </div>
+          
             </div>
 
         </div>

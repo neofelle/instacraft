@@ -138,6 +138,16 @@ class Doctor extends MX_Controller {
         $this->load->view('clientDetail.php',$result);
     }
     
+    public function recommendation() {
+        $webObj = new Doctor_model();
+        $data = $webObj->detailsByClient($this->uri->segment('3'));//complete detail client wise
+        $result['client'] = $data;
+        $result['call_url'] = base_url().'cus-video-consultation?roomName='.$this->input->post('room').'&doctor=yes&appointment_id='.$this->input->post('appointment_id');
+        $result['appointment_id'] = $this->input->post('appointment_id');
+        $result['room'] = $this->input->post('room');
+        $this->load->view('recommendation.php',$result);
+    }
+
     
     public function confirmAppointment() {
         $webObj = new Doctor_model();

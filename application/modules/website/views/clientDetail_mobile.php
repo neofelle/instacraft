@@ -67,7 +67,7 @@
         <?php } ?>
     </div>
     <br style="clear: both;">
-    <a href="" class="green-button-mobile" style="margin-left: 25px;">Call Page</a>
+    <a href="<?php echo base_url().'clientDetail/recommendation/'.$client['id']; ?>" class="green-button-mobile" style="margin-left: 25px;">Call Page</a>
     <br style="clear: both;"><br/>
     <div style="width: 100%;padding-left: 30px;padding-right: 30px;">
         <span style="text-align: justify;"><img src="<?php echo base_url() ?>assets/img/info-icon.png" style="width: 16px;position: relative;top: 3px;right: 5px;"/>The patient system allows you only small number of reschedules per year. Rescheduling an appointmentis inconvenient for patients and should only be done in cases of emergency.</span>

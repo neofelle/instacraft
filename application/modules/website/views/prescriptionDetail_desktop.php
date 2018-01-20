@@ -58,8 +58,35 @@
                     </div>
                 </div>
             </div>
-            <div class="down-action" style="width: 100%;margin-left: 0px;margin-right: 0px;margin-top: 40px;margin-bottom: 40px;padding-left: 40px;padding-right: 40px;">
-<!--                <div class="btn-bg-grad">
+            <div style="background: #fff;-webkit-box-shadow: 0 0px 51px 6px rgb(230, 230, 230);width: 98%;float: left;margin: 57px 1.5666666666%;padding-left: 50px;padding-right: 50px;padding-top: 50px;padding-bottom: 50px;-moz-box-shadow: 0 0px 51px 6px rgb(230, 230, 230);-ms-box-shadow: 0 0px 51px 6px rgb(230, 230, 230);-o-box-shadow: 0 0px 51px 6px rgb(230, 230, 230);">
+
+                <div class="info-box">
+                    <span class="left">
+                        <i class="icon-info" style="float:left;"></i><label>
+                            <h3 style="float:left;position: relative;bottom: 6px;left: 6px;">Recommendation</h3>
+                        </label>
+                    </span>
+
+                </div>
+                <form action="<?php echo base_url(); ?>generatePdf" method="POST" >
+                    <div class="note-u-recommend">
+                        <textarea placeholder="Write your recommendation here...." name="notes"></textarea>
+                    </div>
+                    <br style="clear: both;">              
+                   
+                    
+                    <input type="hidden" name="appointmentId" value="<?php echo  $client['appointment_id']; ?>" />
+                    <input type="hidden" name="userId" value="<?php echo $this->uri->segment('2'); ?>" />
+                    <input type="submit" id="" class="ap_save_btn" value="Save"  style="display: flex;width: 235px;color: white;padding-left: 20px;padding-right: 20px;padding-top: 1px;padding-bottom: 10px;padding-top:10px;border-radius: 21px;font-size: 20px;text-align: center;justify-content: center;margin: 0 auto;background: #8c77f2;" />
+                    
+                    
+                    
+                </form>
+           
+          
+            </div>
+  <!--           <div class="down-action" style="width: 100%;margin-left: 0px;margin-right: 0px;margin-top: 40px;margin-bottom: 40px;padding-left: 40px;padding-right: 40px;">
+               <div class="btn-bg-grad">
                     <?php if($client['status'] == '3'){ ?>
                         <a id="cancelAppointmentStatus" class="btn-insta-fade"  >Cancelled</a>
                         <a id="cancelAppointmentPop" data-attribute="cancel" class="btn-insta" style="display:none" >Cancel</a>
@@ -87,13 +114,14 @@
                     </span>
 
                 </div>-->
+ <!--                <label>Recommendation</label>
                 <form action="<?php echo base_url(); ?>generatePdf" method="POST" >
                 <div class="info-box note-u">
                     <textarea placeholder="Write your notes here...." name="notes"><?php echo $client['notes']; ?></textarea>
                 </div>
                     <iframe src="<?php echo $client['prescription_front_image']; ?>" style="width:900px; height:10px;" frameborder="0"></iframe>
                 <embed src="pdfFiles/interfaces.pdf" width="600" height="10" alt="pdf" pluginspage="<?php echo $client['prescriptions']; ?>">
-<!--                <div class="down-action select-opt">
+               <div class="down-action select-opt">
                 <p class="top-note">
                     <strong>
                         Please read the following information carefully. Check off each box as you’ve read them. This page will go home
