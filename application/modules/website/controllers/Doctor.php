@@ -139,8 +139,8 @@ class Doctor extends MX_Controller {
     }
     
     public function recommendation() {
-        $webObj = new Doctor_model();
-        $data = $webObj->detailsByClient($this->uri->segment('3'));//complete detail client wise
+        $webObj = new Doctor_model();        
+        $data = $webObj->detailsByClient($this->uri->segment('2'));//complete detail client wise                
         $result['client'] = $data;
         $result['call_url'] = base_url().'cus-video-consultation?roomName='.$this->input->post('room').'&doctor=yes&appointment_id='.$this->input->post('appointment_id');
         $result['appointment_id'] = $this->input->post('appointment_id');
@@ -296,6 +296,14 @@ class Doctor extends MX_Controller {
         $webObj = new Doctor_model();
         $result = $webObj->updatePrescriptionNotes($_POST['prescription_id'], $_POST['notes']);
         redirect('prescriptionDetail/' . $_POST['userId']);
+
+    }
+
+    public function updatePrescriptionRecommendations(){               
+        $webObj = new Doctor_model();
+        $result = $webObj->updatePrescriptionRecommendations($_POST['prescription_id'], $_POST['recommendations']);
+        $refer =  $this->agent->referrer();
+        redirect($refer);
 
     }
     

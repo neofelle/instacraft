@@ -208,6 +208,7 @@ $route['updateProfile']     = 'website/Doctor/updateProfile';//Update doctor pro
 $route['webLogout']         = 'website/Login/signOut';
 $route['signatureUpload']   = 'website/Doctor/signatureUpload';
 $route['updatePrescriptionNotes']     = 'website/Doctor/updatePrescriptionNotes';//Update prescription notes
+$route['updatePrescriptionRecommendations']     = 'website/Doctor/updatePrescriptionRecommendations';//Update prescription recommendations
 $route['check-incoming-call']   = 'website/Doctor/checkIncomingCall';
 
 //customer referred users
