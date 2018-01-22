@@ -5,9 +5,9 @@ if(preg_match('/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|c
   $mobile = true;
 }
   if( $mobile ){
-    include_once('profile_mobile.php');
+    include_once('recommendation_mobile.php');
   }else{
-    include_once('profile_desktop.php');
+    include_once('recommendation_desktop.php');
   }
 
 ?>

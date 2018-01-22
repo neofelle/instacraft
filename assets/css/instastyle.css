@@ -81,6 +81,20 @@ body {
     padding: 12px 25px;
     min-height: 170px;
 }
+ .note-u-recommend {
+    width: 100%;
+    margin-top: 10px;
+    padding: 12px 0;
+
+}
+.note-u-recommend textarea {
+    border: 1px solid #e3e3e3;
+    width: 100%;
+    margin: 28px auto;
+    display: block;
+    padding: 12px 25px;
+    min-height: 225px;
+}
  .no-shadow{
     box-shadow:none !important;
     padding:0px !important;
@@ -309,8 +323,14 @@ a.btn-insta.save {
 
 
 input[type="checkbox"], input[type="radio"] {
-  position: absolute;
-  left: -9999px;
+  position: relative;
+  top: 15px;
+  left: 14px;
+}
+.hide-chk {
+    position: absolute !important;
+    top: -9999px !important;
+    left: -9999px !important;
 }
 
 .side-label, .side-label-box {

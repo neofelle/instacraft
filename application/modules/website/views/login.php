@@ -31,7 +31,7 @@
 
             <div class="btn-bg-grad-login">
                 <!--<a href="#" class="btn-insta">Login</a>-->
-                <input type="submit" class="btn-insta-sub" name="login" style="display:block;"  />
+                <input type="submit" class="btn-insta-sub" name="login" style="display: block;text-align: center;padding-left: 0px !important;padding-right: 0px !important;padding-top: 13px !important;padding-bottom: 13px !important;"  />
             </div>
             <a href="#" class="cont-adm">Contact Admin</a>
         </div>
