@@ -190,6 +190,7 @@ $route['doctor']            = 'website/Login/login';//doctor dashboard
 $route['dashboard']         = 'website/Doctor/dashboard';//doctor dashboard
 $route['updateStatus']      = 'website/Doctor/updateStatus';//update doctor availablity
 $route['updateDaysAndTime'] = 'website/Doctor/updateDaysAndTime';//update days and time of doctor
+$route['updateDoctorSchedules']     = 'website/Doctor/updateDoctorSchedules';//update days and time of doctor
 $route['appointments']      = 'website/Doctor/appointments';//appointments of doctor
 $route['prescriptions']     = 'website/Doctor/prescriptions';//prescriptions of doctor
 $route['analysis']          = 'website/Doctor/analysis';//prescriptions of doctor
