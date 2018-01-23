@@ -193,12 +193,12 @@ $route['updateDaysAndTime'] = 'website/Doctor/updateDaysAndTime';//update days a
 $route['updateDoctorSchedules']     = 'website/Doctor/updateDoctorSchedules';//doctor dashboard updating days and time of doctor
 $route['appointments']      = 'website/Doctor/appointments';//appointments of doctor
 $route['prescriptions']     = 'website/Doctor/prescriptions';//prescriptions of doctor
-$route['analysis']          = 'website/Doctor/analysis'; //prescriptions of doctor
-$route['analysis212']          = 'website/Doctor/analysis'; //prescriptions of doctor
+$route['analysis']          = 'website/Doctor/analysis'; //analysis of doctor
 $route['generatePdf']       = 'website/Doctor/generatePdf';//generate Pdf
 $route['changePassword']    = 'website/Login/Changepwd';//change password of doctor
 //$route['clientCall/(:any)']      = 'website/Doctor/clientDetailedPage/$1';//client detailed page
 $route['clientDetail/(:any)']       = 'website/Doctor/clientDetailedPage/$1';//client detailed page
+$route['recommendation/(:any)']       = 'website/Doctor/recommendation/$1';//client detailed page
 $route['prescriptionDetail/(:any)'] = 'website/Doctor/prescriptionDetail/$1';//prescription detailed page
 $route['confirmAppointment']        = 'website/Doctor/confirmAppointment';//client appointment confirmation(ajax)
 $route['cancelAppointment']         = 'website/Doctor/cancelAppointment';//client appointment cancel(ajax)
@@ -208,6 +208,7 @@ $route['updateProfile']     = 'website/Doctor/updateProfile';//Update doctor pro
 $route['webLogout']         = 'website/Login/signOut';
 $route['signatureUpload']   = 'website/Doctor/signatureUpload';
 $route['updatePrescriptionNotes']     = 'website/Doctor/updatePrescriptionNotes';//Update prescription notes
+$route['updatePrescriptionRecommendations']     = 'website/Doctor/updatePrescriptionRecommendations';//Update prescription recommendations
 $route['check-incoming-call']   = 'website/Doctor/checkIncomingCall';
 
 //customer referred users
