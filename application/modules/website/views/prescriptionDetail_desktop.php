@@ -68,9 +68,10 @@
                     </span>
 
                 </div>
-                <form action="<?php echo base_url(); ?>generatePdf" method="POST" >
+                <form action="<?php echo base_url(); ?>updatePrescriptionNotes" method="POST" >
                     <div class="note-u-recommend">
-                        <textarea placeholder="Write your recommendation here...." name="notes"></textarea>
+                        <input type="hidden" name="prescription_id" value="<?php echo $client['prescription_id']; ?>">                        
+                        <textarea placeholder="Write your recommendation here...." name="notes"><?php echo $client['notes']; ?></textarea>
                     </div>
                     <br style="clear: both;">              
                    

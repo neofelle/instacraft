@@ -244,7 +244,7 @@ function setSearch($search) {
     
     
     public function prescriptionByClient($clientId){
-        $query = $this->db->select('users.*, appointment_details.id as appointment_id,appointment_details.appointment_date, appointment_details.appointment_time, appointment_details.consultation_for, appointment_details.status, prescriptions.prescription_front_image, prescriptions.notes')
+        $query = $this->db->select('users.*, appointment_details.id as appointment_id,appointment_details.appointment_date, appointment_details.appointment_time, appointment_details.consultation_for, appointment_details.status, prescriptions.prescription_front_image, prescriptions.notes, prescriptions.id as prescription_id')
                             ->from('users')
                             ->join('appointment_details','users.id = appointment_details.user_id')
                             ->join('prescriptions','users.id = prescriptions.user_id')
@@ -495,6 +495,19 @@ function setSearch($search) {
         ;
         $results = $schedules->result();
         return $results;
+    }
+
+    public function updatePrescriptionNotes($prescription_id,$notes){
+        $result = false;
+
+        if( $prescription_id > 0 ){
+            $this->db->set('notes',$notes)
+                     ->where('id',$prescription_id)
+                     ->update('prescriptions');
+        }
+
+        return $result;
+
     }
 
 

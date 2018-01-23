@@ -280,8 +280,8 @@ class Doctor extends MX_Controller {
     
     public function prescriptionDetail(){
         $webObj = new Doctor_model();
-        $data = $webObj->prescriptionByClient($this->uri->segment('2'));//complete detail client wise
-        $result['client'] = $data;
+        $data = $webObj->prescriptionByClient($this->uri->segment('2'));//complete detail client wise        
+        $result['client'] = $data;        
         $this->load->view('prescriptionDetail.php',$result);
     }
     
@@ -289,6 +289,14 @@ class Doctor extends MX_Controller {
         $webObj = new Doctor_model();
         $data = $webObj->checkIncomingCall();//complete detail client wise
         echo json_encode($data);die;
+    }
+
+    public function updatePrescriptionNotes(){       
+        print_r($_POST);
+        $webObj = new Doctor_model();
+        $result = $webObj->updatePrescriptionNotes($_POST['prescription_id'], $_POST['notes']);
+        redirect('prescriptionDetail/' . $_POST['userId']);
+
     }
     
     public function test(){
