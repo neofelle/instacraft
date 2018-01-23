@@ -14,6 +14,24 @@
     border-radius: 33px;
     margin-left: 4px;
 }
+.border-1{
+    border-bottom: 1px solid #ded9d9;
+    border-right: 1px solid #ded9d9;
+}
+.border-2{
+    border-bottom: 1px solid #ded9d9;
+}
+.table-left{
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.align-left{
+    text-align: left;
+}
+.align-center{
+    text-align: center;
+}
 .container-symbol{
     border-bottom: 1px solid #c7c6c68c;
     padding-bottom: 35px;    

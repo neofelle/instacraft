@@ -34,6 +34,7 @@
                                 <li class="js_nav-item nav-item"><a class="nav-item-child" href="<?php echo base_url() ?>appointments">My Appointments</a></li>
                                 <li class="js_nav-item nav-item"><a class="nav-item-child" href="<?php echo base_url() ?>prescriptions">Prescriptions</a></li>
                                 <li class="js_nav-item nav-item"><a class="nav-item-child" href="<?php echo base_url() ?>profile">Profile</a></li>
+                                <li class="js_nav-item nav-item"><a class="nav-item-child" href="<?php echo base_url() ?>analysis">Analysis</a></li>
                                 <li class="js_nav-item nav-item"><a class="nav-item-child" data-attribute="forgo-pass" id="chnagepass" data-href="#">Change password</a></li>
                                 <li class="js_nav-item nav-item"><a class="nav-item-child" href="<?php echo base_url() ?>webLogout">Log Out</a></li>
                             </ul>
