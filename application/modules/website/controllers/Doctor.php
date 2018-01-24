@@ -59,7 +59,12 @@ class Doctor extends MX_Controller {
         }
 
         $result['appointments'] = $appointments;
-        $this->load->view('analysis.php', $result);
+        $is_mobile = isMobile();
+        if( $is_mobile ){
+            $this->load->view('analysis_mobile.php',$result);
+        }else{
+            $this->load->view('analysis_desktop.php',$result);
+        }        
     }
     
     public function updateStatus() {
@@ -106,7 +111,13 @@ class Doctor extends MX_Controller {
         $data = $webObj->clientList();//get all client's list by doctor Id
         //echo "<pre>";print_r($data);die;
         $result['appointments'] = $data;
-        $this->load->view('appointments.php',$result);
+
+        $is_mobile = isMobile();
+        if( $is_mobile ){
+            $this->load->view('appointments_mobile.php',$result);
+        }else{
+            $this->load->view('appointments_desktop.php',$result);
+        }
     }
     
     public function prescriptions() {
@@ -123,9 +134,13 @@ class Doctor extends MX_Controller {
         }
         
         $data = $webObj->prescriptionList();//get all client's prescriptionList list by doctor Id
-//        echo "<pre>";print_r($data);die;
         $result['prescriptions'] = $data;
-        $this->load->view('prescriptions.php',$result);
+        $is_mobile = isMobile();
+        if( $is_mobile ){
+            $this->load->view('prescriptions_mobile.php',$result);
+        }else{
+            $this->load->view('prescriptions_desktop.php',$result);
+        }        
     }
     
     public function clientDetailedPage() {
@@ -135,7 +150,12 @@ class Doctor extends MX_Controller {
         $result['call_url'] = base_url().'cus-video-consultation?roomName='.$this->input->post('room').'&doctor=yes&appointment_id='.$this->input->post('appointment_id');
         $result['appointment_id'] = $this->input->post('appointment_id');
         $result['room'] = $this->input->post('room');
-        $this->load->view('clientDetail.php',$result);
+        $is_mobile = isMobile();
+        if( $is_mobile ){
+            $this->load->view('clientDetail_mobile.php',$result);
+        }else{
+            $this->load->view('clientDetail_desktop.php',$result);
+        }           
     }
     
     public function recommendation() {
@@ -150,8 +170,7 @@ class Doctor extends MX_Controller {
             $this->load->view('recommendation_mobile.php',$result);
         }else{
             $this->load->view('recommendation_desktop.php',$result);
-        }
-        
+        }        
     }
     
     public function confirmAppointment() {
@@ -287,7 +306,12 @@ class Doctor extends MX_Controller {
         $webObj = new Doctor_model();
         $data = $webObj->prescriptionByClient($this->uri->segment('2'));//complete detail client wise        
         $result['client'] = $data;        
-        $this->load->view('prescriptionDetail.php',$result);
+        $is_mobile = isMobile();        
+        if( $is_mobile ){
+            $this->load->view('prescriptionDetail_mobile.php',$result);
+        }else{
+            $this->load->view('prescriptionDetail_desktop.php',$result);
+        }        
     }
     
     public function checkIncomingCall(){
