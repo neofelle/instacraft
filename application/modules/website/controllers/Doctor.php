@@ -145,9 +145,14 @@ class Doctor extends MX_Controller {
         $result['call_url'] = base_url().'cus-video-consultation?roomName='.$this->input->post('room').'&doctor=yes&appointment_id='.$this->input->post('appointment_id');
         $result['appointment_id'] = $this->input->post('appointment_id');
         $result['room'] = $this->input->post('room');
-        $this->load->view('recommendation.php',$result);
+        $is_mobile = isMobile();
+        if( $is_mobile ){
+            $this->load->view('recommendation_mobile.php',$result);
+        }else{
+            $this->load->view('recommendation_desktop.php',$result);
+        }
+        
     }
-
     
     public function confirmAppointment() {
         $webObj = new Doctor_model();
@@ -310,5 +315,4 @@ class Doctor extends MX_Controller {
     public function test(){
         
     }
-    
  }       
