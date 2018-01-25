@@ -39,7 +39,7 @@
 <script type="text/javascript" src="https://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>-->
 <script type="text/javascript">
     $(function () {
-        $("#datepicker").datepicker({dateFormat: 'yy-mm-dd'}).datepicker("setDate", new Date());
+        $("#datepicker").datepicker({dateFormat: 'yy-mm-dd', changeYear: true}).datepicker("setDate", new Date());
         $('.next_date').click(function () {
             var updatedDate = $('#datepicker').datepicker('getDate', '+1d');
             updatedDate.setDate(updatedDate.getDate() + 1);
