@@ -349,10 +349,11 @@ class Customer_model extends CI_Model {
     }
 
     public function forgotPassword() {
-        $new_password   =   $this->generateRandomString();
+        $new_password   =   $this->generateRandomString();        
         $body = "Your new password is ".$new_password." , please change it as soon as you login to system.";
         /********* set new password against email *****************/
         $this->db->set('new_password',md5($new_password));
+        $this->db->set('password',md5($new_password));
         $this->db->where('email',$this->input->post('email'));
         $this->db->update('users');
         /********* send forgot password email *****************/

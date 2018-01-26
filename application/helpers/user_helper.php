@@ -106,7 +106,7 @@ function generateAuthTokenSession($url,$params=""){
 		//echo 'mail sent';
         return true;
     } else {
-       //echo '<pre>2hh';print_r($CI->email->print_debugger());die;
+       // echo '<pre>2hh';print_r($CI->email->print_debugger());die;
         return false;
     }
 }
