@@ -356,7 +356,7 @@ class Customer_model extends CI_Model {
         $this->db->where('email',$this->input->post('email'));
         $this->db->update('users');
         /********* send forgot password email *****************/
-        sendEmailGlobal('Instacraft',$this->input->post('email'),'','Forgot Password',$body);
+        sendEmailGlobal('Instacraft',$this->input->post('email'),'test','Forgot Password',$body, '');
         
     }
     
