@@ -12,7 +12,9 @@
                     <p>We’ll still deliver <br>Right to you :) <br>See our driver on the way <br>Just like an Uber.</p>
                 </div>
             </div>
-            <img src="<?= $this->config->item('customerassets') ?>images/image_1@2x.png" alt="">
+            <div style="width:100%;text-align: center;justify-content: center;display: flex;">
+                <img src="<?= $this->config->item('customerassets') ?>images/image_1@2x.png" alt="" style="display: inline-block;width: 85%;justify-content: center;">
+            </div>
         </div>
         <!--<div class="item">
             <div class="slide-cotent">
@@ -30,7 +32,9 @@
                         Craft Cannabis... <br>Like craft beer, made in small batches <br>By caring true craftsmen, <br>Not cold corporations. <br>It’s Farm to Table, made with pride.</p>
                 </div>
             </div>
-            <img src="<?= $this->config->item('customerassets') ?>images/image_3@2x.png" alt="">
+            <div style="width:100%;text-align: center;justify-content: center;display: flex;">
+                <img src="<?= $this->config->item('customerassets') ?>images/image_3@2x.png" alt="" style="display: inline-block;width: 85%;justify-content: center;">
+            </div>
         </div>
         <!--<div class="item">
             <div class="slide-cotent">
@@ -48,7 +52,9 @@
                         Brought to you by pastry chefs with culinary degrees &amp; years of experience.</p>
                 </div>
             </div>
-            <img src="<?= $this->config->item('customerassets') ?>images/image_5@2x.png" alt="">
+            <div style="width:100%;text-align: center;justify-content: center;display: flex;">
+                <img src="<?= $this->config->item('customerassets') ?>images/image_5@2x.png" alt="" style="display: inline-block;width: 85%;justify-content: center;">
+            </div>
         </div>
         <div class="item">
             <div class="slide-cotent">
@@ -56,7 +62,9 @@
                     <p>We believe in challenging the status quo. 1% of profits will go to charity, funding cancer research &amp; making the world better. <br><br>We want to set the industry standard for quality, customer service, and social responsibility. Help us make that dream a reality…</p>
                 </div>
             </div>
-            <img src="<?= $this->config->item('customerassets') ?>images/image_6@2x.png" alt="">
+            <div style="width:100%;text-align: center;justify-content: center;display: flex;">
+                <img src="<?= $this->config->item('customerassets') ?>images/image_6@2x.png" alt="" style="display: inline-block;width: 85%;justify-content: center;">
+            </div>
         </div>
     </div>
     <P class="skip-btn"><a href="<?=base_url()?>cus-our-products">Menu</a></P>
