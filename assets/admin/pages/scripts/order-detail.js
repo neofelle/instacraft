@@ -1,5 +1,5 @@
 var getUrl = window.location;
-var baseUrl = getUrl .protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
+var baseUrl = getUrl .protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[0];
 var catCheckVal = false;
 
 
@@ -422,13 +422,14 @@ if($('#latlng').val() != '' && $('#latlng').val() != undefined){
     ilng = -4.222869873046875 ;
 }
 */
-ilat = 55.86336763758299;
-    ilng = -4.222869873046875 ; 
+ilat = typeof driverLat !== 'undefined' ? driverLat : 55.86336763758299;
+ilng = typeof driverLan !== 'undefined' ? driverLan : -4.222869873046875;
+
 //---- Map JS 
 function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
       center: {lat: parseFloat(ilat), lng: parseFloat(ilng)},  // -21.772488, 131.564276
-      zoom: 4
+      zoom: 15
     });
     var geocoder = new google.maps.Geocoder();
     var input = document.getElementById('searchInput');
@@ -494,14 +495,12 @@ function initMap() {
                     //alert(results[0].formatted_address);
                     $('#whaddress').html(results[0].formatted_address);
                     $('#address').val(results[0].formatted_address);
-                    $('#latlng').val(inLatLng);
-                    $('#pickup_location_latlng').val(inLatLng);
+                    $('#latlng'). val(inLatLng);
                   }
                   else{
                       $('#whaddress').html('<i style="font-weight:200 !important;"> Not set yet </i>');
                       $('#address').val('');
-                      $('#latlng').val('');
-                      $('#pickup_location_latlng').val('');
+                      $('#latlng'). val('');
                   }
                 }
             });
@@ -524,14 +523,12 @@ function initMap() {
                 //-- Fetch/Set Address 
                 $('#whaddress').html(results[0].formatted_address);
                 $('#address').val(results[0].formatted_address);
-                $('#latlng').val(inLatLng);
-                $('#pickup_location_latlng').val(inLatLng);
+                $('#latlng'). val(inLatLng);
               }
               else{
                   $('#whaddress').html('<i style="font-weight:200 !important;"> Not set yet </i>');
                   $('#address').val('');
-                  $('#latlng').val('');
-                  $('#pickup_location_latlng').val('');
+                  $('#latlng'). val('');
               }
             }
         });
@@ -554,14 +551,12 @@ function initMap() {
                 //alert(results[0].formatted_address);
                 $('#whaddress').html(results[0].formatted_address);
                 $('#address'). val(results[0].formatted_address);
-                $('#latlng').val(inLatLng);
-                $('#pickup_location_latlng').val(inLatLng);
+                $('#latlng'). val(inLatLng);
               }
               else{
                   $('#whaddress').html('<i style="font-weight:200 !important;"> Not set yet </i>');
                   $('#address').val('');
-                  $('#latlng').val('');
-                  $('#pickup_location_latlng').val('');
+                  $('#latlng'). val('');
               }
             }
         });

@@ -104,11 +104,16 @@
                                                     </thead>
                                                     <?php
                                                     if (count($result) > 0) {
-                                                        if ($_GET['page'] == '') {
-                                                            $i = 0;
-                                                        } else {
-                                                            $i = ($_GET['page'] - 1 ) * RECORDS_PERPAGE;
+                                                        $i = 0;
+                                                        if ( isset($_GET['page']) )
+                                                        {
+                                                            if ($_GET['page'] == '') {
+                                                                $i = 0;
+                                                            } else {
+                                                                $i = ($_GET['page'] - 1 ) * RECORDS_PERPAGE;
+                                                            }
                                                         }
+
                                                         foreach ($result as $key => $list) {
                                                             $cdate = new DateTime($list['created_at']);
                                                             if ($list['last_login'] !== '0000-00-00 00:00:00') {

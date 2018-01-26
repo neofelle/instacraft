@@ -1,4 +1,4 @@
-<section class="container">
+<section class="container mobile-view-container">
     <div class="my_order_container">
         <?php foreach($orders as $order) {?>
         <a class="border_box clearfix order_detail" href="<?=base_url()?>cus-order-detail?order_id=<?=$order->order_id?>">

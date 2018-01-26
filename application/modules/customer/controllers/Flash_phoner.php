@@ -55,10 +55,10 @@ class Flash_phoner extends MX_Controller {
             $output['appointment_id']   =   $this->input->get('appointment_id');
             /******** check if appointment id is valid ***************/
                 //will write function over here for appointment id validatino
-                $isValid    =   $docObj->validateAppointment();
-                if(!$isValid){
-                    redirect('cus-home');
-                }
+//                $isValid    =   $docObj->validateAppointment();
+//                if(!$isValid){
+//                    redirect('cus-home');
+//                }
             /*********************************************************/
             $userRecord = $docObj->getDoctorData($this->session->userdata('doctor_id'));
             if(sizeof($userRecord) <= 0){
@@ -84,6 +84,12 @@ class Flash_phoner extends MX_Controller {
     public function changeCallStatus(){
         $presObj = new Cus_prescription_model();
         $data = $presObj->changeCallStatus();
+    }
+    
+    public function endCallStatus(){
+        $presObj = new Cus_prescription_model();
+        $data = $presObj->endCallStatus();
+        echo json_encode($data);die;
     }
     
 }

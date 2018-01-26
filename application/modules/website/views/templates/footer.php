@@ -20,15 +20,17 @@
 
     function changeCallStatus() {
         var aptId   =   $('#appointment_id').val();
-        $.ajax({
-            type: 'POST',
-            data: {appointment_id:aptId},
-            url: siteurl+'change-call-status',
-            dataType: "json",
-            success: function (data) {
-                
-            }
-        });
+        if(aptId != null){
+            $.ajax({
+                type: 'POST',
+                data: {appointment_id:aptId},
+                url: siteurl+'change-call-status',
+                dataType: "json",
+                success: function (data) {
+
+                }
+            });
+        }
     }
 
     function checkForIncomingCall() {
@@ -38,19 +40,21 @@
             url: siteurl + 'check-incoming-call',
             dataType: "json",
             success: function (data) {
-                if (data.appointment_id != '') {
-                    $('#appointment_id').val(data.appointment_id);
-                    $('#room_id').val(data.videoRoomId);
-                    document.getElementById('appointment_detail').action = siteurl + 'clientDetail/' + data.appointment_id;
-                    if (confirm('Incoming Call')) {
-                        changeCallStatus();
-                        $('#appointment_detail').submit();
-                        //window.location = siteurl+'clientDetail/'+data.appointment_id+'?appointment_id='+data.appointment_id+'&room='+data.videoRoomId;
+                if(data != null){
+                    if (data.appointment_id != '') {
+                        $('#appointment_id').val(data.appointment_id);
+                        $('#room_id').val(data.videoRoomId);
+                        document.getElementById('appointment_detail').action = siteurl + 'clientDetail/' + data.appointment_id;
+                        if (confirm('Incoming Call')) {
+                            changeCallStatus();
+                            $('#appointment_detail').submit();
+                            //window.location = siteurl+'clientDetail/'+data.appointment_id+'?appointment_id='+data.appointment_id+'&room='+data.videoRoomId;
+                        } else {
+                            alert('rejected');
+                        }
                     } else {
-                        alert('rejected');
-                    }
-                } else {
 
+                    }
                 }
             }
         });
@@ -69,7 +73,7 @@
 <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.min.css">-->
 
 
-<!-- use http://una.im/CSSgram/ for filters 
+<!-- use https://una.im/CSSgram/ for filters 
 <link rel="stylesheet" href="https://cdn.rawgit.com/una/CSSgram/master/source/css/cssgram.css">
 <!-- app styles -->
 <!-- uncomment it which adding call plugin  -->
@@ -343,7 +347,7 @@
 
     <div class="caller__frames_acts">
     <button class="caller__frames_acts_btn j-caller__ctrl" data-target="video">
-    <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19" version="1.1">
+    <svg xmlns="https://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19" version="1.1">
     <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
     <g transform="translate(-290.000000, -80.000000)">
     <g transform="translate(288.000000, 78.000000)">
@@ -356,7 +360,7 @@
     </button>
 
     <button class="caller__frames_acts_btn j-caller__ctrl" data-target="audio">
-    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="19" viewBox="0 0 18 19" version="1.1">
+    <svg xmlns="https://www.w3.org/2000/svg" width="18" height="19" viewBox="0 0 18 19" version="1.1">
     <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
     <g transform="translate(-347.000000, -80.000000)">
     <g transform="translate(344.000000, 78.000000)">
@@ -397,7 +401,7 @@
     <div class="users__title" title="Choose a user to call">
     Choose a user to call
     <button class="users__refresh j-users__refresh" title="click to refresh">
-    <svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink">
     <g id="UI" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
     <g id="Main" transform="translate(-435.000000, -178.000000)">
     <g id="ic_refresh" transform="translate(431.000000, 174.000000)">

@@ -102,10 +102,14 @@
                                                     </thead>
                                                     <?php
                                                     if (count($result) > 0) {
-                                                        if ($_GET['page'] == '') {
-                                                            $i = 0;
-                                                        } else {
-                                                            $i = ($_GET['page'] - 1 ) * RECORDS_PERPAGE;
+                                                        $i = 0;
+                                                        if ( isset($_GET['page']) )
+                                                        {
+                                                            if ($_GET['page'] == '') {
+                                                                $i = 0;
+                                                            } else {
+                                                                $i = ($_GET['page'] - 1 ) * RECORDS_PERPAGE;
+                                                            }
                                                         }
                                                         foreach ($result as $key => $list) {
                                                             $actBtnTxt = $list['warehouse_status'] == 1 ? '<i class="fa fa-ban" aria-hidden="true" style="color:red;"></i>' : '<i class="fa fa-check" aria-hidden="true" style="color:#6565b2;"></i>';
@@ -113,7 +117,8 @@
                                                             $actBtnTitle = $list['warehouse_status'] == 1 ? 'Inactivate' : 'Activate';
                                                             $actBtnId = $list['warehouse_status'] == 1 ? 'whDeactivator' : 'whActivator';
                                                             ?>
-                                                            <tr id="row<?php echo $list['user_id'] ?>">
+
+                                                            <tr id="row <?php //echo $list['user_id'] ?>">
                                                                 <td> <?php echo $i + 1; ?></td>
                                                                 <td class="numeric editable"><b title=""><?php echo ucfirst($list['warehouse_name']); ?></b></td>
                                                                 <td class="numeric editable"><b title=""><?php echo ucfirst($list['warehouse_address']); ?></b></td>

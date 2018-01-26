@@ -1,4 +1,4 @@
-<section class="container">
+<section class="container mobile-view-container">
     <div class="form-container profile_container">
         <?= form_open_multipart('cus-profile-edit', array('class' => 'clearfix ajaxform', 'id' => '')) ?>    
         <div class="alert alert-info wait-div " style="display:none;"> <strong>Please wait! </strong> Your action is in proccess... </div>
@@ -34,7 +34,7 @@
             </label>
         </div>
         <label class="txt_input right_ico">
-            <input type="text" name="dob" id="dob" placeholder="Date of Birth" value="<?=$userRecord->dob?>">
+            <input type="text" name="dob" id="dob" placeholder="Date of Birth" value="<?=$userRecord->dob?>" readonly="">
             <span class="input_ico icon-calendar"></span>
         </label>
         <select class="select_box" name="gender">
@@ -44,7 +44,7 @@
             <option value="3" <?php if($userRecord->gender == '3'){?>selected <?php }?>>Other</option>
         </select>
         <label class="txt_input right_ico">
-            <input type="text" name="location" placeholder="Location">
+            <input type="text" name="location" placeholder="Location" value="<?=$userRecord->address?>">
             <span class="input_ico icon-location"></span>
         </label>
 
@@ -61,6 +61,7 @@
         value: '<?php echo date('Y-m-d'); ?>',
         mask: '',
         timepicker: false,
+        maxDate: new Date('2000-12-31')
         //autoSize:true,
         //changeMonth: true,
         //changeYear: true

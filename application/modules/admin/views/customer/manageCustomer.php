@@ -6,7 +6,7 @@
         <h3 class="page-title page_mrg">Manage Customers</h3>
         <!-- SEARCH HEVRE -->
             <div class="col-md-12">
-                <form action='<?php echo base_url();?>customers' id="searchData" method="GET">
+                <form action='<?php echo base_url();?>customers' id="searchData" method="POST">
                 <div class="form-group search col-md-12"> 
                    <input type="text" class="search-custom form-control" value="<?php echo $this->input->get('searchText')!= '' ? $this->input->get('searchText'):'';?>" name="searchText" onkeyup="stoppedTyping()" placeholder="Search Customer Name, Email, Location">
                 </div>
@@ -86,23 +86,31 @@
                                 <th class="numeric"> Join Date </th>
                                 <th class="numeric"> Total Orders </th>
                                 <th class="numeric"> Prescriptions</th>
+                                <th class="numeric"> Verified</th>
                                 <th class="numeric"> Action </th>
                       
                             </tr>
                         </thead>
+                        <tbody>
                         <?php
                         if (count($customerlist) > 0) 
                         {
-                            if ($_GET['page'] == '') {
-                                        $i = 0;
-                                    } else {
-                                        $i = ($_GET['page'] - 1 ) * RECORDS_PERPAGE;
-                                    }
+                            $i = 0;
+
+                            if ( isset($_GET['page']) ) {
+                                if ($_GET['page'] == '') {
+                                    $i = 0;
+                                } else {
+                                    $i = ($_GET['page'] - 1 ) * RECORDS_PERPAGE;
+                                }
+                            }
+
                             foreach ($customerlist as $key => $list) {
 //                                echo "<pre>";print_r($list);
-                                $ct = new DateTime($list['createdon']);
-                                $pt = new DateTime($list['postdate']);
+                                $ct = new DateTime(isset($list['createdon']) ? $list['createdon'] : "");
+                                $pt = new DateTime(isset($list['postdate']) ? $list['postdate'] : "");
                                 
+                                if ( !empty($list['email']) ):
                                 ?>
                                     <tr>
                                         <td> <?php echo $i + 1; ?> </td>
@@ -123,9 +131,13 @@
                                          <td class="numeric editable"    ><?php echo date(date('d-m-Y',strtotime($list['created_at'])));?></td>
                                          <td class="numeric editable"    ><?php echo $list['orders_count'];?></td>
                                          <td class="numeric editable"    ><?php if($list['uploaded_by']=='1'){ echo "Outbound"; }else if($list['uploaded_by']=='0'){  echo "Inbound";  }else{ echo "Not Added"; } ?></td>
-                                        
-                                        
-                 
+                                         <td class="text-center">
+                                            <?php if ( $list['is_verified'] == 1 ): ?>
+                                                <span class="fa fa-check text-success"></span>
+                                            <?php else: ?>
+                                                <span class="fa fa-times text-danger"></span>
+                                            <?php endif; ?>
+                                         </td>
                                         <td class="action">
                                             <span class="no_wrap">
                                             <?php 
@@ -136,23 +148,30 @@
                                         </td>                                            
                                     </tr>                              
                                 <?php
+                                else: ?>
+                                <tr>
+                                    <td colspan="20" style="text-align: center"> No Record Found </td>
+                                </tr>
+                                <?php endif;
+
                                 $i++;
                             }
                         } else {
-                            ?>
-                            <tbody>
-                                <tr>
-                                    <td colspan="6" style="text-align: center"> No Record Found </td>
-                                </tr>
-                            </tbody>
-                    <?php } ?>
+                        ?>
+                            <tr>
+                                <td colspan="20" style="text-align: center"> No Record Found </td>
+                            </tr>
+                        <?php } ?>
+                        </tbody>
                     </table>
                     <div class="row row_mrg paginate">
-                        <?php if($this->input->get('searchText') != '' || $this->input->get('all')){ ?>
-                            <span  class="right show-more" ><a href="<?php echo base_url();?>customers" data-ci-pagination-page="2" rel="next">Back</a></span>
-                        <?php }else{ ?>
-                            <span  class="right show-more" ><?php echo $this->pagination->create_links(); ?><a class= "btn" href="<?php echo base_url();?>customers?all=true" data-ci-pagination-page="2" rel="next">All</a></span>
-                        <?php } ?>
+                        <div class="col-sm-12">
+                            <?php if($this->input->get('searchText') != '' || $this->input->get('all')){ ?>
+                                <span  class="right show-more" ><a href="<?php echo base_url();?>customers" data-ci-pagination-page="2" rel="next">Back</a></span>
+                            <?php }else{ ?>
+                                <span  class="right show-more" ><?php echo $this->pagination->create_links(); ?><a class= "btn" href="<?php echo base_url();?>customers?all=true" data-ci-pagination-page="2" rel="next">All</a></span>
+                            <?php } ?>
+                        </div>
                     </div>
                 </div>
             </div>

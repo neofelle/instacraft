@@ -1,4 +1,4 @@
-<section class="container">
+<section class="container mobile-view-container">
     <?php foreach($careGivers as $caregiver) {?>
     <div class="caregiver_container accordion">
         <div class="card_style">
@@ -129,7 +129,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="card_style clearfix">
+<!--                <div class="card_style clearfix">
                     <h3>SECTION 3B: Non Cultivating Caregiver Information</h3>
                     <div class="data_form">
                         <ul class="opposite_detail">
@@ -185,8 +185,8 @@
                             </li>
                         </ul>
                     </div>
-                </div>
-                <div class="card_style clearfix">
+                </div>-->
+<!--                <div class="card_style clearfix">
                     <h3>SECTION 4: Dispensary Information</h3>
                     <div class="data_form">
                         <ul class="opposite_detail">
@@ -216,7 +216,7 @@
                             </li>
                         </ul>
                     </div>
-                </div>
+                </div>-->
                 <div class="card_style clearfix">
                     <h3>SECTION 5: Patient Rights and Responsibilities</h3>
                     <div class="data_form">

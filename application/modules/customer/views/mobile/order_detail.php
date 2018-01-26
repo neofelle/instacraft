@@ -1,4 +1,4 @@
-<section class="container">
+<section class="container mobile-view-container">
     <div class="order_detail_container">
         <ul class="opposite_detail"><?php
                 if($orderDetail[0]->order_status == 0){

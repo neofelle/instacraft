@@ -22,6 +22,17 @@ class Customer_model extends CI_Model {
     private $_dob = "";
     private $_profile_pic = "";
     private $_slug = "";
+    private $_address = "";
+    private $_ip = "";
+    private $_fingerprint = "";
+
+    function get_address() {
+        return $this->_address;
+    }
+
+    function set_address($_address) {
+        $this->_address = $_address;
+    }
 
     function get_slug() {
         return $this->_slug;
@@ -135,6 +146,22 @@ class Customer_model extends CI_Model {
         $this->_registration_type = $_registration_type;
     }
 
+    function set_ip($_ip) {
+        $this->_ip = $_ip;
+    }
+
+    function get_ip() {
+        return $this->_ip;
+    }
+
+    function set_fingerprint($_fingerprint) {
+        $this->_fingerprint = $_fingerprint;
+    }
+
+    function get_fingerprint() {
+        return $this->_fingerprint;
+    }
+
     public function register() {
 
         $refferel_code = mt_rand(100000, 999999);
@@ -215,6 +242,27 @@ class Customer_model extends CI_Model {
         $this->db->where('refferal_code', $this->get_reffered_by());
         $query = $this->db->get('users');
         return $query->row();
+    }
+    
+    public function getUserDetailsByFingerPrintAndIP()
+    {
+        $this->db->select("*")->where('fingerprint', $this->get_fingerprint())->where('ip', $this->get_ip());
+        return $this->db->get('users')->row();
+    }
+
+    public function checkVerfificationDoc() {
+        $this->db->select('proof_front_image,proof_back_image');
+        $this->db->where('user_id', $this->session->userdata('CUSTOMER-ID'));
+        $query = $this->db->get('proof')->row();
+        if(sizeof($query) > 0) {
+            if($query->proof_front_image != '' && $query->proof_back_image != ''){
+                return true;
+            }else{
+                return false;
+            }
+        }else{
+            return false;
+        }
     }
 
     public function updatePoints($source) {
@@ -308,7 +356,7 @@ class Customer_model extends CI_Model {
         $this->db->where('email',$this->input->post('email'));
         $this->db->update('users');
         /********* send forgot password email *****************/
-        sendEmailGlobal('Instacraft',$this->input->post('email'),'','Forgot Password !!!',$body);
+        sendEmailGlobal('Instacraft',$this->input->post('email'),'','Forgot Password',$body);
         
     }
     
@@ -361,7 +409,7 @@ class Customer_model extends CI_Model {
     }
     
     public function validateAppointment(){
-        $where = "current_timestamp() between date_sub(CONCAT(appointment_date, ' ', appointment_time), INTERVAL 5 MINUTE) and date_add(CONCAT(appointment_date, ' ', appointment_time), INTERVAL 15 MINUTE)";
+        $where = "timestamp(DATE_SUB(NOW(), INTERVAL 300 MINUTE)) between date_sub(CONCAT(appointment_date, ' ', appointment_time), INTERVAL 5 MINUTE) and date_add(CONCAT(appointment_date, ' ', appointment_time), INTERVAL 15 MINUTE)";
         $this->db->select('id as appointment_id,status,appointment_time,appointment_date');
         $this->db->where('user_id',$this->session->userdata('CUSTOMER-ID'));
         $this->db->where('id',$this->input->post('appointment_id'));
@@ -376,7 +424,7 @@ class Customer_model extends CI_Model {
     }
     
     public function checkUpcomingAppointment(){
-        $where = "current_timestamp() between date_sub(CONCAT(appointment_date, ' ', appointment_time), INTERVAL 5 MINUTE) and date_add(CONCAT(appointment_date, ' ', appointment_time), INTERVAL 15 MINUTE)";
+        $where = "timestamp(DATE_SUB(NOW(), INTERVAL 300 MINUTE)) between date_sub(CONCAT(appointment_date, ' ', appointment_time), INTERVAL 5 MINUTE) and date_add(CONCAT(appointment_date, ' ', appointment_time), INTERVAL 15 MINUTE)";
         $this->db->select('id as appointment_id,status,appointment_time,appointment_date');
         $this->db->where('user_id',$this->session->userdata('CUSTOMER-ID'));
         $this->db->where('status','1');
@@ -384,6 +432,43 @@ class Customer_model extends CI_Model {
         $this->db->where($where);
         $query   =   $this->db->get('appointment_details');
         return $query->row();
+    }
+    
+    public function uploadProofs(){
+        $front_id_proof = time() . $_FILES["front_id_proof"]['name'];
+        $fileTempName = $_FILES["front_id_proof"]['tmp_name'];
+        $front_image = uploadImageOnS3($front_id_proof,$fileTempName,'customer');
+        //$front_image = $fileTempName;
+        
+        $back_id_proof = time() . $_FILES["back_id_proof"]['name'];
+        $fileTempName = $_FILES["back_id_proof"]['tmp_name'];
+        $back_image = uploadImageOnS3($back_id_proof,$fileTempName,'customer');
+        //$back_image = $fileTempName;
+        
+        // Check if user has already uploaded docs
+        $res    =   $this->db->select('proof_front_image,proof_back_image')->where('user_id',$this->session->userdata('CUSTOMER-ID'))->get('proof')->row();
+        if($res->proof_front_image !='' ||$res->proof_back_image !=''){
+            $this->db->set('proof_front_image',$front_image);
+            $this->db->set('proof_back_image',$back_image);
+            $this->db->where('user_id',$this->session->userdata('CUSTOMER-ID'));
+            $this->db->update('proof');
+            if($this->db->affected_rows() > 0){
+                return true;
+            }else{
+                return false;
+            }
+        }else{
+            $this->db->set('proof_front_image',$front_image);
+            $this->db->set('proof_back_image',$back_image);
+            $this->db->set('user_id',$this->session->userdata('CUSTOMER-ID'));
+            $this->db->insert('proof');
+            $lastInsertedId =   $this->db->insert_id();
+            if($lastInsertedId > 0){
+                return true;
+            }else{
+                return false;
+            }
+        } 
     }
 
 }

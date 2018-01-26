@@ -1,1 +1,5 @@
-/application/logs/
+.DS_Store
+.svn/*
+.htaccess
+application/config/database.php
+WebRTC/node_modules

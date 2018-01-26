@@ -24,8 +24,11 @@ class Manager extends MX_Controller{
      * @admin panel 
      * @function for : shows dashboard view with all analised data
      */
-    public function dashboard(){ 
-        sessionChk();                        //-- Validating session
+    public function dashboard(){
+        if ( is_null(sessionChk()) )                        //-- Validating session
+        {
+            redirect(base_url().'admin');
+        }
         $manager_model = new Manager_model();//-- Model Object 
         //-- if search by data range
         if($this->input->post('sdate') != '' && $this->input->post('edate') != ''){ 
@@ -56,41 +59,43 @@ class Manager extends MX_Controller{
         sessionChk();                        //-- Validating session
         $manager_model = new Manager_model();//-- Model Object 
         //-- if search by data range
-            if($this->input->post('sdate') != '' && $this->input->post('edate') != ''){ 
-                $manager_model->set_sdate($this->input->post('sdate'));
-                $manager_model->set_edate($this->input->post('edate')); 
-            }
+        if($this->input->post('sdate') != '' && $this->input->post('edate') != ''){ 
+            $manager_model->set_sdate($this->input->post('sdate'));
+            $manager_model->set_edate($this->input->post('edate')); 
+        }
+        
         //-- IF SEARCH TEXT EXIST 
-            if($this->input->post('searchText') != ''){ 
-                $manager_model->setSearchData(strtolower(trim($this->input->post('searchText'))));
-            }
-            
-            if($this->input->post('orderStatus') != ''){ 
-                $manager_model->setSearchStatus($this->input->post('orderStatus'));
-            }
-            
-            if($this->input->post('driver') != ''){ 
-                $manager_model->setSearchDriver(strtolower(trim($this->input->post('driver'))));
-            }
-            
-            if($this->input->post('location') != ''){ 
-                $manager_model->setSearchLocation(strtolower(trim($this->input->post('location'))));
-            }
+        if($this->input->post('searchText') != ''){ 
+            $manager_model->setSearchData(strtolower(trim($this->input->post('searchText'))));
+        }
+        
+        if($this->input->post('orderStatus') != ''){ 
+            $manager_model->setSearchStatus($this->input->post('orderStatus'));
+        }
+        
+        if($this->input->post('driver') != ''){ 
+            $manager_model->setSearchDriver(strtolower(trim($this->input->post('driver'))));
+        }
+        
+        if($this->input->post('location') != ''){ 
+            $manager_model->setSearchLocation(strtolower(trim($this->input->post('location'))));
+        }
 
-            $totalPage      = $manager_model->ordersCount();
-            $baseUrl        = base_url() ."orders";
-            $pageFrom       = globalPagination($totalPage,$baseUrl,RECORDS_PERPAGE);
-            //echo $totalPage;die;
-            if($this->input->get('all') != ''){ 
-                $all = true;
-                $data['result'] = $manager_model->getAllOrders(RECORDS_PERPAGE,$pageFrom,$all);
-            }elseif($this->input->get('searchText') != ''){
-                $all = false;
-                $data['result'] = $manager_model->getAllOrders(RECORDS_PERPAGE,$pageFrom,$all);
-            }
-            else{
-                $data['result'] = $manager_model->getAllOrders(RECORDS_PERPAGE,$pageFrom,false);
-            }
+        $totalPage      = $manager_model->ordersCount();
+        $baseUrl        = base_url() ."orders";
+        $pageFrom       = globalPagination($totalPage,$baseUrl,RECORDS_PERPAGE);
+
+        //echo $totalPage;die;
+        if($this->input->get('all') != ''){ 
+            $all = true;
+            $data['result'] = $manager_model->getAllOrders(RECORDS_PERPAGE,$pageFrom,$all);
+        }elseif($this->input->get('searchText') != ''){
+            $all = false;
+            $data['result'] = $manager_model->getAllOrders(RECORDS_PERPAGE,$pageFrom,$all);
+        }
+        else{
+            $data['result'] = $manager_model->getAllOrders(RECORDS_PERPAGE,$pageFrom,false);
+        }
         $data['drivers']   = $manager_model->driversdetails(); 
         $data['locations'] = $manager_model->ordersLocationsdetails(); 
         $body_data = array('drivers'=>$data['drivers'],'drivers'=>$data['locations']);
@@ -115,16 +120,14 @@ class Manager extends MX_Controller{
         sessionChk();                        //-- Validating session
         $manager_model = new Manager_model();//-- Model Object 
         $driverInvetoryModel = new Driver_inventory_model();
-        
         $customerObj = new Customer_model();
-        
-        
         $orderModel = new Order_model();
+
         if($this->uri->segment('2')){
-            $manager_model->set_customid($this->uri->segment('2')); //-- Order Id 
+           $manager_model->set_customid($this->uri->segment('2')); //-- Order Id 
            $orderInfo = $manager_model->fetchOrderdetails($this->uri->segment('2'));
            $customerObj->set_customer_id($orderInfo['uid']);
-//           echo "<pre>";    print_r($orderInfo);
+
             $body['orderinfo'] = $orderInfo;
             $orderModel->setOrder_id($orderInfo['oid']);
             $body['orderItemInfo'] = $orderModel->selectOrderItemDetails();
@@ -132,18 +135,23 @@ class Manager extends MX_Controller{
             $body['is_first_time'] = $manager_model->check_first_time($this->uri->segment('2'));
             $body['prescription'] = $customerObj->prescription();
             $body['personalDetail'] = $customerObj->viewCustomerData();
-            //echo "<pre>";    print_r($body);
-            if($orderInfo['did']>0){
-             $driverInvetoryModel->setDriver_id($orderInfo['did']);
-             $driverInvetoryModel->setOrder_id($orderInfo['oid']);
-             $isPickup = $driverInvetoryModel->checkDiverInvetoryAgainstOrder();
-            $body['isPickup'] = $isPickup;
-            }else{
+
+            if($orderInfo['did']>0)
+            {
+                // calculate the distance
+                $distanceAndDuration = getDistanceAndDuration($orderInfo['driver_slat'], $orderInfo['driver_slang'], $orderInfo['drop_location_lat'], $orderInfo['drop_location_lang']);
+
+                $driverInvetoryModel->setDriver_id($orderInfo['did']);
+                $driverInvetoryModel->setOrder_id($orderInfo['oid']);
+                $isPickup = $driverInvetoryModel->checkDiverInvetoryAgainstOrder();
+                $body['isPickup'] = $isPickup;
+                $body['distance_maps'] = $distanceAndDuration;
+            }
+            else
+            {
                 $body['isPickup'] = FALSE;
             }
-            
-                    
-//            echo "<pre>"; print_r($body['orderInfo']); die; //check_verfied_user
+
             if(isset($body['orderinfo']) && count(['orderinfo']) > 0 ){
                 //-- Update Doctor If Post Data )
                 if(isset($_POST['did']) && isset($_POST['oid']) && isset($_POST['dtype'])  && isset($_POST['from_time'])){ 
@@ -180,8 +188,7 @@ class Manager extends MX_Controller{
             }
         }else{
             redirect('orders','refresh');
-        }
-             
+        }    
     }
     
     /*
@@ -195,14 +202,12 @@ class Manager extends MX_Controller{
          
         sessionChk();                        //-- Validating session
         $manager_model = new Manager_model();//-- Model Object 
-        //-- IF SEARCH TEXT EXIST 
-        
-        
+        //-- IF SEARCH TEXT EXIST
         $drivers  = $manager_model->fetchAllDrivers();   
         $list = '<select class="form-control" id="did" name="did">';
         $list .= '<option value="">Choose any Driver</option>';
         foreach ($drivers AS $driver){
-            $list .= '<option value="'.$driver['driver_id'].'">'.ucfirst($driver['first_name']).' '.ucfirst($driver['last_name']).'</option>';
+            $list .= '<option value="'.$driver['driver_id'].'" data-location="'.$driver['latitude'].','.$driver['longitude'].'">'.ucfirst($driver['first_name']).' '.ucfirst($driver['last_name']).'</option>';
         }
         $list .= '</select ><span id="did-error" class="help-block hide"></span>';
         echo $list;
@@ -222,29 +227,29 @@ class Manager extends MX_Controller{
         sessionChk();                        //-- Validating session
         $manager_model = new Manager_model();//-- Model Object 
         //-- IF SEARCH TEXT EXIST 
-            if($this->input->post('searchText') != ''){ 
-                $manager_model->setSearchData(strtolower(trim($this->input->post('searchText'))));
-            }
-            
-            if($this->input->post('doctorStatus') != ''){ 
-                $manager_model->setSearchStatus($this->input->post('doctorStatus'));
-            }
+        if($this->input->post('searchText') != ''){ 
+            $manager_model->setSearchData(strtolower(trim($this->input->post('searchText'))));
+        }
+        
+        if($this->input->post('doctorStatus') != ''){ 
+            $manager_model->setSearchStatus($this->input->post('doctorStatus'));
+        }
 
-            $totalPage      = $manager_model->careGiversCount();
-            //echo $this->db->last_query(); echo "<br>".$totalPage;die;
-            $baseUrl        = base_url() ."doctors";
-            $pageFrom       = globalPagination($totalPage,$baseUrl,RECORDS_PERPAGE);
-            //echo $totalPage;die;
-            if($this->input->post('all') != ''){ 
-                $all = true;
-                $body['result'] = $manager_model->getAllCareGivers(RECORDS_PERPAGE,$pageFrom,$all);
-            }elseif($this->input->get('searchText') != ''){
-                $all = false;
-                $body['result'] = $manager_model->getAllCareGivers(RECORDS_PERPAGE,$pageFrom,$all);
-            }
-            else{
-                $body['result'] = $manager_model->getAllCareGivers(RECORDS_PERPAGE,$pageFrom,false);
-            }
+        $totalPage      = $manager_model->careGiversCount();
+        //echo $this->db->last_query(); echo "<br>".$totalPage;die;
+        $baseUrl        = base_url() ."doctors";
+        $pageFrom       = globalPagination($totalPage,$baseUrl,RECORDS_PERPAGE);
+        //echo $totalPage;die;
+        if($this->input->post('all') != ''){ 
+            $all = true;
+            $body['result'] = $manager_model->getAllCareGivers(RECORDS_PERPAGE,$pageFrom,$all);
+        }elseif($this->input->post('searchText') != ''){
+            $all = false;
+            $body['result'] = $manager_model->getAllCareGivers(RECORDS_PERPAGE,$pageFrom,$all);
+        }
+        else{
+            $body['result'] = $manager_model->getAllCareGivers(RECORDS_PERPAGE,$pageFrom,false);
+        }
 
         //echo"<pre>";print_r($body['result']);die;
         $data['title']          = 'Care Givers List';
@@ -453,7 +458,7 @@ class Manager extends MX_Controller{
         $data['title']          = 'Orders Detail';
         $data['header']         = array('view' => 'templates/header', 'data' => $data);
         $data['sidebar']        = array('view' => 'templates/common_sidebar', 'data' => $body);
-        $data['main_content']   = array('view' => 'doctors/admin_doctors', 'data' => $body_data);
+        $data['main_content']   = array('view' => 'doctors/admin_doctors', 'data' => []);
         $data['footer']         = array('view' => 'templates/footer', 'data' => $data);
         $this->load->view('templates/common_template', $data);
     }
@@ -866,7 +871,7 @@ class Manager extends MX_Controller{
         $age              = $interval->format("%Y")=='00' ?  '<i style="color:red;">Not set</i>' : $interval->format("%Y Year, %M Months"); 
 
         $ssn              = 6565649654;
-        $prescription_src = 'http://accesspharmacy.mhmedical.com/data/books/1810/m_hilgg2_apxI_f001.png';
+        $prescription_src = 'https://accesspharmacy.mhmedical.com/data/books/1810/m_hilgg2_apxI_f001.png';
         $createdOn        = $appointmentInfo['created_at'];
         $appointDate      = $appointmentInfo['appointment_date'];
         $appointTime      = $appointmentInfo['appointment_time'];
@@ -896,7 +901,7 @@ class Manager extends MX_Controller{
                                 <tr>
                                     <td class="pad9topBtm" colspan="4" style="margin: 0 auto;">
                                         <code class="sampleText">* Demo prescription image</code>
-                                        <a alt="View Image" href="http://accesspharmacy.mhmedical.com/data/books/1810/m_hilgg2_apxI_f001.png" target="_black">
+                                        <a alt="View Image" href="https://accesspharmacy.mhmedical.com/data/books/1810/m_hilgg2_apxI_f001.png" target="_black">
                                             <img src='.$prescription_src.' class="" height="" width="100%" />
                                         </a>
                                     </td>
@@ -923,6 +928,7 @@ class Manager extends MX_Controller{
      * @function for : Product List ()
      */
     public function products(){ 
+       
 //        echo "<pre>";
 //        print_r($this->input->post());exit;
         sessionChk();                        //-- Validating session
@@ -971,7 +977,7 @@ class Manager extends MX_Controller{
         $data['title']          = 'Orders Detail';
         $data['header']         = array('view' => 'templates/header', 'data' => $data);
         $data['sidebar']        = array('view' => 'templates/common_sidebar', 'data' => $body);
-        $data['main_content']   = array('view' => 'products/admin_products', 'data' => $body_data);
+        $data['main_content']   = array('view' => 'products/admin_products', 'data' => []);
         $data['footer']         = array('view' => 'templates/footer', 'data' => $data);
         $this->load->view('templates/common_template', $data);
     }
@@ -991,9 +997,10 @@ class Manager extends MX_Controller{
         //-- Add Doctor If Post Data 
     
                                                                                                                                                                                                                                                              
-         
-        
-            if(isset($_FILES['item_pic']) && $this->input->post('itemcolor') && $this->input->post('itemflavour') && $this->input->post('itemname') && $this->input->post('itemunit') && $this->input->post('itemfamily') && $this->input->post('ounce8price') && $this->input->post('anounceprice') && $this->input->post('itemrecommends') && $this->input->post('itemeffects') && $this->input->post('itemreview') && $this->input->post('categories') && $this->input->post('caregiver')){ 
+//        echo "<pre>";print_r($_FILES);
+//                    echo "<pre>";print_r($_POST);die;
+       
+            if(isset($_FILES['item_pic']) && $this->input->post('itemcolor') && $this->input->post('itemflavour') && $this->input->post('itemname') && $this->input->post('itemunit') && $this->input->post('itemfamily') && $this->input->post('ounce8price') && $this->input->post('anounceprice') && $this->input->post('itemrecommends') && $this->input->post('itemeffects') && $this->input->post('itemreview') && $this->input->post('category') && $this->input->post('caregiver')){ 
 
                 $wareArray = array();
                 foreach($body['warehouses'] AS $warehouse){
@@ -1004,15 +1011,31 @@ class Manager extends MX_Controller{
                     }
                 }
                 $manager_model->set_itemswhQnty($wareArray);
+                
+                $quantityTypeArray = array();
+                foreach($body['warehouses'] AS $warehouse){
+                    $qtTP   = $warehouse['warehouse_id'];
+                    $qtType = 'quantity_type_'.$qtTP;
+                    if(isset($_POST[$qtType])){
+                        $quantityTypeArray[$qtTP]= $_POST[$qtType];
+                    }
+                }
+                $manager_model->set_quantity_type($quantityTypeArray);
+                
+//                 echo "<pre>";
+//                 print_r($wareArray); 
+//                 print_r($quantityTypeArray); die;
                 // print_r($manager_model->get_itemswhQnty($wareArray)); die;
+                
                 $pic_url = '';
+                $pic_name = explode('.',$_FILES['item_pic']['name']);
                 //- Uploading Profile Pic 
                 if(isset($_FILES['item_pic'])){
                     $file_size = $_FILES['item_pic']['size'];
                     $file_tmp  = $_FILES['item_pic']['tmp_name'];
                     $file_type = $_FILES['item_pic']['type'];
-                    $file_name = strtolower(array_shift(explode('.',$_FILES['item_pic']['name'])));
-                    $file_ext  = strtolower(end(explode('.',$_FILES['item_pic']['name'])));
+                    $file_name = strtolower(array_shift($pic_name));
+                    $file_ext  = strtolower(end($pic_name));
                     $expensions1= array("jpg", "jpeg","jpg","png");
                     $expensions2= array("pdf","doc","docx");
                     //echo "Profile pic Extension is $file_ext and Size is $file_size in byte<br/>";
@@ -1022,33 +1045,43 @@ class Manager extends MX_Controller{
                         $pic_url = '123';
                     } 
                 }
+                
                 if($pic_url){
                     //-- Set All Value in Setter 
-                    $manager_model->set_categories($this->input->post('categories'));
+                    $manager_model->set_categories($this->input->post('category'));
+                    $manager_model->set_subCategory($this->input->post('subcategory'));
                     $manager_model->set_itemname($this->input->post('itemname'));
                     $manager_model->set_picUrl(trim($pic_url));
                     $manager_model->set_itemunit($this->input->post('itemunit'));
                     $manager_model->set_itemfamily($this->input->post('itemfamily'));
+                    $manager_model->set_onegramprice($this->input->post('onegramprice'));
+                    $manager_model->set_onegramoffprice($this->input->post('onegramoffprice'));
                     $manager_model->set_ounce8price($this->input->post('ounce8price'));
+                    $manager_model->set_ounce8offprice($this->input->post('ounce8offprice'));
                     $manager_model->set_anounceprice($this->input->post('anounceprice'));
+                    $manager_model->set_anounceoffprice($this->input->post('anounceoffprice'));
+                    $manager_model->set_deducted_price($this->input->post('deducted_price'));
                     $manager_model->set_itemrecommends($this->input->post('itemrecommends'));
                     $manager_model->set_itemeffects($this->input->post('itemeffects'));
                     $manager_model->set_itemreview($this->input->post('itemreview'));
                     $manager_model->set_itemcolor($this->input->post('itemcolor'));
                     $manager_model->set_itemflavour($this->input->post('itemflavour'));
                     $manager_model->set_cargiver($this->input->post('caregiver'));
+                    $manager_model->set_moods($this->input->post('moods'));
+                    $manager_model->set_medicals($this->input->post('medicals'));
                     
+                    $this->input->post('limited') ? $manager_model->set_limited($this->input->post('limited')) : $manager_model->set_limited(0);
                     $this->input->post('biweekly') ? $manager_model->set_itembiweekly('1') : $manager_model->set_itembiweekly('0');
                     $this->input->post('hot') ? $manager_model->set_itemhot('1') : $manager_model->set_itemhot('0');
-                    $this->input->post('luxurious') ? $manager_model->set_itemluxurious('1') : $manager_model->set_itemluxurious('0');
-
+                    $this->input->post('luxurious') ? $manager_model->set_itemluxurious($this->input->post('luxurious')) : $manager_model->set_itemluxurious('0');
                     $this->input->post('thc') ? $manager_model->set_itemthc($this->input->post('thc')) : $manager_model->set_itemthc('');
                     $this->input->post('cbg') ? $manager_model->set_itemcbg($this->input->post('cbg')) : $manager_model->set_itemcbg('');
                     $this->input->post('cbc') ? $manager_model->set_itemcbc($this->input->post('cbc')) : $manager_model->set_itemcbc('');
                     $this->input->post('cbn') ? $manager_model->set_itemcbn($this->input->post('cbn')) : $manager_model->set_itemcbn('');
                     $this->input->post('cbd') ? $manager_model->set_itemcbd($this->input->post('cbd')) : $manager_model->set_itemcbd('');
                     $this->input->post('thcv') ? $manager_model->set_itemthcv($this->input->post('thcv')) : $manager_model->set_itemthcv('');
-//                    echo "<pre>";print_r($this->input->post('caregiver'));die;
+                    //$manager_model->set_quantity_type($this->input->post('quantity_type'));
+                    
                     $resData = $manager_model->addNewProduct();
                     if($resData == '-1'){
                         echo "<script type='text/javascript'>alert('Something went wrong, please try later.')</script>";
@@ -1068,6 +1101,8 @@ class Manager extends MX_Controller{
         $body['warehouses']   = $manager_model->fetch_warehouses_detail();
         $body['getCaregivers']   = $manager_model->getCaregivers();
         $body['categories']   = $manager_model->fetch_items_categories();
+        $body['moods']   = $manager_model->fetch_moods();
+        $body['medicals']   = $manager_model->fetch_medicals();
         $body['itemfamilies'] = $manager_model->fetch_items_families();
         
         // echo "<pre>";print_r($body['categories']);die;             
@@ -1089,7 +1124,6 @@ class Manager extends MX_Controller{
      * @function for : View Product Page 
      */
     public function view_product(){
-         
         sessionChk();                        //-- Validating session
         $manager_model = new Manager_model();//-- Model Object 
         
@@ -1143,6 +1177,7 @@ class Manager extends MX_Controller{
                         $manager_model->set_itemfamily($this->input->post('itemfamily'));
                         $manager_model->set_ounce8price($this->input->post('ounce8price'));
                         $manager_model->set_anounceprice($this->input->post('anounceprice'));
+                        $manager_model->set_anounceprice($this->input->post('deducted_price'));
                         $manager_model->set_itemrecommends($this->input->post('itemrecommends'));
                         $manager_model->set_itemeffects($this->input->post('itemeffects'));
                         $manager_model->set_itemreview($this->input->post('itemreview'));
@@ -1252,7 +1287,7 @@ class Manager extends MX_Controller{
         $data['title']          = 'Categories List';
         $data['header']         = array('view' => 'templates/header', 'data' => $data);
         $data['sidebar']        = array('view' => 'templates/common_sidebar', 'data' => $body);
-        $data['main_content']   = array('view' => 'categories/all_categories', 'data' => $body_data);
+        $data['main_content']   = array('view' => 'categories/all_categories', 'data' => []);
         $data['footer']         = array('view' => 'templates/footer', 'data' => $data);
         $this->load->view('templates/common_template', $data);
     }
@@ -1354,7 +1389,7 @@ class Manager extends MX_Controller{
         $data['title']          = 'Messages details';
         $data['header']         = array('view' => 'templates/header', 'data' => $data);
         $data['sidebar']        = array('view' => 'templates/common_sidebar', 'data' => $body);
-        $data['main_content']   = array('view' => 'messages/all_messages', 'data' => $body_data);
+        $data['main_content']   = array('view' => 'messages/all_messages', 'data' => []);
         $data['footer']         = array('view' => 'templates/footer', 'data' => $data);
         $this->load->view('templates/common_template', $data);
     }
@@ -1457,7 +1492,7 @@ class Manager extends MX_Controller{
         $data['title']          = 'Messages details';
         $data['header']         = array('view' => 'templates/header', 'data' => $data);
         $data['sidebar']        = array('view' => 'templates/common_sidebar', 'data' => $body);
-        $data['main_content']   = array('view' => 'coupons/all_coupons', 'data' => $body_data);
+        $data['main_content']   = array('view' => 'coupons/all_coupons', 'data' => []);
         $data['footer']         = array('view' => 'templates/footer', 'data' => $data);
         $this->load->view('templates/common_template', $data);
     }
@@ -1580,11 +1615,6 @@ class Manager extends MX_Controller{
         
                 
     }
-    
-    
-    
-    
-    
     
     public function updatePrescriptionVerification(){
         //$result = array();

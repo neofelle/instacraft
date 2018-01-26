@@ -155,7 +155,7 @@ class Driver_model extends CI_Model {
 
     public function getAllDrivers($from = '', $perPage = '') {
         $data = array();
-        $query = $this->db->select('driver.driver_id,driver.email,driver.contact_number,driver.first_name,driver.last_name,professional_detail.registration_number,warehouse.name')
+        $query = $this->db->select('driver.driver_id,driver.online,driver.email,driver.contact_number,driver.first_name,driver.last_name,professional_detail.registration_number,warehouse.name')
                 ->from('driver')
                 ->join('driver_professional_detail as professional_detail', 'professional_detail.driver_id=driver.driver_id', 'left')
                 ->join('warehouse', 'warehouse.id=driver.starting_location');
@@ -540,6 +540,7 @@ class Driver_model extends CI_Model {
     }
 
     public function getdriverReviews($driverId) {
+        $data = [];
         $query = $this->db->select('drr.*,us.first_name,us.last_name,us.profile_pic')
                 ->from('driver_review_rating as drr')
                 ->join('users as us', 'drr.review_by=us.id', 'left')
@@ -561,6 +562,7 @@ class Driver_model extends CI_Model {
 //WHERE break_clock.shift_id !=  'null'
 //GROUP BY break_clock.shift_id
 //LIMIT 0 , 30
+        $data = [];
         $query = $this->db->query("SELECT 
     shift_clock . *,(SELECT IF(count(break_id) is NULL ,0, count(break_id) )   FROM `break_clock` where break_clock.shift_id != 'null' and break_clock.shift_id = shift_clock.shift_id and driver_id = shift_clock.driver_id group by shift_id) as break_taken,
     SUM(CASE

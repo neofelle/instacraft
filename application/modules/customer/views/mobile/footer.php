@@ -1,3 +1,204 @@
+<!--popup to ask questions before making the appointment-->
+  <section class="popup_overlay" data-pop="appointment-question">
+      <div class="popup popup-new">
+          <div class="pop_head">
+              <div class="popup-title cart-popup"></div>
+              <span class="icon-close"></span>
+          </div>
+          <div class="popup_body">
+              <div class="popup_form clearfix">
+                  <div class="price-wrapper price-textarea">
+                    <textarea name="other_prescription" id="other_prescription" placeholder="What else have you done so far to treat the medical condition(s) you selected?"><?=$this->session->userdata('other_prescription')?$this->session->userdata('other_prescription'):""?></textarea>
+                    <textarea name="other_doctor" id="other_doctor" placeholder="Who is your usual or primary doctor?"><?=$this->session->userdata('other_doctor')?$this->session->userdata('other_doctor'):""?></textarea>
+                      <button class="btn btn-lg btn-purle saveSelected">Submit</button>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+
+<!--popup add to cart-->
+  <section class="popup_overlay" data-pop="addtocart-pop">
+      <div class="popup popup-new">
+          <div class="pop_head">
+              <div class="popup-title cart-popup"></div>
+              <span class="icon-close"></span>
+              <!--<h2 class="item-name" id="popup_product_name">Product Name</h2>-->
+          </div>
+          <div class="popup_body">
+              <div class="popup_form clearfix">
+                  <div class="price-wrapper">
+                      <input type="hidden" id="product_id" name="product_id" value="">
+                      <input type="hidden" id="limit" name="limit" value="">
+                      <div class="price-row radio_container">
+                        <label class="parent-label">
+                          <input type="radio" checked="checked" name="price" class="radio_license"> <span class="radio_box"> <span class="radio_bullet bg-black"></span></span>
+                        </label>
+                        <span class="sale-price gram-span" data-quantity="1" data-type="gram" data-price=""></span>
+                        <span class="old-price gram-price"></span>
+                      </div>
+                      <div class="price-row radio_container">
+                        <label class="parent-label">
+                          <input type="radio" name="price" class="radio_license"> <span class="radio_box"> <span class="radio_bullet bg-black"></span></span>
+                        </label>
+                        <span class="sale-price eight-span" data-quantity="1" data-type="eight" data-price=""></span>
+                        <span class="old-price eight-price"></span>
+                      </div>
+                      <div class="price-row radio_container">
+                        <label class="parent-label">
+                          <input type="radio" name="price" class="radio_license"> <span class="radio_box"> <span class="radio_bullet bg-black"></span></span>
+                        </label>
+                        <span class="sale-price ounce-span" data-quantity="1" data-type="ounce" data-price=""></span>
+                        <span class="old-price ounce-price"></span>
+                      </div>
+                      <div class="price-row item-total mb-30">
+                        <span class="item-plus icon icon-minus"></span>
+                        <span class="item-number">(1)</span>
+                        <span class="item-minus icon icon-plus"></span>
+                      </div>
+                      <button class="btn btn-lg btn-purle save-add-to-cart">Add to Cart</button>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+
+<script>
+    $(document).on('click', '.add_add_to_cart', function () {
+        checkUserLogin();
+        var productId = $(this).data('productid');
+        var productPriceOunce = $(this).data('productprice');
+        var productPriceEigth = $(this).data('productpriceeigth');
+        var productPriceGram = $(this).data('productpricegram');
+        var limit = $(this).data('limited');
+        
+        var productPriceOunceOff = $(this).data('productpriceoff');
+        var productPriceEigthOff = $(this).data('productpriceeigthoff');
+        var productPriceGramOff = $(this).data('productpricegramoff');
+        
+        var isearlyadopter = $(this).data('isearlyadopter');
+        
+        if(isearlyadopter == '1'){
+            $('.cart-popup').html('On Sale For Early Adopters');
+        }else{
+            $('.cart-popup').html('Add To Cart');
+        }
+        // Reset previous values
+        $('.ounce-price').html('');
+        $('.eight-price').html('');
+        $('.gram-price').html('');
+        $('div.price-row').find('span.sale-price').attr('data-price','');
+        $('div.price-row').find('span.sale-price').attr('data-quantity','1');
+        $('.item-number').html('(1)');
+        /////////////////////////////////////////////////////
+        
+        if(productPriceOunceOff > 0){
+            $('.ounce-span').html('1 Ounce, $'+productPriceOunceOff);  
+            $('.ounce-span').attr('data-actual-price',productPriceOunceOff);
+            $('.ounce-price').html('$'+productPriceOunce);
+        }else{
+            $('.ounce-span').html('1 Ounce, $'+productPriceOunce);  
+            $('.ounce-span').attr('data-actual-price',productPriceOunce);
+            $('.ounce-price').html();
+        }
+        if(productPriceEigthOff > 0){
+            $('.eight-span').html('1 Eigth, $'+productPriceEigthOff);  
+            $('.eight-span').attr('data-actual-price',productPriceEigthOff);
+            $('.eight-price').html('$'+productPriceEigth);
+        }else{
+            $('.eight-span').html('1 Eigth, $'+productPriceEigth);  
+            $('.eight-span').attr('data-actual-price',productPriceEigth);
+            $('.eight-price').html();
+        }
+        if(productPriceGramOff > 0){
+            $('.gram-span').html('1 Gram, $'+productPriceGramOff);  
+            $('.gram-span').attr('data-actual-price',productPriceGramOff);
+            $('.gram-price').html('$'+productPriceGram);
+        }else{
+            $('.gram-span').html('1 Gram, $'+productPriceGram);  
+            $('.gram-span').attr('data-actual-price',productPriceGram);
+            $('.gram-price').html();
+        }
+        $("#product_id").val(productId);
+        $("#limit").val(limit);
+
+    });
+    
+    $(document).on('click', '.icon-plus', function () {
+        var quantity   =   $('input[name=price]:checked').closest('div.price-row').find('span.sale-price').attr('data-quantity');
+        var type   =   $('input[name=price]:checked').closest('div.price-row').find('span.sale-price').attr('data-type');
+        var limit   =   $("#limit").val();
+        // 1 ounce = 28 gram, 1/8 ounce = 3.5 gram
+        var gramToOunce =   '';
+        var eighthToOunce =   '';
+        var new_quantity    =   parseInt(quantity) + parseInt(1);
+        
+        if(type == 'ounce' && new_quantity > limit){
+            alert('This product is limited to '+limit+' ounce a day');
+            $('.item-number').html('('+limit+')');
+            return false;
+        }
+        if(type == 'gram'){
+            gramToOunce =   (new_quantity/28);
+            if(gramToOunce > limit){
+                alert('This product is limited to '+parseInt(new_quantity-1)+' Grams a day');
+                $('.item-number').html('('+parseInt(new_quantity-1)+')');
+                return false;
+            }
+        }
+        if(type == 'eight'){
+            eighthToOunce =   ((new_quantity*3.5)/28);
+            if(eighthToOunce > limit){
+                alert('This product is limited to '+limit+' Ounce a day');
+                $('.item-number').html('('+parseInt(new_quantity-1)+')');
+                return false;
+            }
+        }
+        var actual_price   =   $('input[name=price]:checked').closest('div.price-row').find('span.sale-price').attr('data-actual-price');
+        $('input[name=price]:checked').closest('div.price-row').find('span.sale-price').attr('data-price',parseInt(actual_price) * new_quantity);
+        $('input[name=price]:checked').closest('div.price-row').find('span.sale-price').attr('data-quantity',new_quantity);
+        $('.item-number').html('('+new_quantity+')');
+    });
+    
+    $(document).on('click', '.icon-minus', function () {
+        var quantity   =   $('input[name=price]:checked').closest('div.price-row').find('span.sale-price').attr('data-quantity');
+        var new_quantity    =   parseInt(quantity) - parseInt(1);
+        if(new_quantity == 0){
+            return false;
+        }
+        var actual_price   =   $('input[name=price]:checked').closest('div.price-row').find('span.sale-price').attr('data-actual-price');
+        $('input[name=price]:checked').closest('div.price-row').find('span.sale-price').attr('data-price',parseInt(actual_price) * new_quantity);
+        $('input[name=price]:checked').closest('div.price-row').find('span.sale-price').attr('data-quantity',new_quantity);
+        $('.item-number').html('('+new_quantity+')')
+    });
+    
+    $(document).on('click','.save-add-to-cart',function(){
+        var item_id     =   $('#product_id').val();
+        var quantity    =   $('input[name=price]:checked').closest('div.price-row').find('span.sale-price').attr('data-quantity');
+        var price       =   $('input[name=price]:checked').closest('div.price-row').find('span.sale-price').attr('data-price');
+        var type        =   $('input[name=price]:checked').closest('div.price-row').find('span.sale-price').attr('data-type');
+        $.ajax({
+            type: 'POST',
+            data: {item_id: item_id, quantity:quantity, type:type},
+            url: siteurl + 'cus-add-tocart-products',
+            dataType: "json",
+            beforeSend: function () {
+                $('.wait-div').show();
+            },
+            success: function (data) {
+                
+                $('.wait-div').hide();
+                if (data != null) {
+                    if(data.success){
+                       $('.cart_valu').html(data.quantity); 
+                       $('.main_header').click(); 
+                    }
+                }
+            }
+        });
+    });
+</script>    
+
 <!-- Forgot password popup starts here -->
 <section class="popup_overlay forgot_password" data-pop="forgot-pop">
     <div class="popup">
@@ -30,40 +231,6 @@
 </section>
 
 
-<!-- Add to Cart popup starts here -->
-<section class="popup_overlay" data-pop="addtocart-pop">
-    <div class="popup">
-        <div class="pop_head">
-            <h2 class="pop_head_txt">Add To Cart</h2>
-            <span class="icon-close"></span>
-        </div>
-        <div class="popup_body">
-            <div class="body_txt cart-sec clearfix">
-                <!--                <div class="pro_img left">
-                                    <img id="popup_product_image" src="" alt="product">
-                                </div>-->
-                <div class="product_info right">
-                    <h3 id="popup_product_name"></h3>
-                    <p id="popup_product_price" ></p>
-                </div>
-                <div class="clearfix"></div>
-                <div class="popup_form clearfix">
-                    <?= form_open_multipart('cus-add-tocart-products', array('class' => '', 'id' => '')) ?> 
-                    <input type="hidden" name="item_id" id="popup_product_id">
-                    <div class="quant-sec">
-                        <h3 class="text">Quantity</h3>
-                        <p><input type="number" style="" class="gradient_border" name="quantity" id="popup_product_quntity" value="1" min="1"> </p>
-                    </div>
-
-
-                    <button type="submit" class="btn gradient">Save</button>
-                    <?= form_close() ?>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</section>	
 
 <!-- delivery date time popup -->
 <section class="popup_overlay" data-pop="deliveryDateTime-pop">
@@ -105,25 +272,24 @@
 </section>
 <!-- Forgot password popup end here -->
 <script>
+    document.onreadystatechange = function(e)
+    {
+        if (document.readyState === 'complete')
+        {
+            var cookie = ReadCookie('splash_shown');
+            if (cookie == null)
+            {
+                window.location.href = 'cus-splash';
+            }
+        }
+    };
     $(document).ready(function () {
         //$('.icon-cart').attr('cart-value',<?= $this->session->userdata('total_item') ?>); 
-        var cart_val    =   '<?php echo $this->session->userdata('total_item'); php?>';
+        var cart_val    =   "<?php echo $this->session->userdata('total_item'); ?>";
         if(cart_val > 0){
             $('.cart-badge').html('<span class="cart_valu">'+cart_val+'</span> ');
         }
     });
-    $(window).on('load', function () {
-
-        var cookie = ReadCookie('splash_shown');
-        if (cookie == null)
-        {
-            window.location.href = 'cus-splash';
-//            window.setInterval(function () {
-//                $(".splash_container").fadeOut('slow');
-//            }, 10000);
-        }
-    });
-
     function ReadCookie(name)
     {
         name += '=';
@@ -172,7 +338,10 @@
 
 //    check for upcoming appointments
     window.setInterval(function () {
-        checkForUpcomingAppointment();
+        var userId = '<?= $this->session->userdata('CUSTOMER-ID') ?>';
+        if(userId !=''){
+            checkForUpcomingAppointment();
+        }
     }, 60000);
 
     function checkForUpcomingAppointment() {
@@ -246,7 +415,7 @@
     });
 
     $(document).on('click', '.facebook_btn', function () {
-        fbs_click(this);
+        shareOnFacebook();
     });
     $(document).on('click', '.insta_btn', function () {
         insta_click(this);
@@ -260,21 +429,37 @@
         u = $($this).attr('data-url');
         t = $($this).attr('data-title');
 
-        window.open('http://www.facebook.com/sharer.php?u=' + encodeURIComponent(u) + '&t=' + encodeURIComponent(t),
+        window.open('https://www.facebook.com/sharer.php?u=' + encodeURIComponent(u) + '&t=' + encodeURIComponent(t),
                 'sharer',
                 'toolbar=0,status=0,top=150,left=200,width=626,height=400');
 
         return false;
     }
 
-
+    function shareOnFacebook() {
+        FB.ui(
+        {
+            method: 'share',
+            href: siteurl
+        },
+        function(response) {
+            if (response && !response.error_message) {
+                // HERE YOU CAN DO WHAT YOU NEED
+                alert('OK! User has published on Facebook.');
+            }
+            else
+            {
+                return
+            }
+        });
+    }
 
     function insta_click($this)
     {
         u = $($this).attr('data-url');
         t = $($this).attr('data-title');
 
-        window.open('http://www.instagram.com/sharer.php?u=' + encodeURIComponent(u) + '&t=' + encodeURIComponent(t),
+        window.open('https://www.instagram.com/sharer.php?u=' + encodeURIComponent(u) + '&t=' + encodeURIComponent(t),
                 'sharer',
                 'toolbar=0,status=0,top=150,left=200,width=626,height=400');
 
@@ -286,22 +471,128 @@
     {
         u = $($this).attr('data-url');
         t = $($this).attr('data-title');
-        window.open('http://www.twitter.com/share?url=' + encodeURIComponent(u) + '&t=' + encodeURIComponent(t),
+        window.open('https://www.twitter.com/share?url=' + encodeURIComponent(u) + '&t=' + encodeURIComponent(t),
                 'sharer',
                 'toolbar=0,status=0,top=150,left=200,width=626,height=400');
 
         return false;
     }
 
+    $(document).on('click', '.by-purpose', function () {
+        $('.cats-container').hide();
+        $('#page_name_header').text('By Purpose');
+        $('.back-screen').attr('href', siteurl + 'cus-our-products');
+        $('#moods_purpose').show();
+    });
+    
+    $(document).on('click', '.back-to-our-products', function () {
+        $('.back-to-our-products').attr('href', siteurl + 'cus-our-products');
+    });
+    
+    $(document).on('click', '.back_to_by_purpose', function () {
+        $('.cats-container').hide();
+        $('.filter_container').hide();
+        $('.product_list').hide();
+        $('#page_name_header').text('By Purpose');
+        $('.back_to_by_purpose').addClass('back-to-our-products');
+        $('.back-to-our-products').removeClass('back_to_by_purpose');
+        $('#moods_purpose').show();
+    });
+    
+    $(document).on('click','.activity-img',function(){
+        $('#page_name_header').text($(this).attr('data-text'));
+        $('#page_name_header').attr('data-value',$(this).attr('data-value'));
+        var mood_id =   $(this).attr('data-value');
+        $('.back-to-our-products').addClass('back-screen');
+        $('.back-screen').attr('href', 'javascript:;');
+        $('.back-screen').addClass('back_to_by_purpose');
+        $('.back_to_by_purpose').removeClass('back-screen');
+        $('.back_to_by_purpose').removeClass('back-to-our-products');
+        $('#moods_purpose').hide();
+        $('.cats-container').hide();
+        $('.sub-cats').hide();
+        $.ajax({
+            type: 'POST',
+            data: {by_mood: 'yes', by_mood_id: mood_id},
+            url: siteurl + 'get-sub-categories',
+            dataType: "json",
+            beforeSend: function () {
+                $('.wait-div').show();
+            },
+            success: function (data) {
+                $('.wait-div').hide();
+                var product_html = '';
+                
+                if (data.products.length > 0) {
+                    var weight_in = '';
+                    var previous = '';
+                    $.each(data.products, function (i, j) {
+                        if (j.item_unit == '1')
+                            weight_in = 'ounce';
+                        if (j.item_unit == '2')
+                            weight_in = 'gram';
+                        if (j.item_unit == '3')
+                            weight_in = 'ml';
+                        if (j.item_unit == '4')
+                            weight_in = 'piece';
+                        if (previous != j.cat_name) { 
+                            product_html += '<p class="help_txt">'+j.cat_name+'</p>';
+                        }
+                        
+                        product_html += '<div class="product_card clearfix">';
+                        product_html += '<div class="product_detail clearfix" style="background:' + j.color_code + '">';
+                        if(j.limited != 0 && j.limited != '' && j.limited != null){
+                            product_html += '<div class="pro_img left"><img src="' + j.item_image + '" alt="product"><span class="limite_tag">LIMITED SUPPLY</span></div>';
+                        }else{
+                            product_html += '<div class="pro_img left"><img src="' + j.item_image + '" alt="product"></div>';
+                        }
+                        product_html += '<div class="product_info right">';
+                        product_html += '<h3>' + j.item_name + '</h3>';
+                        product_html += '<div class="about_prdo clearfix">';
+                        product_html += '<p><b>Effect : </b><span class="txt_description">'+j.effect+'</span></p>';
+                        product_html += '<p><b>Flavor : </b><span class="txt_description">'+j.flavor+'</span> </p>';
+                        product_html += '<p class="price_product">$'+j.price_one+' /'+weight_in+'</p>';
+                        product_html += '</div>';
+                        product_html += '</div>';
+                        product_html += '</div>';
+                        product_html += '<div class="card_buttons clearfix">';
+                        product_html += '<a href="javascript:;" data-productId="' + j.item_id + '" data-productname="' + j.item_name + '" data-productprice="' + j.price_one + '" data-productpriceeigth="'+j.price_eigth+'" data-productpricegram="'+j.price_gram+'" data-productpriceoff="' + j.price_one_off + '" data-productpriceeigthoff="'+j.price_eight_off+'" data-productpricegramoff="'+j.price_gram_off+'" data-isearlyadopter="'+j.is_early_adopter+'" data-limited="'+j.limited+'" class="add_to_cart add_add_to_cart" data-attribute="addtocart-pop" >ADD TO CART</a>';
+                        product_html += '<a href="' + siteurl + 'cus-product-detail/' + j.item_id + '" class="add_to_cart">VIEW DETAILS</a>';
+                        product_html += '</div>';
+                        product_html += '</div>';
+                        
+                        previous = j.cat_name;
+                    });
+                    //$('#moods_purpose').show();
+                } else {
+                    product_html += 'No products';
+                }
+                $('.filter_container').show();
+                $('.product_list').show();
+                $('.product_list').html();
+                $('.product_list').html(product_html);
+            }
+        });
+    });
+
+
     $(document).on('click', '.main-cat', function () {
+        var all_products     =   'no';
+        var rare_products    =   'no';
         $('.main-cat').removeClass('gradient');
         $(this).addClass('gradient');
+        if($(this).hasClass('all_products')){
+            all_products =   'yes';
+        }
+        if($(this).hasClass('rare_products')){
+            rare_products =   'yes';
+        }
         $('#page_name_header').text($(this).text());
         $('.back-screen').attr('href', siteurl + 'cus-our-products');
         var cat_id = $(this).attr('data-value');
         $.ajax({
             type: 'POST',
-            data: {cat_id: cat_id},
+            data: {cat_id: cat_id, is_main: 'yes', all_products:all_products, rare_products:rare_products},
             url: siteurl + 'get-sub-categories',
             dataType: "json",
             beforeSend: function () {
@@ -312,6 +603,7 @@
                 var cat_html = '';
                 var product_html = '';
                 var isSelected = '';
+                var is_main = '';
                 if (data.subCats.length > 0) {
                     $.each(data.subCats, function (i, j) {
                         if (i == 0) {
@@ -319,13 +611,19 @@
                         } else {
                             isSelected = '';
                         }
-                        cat_html += '<li class="sub-cat ' + isSelected + '" data-value=' + j.category_id + '>' + j.name + '</li>';
+                        if(j.category_id == cat_id){
+                            is_main =   'yes';
+                        }else{
+                            is_main =   'no';
+                        }
+                        cat_html += '<li class="sub-cat ' + isSelected + '" data-value=' + j.category_id + ' data-is-main='+is_main+'>' + j.name + '</li>';
                     });
                 } else {
                     cat_html += 'No further categories...';
                 }
                 if (data.products.length > 0) {
                     var weight_in = '';
+                    var previous = '';
                     $.each(data.products, function (i, j) {
                         if (j.item_unit == '1')
                             weight_in = 'ounce';
@@ -335,35 +633,45 @@
                             weight_in = 'ml';
                         if (j.item_unit == '4')
                             weight_in = 'piece';
+                        if (previous != j.cat_name) { 
+                            product_html += '<p class="help_txt">'+j.cat_name+'</p>';
+                        }
+                        
                         product_html += '<div class="product_card clearfix">';
                         product_html += '<div class="product_detail clearfix" style="background:' + j.color_code + '">';
-                        product_html += '<span class="certificate_ico icon-badge"></span>';
-                        product_html += '<div class="pro_img left"><img src="' + j.item_image + '" alt="product"></div>';
+                        if(j.limited != 0 && j.limited != '' && j.limited != null){
+                            product_html += '<div class="pro_img left"><img src="' + j.item_image + '" alt="product"><span class="limite_tag">LIMITED SUPPLY</span></div>';
+                        }else{
+                            product_html += '<div class="pro_img left"><img src="' + j.item_image + '" alt="product"></div>';
+                        }
                         product_html += '<div class="product_info right">';
                         product_html += '<h3>' + j.item_name + '</h3>';
-                        product_html += '<p><b>Price:</b> $' + j.price_one + '/1 ' + weight_in + '</p>';
-                        product_html += '<p class="about">' + j.family + '</p>';
-                        product_html += '<h4>In Stock</h4>';
-                        product_html += '<p><b>Amount:</b> $20/g- $200/ ounce</p>';
+                        product_html += '<div class="about_prdo clearfix">';
+                        product_html += '<p><b>Effect : </b><span class="txt_description">'+j.effect+'</span></p>';
+                        product_html += '<p><b>Flavor : </b><span class="txt_description">'+j.flavor+'</span> </p>';
+                        product_html += '<p class="price_product">$'+j.price_one+' /'+weight_in+'</p>';
+                        product_html += '</div>';
                         product_html += '</div>';
                         product_html += '</div>';
                         product_html += '<div class="card_buttons clearfix">';
-                        product_html += '<a href="javascript:;" data-productId="' + j.item_id + '" data-productimage="' + j.item_image + '" data-productname="' + j.item_name + '" data-productprice="' + j.price_one + '" data-productweight="' + weight_in + '" class="add_to_cart add_add_to_cart" data-attribute="addtocart-pop" >Add to Cart</a>';
-                        product_html += '<a href="' + siteurl + 'cus-product-detail/' + j.item_id + '" class="add_to_cart">More Info</a>';
+                        product_html += '<a href="javascript:;" data-productId="' + j.item_id + '" data-productname="' + j.item_name + '" data-productprice="' + j.price_one + '" data-productpriceeigth="'+j.price_eigth+'" data-productpricegram="'+j.price_gram+'" data-productpriceoff="' + j.price_one_off + '" data-productpriceeigthoff="'+j.price_eight_off+'" data-productpricegramoff="'+j.price_gram_off+'" data-isearlyadopter="'+j.is_early_adopter+'" data-limited="'+j.limited+'" class="add_to_cart add_add_to_cart" data-attribute="addtocart-pop" >ADD TO CART</a>';
+                        product_html += '<a href="' + siteurl + 'cus-product-detail/' + j.item_id + '" class="add_to_cart">VIEW DETAILS</a>';
                         product_html += '</div>';
                         product_html += '</div>';
-
+                        
+                        previous = j.cat_name;
                     });
+                    $('#moods_purpose').show();
                 } else {
                     product_html += 'No products';
                 }
-
-                $('.cats-container').hide();
-                $('.sub-cats').html();
-                $('.sub-cats').html(cat_html);
-                $('.sub-cats').show();
-                $('.filter_container').show();
-
+                if(all_products == 'no' && rare_products == 'no'){
+                    $('.cats-container').hide();
+                    $('.sub-cats').html();
+                    $('.sub-cats').html(cat_html);
+                    $('.sub-cats').show();
+                    $('.filter_container').show();
+                }
                 $('.product_list').html();
                 $('.product_list').html(product_html);
             }
@@ -371,14 +679,18 @@
     });
 
     $(document).on('click', '.sub-cat', function () {
+        var cat_id = '';
         $('.sub-cat').removeClass('gradient');
         $(this).addClass('gradient');
-        var cat_id = $(this).attr('data-value');
+        var is_main = $(this).attr('data-is-main');
+        if(is_main == 'no'){
+            cat_id = $(this).attr('data-value');
+        }
         var family_id = $('#search_product_family').val();
         var main_cat_id = $('.main-cat.gradient').attr('data-value');
         $.ajax({
             type: 'POST',
-            data: {cat_id: main_cat_id, sub_cat_id: cat_id, family_id: family_id},
+            data: {cat_id: main_cat_id, sub_cat_id: cat_id, family_id: family_id, is_main: is_main,all_products:'no'},
             url: siteurl + 'get-products-by-subcat',
             dataType: "json",
             beforeSend: function () {
@@ -389,6 +701,7 @@
                 var product_html = '';
                 if (data.products.length > 0) {
                     var weight_in = '';
+                    var previous = '';
                     $.each(data.products, function (i, j) {
                         if (j.item_unit == '1')
                             weight_in = 'ounce';
@@ -398,25 +711,36 @@
                             weight_in = 'ml';
                         if (j.item_unit == '4')
                             weight_in = 'piece';
+                        if (previous != j.cat_name) { 
+                            product_html += '<p class="help_txt">'+j.cat_name+'</p>';
+                        }
                         product_html += '<div class="product_card clearfix">';
                         product_html += '<div class="product_detail clearfix" style="background:' + j.color_code + '">';
-                        product_html += '<span class="certificate_ico icon-badge"></span>';
-                        product_html += '<div class="pro_img left"><img src="' + j.item_image + '" alt="product"></div>';
+                        if(j.limited != 0 && j.limited != '' && j.limited != null){
+                            product_html += '<div class="pro_img left"><img src="' + j.item_image + '" alt="product"><span class="limite_tag">LIMITED SUPPLY</span></div>';
+                        }else{
+                            product_html += '<div class="pro_img left"><img src="' + j.item_image + '" alt="product"></div>';
+                        }
+                        //product_html += '<div class="pro_img left"><img src="' + j.item_image + '" alt="product"></div>';
                         product_html += '<div class="product_info right">';
                         product_html += '<h3>' + j.item_name + '</h3>';
-                        product_html += '<p><b>Price:</b> $' + j.price_one + '/1 ' + weight_in + '</p>';
-                        product_html += '<p class="about">' + j.family + '</p>';
-                        product_html += '<h4>In Stock</h4>';
-                        product_html += '<p><b>Amount:</b> $20/g- $200/ ounce</p>';
+                        product_html += '<div class="about_prdo clearfix">';
+                        product_html += '<p><b>Effect : </b><span class="txt_description">'+j.effect+'</span></p>';
+                        product_html += '<p><b>Flavor : </b><span class="txt_description">'+j.flavor+'</span> </p>';
+                        product_html += '<p class="price_product">$'+j.price_one+' /'+weight_in+'</p>';
+                        product_html += '</div>';
                         product_html += '</div>';
                         product_html += '</div>';
                         product_html += '<div class="card_buttons clearfix">';
-                        product_html += '<a href="javascript:;" data-productId="' + j.item_id + '" data-productimage="' + j.item_image + '" data-productname="' + j.item_name + '" data-productprice="' + j.price_one + '" data-productweight="' + weight_in + '" class="add_to_cart add_add_to_cart" data-attribute="addtocart-pop" >Add to Cart</a>';
-                        product_html += '<a href="' + siteurl + 'cus-product-detail/' + j.item_id + '" class="add_to_cart">More Info</a>';
+                        product_html += '<a href="javascript:;" data-productId="' + j.item_id + '" data-productname="' + j.item_name + '" data-productprice="' + j.price_one + '" data-productpriceeigth="'+j.price_eigth+'" data-productpricegram="'+j.price_gram+'" data-productpriceoff="' + j.price_one_off + '" data-productpriceeigthoff="'+j.price_eight_off+'" data-productpricegramoff="'+j.price_gram_off+'" data-isearlyadopter="'+j.is_early_adopter+'" data-limited="'+j.limited+'" class="add_to_cart add_add_to_cart" data-attribute="addtocart-pop" >ADD TO CART</a>';
+                        product_html += '<a href="' + siteurl + 'cus-product-detail/' + j.item_id + '" class="add_to_cart">VIEW DETAILS</a>';
                         product_html += '</div>';
                         product_html += '</div>';
+                        
+                        previous = j.cat_name;
 
                     });
+                    $('#moods_purpose').show();
                 } else {
                     product_html += 'No products';
                 }
@@ -428,12 +752,22 @@
     });
 
     $(document).on('click', '#search_product_family', function () {
+        var mood_id =   $('#page_name_header').attr('data-value');
+        var by_mood = 'no';
+        if(mood_id != '' && mood_id != undefined){
+            by_mood =   'yes';
+        }
+        var cat_id  =   '';
         var main_cat_id = $('.main-cat.gradient').attr('data-value');
-        var cat_id = $('.sub-cat.gradient').attr('data-value');
+        var is_main = $('.sub-cat.gradient').attr('data-is-main');
+        if(is_main == 'no'){
+            cat_id = $('.sub-cat.gradient').attr('data-value');
+        }
+        
         var family_id = $(this).val();
         $.ajax({
             type: 'POST',
-            data: {cat_id: main_cat_id, sub_cat_id: cat_id, family_id: family_id},
+            data: {cat_id: main_cat_id, sub_cat_id: cat_id, family_id: family_id, by_mood_id:mood_id, by_mood:by_mood},
             url: siteurl + 'get-products-by-subcat',
             dataType: "json",
             beforeSend: function () {
@@ -444,6 +778,7 @@
                 var product_html = '';
                 if (data.products.length > 0) {
                     var weight_in = '';
+                    var previous = '';
                     $.each(data.products, function (i, j) {
                         if (j.item_unit == '1')
                             weight_in = 'ounce';
@@ -453,25 +788,38 @@
                             weight_in = 'ml';
                         if (j.item_unit == '4')
                             weight_in = 'piece';
+                        if (previous != j.cat_name) { 
+                            product_html += '<p class="help_txt">'+j.cat_name+'</p>';
+                        }
                         product_html += '<div class="product_card clearfix">';
                         product_html += '<div class="product_detail clearfix" style="background:' + j.color_code + '">';
-                        product_html += '<span class="certificate_ico icon-badge"></span>';
-                        product_html += '<div class="pro_img left"><img src="' + j.item_image + '" alt="product"></div>';
+                        if(j.limited != 0 && j.limited != '' && j.limited != null){
+                            product_html += '<div class="pro_img left"><img src="' + j.item_image + '" alt="product"><span class="limite_tag">LIMITED SUPPLY</span></div>';
+                        }else{
+                            product_html += '<div class="pro_img left"><img src="' + j.item_image + '" alt="product"></div>';
+                        }
+                        //product_html += '<div class="pro_img left"><img src="' + j.item_image + '" alt="product"></div>';
                         product_html += '<div class="product_info right">';
                         product_html += '<h3>' + j.item_name + '</h3>';
-                        product_html += '<p><b>Price:</b> $' + j.price_one + '/1 ' + weight_in + '</p>';
-                        product_html += '<p class="about">' + j.family + '</p>';
-                        product_html += '<h4>In Stock</h4>';
-                        product_html += '<p><b>Amount:</b> $20/g- $200/ ounce</p>';
+                        product_html += '<div class="about_prdo clearfix">';
+                        product_html += '<p><b>Effect : </b><span class="txt_description">'+j.effect+'</span></p>';
+                        product_html += '<p><b>Flavor : </b><span class="txt_description">'+j.flavor+'</span> </p>';
+                        product_html += '<p class="price_product">$'+j.price_one+' /'+weight_in+'</p>';
+                        product_html += '</div>';
                         product_html += '</div>';
                         product_html += '</div>';
                         product_html += '<div class="card_buttons clearfix">';
-                        product_html += '<a href="javascript:;" data-productId="' + j.item_id + '" data-productimage="' + j.item_image + '" data-productname="' + j.item_name + '" data-productprice="' + j.price_one + '" data-productweight="' + weight_in + '" class="add_to_cart add_add_to_cart" data-attribute="addtocart-pop" >Add to Cart</a>';
-                        product_html += '<a href="' + siteurl + 'cus-product-detail/' + j.item_id + '" class="add_to_cart">More Info</a>';
+                        product_html += '<a href="javascript:;" data-productId="' + j.item_id + '" data-productname="' + j.item_name + '" data-productprice="' + j.price_one + '" data-productpriceeigth="'+j.price_eigth+'" data-productpricegram="'+j.price_gram+'" data-productpriceoff="' + j.price_one_off + '" data-productpriceeigthoff="'+j.price_eight_off+'" data-productpricegramoff="'+j.price_gram_off+'" data-isearlyadopter="'+j.is_early_adopter+'" data-limited="'+j.limited+'" class="add_to_cart add_add_to_cart" data-attribute="addtocart-pop" >ADD TO CART</a>';
+                        product_html += '<a href="' + siteurl + 'cus-product-detail/' + j.item_id + '" class="add_to_cart">VIEW DETAILS</a>';
                         product_html += '</div>';
                         product_html += '</div>';
+                        
+                        previous = j.cat_name;
 
                     });
+                    if(by_mood == 'no'){
+                        $('#moods_purpose').show();
+                    }
                 } else {
                     product_html += 'No products';
                 }
@@ -482,39 +830,8 @@
         });
     });
 
-
-//    add to cart
-
-    $(document).on('click', '.add_add_to_cart', function () {
-        checkUserLogin();
-        var productId = $(this).data('productid');
-        var productImage = $(this).data('productimage');
-        var productName = $(this).data('productname');
-        var productPrice = $(this).data('productprice');
-        var productWeight = $(this).data('productweight');
-
-        var pricehtml = '<b>Price:</b>$<input type="hidden" id="old_product_price" value="' + productPrice + '"><span id="popup_product_one_amount">' + productPrice + '</span>/<span id="product_quantity">1</span>' + productWeight;
-
-        $("#popup_product_image").attr("src", productImage);
-        $("#popup_product_name").html(productName);
-        $("#popup_product_price").html(pricehtml);
-        $("#popup_product_quntity").val(1);
-        $("#popup_product_id").val(productId);
-
-    });
-
-    $(document).on("keyup keydown change", "#popup_product_quntity", function () {
-
-        var quantity = $("#popup_product_quntity").val();
-        var price = $("#old_product_price").val();
-
-        $("#popup_product_one_amount").html(parseInt(price) * parseInt(quantity));
-        $("#product_quantity").html(quantity);
-    });
-
     $(document).on('click', '.cart_checkout', function () {
         var total_amount = $('#total_cart_value').text();
-        //window.location.href = 'cus-caregiver-step1';
         window.location.href = 'cus-delivery-datetime';
     });
 
@@ -575,11 +892,16 @@
             },
             success: function (data) {
                 $('.wait-div').hide();
-                $('#product_card_' + cart_id).remove();
-                var numItems = $('.product_card_small').length;
-                if (numItems <= 0) {
-                    $('.my_cart.product_list').html('Nothing in cart...');
-                }
+//                var item_total_price    =   $('.total_val_'+cart_id).data('value');
+//                var updatedTotal    =   parseInt($('#total_cart_value').data('value'))-parseInt(item_total_price);
+//                $('#total_cart_value').attr('data-value',updatedTotal);
+//                $('#total_cart_value').html('$'+updatedTotal);
+//                $('#product_card_' + cart_id).remove();
+//                var numItems = $('.product_card_small').length;
+//                if (numItems <= 0) {
+//                    $('.my_cart.product_list').html('Nothing in cart...');
+//                }
+                location.reload();
             }
         });
     });
@@ -595,6 +917,50 @@
             success: function (data) {
                 $('.wait-div').hide();
                 $('.my_cart.product_list').html('Nothing in cart...');
+            }
+        });
+    });
+    
+    $(document).on('click', '.saveSelected', function () {
+        var selectedValues = [];
+        $("input:checkbox[name=prescription]:checked").each(function () {
+            selectedValues.push($(this).val());
+
+        });
+        if (selectedValues.length <= 0) {
+            alert('Please select at least one consultation.');
+            location.reload();
+        }
+
+        var other_reason = $('#other_reason').val();
+        var other_prescription = $('#other_prescription').val();
+        var other_doctor = $('#other_doctor').val();
+        if(other_prescription == ''){
+            document.getElementById("other_prescription").style.borderColor = "red";
+            return false;
+        }else{
+            document.getElementById("other_prescription").style.borderColor = "";
+        }
+        
+        if(other_doctor == ''){
+            document.getElementById("other_doctor").style.borderColor = "red";
+            return false;
+        }else{
+            document.getElementById("other_doctor").style.borderColor = "";
+        }
+        
+        $.ajax({
+            type: 'POST',
+            data: {selectedValues: selectedValues, other_reason: other_reason, other_prescription:other_prescription, other_doctor:other_doctor},
+            url: siteurl + 'save-selected-consultations',
+            dataType: "json",
+            success: function (data) {
+                if(data.success){
+                    window.location.href = 'cus-time-availability';
+                }else{
+                    alert('Please upload Id proofs first.');
+                    window.location.href = 'cus-upload-proof';
+                }
             }
         });
     });

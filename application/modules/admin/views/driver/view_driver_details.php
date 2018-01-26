@@ -230,43 +230,43 @@
                         <div class="col-md-6 checckbox_list" >
                             
                                  <label class="checkbox clearfix">
-                                     <input id="mon" type="checkbox" name="mon" <?php if($driverAvailability['mon']=='1'){echo "checked";} ?> >
+                                     <input id="mon" type="checkbox" name="mon" <?php if(isset($driverAvailability['mon']) && $driverAvailability['mon'] == '1'){echo "checked";} ?> >
                                    
                                 <span class="box_line"> </span>
                             <span class="checkbox_txt">Mon</span> 
                         </label>
                                 <label class="checkbox clearfix">
-                                    <input id="tue" class="form-control" type="checkbox" name="tue" <?php if($driverAvailability['tue']=='1'){echo "checked";} ?>>
+                                    <input id="tue" class="form-control" type="checkbox" name="tue" <?php if(isset($driverAvailability['tue']) && $driverAvailability['tue']=='1'){echo "checked";} ?>>
                                     
                                <span class="box_line"> </span>
                             <span class="checkbox_txt">Tue</span> 
                         </label>
                                  <label class="checkbox clearfix">
-                                    <input id="wed" type="checkbox" name="wed" <?php if($driverAvailability['wed']=='1'){echo "checked";} ?>>
+                                    <input id="wed" type="checkbox" name="wed" <?php if(isset($driverAvailability['wed']) && $driverAvailability['wed']=='1'){echo "checked";} ?>>
                                     
                                 <span class="box_line"> </span>
                             <span class="checkbox_txt">Wed</span> 
                         </label>
                                  <label class="checkbox clearfix">
-                                    <input id="thu" type="checkbox" name="thu" <?php if($driverAvailability['thu']=='1'){echo "checked";} ?>>
+                                    <input id="thu" type="checkbox" name="thu" <?php if(isset($driverAvailability['thu']) && $driverAvailability['thu']=='1'){echo "checked";} ?>>
                                     
                                 <span class="box_line"> </span>
                             <span class="checkbox_txt">Thu</span> 
                         </label>
                                  <label class="checkbox clearfix">
-                                    <input id="fri" type="checkbox" name="fri" <?php if($driverAvailability['fri']=='1'){echo "checked";} ?>>
+                                    <input id="fri" type="checkbox" name="fri" <?php if(isset($driverAvailability['fri']) && $driverAvailability['fri']=='1'){echo "checked";} ?>>
                                     
                                 <span class="box_line"> </span>
                             <span class="checkbox_txt">Fri</span> 
                         </label>
                                  <label class="checkbox clearfix">
-                                    <input id="sat" type="checkbox" name="sat" <?php if($driverAvailability['sat']=='1'){echo "checked";} ?>>
+                                    <input id="sat" type="checkbox" name="sat" <?php if(isset($driverAvailability['sat']) && $driverAvailability['sat']=='1'){echo "checked";} ?>>
                                     
                                 <span class="box_line"> </span>
                             <span class="checkbox_txt">Sat</span> 
                         </label>
                                  <label class="checkbox clearfix">
-                                    <input id="sun" type="checkbox" name="sun" <?php if($driverAvailability['sun']=='1'){echo "checked";} ?>>
+                                    <input id="sun" type="checkbox" name="sun" <?php if(isset($driverAvailability['sun']) && $driverAvailability['sun']=='1'){echo "checked";} ?>>
                                     
                                 <span class="box_line"> </span>
                             <span class="checkbox_txt">Sun</span> 
@@ -316,20 +316,23 @@
                                   
                                   if(count($driverStatistics)>0){
 //                                   echo "<pre>"; print_r($driverStatistics);exit;
-                                    foreach($driverStatistics as $index => $val){ 
-                                        
+                                    foreach($driverStatistics as $index => $val){
                                     ?>
                                 <tr>
                                     <td><?php echo $index+1; ?></td>
                                     <td><?php echo date("d-m-Y",strtotime($val['date']));  ?></td>
-                                    <td><?php echo date(D,strtotime($val['date']));  ?></td>
+                                    <td><?php echo date("D",strtotime($val['date']));  ?></td>
                                     <td><?php echo $val['total'];  ?></td>
                                     <td>
                                         <?php 
-                                            echo $start = date_create($val['start_time']);
-                                            echo $end = date_create($val['end_time']);
-                                            $diff=date_diff($end,$start);
-                                            echo $diff->h.':'.$diff->i;
+                                            $start = date_create($val['start_time']);
+                                            $end = date_create($val['end_time']);
+
+                                            echo $start->format('H:m').'<br>';
+                                            echo $end->format('H:m').'<br>';
+
+                                            $diff = date_diff($end,$start);
+                                            echo $diff->format("%h Hours");
                                         ?>
                                     </td>
                                     <td><?php echo $val['distance_in_km'];  ?></td>
@@ -486,7 +489,6 @@ $('.timepicker').timepicker({
             interval: 60,
             minTime: '0',
             maxTime: '11:00pm',
-            defaultTime: '<?php echo $from;?>',
             startTime: '12:00am',
             dynamic: false,
             dropdown: true,
@@ -497,8 +499,7 @@ $('.timepicker').timepicker({
             timeFormat: 'h:mm p',
             interval: 60,
             minTime: '0',
-            maxTime: '11:00pm',
-            defaultTime: '<?php echo $to; ?>',
+            maxTime: '11:00pm'
             startTime: '12:00am',
             dynamic: false,
             dropdown: true,

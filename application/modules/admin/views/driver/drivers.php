@@ -55,7 +55,7 @@ td.action i.fa.fa-user {
          <?php  } ?>
         <!-- SEARCH HEVRE -->
             <div class="row-fluid top-act">
-               <form action='<?php echo base_url();?>drivers' id="searchData" method="GET">
+               <form action='<?php echo base_url();?>drivers' id="searchData" method="POST">
                <div class="form-group search"> 
                   <input type="text" class="search-custom" value="<?php echo $this->input->get('searchText')!= '' ? $this->input->get('searchText'):'';?>" name="searchText" onkeyup="stoppedTyping()" placeholder="Search Driver">
                </div>
@@ -71,8 +71,8 @@ td.action i.fa.fa-user {
                  <div class="col-xs-2 ">
                  <select onchange="changeStatus()" class="form-control" name="status">
                     <option value="">Status</option>
-                      <option <?php echo $_GET['status']==1?'selected=selected':''?> value="1">Online</option>
-                      <option <?php echo $_GET['status']=='0'?'selected=selected':''?> value="0">Off Line</option>
+                      <option <?php echo isset($_GET['status']) && $_GET['status'] == 1 ? 'selected=selected':''?> value="1">Online</option>
+                      <option <?php echo isset($_GET['status']) && $_GET['status'] == 0 ? 'selected=selected':''?> value="0">Off Line</option>
                  </select>
                 </div>   
                    
@@ -111,19 +111,24 @@ td.action i.fa.fa-user {
                         <?php
                         if (count($driverlist) > 0) 
                         {
-                            if ($_GET['page'] == '') {
-                                        $i = 0;
-                                    } else {
-                                        $i = ($_GET['page'] - 1 ) * RECORDS_PERPAGE;
-                                    }
+                            $i = 0;
+
+                            if ( isset($_GET['page']) )
+                            {
+                                if ($_GET['page'] == '') {
+                                    $i = 0;
+                                } else {
+                                    $i = ($_GET['page'] - 1 ) * RECORDS_PERPAGE;
+                                }
+                            }
                             foreach ($driverlist as $key => $list) {
                                 //print_r($list);die;
-                                $ct = new DateTime($list['createdon']);
-                                $pt = new DateTime($list['postdate']);
+                                /*$ct = new DateTime($list['createdon']);
+                                $pt = new DateTime($list['postdate']);*/
                                 
                                 ?>
                                     <tr>
-                                         <?php $status = $list['online']=='1' ? 'Online' : 'Offline'; ?>
+                                         <?php $status = $list['online'] == '1' ? 'Online' : 'Offline'; ?>
                                         
                                         <td> <?php echo $i + 1; ?> </td>
                                         <td class="numeric editable"><?php echo $list['first_name']." ".$list['last_name']; ?> </td>

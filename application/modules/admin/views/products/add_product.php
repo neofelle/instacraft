@@ -183,36 +183,68 @@
         <!------------------content start ------------------------------>
         
         <!-- BEGIN FORM-->
-        <form class="form-horizontal" id="addProduct" name="addDoctor" action="" style="min-height:495px;" role="form" enctype='multipart/form-data' method="post">                
+        <form class="form-horizontal" id="addProduct" name="addDoctor" action="" style="min-height:495px;" role="form" enctype='multipart/form-data' method="post">
             <h3 class="page-title ">Add Product </h3>
+            <div class="col-sm-12 note-message">
+                <span class="text-danger">NOTE: All fields are required.</span> 
+            </div>
             <div class="portlet-body form">
                         <div class="form-body padLeftZero">                  
                             <div class="row padLeftZero">
                                 <div class="col-md-2 padLeftZero">
                                     
                                     <div class="form-group padLeftZero">
-                                        <div class="col-md-12 padLeftZero">
-                                            <input class="font12px" type="text" value="" id="styleInput" style="width:32%;height:35px;border:2px solid #ddb9fc;;" readonly>
-                                            <input type="hidden" id="itemcolor" name="itemcolor" value="" readonly>
-                                            <button class="jscolor {valueElement:'itemcolor', styleElement:'styleInput'}" id="colorPicker">Pick color&nbsp;&nbsp;<i class="fa fa-caret-down" aria-hidden="true"></i></button>
-                                            <span id="itemcolor-error" class="help-block hide"></span>
+                                        <div class="col-md-12 padLeftZero" >
+                                            <input type="radio" name="mycolor"  class="mycolor customehide"> Custom Color </br>
+
+                                            <div style="display:none;" class="mycustomerColor">
+                                                <input class="font12px" type="text" value="" id="styleInput" style="width:32%;height:35px;border:2px solid #ddb9fc;;" readonly>
+                                                <input type="hidden" id="itemcolor" name="itemcolor" value="" readonly>
+                                                <button class="jscolor {valueElement:'itemcolor', styleElement:'styleInput'}" id="colorPicker">Pick color&nbsp;&nbsp;<i class="fa fa-caret-down" aria-hidden="true"></i></button>
+                                                
+                                            </div>
 <!--                                            <span id="itemSubType-error" class="help-block hide"></span>-->
                                         </div>
                                     </div>
+                                    <div class="form-group ">
+                                        <div class="col-md-12 ">
+                                            <input type="radio" name="mycolor" class="mycolor hideCustom" value="8e39c3" >
+                                            <span class="box_line"> </span>
+                                            <input class="font12px" type="text" value="" id="styleInput " style="width: 32%; height: 35px; border: 2px solid rgb(221, 185, 252); background-image: none; background-color: #8e39c3; color:rgb(0, 0, 0);" readonly="">
+                                            
+                                        </div>
+                                        <div class="col-md-12">
+                                            <input type="radio" name="mycolor" class="mycolor hideCustom"  value="fab91f" >
+                                            <span class="box_line"> </span>
+                                            <input class="font12px" type="text" value="" id="styleInput" style="width: 32%; height: 35px; border: 2px solid rgb(221, 185, 252); background-image: none; background-color: #fab91f; color: rgb(0, 0, 0);" readonly="">
+
+                                        </div>
+                                        <div class="col-md-12">
+                                            <input type="radio" name="mycolor" class="mycolor hideCustom" value="2db8b3" >
+                                            <span class="box_line"> </span>
+                                            <input class="font12px" type="text" value="" id="styleInput" style="width: 32%; height: 35px; border: 2px solid rgb(221, 185, 252); background-image: none; background-color: #2db8b3; color: rgb(0, 0, 0);" readonly="">
+                                        </div>
+                                        <div class="col-md-12">
+                                            <input type="radio" name="mycolor"  class="mycolor hideCustom" value="39a84c" >
+                                            <span class="box_line"> </span>
+                                            <input class="font12px" type="text" value="" id="styleInput" style="width: 32%; height: 35px; border: 2px solid rgb(221, 185, 252); background-image: none; background-color: #39a84c; color: rgb(0, 0, 0);" readonly="">
+                                        </div>
+                                        <span id="mycolor-error" class="help-block hide"></span>
+                                    </div>
                                     <div class="form-group padLeftZero">
                                         <div class="col-md-12 padLeftZero">
-                                            <input type="text" id="itemflavour" name="itemflavour" class="form-control font12px" placeholder="Flavour " value="<?php if(isset($_POST['itemflavour'])) echo $_POST['itemflavour']; ?>">
+                                            <input type="text" id="itemflavour" name="itemflavour" class="form-control font12px" placeholder="Flavour " value="">
                                             <span id="itemflavour-error" class="help-block hide"></span>
 <!--                                            <span id="itemSubType-error" class="help-block hide"></span>-->
                                         </div>
                                     </div>
                                     <div class="box">
                                         <input type="file" name="item_pic" id="item_pic" class="inputfile inputfile-1 hidden" data-multiple-caption="{count} files selected" onChange="VehicleImageURL(this,this.value,'profileimage');" value=""  />
-                                        <label for="item_pic" class="labelCustom" title="Choose Product image" style="margin-bottom:0px !important;"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"/></svg> <span style="font-size: 10px;">Choose a image&hellip;</span></label>
+                                        <label for="item_pic" class="labelCustom" title="Choose Product image" style="margin-bottom:0px !important;"><svg xmlns="https://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"/></svg> <span style="font-size: 10px;">Choose a image&hellip;</span></label>
                                     </div>
                                     <!-- Trigger the Modal -->
-<!--                                    <img id="myImg" src="http://www.lifeline.ae/lifeline-hospital/wp-content/uploads/2015/02/LLH-Doctors-Male-Avatar.png" alt="Trolltunga, Norway"  width="138px">-->
-                                    <img id="profileimage" style="border: 1px solid cyan;" width="152px" src="http://www.lifeline.ae/lifeline-hospital/wp-content/uploads/2015/02/LLH-Doctors-Male-Avatar.png" alt="Profile Photo" />
+<!--                                    <img id="myImg" src="https://www.lifeline.ae/lifeline-hospital/wp-content/uploads/2015/02/LLH-Doctors-Male-Avatar.png" alt="Trolltunga, Norway"  width="138px">-->
+                                    <img id="profileimage" style="border: 1px solid cyan;" width="152px" src="https://www.lifeline.ae/lifeline-hospital/wp-content/uploads/2015/02/LLH-Doctors-Male-Avatar.png" alt="Profile Photo" />
                                     <span id="item_pic-error" class="help-block hide"></span>
                                 </div>
                                 <!--/span-->
@@ -271,15 +303,41 @@
                                     <!-- PRICE BOX -->
                                     <div class="form-group">
                                         <div class="col-md-6 customCol">
+                                            <input type="text" id="onegramprice" name="onegramprice" class="form-control font12px" onkeypress="return isNumberKey(event)" placeholder="An gram price" value="<?php if(isset($_POST['dctrFname'])) echo $_POST['dctrFname']; ?>">
+                                            <span id="onegramprice-error" class="help-block hide"></span>
+                                            
+                                        </div>
+
+                                        <div class="col-md-6 customCol">
+                                            <input type="text" id="onegramoffprice" name="onegramoffprice" class="form-control font12px" onkeypress="return isNumberKey(event)" placeholder="One gram off price" value="<?php if(isset($_POST['dctrFname'])) echo $_POST['dctrFname']; ?>">
+                                            <span id="onegramoffprice-error" class="help-block hide"></span>
+
+                                        </div>
+
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-6 customCol">
                                             <input type="text" id="ounce8price" name="ounce8price" class="form-control font12px" onkeypress="return isNumberKey(event)" placeholder="1/8 ounce price" value="<?php if(isset($_POST['dctrFname'])) echo $_POST['dctrFname']; ?>">
                                             <span id="ounce8price-error" class="help-block hide"></span>
                                         </div>
                                         <div class="col-md-6 customCol">
+                                            <input type="text" id="ounce8offprice" name="ounce8offprice" class="form-control font12px" onkeypress="return isNumberKey(event)" placeholder="1/8 ounce off price" value="<?php if(isset($_POST['dctrFname'])) echo $_POST['dctrFname']; ?>">
+                                            <span id="ounce8offprice-error" class="help-block hide"></span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-6 customCol">
                                             <input type="text" id="anounceprice" name="anounceprice" class="form-control font12px" onkeypress="return isNumberKey(event)" placeholder="An ounce price" value="<?php if(isset($_POST['dctrFname'])) echo $_POST['dctrFname']; ?>">
                                             <span id="anounceprice-error" class="help-block hide"></span>
                                         </div>
+                                        <div class="col-md-6 customCol">
+                                            <input type="text" id="anounceoffprice" name="anounceoffprice" class="form-control font12px" onkeypress="return isNumberKey(event)" placeholder="An ounce off price" value="<?php if(isset($_POST['dctrFname'])) echo $_POST['dctrFname']; ?>">
+                                            <span id="anounceoffprice-error" class="help-block hide"></span>
+                                        </div>
+                                        
                                     </div>
                                     <!-- EFFECTS RECOMMENDED_USAGES REVIEW  -->
+                                    
                                     <div class="form-group">
                                       <div class="col-md-12 customCol">
                                           <textarea class="form-control font12px" id="itemrecommends" name="itemrecommends" placeholder="Recommended usages" ><?php if(isset($_POST['dctrEmail'])) echo $_POST['dctrEmail']; ?></textarea>
@@ -321,13 +379,16 @@
                                                         <ul>
                                                             <?php
                                                                 if (isset($categories) && count($categories) > 0) {
+//                                                                    echo "<pre>";print_r($categories);
                                                                     foreach ($categories AS $category){
                                                                         $catid   = $category['catid']; $catname = $category['catname'];
-                                                                        echo '<li class="cat"><input type="checkbox" data-info="category_'.$catid.'" id="catid_'.$catid.'" name="categories[]" value="'.$catid.'" data-val="'.$catname.'" /> '.$catname.' </li>';
+                                                                        echo '<li class="cat">'.$catname.' </li>';
+//                                                                        echo '<li class="cat"><!--input type="radio" data-info="category_'.$catid.'" id="catid_'.$catid.'" name="categories[]" value="'.$catid.'" data-val="'.$catname.'" /--> '.$catname.' </li>';
                                                                         if(isset($category['subcategories']) && count($category['subcategories']) > 0){
                                                                             foreach ($category['subcategories'] AS $subcategory){
                                                                                 $subcatid   = $subcategory['subcatid']; $subcatname = $subcategory['subcatname'];
-                                                                                echo '<li class="subcat"><input type="checkbox" data-info="subcategory_'.$catid.'" id="subcatid_'.$subcatid.'" name="categories[]" value="'.$subcatid.'"  data-val="'.$subcatname.'"  />'.$subcatname.'</li>';                                                                               
+//                                                                                echo '<li class="subcat"><input type="radio" data-info="subcategory_'.$catid.'" id="subcatid_'.$subcatid.'" name="categories[]" value="'.$subcatid.'"  data-val="'.$subcatname.'"  />'.$subcatname.'</li>';                                                                               
+                                                                                echo '<li class="subcat"><input type="radio" data-info="subcategory_'.$catid.'" id="subcatid" class="subcatid" name="subcategory" value="'.$subcatid.'"  data-val="'.$subcategory['parent'].'"  />'.$subcatname.'</li>';                                                                               
                                                                             }
                                                                         }
                                                                     }
@@ -335,6 +396,7 @@
                                                                     echo '<li>No category defined, Please create one.<button class="btn btn-sm btn-info" id="createCat" style="margin-top:10px" type="button">Create new category</button></li>';
                                                                 }
                                                             ?>
+                                                            <input type="hidden" name="category" id="setcategory" value="" />
                                                             <!--
                                                             <li class="cat"><input type="checkbox" data-info="category_44" id="catid_44" value="44" data-val="Cat 1" /> Cat 1 </li>
 
@@ -366,24 +428,71 @@
                                             <fieldset class="customFieldset">
                                                 <legend style="font-size:13px;margin-bottom: 5px;"> Choose for Specials</legend>
                                                 <div class="form-group textAlignMiddle">
-                                                    <div class="col-md-4 customCol ">
+<!--                                                    <div class="col-md-4 customCol ">
                                                         <input class="customChkBtn" type="checkbox" name="biweekly" id="biweekly" value="biweekly" />Biweekly 
                                                         <span id="biweekly-error" class="help-block hide"></span>
-                                                    </div>
-                                                    <div class="col-md-4 customCol ">
-                                                        <input class="customChkBtn" type="checkbox" name="luxurious" id="luxurious" value="luxurious" />Most Luxurious 
+                                                    </div>-->
+                                                    <div class="col-md-6 customCol ">
+                                                        <input class="customChkBtn" type="radio" name="luxurious" id="luxurious" value="1" />Most Luxurious (Rare Items) 
                                                         <span id="luxurious-error" class="help-block hide"></span>
                                                     </div>
                                                     <div class="col-md-4 customCol ">
-                                                        <input class="customChkBtn" type="checkbox" name="hot" id="hot" value="hot" />Hot item 
+                                                        <input class="customChkBtn" type="radio" name="luxurious" id="hot" value="2" />Hot item 
                                                         <span id="hot-error" class="help-block hide"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group textAlignMiddle">
+                                                    <div class="col-md-12 customCol ">
+                                                        <!--<input class="customChkBtn" type="radio" name="limited_supply" id="limited_supply" value="luxurious" />Limited Supply--> 
+                                                        <span id="luxurious-error" class="help-block hide"></span>
+                                                        Limited
+                                                        <input type="text" name="limited" id="limited" onkeypress="return isNumberKey(event)" class="limited" value="" placeholder="Add a limit for user on purchase" />
+                                                        <span id="limited-error" class="help-block hide"></span>
+
                                                     </div>
                                                 </div>
                                             </fieldset>
                                         </div>
                                     </div>
-                                    <!-- TEST RESULTS -->
+                                    
                                     <div class="form-group padLeftZero">
+                                        <div class="col-md-12 padLeftZero">
+                                            <fieldset class="customFieldset">
+                                                <legend style="font-size:13px;margin-bottom: 5px;"> Moods & Activities</legend>
+                                                <div class="form-group textAlignMiddle">
+                                                    <?php if ( is_array($moods) ): ?>
+                                                    <?php foreach($moods as $moodval){ ?>
+                                                        <div class="col-md-6 customCol ">
+                                                            <input class="customChkBtn" type="checkbox" name="moods[]" id="moods" value="<?php echo $moodval['id'];  ?>" /><?php echo $moodval['purpose_name'];  ?> 
+                                                            <span id="luxurious-error" class="help-block hide"></span>
+                                                        </div>
+                                                    <?php } ?>
+                                                    <?php endif; ?>
+                                                </div>                                               
+                                            </fieldset>
+                                        </div>
+                                    </div>
+                                    
+                                    
+                                    <div class="form-group padLeftZero">
+                                        <div class="col-md-12 padLeftZero">
+                                            <fieldset class="customFieldset">
+                                                <legend style="font-size:13px;margin-bottom: 5px;"> Medicals</legend>
+                                                <div class="form-group textAlignMiddle">
+                                                    <?php if ( is_array($medicals) ): ?>
+                                                    <?php foreach($medicals as $medicalsval){ ?>
+                                                        <div class="col-md-6 customCol ">
+                                                            <input class="customChkBtn" type="checkbox" name="medicals[]" id="moods" value="<?php echo $medicalsval['id'];  ?>" /><?php echo $medicalsval['purpose_name'];  ?> 
+                                                            <span id="luxurious-error" class="help-block hide"></span>
+                                                        </div>
+                                                    <?php } ?>
+                                                    <?php endif; ?>
+                                                </div>                                               
+                                            </fieldset>
+                                        </div>
+                                    </div>
+                                    <!-- TEST RESULTS -->
+                                    <div class="form-group padLeftZero" style="display:none;">
                                         <div class="col-md-12 padLeftZero">
                                             
                                             <fieldset class="customFieldset">
@@ -437,11 +546,12 @@
                                                         <th class="numeric" style="width:50px;"> Status </th>
                                                         <th class="numeric" style="width:60px;"> Last Updated </th>
                                                         <th class="numeric" style="width:190px;"> Action </th>
+                                                        <th class="numeric" style="width:190px;"> Quantity type</th>
                                                     </tr>
                                                 </thead>
                                                 <?php
-                                                    
-                                                 if (count($warehouses) > 0) {
+                                                    $i = 0;
+                                                    if (count($warehouses) > 0) {
                                                     foreach ($warehouses as $key => $list) {
                                                         $a = $list['warehouse_status'];
                                                         $status =  $a != '0' ? "Active" : 'Inactive';
@@ -457,6 +567,14 @@
                                                                     <span><a class="btnsmall btn-primary" onclick="inOutQnty('whQnty_<?php echo $list['warehouse_id']; ?>', 1, 'plus')"><i class="fa fa-plus"></i></a></span>
                                                                         <input type="text" value="0" class="form-control" style="display:inline-block;width:50px;margin-right:2px;" name="whQnty_<?php echo $list['warehouse_id'] ?>" id="whQnty_<?php echo $list['warehouse_id']; ?>" onkeypress="return isNumberKey(event)" />
                                                                         <span><a class="btnsmall btn-info" onclick="inOutQnty('whQnty_<?php echo $list['warehouse_id']; ?>', 1, 'minus')"><i class="fa fa-minus"></i></a></span>
+                                                                </td>
+                                                                <td class="numeric">
+                                                                    <select class="form-control" name="quantity_type_<?php echo $list['warehouse_id']; ?>">
+                                                                        <option value="1">Ounces</option>
+                                                                        <option value="2">Grams</option>
+                                                                        <option value="3">ML</option>
+                                                                        <option value="4">Piece</option>
+                                                                    </select>
                                                                 </td>
                                                             </tr>                                
                                                 <?php  $i++; }  } else { ?>
@@ -496,6 +614,35 @@
 <script src="assets/admin/jscolor/jscolor.min.js"></script>
 
 <script>
+    
+    $('.subcatid').click(function(){
+//        alert($(this).attr('data-val'));
+        $('#setcategory').val($(this).attr('data-val'));
+    });
+    
+    $('#limited_supply').click(function(){
+        $('.limited').css("display", "block");
+    });
+    
+    $('.customehide').click(function(){
+        $('.mycustomerColor').css("display", "block");
+    });
+    
+    $('.hideCustom').click(function(){
+        $('.mycustomerColor').css("display", "none");
+    });
+    
+    
+    $('.mycolor').click(function(){
+        var selectedcolor = $(this).val();
+        if(selectedcolor==='on'){
+           $('#itemcolor').val('FFFFF'); 
+        }else{
+           $('#itemcolor').val(selectedcolor); 
+        }
+        
+        
+    });
 //-- Inventory ++/--
 function inOutQnty(effetiveId, numVal, logic){
     if(logic == 'plus'){

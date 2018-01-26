@@ -92,56 +92,55 @@ class Customer_model extends CI_Model {
 
     public function getAllCustomers($from = '',$perPage = '') {
         $data = array();
-        $variable = '';   
-        
-        
-        if ($this->input->get("preOrder")) {
-            //echo "Preorder";
-        }
-        if ($this->input->get("firstTimeUsers")) {
-            //echo "First Time";
-        }
-        if ($this->input->get("nonVerifiedUsers")) {
-            //echo "non verified";exit;
-        }
-        
-        if ($this->input->get("prescription")) {
-            //echo "Prescription";exit;
-        }
-        
-        
+        $variable = '';
+        $orderQuery = "SELECT count(*) from orders where orders.user_id = users.id";
 
-
-        $variable .= "SELECT  `users` . * , 
-            (select count(*) from orders where orders.user_id = users.id) as orders_count,
+        $variable .= "SELECT  `orders`.*, `users`.*,
+            ($orderQuery) as orders_count,
             (select uploaded_by from prescriptions where user_id =  users.id ORDER BY prescriptions.id DESC LIMIT 1) as uploaded_by
-            FROM  `users` 
-            LEFT JOIN  `orders` AS  `od` ON  `od`.`user_id` =  `users`.`id` ";
-        if ($this->input->get('searchText') != "") {
-            
-            $variable .="WHERE ( users.first_name LIKE '%".$this->input->get('searchText')."%'";
-            $variable .=" OR users.last_name LIKE '%".$this->input->get('searchText')."%'";
-            $variable .=" OR users.email LIKE '%".$this->input->get('searchText')."%'";
-            $variable .=" OR users.address LIKE '%".$this->input->get("searchText")."%' )";
-            
+            FROM  `orders` 
+            LEFT JOIN  `users` ON  `orders`.`user_id` =  `users`.`id`";
+
+        if ($this->input->post('searchText') != "") {
+            $variable .= " AND ( users.first_name LIKE '%".$this->input->post('searchText')."%'";
+            $variable .= " OR users.last_name LIKE '%".$this->input->post('searchText')."%'";
+            $variable .= " OR users.email LIKE '%".$this->input->post('searchText')."%'";
+            $variable .= " OR users.address LIKE '%".$this->input->post("searchText")."%' )";
         }  
         
         
-        if (trim($this->input->get("from_time")) != "" && trim($this->input->get("to_time")) != "") {
+        if (trim($this->input->post("from_time")) != "" && trim($this->input->post("to_time")) != "") {
             //check the below query before proceed
-            //$variable .= " and users.created_at BETWEEN ".$this->input->get('from_time')." AND ".$this->input->get('from_time');
+            $variable .= " and users.created_at BETWEEN ".$this->input->post('from_time')." AND ".$this->input->post('from_time');
         }
+
+        if ($this->input->post("firstTimeUsers")) {
+            //
+        }
+
+        if ($this->input->post("preOrder")) {
+            //echo "Preorder";
+        }
+
+        if ($this->input->post("nonVerifiedUsers") != null) {
+            $variable .= " and users.is_verified = '1'";
+        }
+
+        if ($this->input->post("prescription") != null) {
+            $variable .= " and users.is_medical_prescription = '1'";
+        }
+
+        $variable .=" and  `user_type` =  '0'
+        AND  `is_deleted` =  '0' 
+        GROUP BY users.id ORDER BY users.id DESC
+        LIMIT 0 , 300";
         
-            $variable .=" and  `user_type` =  '0'
-            AND  `is_deleted` =  '0' 
-            GROUP BY users.id ORDER BY users.id DESC
-            LIMIT 0 , 300";
-//        echo "(".$variable.")";
-            $query = $this->db->query($variable);
-//        echo $this->db->last_query();exit;
+        $query = $this->db->query($variable);
+
         if ($query->num_rows() > 0) {
             $data = $query->result_array();
         }
+
         return $data;
     }
 
@@ -178,7 +177,7 @@ class Customer_model extends CI_Model {
     }
     
     public function viewCustomerData(){
-        
+        $data = [];
         $query = $this->db->select('*')
                 ->from('users')
                 ->where('id', $this->uri->segment('2'))
@@ -190,7 +189,7 @@ class Customer_model extends CI_Model {
     }
     
     public function viewCustomerOrdersData(){
-        
+        $data = [];
         $query = $this->db->select('od.*, driver.driver_id,driver.first_name as driverFirstName, driver.last_name as driverLastName, dao.delivery_time, dao.delivered_date, dao.drop_location')
                 ->from('orders as od')
                 ->join('driver','driver.driver_id=od.driver_id')
@@ -204,7 +203,7 @@ class Customer_model extends CI_Model {
     }
     
     public function getRewardedPoint(){
-        
+        $data = ['total_point' => 0];
         $query = $this->db->select('total_point')
                 ->from('user_points')
                 ->where('user_id', $this->uri->segment('2'))

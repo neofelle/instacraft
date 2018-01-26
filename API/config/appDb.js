@@ -2,6 +2,7 @@
 
 //set NODE_ENV=production
 if (process.env.NODE_ENV === "prod") {
+     
      var dbinfo = {
         'url': 'instacraftdb.c7mkioq7chm7.us-west-2.rds.amazonaws.com',
         'port': '3306',
@@ -10,6 +11,7 @@ if (process.env.NODE_ENV === "prod") {
         'database': 'instacraft',
     }
 } else if (process.env.NODE_ENV === "uts") {
+    console.log("######1");
     var dbinfo = {
         'url': 'instacraftdb.c7mkioq7chm7.us-west-2.rds.amazonaws.com',
         'port': '3306',
@@ -19,6 +21,7 @@ if (process.env.NODE_ENV === "prod") {
     }
 
 } else {
+    console.log("######2");
     var dbinfo = {
         'url': 'instacraftdb.c7mkioq7chm7.us-west-2.rds.amazonaws.com',
         'port': '3306',

@@ -9,6 +9,7 @@
 class Cus_prescription_model extends CI_Model {
     
     private $_prescription_front_image = "";
+    private $_prescription_back_image = "";
     private $_uploaded_by = "";
     private $_user_id = "";
     function get_user_id() {
@@ -30,6 +31,10 @@ class Cus_prescription_model extends CI_Model {
     function get_prescription_front_image() {
         return $this->_prescription_front_image;
     }
+    
+    function get_prescription_back_image() {
+        return $this->_prescription_back_image;
+    }
 
     function get_upoaded_by() {
         return $this->_upoaded_by;
@@ -37,6 +42,10 @@ class Cus_prescription_model extends CI_Model {
 
     function set_prescription_front_image($_prescription_front_image) {
         $this->_prescription_front_image = $_prescription_front_image;
+    }
+    
+    function set_prescription_back_image($_prescription_back_image) {
+        $this->_prescription_back_image = $_prescription_back_image;
     }
 
     public function getAllConsultationTypes(){
@@ -48,8 +57,15 @@ class Cus_prescription_model extends CI_Model {
     public function uploadMedicalLicense(){
         $new_name = time() . $_FILES["prescription_image"]['name'];
         $fileTempName = $_FILES["prescription_image"]['tmp_name'];
-        $profile_image = uploadImageOnS3($new_name,$fileTempName,'customer');
-        $this->set_prescription_front_image($profile_image);
+        $front_image = uploadImageOnS3($new_name,$fileTempName,'customer');
+        //$front_image = $fileTempName;
+        $this->set_prescription_front_image($front_image);
+        
+        $back_image = time() . $_FILES["prescription_image_back"]['name'];
+        $fileTempName = $_FILES["prescription_image_back"]['tmp_name'];
+        $back_image = uploadImageOnS3($back_image,$fileTempName,'customer');
+        //$back_image = $fileTempName;
+        $this->set_prescription_back_image($back_image);
         
         $class_vars = get_object_vars($this);
         foreach ($class_vars as $key => $var) {
@@ -99,7 +115,7 @@ class Cus_prescription_model extends CI_Model {
     }
     
     public function checkUpcomingAppointment(){
-        $where = "current_timestamp() between date_sub(CONCAT(appointment_date, ' ', appointment_time), INTERVAL 5 MINUTE) and date_add(CONCAT(appointment_date, ' ', appointment_time), INTERVAL 15 MINUTE)";
+        $where = "timestamp(DATE_SUB(NOW(), INTERVAL 300 MINUTE)) between date_sub(CONCAT(appointment_date, ' ', appointment_time), INTERVAL 5 MINUTE) and date_add(CONCAT(appointment_date, ' ', appointment_time), INTERVAL 15 MINUTE)";
         $this->db->select('id as appointment_id,status,appointment_time,appointment_date');
         $this->db->where('user_id',$this->input->post('userId'));
         $this->db->where('status','1');
@@ -126,6 +142,14 @@ class Cus_prescription_model extends CI_Model {
     public function changeCallStatus(){
         $this->db->set('call_status','ongoing');
         $this->db->where('id',$this->input->post('appointment_id'));
+        $this->db->update('appointment_details');
+    }
+    
+    public function endCallStatus(){
+        $this->db->where('user_id',$this->session->userdata('CUSTOMER-ID'));
+        $this->db->where('call_status','ringing');
+        $this->db->set('videoRoomId',NULL);
+        $this->db->set('call_status',NULL);
         $this->db->update('appointment_details');
     }
 

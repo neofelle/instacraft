@@ -6,13 +6,72 @@
  * and open the template in the editor.
  */
 
-class Manager_model extends CI_Model {
+class Manager_model extends CI_Model {   
+    private $_searchData = "", $_unit = "", $_category = "", $_subCategory = "", $_productUnit = "";
+    private $_firstname, $_lastname, $_email, $_phone, $_picUrl, $_customid, $_customname, $_customarray;
+    private $_doc1Name, $_do2Name, $_doc3Name, $_doc1Url, $_doc2Url, $_doc3Url, $_orderType;
+    private $_sdate, $_edate, $_stime, $_etime, $_searchStatus, $_searchDriver, $_searchLocation;
+    private $_driverid, $_orderid, $_lat, $_lng;
+    private $_name, $_designee, $_identityno, $_city, $_state, $_country;
+    //------------ Add/View/Edit Product private variable
+    private $_categories = array(), $_itemSubType, $_itemname, $_itemunit, $_itemfamily, $_itemcolor, $_itemflavour, $_deducted_price;
+    private $_itemid, $_ounce8price, $_ounce8offprice, $_anounceprice, $_anounceoffprice, $_itemrecommends, $_itemeffects, $_itemreview, $_categoryName;
+    private $_itemhot, $_itembiweekly, $_itemluxurious, $_itemthc, $_itemcbg, $_itemcbc, $_itemcbn, $_itemcbd, $_itemthcv, $_itemswhQnty;
+    private $_message, $_link, $_familyId, $_familyname, $_modules, $_whid, $_whname, $_whaddress, $_zipcode;
+    private $_cargiver;
+    private $_onegramprice, $_onegramoffprice, $_limited, $_moods, $_medicals,$_quantity_type;
+    //--  Coupons private variables
+    private $_couponName, $_couponMinOrderPrice, $_couponCode, $_couponValidity, $_couponPoints, $_couponDiscount, $_couponDistype, $_couponCategoryid;
+
+    //--- Start date setter/getter
+
+     function get_quantity_type() {
+        return $this->_quantity_type;
+    }
+
+    function set_quantity_type($_quantity_type) {
+        $this->_quantity_type = $_quantity_type;
+    }
+
+    
+    function get_moods() {
+        return $this->_moods;
+    }
+
+    function get_medicals() {
+        return $this->_medicals;
+    }
+
+    function set_moods($_moods) {
+        $this->_moods = $_moods;
+    }
+
+    function set_medicals($_medicals) {
+        $this->_medicals = $_medicals;
+    }
+
+    function get_limited() {
+        return $this->_limited;
+    }
+
+    function set_limited($_limited) {
+        $this->_limited = $_limited;
+    }
+
     function get_do2Name() {
         return $this->_do2Name;
     }
 
     function get_cargiver() {
         return $this->_cargiver;
+    }
+
+    function get_deducted_price() {
+        return $this->_deducted_price;
+    }
+
+    function set_deducted_price($_deducted_price) {
+        $this->_deducted_price = $_deducted_price;
     }
 
     function set_do2Name($_do2Name) {
@@ -23,22 +82,38 @@ class Manager_model extends CI_Model {
         $this->_cargiver = $_cargiver;
     }
 
-        private $_searchData = "", $_unit = "", $_category = "", $_subCategory = "", $_productUnit = "";
-    private $_firstname, $_lastname, $_email, $_phone, $_picUrl, $_customid, $_customname, $_customarray;
-    private $_doc1Name, $_do2Name, $_doc3Name, $_doc1Url, $_doc2Url, $_doc3Url, $_orderType;
-    private $_sdate, $_edate, $_stime, $_etime, $_searchStatus, $_searchDriver, $_searchLocation;
-    private $_driverid, $_orderid, $_lat, $_lng;
-    private $_name, $_designee, $_identityno, $_city, $_state, $_country;
-    //------------ Add/View/Edit Product private variable
-    private $_categories = array(), $_itemSubType, $_itemname, $_itemunit, $_itemfamily, $_itemcolor, $_itemflavour;
-    private $_itemid, $_ounce8price, $_anounceprice, $_itemrecommends, $_itemeffects, $_itemreview, $_categoryName;
-    private $_itemhot, $_itembiweekly, $_itemluxurious, $_itemthc, $_itemcbg, $_itemcbc, $_itemcbn, $_itemcbd, $_itemthcv, $_itemswhQnty;
-    private $_message, $_link, $_familyId, $_familyname, $_modules, $_whid, $_whname, $_whaddress, $_zipcode;
-    private $_cargiver;
-    //--  Coupons private variables
-    private $_couponName, $_couponMinOrderPrice, $_couponCode, $_couponValidity, $_couponPoints, $_couponDiscount, $_couponDistype, $_couponCategoryid;
+    function get_ounce8offprice() {
+        return $this->_ounce8offprice;
+    }
 
-    //--- Start date setter/getter
+    function get_anounceoffprice() {
+        return $this->_anounceoffprice;
+    }
+
+    function get_onegramprice() {
+        return $this->_onegramprice;
+    }
+
+    function get_onegramoffprice() {
+        return $this->_onegramoffprice;
+    }
+
+    function set_ounce8offprice($_ounce8offprice) {
+        $this->_ounce8offprice = $_ounce8offprice;
+    }
+
+    function set_anounceoffprice($_anounceoffprice) {
+        $this->_anounceoffprice = $_anounceoffprice;
+    }
+
+    function set_onegramprice($_onegramprice) {
+        $this->_onegramprice = $_onegramprice;
+    }
+
+    function set_onegramoffprice($_onegramoffprice) {
+        $this->_onegramoffprice = $_onegramoffprice;
+    }
+
     function set_sdate($_sdate) {
         $this->_sdate = $_sdate;
     }
@@ -244,17 +319,15 @@ class Manager_model extends CI_Model {
     function setUnit($unit) {
         $this->_unit = $unit;
     }
-
-    //-- Category Text Setter / Getter
-    function getSubCategory() {
+    function get_subCategory() {
         return $this->_subCategory;
     }
 
-    function setSubCategory($subCategory) {
-        $this->_subCategory = $subCategory;
+    function set_subCategory($_subCategory) {
+        $this->_subCategory = $_subCategory;
     }
 
-    //-- Product Unit Text Setter / Getter
+        //-- Product Unit Text Setter / Getter
     function getProductUnit() {
         return $this->_productUnit;
     }
@@ -912,7 +985,7 @@ class Manager_model extends CI_Model {
 
     public function getAllOrders($from = '', $perPage = '', $all = '') {
         $data = array();
-        $query = $this->db->select('orders.order_id AS oid, orders.user_id AS uid,fetchPrescription(orders.user_id) as prescriptions, orders.driver_id AS did, orders.delivery_time, orders.delivery_date, orders.drop_location, orders.drop_location_lat, orders.drop_location_lang, orders.pay_status, orders.order_type, orders.order_status, orders.amount, orders.created_at, orders.updated_at, driver.first_name AS driver_fname, driver.last_name AS driver_lname, driver.email AS driver_email, driver.contact_number AS driver_contact, driver.starting_location AS warehouseid, driver.latitude AS driver_latitude, driver.longitude AS driver_longitude, warehouse.name AS driver_sloc, warehouse.address AS driver_saddr, warehouse.lat AS driver_slat, warehouse.lang AS driver_slang, driver_professional_detail.registration_number AS driver_vehicleno,driver_professional_detail.vehicle_model_type AS driver_vehiclemodel, users.first_name AS user_fname, users.last_name AS user_lname, users.email AS user_email, users.phone_number AS user_contact, users.city, users.state, users.address')->from('orders')
+        $query = $this->db->select('orders.order_id AS oid, orders.first_time AS first_time, orders.user_id AS uid,fetchPrescription(orders.user_id) as prescriptions, orders.driver_id AS did, orders.delivery_time, orders.delivery_date, orders.drop_location, orders.drop_location_lat, orders.drop_location_lang, orders.pay_status, orders.order_type, orders.order_status, orders.amount, orders.created_at, orders.updated_at, driver.first_name AS driver_fname, driver.last_name AS driver_lname, driver.email AS driver_email, driver.contact_number AS driver_contact, driver.starting_location AS warehouseid, driver.latitude AS driver_latitude, driver.longitude AS driver_longitude, warehouse.name AS driver_sloc, warehouse.address AS driver_saddr, warehouse.lat AS driver_slat, warehouse.lang AS driver_slang, driver_professional_detail.registration_number AS driver_vehicleno,driver_professional_detail.vehicle_model_type AS driver_vehiclemodel, users.first_name AS user_fname, users.last_name AS user_lname, users.email AS user_email, users.phone_number AS user_contact, users.city, users.state, users.address, users.is_approved as active, users.id')->from('orders')
                 ->join('driver', 'driver.driver_id = orders.driver_id', 'left')
                 ->join('users', 'users.id = orders.user_id', 'left')
                 ->join('driver_professional_detail', 'driver_professional_detail.driver_id = orders.driver_id', 'left')
@@ -943,9 +1016,9 @@ class Manager_model extends CI_Model {
         //-- Search Text by Customer Name, Order Id , Email        
         if ($this->getSearchData() != "") {
             $makeFilter = $this->input->post("searchText");
-            $query = $this->db->or_like(array("CONCAT(users.first_name, ' ', users.last_name)" => $makeFilter, 'users.first_name' => $makeFilter, 'users.last_name' => $makeFilter, 'users.email' => $makeFilter, 'orders.order_id' => $makeFilter)); /* LIKE OR LIKE */
+            $query = $this->db->or_like(array("CONCAT(users.first_name, ' ', users.last_name)" => $makeFilter, 'users.first_name' => '%'.$makeFilter.'%', 'users.last_name' => '%'.$makeFilter.'%', 'users.email' => '%'.$makeFilter.'%', 'orders.order_id' => '%'.$makeFilter.'%')); /* LIKE OR LIKE */
         }
-        
+
         if ($all) {
             $this->db->order_by('orders.created_at', "asc");
             $query = $this->db->get();
@@ -982,17 +1055,15 @@ class Manager_model extends CI_Model {
                         . 'driver_professional_detail.vehicle_model_type AS driver_vehiclemodel,'
                         . ' users.first_name AS user_fname, users.last_name AS user_lname, '
                         . 'users.email AS user_email, users.phone_number AS user_contact, '
-                        . 'users.city, users.state, users.address,'
+                        . 'users.city, users.country, users.state, users.address,'
                         . 'fn_returnOrderStatusName(orders.order_status) as orderStatusName', false)
                 ->from('orders')->where('orders.order_id', $this->get_customid())
                 ->join('driver', 'driver.driver_id = orders.driver_id', 'left')
                 ->join('users', 'users.id = orders.user_id', 'left')
                 ->join('warehouse', 'warehouse.id = driver.starting_location', 'left')
                 ->join('driver_professional_detail', 'driver_professional_detail.driver_id = orders.driver_id', 'left');
-       
+
         return $query->get()->row_array();
-        echo $this->db->last_query();exit;        
-        //return $query->row_array();
     }
 
     /*
@@ -1001,7 +1072,6 @@ class Manager_model extends CI_Model {
      * @admin panel 
      * @function for : Check User Verified / Non Verified
      */
-
     public function check_verfied_user() {
         $query = $this->db->select('*')
                 ->from('orders')
@@ -1035,33 +1105,46 @@ class Manager_model extends CI_Model {
 
     public function assignDriver($oredr_info) {
         $order_type = $this->get_orderType() == 'asap' ? '1' : '0';
-        $dataWhr = array('order_id' => $this->get_orderid());
-        $up_data = array('driver_id' => $this->get_driverid(), 'order_type' => $order_type, 'delivery_time' => $this->get_stime(), 'delivery_date' => $this->get_sdate(), 'order_status' => '1');
-        $query = $this->db->where($dataWhr)
-                ->update('orders', $up_data);
-        $data = $this->db->affected_rows();
+        
+        // Check first if there is already the same order assigned to a driver, if so then just update it
+        $driverAssignedExist = $this->db->where(['order_id' => $this->get_orderid()])->get('driver_assigned_order')->row_array();
 
-        $userInfo = $this->db->select('*')->from('users')->where("`id` = (SELECT user_id FROM orders WHERE order_id = " . $this->get_orderid() . ")", NULL, FALSE)->get()->row_array();
+        // prepare the list of data
         $bt = new DateTime($oredr_info['created_at']);
         $cdate = $bt->format('Y-m-d');
-        //echo "<pre>"; print_r($oredr_info);die;
-        $pickupLocationLatLng    =   explode(',',$this->input->post('pickup_location_latlng'));
         $in_data = array(
             'order_id' => $oredr_info['oid'],
             'user_id' => $oredr_info['uid'],
             'driver_id' => $oredr_info['did'],
             'delivery_time' => $this->get_stime(),
-            'drop_location' => $oredr_info['drop_location'],
-            'drop_location_lat' => $oredr_info['drop_location_lat'],
-            'drop_location_lang' => $oredr_info['drop_location_lang'],
-            'pickup_location' => $oredr_info['driver_sloc'],
-            'pickup_location_lat' => $pickupLocationLatLng[0],
-            'pickup_location_lang' => $pickupLocationLatLng[1],
+            'drop_location' => isset($oredr_info['drop_location']) && $oredr_info['drop_location'] != null ? $oredr_info['drop_location'] : "-",
+            'drop_location_lat' => isset($oredr_info['drop_location_lat']) && $oredr_info['drop_location_lat'] != null ? $oredr_info['drop_location_lat'] : "-",
+            'drop_location_lang' => isset($oredr_info['drop_location_lang']) && $oredr_info['drop_location_lang'] != null ? $oredr_info['drop_location_lang'] : "-",
+            'pickup_location' => isset($oredr_info['driver_sloc']) && $oredr_info['driver_sloc'] != null ? $oredr_info['driver_sloc'] : "-",
+            'pickup_location_lat' => isset($pickupLocationLatLng[0]) && $pickupLocationLatLng[0] != null ? $pickupLocationLatLng[0] : "-",
+            'pickup_location_lang' => isset($pickupLocationLatLng[1]) && $pickupLocationLatLng[1] != null ? $pickupLocationLatLng[1] : "-",
             'order_date' => $cdate,
             'order_status' => $oredr_info['order_type'],
             'updated_at' => date('Y-m-d H:i:s'),
         );
-        $res = $this->db->insert('driver_assigned_order', $in_data);
+
+        if ( $driverAssignedExist == null )
+        {
+            $dataWhr = array('order_id' => $this->get_orderid());
+            $up_data = array('driver_id' => $this->get_driverid(), 'order_type' => $order_type, 'delivery_time' => $this->get_stime(), 'delivery_date' => $this->get_sdate(), 'order_status' => '1');
+            $query = $this->db->where($dataWhr)
+                    ->update('orders', $up_data);
+            /*$userInfo = $this->db->select('*')->from('users')->where("`id` = (SELECT user_id FROM orders WHERE order_id = " . $this->get_orderid() . ")", NULL, FALSE)->get()->row_array();*/
+            //echo "<pre>"; print_r($oredr_info);die;
+            $pickupLocationLatLng = explode(',', $this->input->post('pickup_location_latlng'));
+            $res = $this->db->insert('driver_assigned_order', $in_data);
+        }
+        else
+        {
+            $updateAssignDriverData = $this->db->where(['order_id' => $this->get_orderid()])->update('driver_assigned_order', $in_data);
+        }
+
+        $data = $this->db->affected_rows();
         return $data;
     }
 
@@ -1134,6 +1217,12 @@ class Manager_model extends CI_Model {
         $data = array();
         $query = $this->db->select('*')->from('caregiver_details');
 
+        //-- Search by order Status
+        if ($this->getSearchData() != "") {
+            $makeFilter = $this->getSearchData();
+            $query = $this->db->where('name', '%'.$makeFilter.'%');
+        }
+
         if ($all) {
             $query = $this->db->get();
         } else {
@@ -1146,6 +1235,7 @@ class Manager_model extends CI_Model {
             $data = $query->result_array();
         }
         return $data;
+        var_dump($data);die();
     }
 
     /*
@@ -1526,7 +1616,8 @@ class Manager_model extends CI_Model {
             $query = $this->db->where('orders.order_status', $makeFilter);
         }
         //-- Search by Customer Name
-        if ($this->getSubCategory() != "") {
+//        if ($this->getSubCategory() != "") {
+        if ($this->get_subCategory() != "") {
             $makeFilter = $this->getsearchDriver();
             $query = $this->db->where('orders.driver_id', $makeFilter);
         }
@@ -1565,7 +1656,7 @@ class Manager_model extends CI_Model {
 
     public function getAllProducts($from = '', $perPage = '', $all = '') {
         $data = array();
-        $query = $this->db->select('`a`.`item_id` AS `itemid`, categoryNamesByItemId(a.item_id) as categoryname, `a`.`item_name` AS `itemname`, `a`.`item_unit` AS `itemunit`, `a`.`item_image` AS `itemsrc`, `a`.`price_eigth`, `a`.`price_one`, `a`.`weight`, `a`.`item_familly`, `a`.`recommended_uses`, `a`.`flavor`, `a`.`smell`, `a`.`effect`, `a`.`color_code`, `a`.`review` AS `itemdsc`, `a`.`thc`, `a`.`cbg`, `a`.`cbc`, `a`.`cbn`, `a`.`cbd`, `a`.`thcv`, `a`.`is_biweekly`, `a`.`is_hot_item`, `a`.`is_luxurious_item`, `a`.`created_at`, `a`.`updated_at`')->from('items a')
+        $query = $this->db->select('`a`.`item_id` AS `itemid`, categoryNamesByItemId(a.item_id) as categoryname, `a`.`item_name` AS `itemname`, `a`.`item_unit` AS `itemunit`, `a`.`item_image` AS `itemsrc`, `a`.`price_eigth`,`a`.`price_eight_off`, `a`.`price_one`,`a`.`price_one_off`, `a`.`price_gram`,`a`.`price_gram_off`, `a`.`weight`, `a`.`item_familly`, `a`.`recommended_uses`, `a`.`flavor`, `a`.`smell`, `a`.`effect`, `a`.`color_code`, `a`.`review` AS `itemdsc`, `a`.`thc`, `a`.`cbg`, `a`.`cbc`, `a`.`cbn`, `a`.`cbd`, `a`.`thcv`, `a`.`is_biweekly`, `a`.`is_hot_item`, `a`.`is_luxurious_item`, `a`.`created_at`, `a`.`updated_at`')->from('items a')
                 ->join('item_familly b', 'b.id = a.item_familly', 'left')
                 ->join('order_items c', 'c.item_id = a.item_id', 'left');
 
@@ -1575,7 +1666,7 @@ class Manager_model extends CI_Model {
             $query = $this->db->where('orders.order_status', $makeFilter);
         }
         //-- Search by Customer Name
-        if ($this->getSubCategory() != "") {
+        if ($this->get_subCategory() != "") {
             $makeFilter = $this->getsearchDriver();
             $query = $this->db->where('orders.driver_id', $makeFilter);
         }
@@ -1594,6 +1685,7 @@ class Manager_model extends CI_Model {
         }
 
         $query = $this->db->limit($from, $perPage)->get();
+//        echo $this->db->last_query();exit;
         if ($query) {
             if ($query->num_rows() > 0) {
                 $data = $query->result_array();
@@ -1649,14 +1741,15 @@ class Manager_model extends CI_Model {
     public function fetch_items_categories() {
         $data = array();
         $query = $this->db->select("category_id AS catid ,name AS catname ,status AS catstatus, created_at AS category_created_date")->from('category')->where(array('parent_id' => '0'))->where(array('status' => '1'))->get();
-        //echo $this->db->last_query();die;
+//        echo $this->db->last_query();die;
         if ($query) {
             if ($query->num_rows() > 0) {
                 $data = $query->result_array();
                 $start = 0;
                 foreach ($data AS $record) {
                     $data[$start]['subcategories'] = array();
-                    $subquery = $this->db->select("category_id AS subcatid, name AS subcatname, status AS subcatname")->from('category')->where(array('parent_id' => $record['catid']))->where(array('status' => '1'))->get();
+                    $subquery = $this->db->select("category_id AS subcatid, name AS subcatname, parent_id AS parent , status AS subcatstatus")->from('category')->where(array('parent_id' => $record['catid']))->where(array('status' => '1'))->get();
+//                    echo $this->db->last_query();die;
                     if ($subquery) {
                         if ($subquery->num_rows() > 0) {
                             $data[$start]['subcategories'] = $subquery->result_array();
@@ -1672,6 +1765,45 @@ class Manager_model extends CI_Model {
         }
 
         return $data;
+    }
+
+    /*
+     * Admin Product Section
+     * @author : Ankit
+     * @add product / view product
+     * @function for : Fetch All Sub-category / category-wise records
+     */
+
+    function fetch_moods() {
+        $query = $this->db->select("*")
+                ->from('purpose')
+                ->where(array('purpose_type' => '1'))
+                ->get();
+        if ($query) {
+            if ($query->num_rows() > 0) {
+                $data = $query->result_array();
+                return $data;
+            }
+            return FALSE;
+        } else {
+            return TRUE;
+        }
+    }
+
+    function fetch_medicals() {
+        $query = $this->db->select("*")
+                ->from('purpose')
+                ->where(array('purpose_type' => '2'))
+                ->get();
+        if ($query) {
+            if ($query->num_rows() > 0) {
+                $data = $query->result_array();
+                return $data;
+            }
+            return FALSE;
+        } else {
+            return TRUE;
+        }
     }
 
     /*
@@ -1705,34 +1837,57 @@ class Manager_model extends CI_Model {
 
     public function addNewProduct() {
 
+        $selected_moods = $this->get_moods();
+        is_null($selected_moods) && $selected_moods = [];
+        $selected_sizes_comma_seprated_moods = implode(',', $selected_moods);
+
+        $selected_medicals = $this->get_medicals();
+        is_null($selected_medicals) && $selected_medicals = [];
+        $selected_sizes_comma_seprated_medicals = implode(',', $selected_medicals);
+
         $in_data = array(
-            'category_id' => '',
-            'sub_category_ids' => '',
+            'category_id' => $this->get_categories(),
+            'sub_category_ids' => $this->get_subCategory(),
             'item_name' => $this->get_itemname(),
             'item_unit' => $this->get_itemunit(),
             'item_image' => $this->get_picUrl(),
-            'price_eigth' => $this->get_anounceprice(),
+            'price_eigth' => $this->get_ounce8price(),
+            'price_eight_off' => $this->get_ounce8offprice(),
             'price_one' => $this->get_anounceprice(),
+            'price_one_off' => $this->get_anounceoffprice(),
+            'price_gram' => $this->get_onegramprice(),
+            'price_gram_off' => $this->get_onegramoffprice(),
             'item_familly' => $this->get_itemfamily(),
             'recommended_uses' => $this->get_itemrecommends(),
             'flavor' => $this->get_itemflavour(),
             'effect' => $this->get_itemeffects(),
             'color_code' => "#" . $this->get_itemcolor(),
             'review' => $this->get_itemreview(),
-            'thc' => $this->get_itemthc(),
-            'cbg' => $this->get_itemcbg(),
-            'cbc' => $this->get_itemcbc(),
-            'cbn' => $this->get_itemcbn(),
-            'cbd' => $this->get_itemcbd(),
-            'thcv' => $this->get_itemthcv(),
+            'thc' => '0',
+            'cbg' => '0',
+            'cbc' => '0',
+            'cbn' => '0',
+            'cbd' => '0',
+            'thcv' => '0',
+//            'thc' => $this->get_itemthc(),
+//            'cbg' => $this->get_itemcbg(),
+//            'cbc' => $this->get_itemcbc(),
+//            'cbn' => $this->get_itemcbn(),
+//            'cbd' => $this->get_itemcbd(),
+//            'thcv' => $this->get_itemthcv(),
             'is_biweekly' => $this->get_itembiweekly(),
             'is_hot_item' => $this->get_itemhot(),
             'status' => 1,
             'created_at' => date('Y-m-d H:i:s'),
             'is_luxurious_item' => $this->get_itemluxurious(),
-            'caregiver_id' => $this->get_cargiver()
+            'limited' => $this->get_limited(),
+            'caregiver_id' => $this->get_cargiver(),
+            'moods' => $selected_sizes_comma_seprated_moods,
+            'medicals' => $selected_sizes_comma_seprated_medicals
         );
-
+//        echo "<pre>";
+//        print_r($in_data);
+//        exit;
         $res = $this->db->insert('items', $in_data);
 //        echo $this->db->last_query();exit;
         $data = $this->db->affected_rows();
@@ -1741,12 +1896,15 @@ class Manager_model extends CI_Model {
 
             // Quantity for ware House 
             $ware_items_records = $this->get_itemswhQnty();
+            $ware_quantity_type = $this->get_quantity_type();
+            //update $ware_quantity_type record with the below loop in same table using item id 
             if (count($ware_items_records) > 0) {
                 foreach ($ware_items_records AS $key => $val) {
                     $ware_data[] = array(
                         'warehouse_id' => $key,
                         'item_id' => $insert_id,
                         'inventry_left' => $val,
+                        'quantity_type' => $ware_quantity_type[$key],
                         'created_at' => date('Y-m-d H:i:s'),
                     );
                 }
@@ -1755,16 +1913,29 @@ class Manager_model extends CI_Model {
 
             // Item Category & Sub-category
             $categories_records = $this->get_categories();
-            if (count($categories_records) > 0) {
-                foreach ($categories_records AS $key => $val) {
+
+            $cat_records = [];
+
+            if ( is_array($categories_records) )
+            {
+                 foreach ($categories_records AS $key => $val) {
                     $cat_records[] = array(
                         'item_id' => $insert_id,
                         'category_id' => $val,
                         'created_at' => date('Y-m-d H:i:s'),
                     );
                 }
-                $this->db->insert_batch('item_category_mapping', $cat_records);
             }
+            elseif(is_numeric($categories_records))
+            {
+                $cat_records[] = array(
+                    'item_id' => $insert_id,
+                    'category_id' => $categories_records,
+                    'created_at' => date('Y-m-d H:i:s'),
+                );
+            }
+
+            !empty($cat_records) && $this->db->insert_batch('item_category_mapping', $cat_records);
         }
 
         return $data;
@@ -1812,7 +1983,7 @@ class Manager_model extends CI_Model {
      */
 
     public function product_quantity_wareHouseWise($itemId) {
-        if ($userId != '') {
+        if ($itemId != '') {
             $data = array();
             $query = $this->db->select('d.id AS warehouse_id, d.name AS warehouse_name, d.address AS warehouse_address, d.lat AS warehouse_lat, d.lang AS warehouse_lang, d.status AS warehouse_status, d.created_at AS warehouse_created_at , b.inventry_left  AS quantity, b.created_at AS wharehouse_created_at, b.updated_at AS warehouse_updated_at ')->from('warehouse d')
                     ->join('manage_warehouse_items b', '`b`.`warehouse_id` =  `d`.`id` AND  `b`.`item_id` = ' . $itemId, 'left')
@@ -2725,8 +2896,8 @@ class Manager_model extends CI_Model {
         $data = $this->db->affected_rows();
         return $data;
     }
-    
-    public function edit_a_caregiver($careGivrId){
+
+    public function edit_a_caregiver($careGivrId) {
         echo "Model";
     }
 

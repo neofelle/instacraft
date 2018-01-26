@@ -1,4 +1,4 @@
-<section class="container">
+<section class="container mobile-view-container">
     <div class="form-container">
         <?= form_open_multipart('', array('class' => 'clearfix ajaxform', 'id' => '')) ?>    
             <div class="alert alert-info wait-div " style="display:none;"> <strong>Please wait! </strong> Your action is in proccess... </div>
@@ -9,7 +9,7 @@
                 </div>
             </div>
             <label class="txt_input">
-                <input type="text" name="current_password" placeholder="Current Password">
+                <input type="Password" name="current_password" placeholder="Current Password">
 
             </label>
             <label class="txt_input">

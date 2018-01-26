@@ -17,28 +17,22 @@
                 <li class="sidebar-toggler-wrapper" style="margin-bottom:5px;">
                     <div class="sidebar-toggler"></div>
                 </li>
-                <?php  
-                       
-                
-               foreach ($menu_data as $menu) {
-                
+                <?php
+                foreach ($menu_data as $menu):
                 ?>
                     <li class="<?php if($this->uri->segment('1') ==  $menu['path']){echo 'active'; }else { echo ''; }  ?>" >
-                    <a href="<?php echo base_url() . $menu['path']; ?>"><i class="fa fa-tachometer" aria-hidden="true"></i> <span class="title"><?php echo $menu['module_name'];?> </span></a>
-                </li>
-                
-               <?php }
+                        <a href="<?php echo base_url() . $menu['path']; ?>">
+                            <i class="fa fa-tachometer" aria-hidden="true"></i> <span class="title"><?php echo $menu['module_name'];?> </span>
+                        </a>
+                    </li>
+               <?php
+                endforeach;
                ?>
-                
-                       
-                
-               
                 <li class="<?php if($this->uri->segment('1') == 'logout'){echo 'active'; }else { echo ''; }  ?>" >
                     <a href="<?php echo base_url() . "logout"; ?>">
                         <!-- <i class="icon-logout"></i>-->
                         <i class="fa fa-power-off" aria-hidden="true"></i>
                         <span class="title">Log Out</span>
-                        
                     </a>
                 </li>
             </ul>		

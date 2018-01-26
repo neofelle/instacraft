@@ -45,7 +45,7 @@ class Fblogin extends MX_Controller {
                         $custObj->set_slug(create_unique_slug_for_common($slug, 'users'));
                         
                         
-//                        $image_url = "http://graph.facebook.com/" . $facebookData['id'] . "/picture?type=large";
+//                        $image_url = "https://graph.facebook.com/" . $facebookData['id'] . "/picture?type=large";
 //                        $file_name = $facebookData['id'] . '.jpg';
 //                        $savepath = './assets/uploads/member/' . $member_id . '/profile_images/' . $file_name;
 //                        file_put_contents($savepath, file_get_contents($image_url));

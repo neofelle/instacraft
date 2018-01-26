@@ -68,7 +68,7 @@ img.logo-default{width: 85%;}
 .fit.Block span.icn_nav{margin-right: 20px;}
 .Add_new{ width: 120px;height: 30px;line-height: 30px;padding: 0px;}
 .page_mrg{margin-bottom: 30px !important;}
-.row_mrg{margin-top: 8px;}
+.row_mrg{margin-top: 8px;margin-right: 0;margin-left: 0;margin-bottom: 8px;}
 .Add_new_invest { width: 160px; height: 45px; padding: 0px; line-height: 45px;}
 .dd_main{float: left;float: left; margin-left: 10px;}
 .input-group.email.main_search{margin-left: 20px;}
@@ -207,4 +207,27 @@ h2{font-size:16px;}
 .customCol{
     padding-left:5px !important;
     padding-right:5px !important;
+}
+
+.note-message{
+    margin-bottom: 20px;
+    padding: 0;
+}
+
+.form-group{
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+}
+
+.no-padding{
+    padding: 0;
+}
+div.list{
+    margin-top: 15px;
+}
+div.list > div{
+    margin-bottom: 5px;
+}
+div.list > div:las-child{
+    margin-bottom: 0;
 }

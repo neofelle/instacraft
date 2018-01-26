@@ -8,7 +8,7 @@
 
 function returnOrderStatusMenu($selectedItem = '') {
    
-    $satus = array(0 => 'Unsigned', 1 => 'Assigned', 2 => 'in-transit/Start', 3 => 'Hold', 4 => 'Reached', 5 => 'Return', 6 => 'Delivered', 7 => 'Delayed');
+    $satus = array(0 => 'Unassigned', 1 => 'Assigned', 2 => 'in-transit/Start', 3 => 'Hold', 4 => 'Reached', 5 => 'Return', 6 => 'Delivered', 7 => 'Delayed');
     $html = "<select name=\"orderSatus\" id=\"orderSatus\" class=\"form-control\">";
     $html .= "<option value=\"-1\">select</option>";
     foreach ($satus as $key => $value) {

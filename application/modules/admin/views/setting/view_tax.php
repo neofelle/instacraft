@@ -23,7 +23,7 @@
                         <div class="panel-heading">
                             <ul class="nav nav-tabs">
                                 <li><a href="<?php echo base_url(); ?>manage-users">Manage Users</a></li>
-                                <li><a href="#manageProducts" data-toggle="tab" >Manage Product Input</a></li>
+                                <li><a href="<?php echo base_url(); ?>manage-products">Manage Product Input</a></li>
                                 <li><a href="<?php echo base_url(); ?>manage-warehouses">Manage Warehouse</a></li>
                                 <li><a href="<?php echo base_url(); ?>restricted-areas">Restricted Area</a></li>
                                 <li><a href="<?php echo base_url(); ?>minimum-delivery-prices" data-toggle="tab">Minimum Delivery Prices</a></li>

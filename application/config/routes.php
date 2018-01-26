@@ -222,6 +222,7 @@ $route['reject_prescription']= 'admin/Manager/rejectPrescriptionStatus';
 
 $route['user_authentication']   = 'customer/Customer/facebookLogin';
 $route['cus-signup']            = 'customer/Customer/register';
+$route['cus-visit']            = 'customer/Customer/checkIfNewVisitor';
 $route['cus-login']             = 'customer/Customer/login';
 $route['cus-splash']            = 'customer/Welcome/splash';
 $route['cus-log-out']           = 'customer/Customer/logout';
@@ -233,6 +234,8 @@ $route['cus-forgot-password']   = "customer/Customer/forgotPassword";
 $route['cus-change-password']   = "customer/Customer/changePassword";
 $route['cus-social-share']      = "customer/Customer/socialShare";
 $route['cus-settings']          = "customer/Customer/settings";
+$route['mail-test']             = 'customer/Customer/mailTest';
+$route['cus-upload-proof']      = 'customer/Customer/uploadDocs';
 
 /************ prescription routes *************************/
 $route['cus-new-prescription']                  = "customer/Prescription/consultations";
@@ -254,6 +257,7 @@ $route['cus-video-consultation']        = "customer/Flash_phoner/makeVideoCall";
 $route['save-video-room']               = 'customer/Flash_phoner/saveVideoRoom';
 $route['remove-video-room']             = 'customer/Flash_phoner/removeVideoRoom';
 $route['change-call-status']            = 'customer/Flash_phoner/changeCallStatus';
+$route['end-call-status']               = 'customer/Flash_phoner/endCallStatus';
 
 /********************* product routes ************************************/
 $route['cus-our-products']            = 'customer/Products/productListing';
@@ -288,3 +292,8 @@ $route['add-tax']      = 'admin/Setting/add_tax';
 $route['view-tax/(:num)']  = "admin/Setting/view_tax/$1"; 
 $route['change-tax-status/(:num)'] = 'admin/Setting/change_tax_status/$1';
 $route['delete-tax/(:num)'] = 'admin/Setting/delete_tax/$1';
+
+/**
+ * Privacy policy, terms of use
+ */
+$route['privacy'] = 'customer/Pages/privacy';

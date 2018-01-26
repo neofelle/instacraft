@@ -1,4 +1,4 @@
-<section class="container">
+<section class="container mobile-view-container">
     <div class="pro-view_container">
         <div class="main_img">
             <?php if($userRecord->profile_pic == '') {
@@ -36,7 +36,7 @@
 
             <li>
                 <span class="label">Location:</span>
-                <span class="value">Los Angeles, California</span>
+                <span class="value"><?=$userRecord->address?></span>
             </li>
 
             <li>

@@ -111,20 +111,38 @@ function VehicleImageURL(input,val,imgTagId) {
         var error = [];
         var item_pic = $("#item_pic").val();
         //-- Personal Info 
-        var categories    = $("#categories").val();
+//        var categories = $('input[name=category]:checked', '#addProduct').val();
+        var categories = $('input[name=subcategory]:checked', '#addProduct').val();
         var itemname = $("#itemname").val();
         var itemunit = $("#itemunit").val();
         var itemfamily = $("#itemfamily").val();
+        var onegramprice = $("#onegramprice").val();
+        var onegramoffprice = $("#onegramoffprice").val();
         var ounce8price = $("#ounce8price").val();
+        var ounce8offprice = $("#ounce8offprice").val();
         var anounceprice = $("#anounceprice").val();
+        var anounceoffprice = $("#anounceoffprice").val();
         var itemrecommends = $("#itemrecommends").val();
         var itemeffects = $("#itemeffects").val();
         var itemreview = $("#itemreview").val();
         var itemcolor = $("#itemcolor").val();
         var itemflavour = $("#itemflavour").val();
+        var itemmycolor = $(".mycolor").val();
+        var myColorRadioVal = $('input[name=mycolor]:checked', '#addProduct').val();
+
+        //--- Category Type Validation
+        if(myColorRadioVal == '' || myColorRadioVal == undefined){
+            setFeedError('mycolor-error','Please select a color');
+            error['mycolor'] = true;
+        }
+        else{
+            washFeedError('mycolor-error');
+            error['mycolor'] = false;
+        }
+
         //--- Profile Pic Validation
         if(item_pic == ''){
-            setFeedError('item_pic-error','required field');
+            setFeedError('item_pic-error','Please select picture');
             error['item_pic'] = true;
         }
         else if(!validate_uploadfile_format(item_pic,'image')){
@@ -144,7 +162,7 @@ function VehicleImageURL(input,val,imgTagId) {
         
         //--- Category Type Validation
         if(categories == '' || categories == undefined){
-            setFeedError('categories-error','required field');
+            setFeedError('categories-error','Please select a category');
             error['categories'] = true;
         }
         else{
@@ -154,7 +172,7 @@ function VehicleImageURL(input,val,imgTagId) {
         
         //--- Item Name Validation
         if(itemname == '' || itemname == undefined){
-            setFeedError('itemname-error','required field');
+            setFeedError('itemname-error','Please select an item');
             error['itemname'] = true;
         }
         else if(itemname.length < 5){
@@ -172,7 +190,7 @@ function VehicleImageURL(input,val,imgTagId) {
         
         //--- Item Unit Validation
         if(itemunit == '' || itemunit == undefined){
-            setFeedError('itemunit-error','required field');
+            setFeedError('itemunit-error','Please select an item unit');
             error['itemunit'] = true;
         }
         else{
@@ -182,12 +200,32 @@ function VehicleImageURL(input,val,imgTagId) {
         
         //--- Item Family Validation
         if(itemfamily == '' || itemfamily == undefined){
-            setFeedError('itemfamily-error','required field');
+            setFeedError('itemfamily-error','Please select a caregiver');
             error['itemfamily'] = true;
         }
         else{
             washFeedError('itemfamily-error');
             error['itemfamily'] = false;
+        }
+        
+        //--- One gram price Validation
+        if(onegramprice == '' || onegramprice == undefined){
+            setFeedError('onegramprice-error','required field');
+            error['onegramprice'] = true;
+        }
+        else{
+            washFeedError('onegramprice-error');
+            error['onegramprice'] = false;
+        }
+        
+        //--- One gram off price Validation
+        if(onegramoffprice == '' || onegramoffprice == undefined){
+            setFeedError('onegramoffprice-error','required field');
+            error['onegramoffprice'] = true;
+        }
+        else{
+            washFeedError('onegramoffprice-error');
+            error['onegramoffprice'] = false;
         }
         
         //--- Ounces eight price Validation
@@ -200,6 +238,16 @@ function VehicleImageURL(input,val,imgTagId) {
             error['ounce8price'] = false;
         }
         
+        //--- Ounces eight price Validation
+        if(ounce8offprice == '' || ounce8offprice == undefined){
+            setFeedError('ounce8offprice-error','required field');
+            error['ounce8offprice'] = true;
+        }
+        else{
+            washFeedError('ounce8offprice-error');
+            error['ounce8offprice'] = false;
+        }
+        
         //--- an ounce price  Validation
         if(anounceprice == '' || anounceprice == undefined){
             setFeedError('anounceprice-error','required field');
@@ -210,9 +258,19 @@ function VehicleImageURL(input,val,imgTagId) {
             error['anounceprice'] = false;
         } 
         
+        //--- an ounce off price  Validation
+        if(anounceoffprice == '' || anounceoffprice == undefined){
+            setFeedError('anounceoffprice-error','required field');
+            error['anounceoffprice'] = true;
+        }
+        else{
+            washFeedError('anounceoffprice-error');
+            error['anounceoffprice'] = false;
+        } 
+        
         //--- Item Recommended Validation
         if(itemrecommends == '' || itemrecommends == undefined){
-            setFeedError('itemrecommends-error','required field');
+            setFeedError('itemrecommends-error','Please add a recommends');
             error['itemrecommends'] = true;
         }
         else if(itemrecommends.length < 5){
@@ -248,7 +306,7 @@ function VehicleImageURL(input,val,imgTagId) {
         
         //--- Item Review Validation  
         if(itemreview == '' || itemreview == undefined){
-            setFeedError('itemreview-error','required field');
+            setFeedError('itemreview-error','Please add a review');
             error['itemreview'] = true;
         }
         else if(itemreview.length < 5){
@@ -268,7 +326,7 @@ function VehicleImageURL(input,val,imgTagId) {
         
         //--- Item Color Validation
         if(itemcolor == '' || itemcolor == undefined){
-            setFeedError('itemcolor-error','required field');
+            setFeedError('itemcolor-error','Please select a color');
             error['itemcolor'] = true;
         }
         else if(itemcolor == 'FFFFFF'){
@@ -282,7 +340,7 @@ function VehicleImageURL(input,val,imgTagId) {
         
         //--- Item Flavour Validation  
         if(itemflavour == '' || itemflavour == undefined){
-            setFeedError('itemflavour-error','required field');
+            setFeedError('itemflavour-error','Please select a flavour');
             error['itemflavour'] = true;
         }
         else if(itemflavour.length < 5){
@@ -297,6 +355,19 @@ function VehicleImageURL(input,val,imgTagId) {
             washFeedError('itemflavour-error');
             error['itemflavour'] = false;
         }
+//        alert(error['categories'])
+//        alert(error['item_pic'])
+//        alert(error['itemname']);
+//        alert(error['itemunit'])
+//        alert(error['itemfamily'])
+//        alert(error['ounce8price']);
+//        alert(error['anounceprice']);
+//        alert(error['itemflavour']);
+//        alert(error['itemcolor']);
+//        alert(error['itemrecommends']);
+//        alert(error['itemeffects']);
+//        alert(error['itemreview']);
+//        return false;
 
         if(error['categories'] == false && error['item_pic'] == false && error['itemname'] == false 
                 && error['itemunit'] == false && error['itemfamily'] == false && error['ounce8price'] == false && error['anounceprice'] == false 

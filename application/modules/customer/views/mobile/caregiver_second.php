@@ -8,30 +8,17 @@
         var ga = document.createElement('script');
         ga.type = 'text/javascript';
         ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'https://www') + '.google-analytics.com/ga.js';
         var s = document.getElementsByTagName('script')[0];
         s.parentNode.insertBefore(ga, s);
     })();
 </script>
-<section class="container">
+<section class="container mobile-view-container">
     <div class="checkout_container">
         <p class="fs_15"><b>Section 5:</b> Patient Rights &nbsp; Responsibilities</p>
-        <div class="input_container">
-            My provider has certified that I have a condition that entitles me to participate in the Maine Medical Use of Marijuana Program until
-            <input type="text" name="" disabled="">. I have provided you witha copy of my Maine Medical Use of Marijuana Program identification card/MMMP certificationand my original designation cardas proof that I am authorized to participate in the program. I have also provided you a copy of my Maine issued driver license or other Maine issued photo identification card as proof of my identity.
-        </div>
-        <div class="input_container">
-            If I am visiting from another state, I have provided you with a copy of the medical use of marijuana certification issued by my state of
-            <input type="text" name="" disabled=""> as evidence that I live in a state that authorizes marijuana for medical purposes and have a debilitating condition authorized under Maine law. I have also provided you with a copy of my Maine provider certification and a copy of my photographic identification card or driver’s license frommy home jurisdiction. As a visiting qualifying patient, I agree to abide by all terms and conditions of the Maine Medical Use of Marijuana Program.
-        </div>
-        <p>You are hereby authorized to share this caregiver designation form and any copies of documents that I am required to provide to a member of the law enforcement community in order toverify the services you are providing to me are authorized under Maine law.</p>
-
-        <p>I have the right to terminate this agreement at anytime. This MMMP designation formand designation cardis my property, and any authorized activity conveyed to you through this designation form terminates upon my notice. You must either dispose of the excess marijuana in your possession on my behalf, or replace me with another qualified patient. You will have 10 days from the date of notice to return this form to me.</p>
-
-        <p>In the event I terminate this agreement and you do not return this designation form to me, I authorize the Maine Department of Health and Human Services to demand the return of this designation formand cardor take other action to enforce the Rules Governing the Maine Medical Use of Marijuana Program, which includes terminating the caregiver number that they assigned to you and that you have listed on this designation form.</p>
         <div class="signature">
             <h2>Patient Name</h2>
-            <span class="date_signature">July 21st, 2017 </span>
+            <span class="date_signature"><?= date('Y-m-d')?></span>
             <!--            <div class="signature_area">
             
                         </div>-->
@@ -59,6 +46,20 @@
             </div>
         </div>
 
+        <div class="input_container">
+            My provider has certified that I have a condition that entitles me to participate in the Maine Medical Use of Marijuana Program until
+            <input type="text" name="" disabled="">. I have provided you witha copy of my Maine Medical Use of Marijuana Program identification card/MMMP certificationand my original designation cardas proof that I am authorized to participate in the program. I have also provided you a copy of my Maine issued driver license or other Maine issued photo identification card as proof of my identity.
+        </div>
+        <div class="input_container">
+            If I am visiting from another state, I have provided you with a copy of the medical use of marijuana certification issued by my state of
+            <input type="text" name="" disabled=""> as evidence that I live in a state that authorizes marijuana for medical purposes and have a debilitating condition authorized under Maine law. I have also provided you with a copy of my Maine provider certification and a copy of my photographic identification card or driver’s license frommy home jurisdiction. As a visiting qualifying patient, I agree to abide by all terms and conditions of the Maine Medical Use of Marijuana Program.
+        </div>
+        <p>You are hereby authorized to share this caregiver designation form and any copies of documents that I am required to provide to a member of the law enforcement community in order toverify the services you are providing to me are authorized under Maine law.</p>
+
+        <p>I have the right to terminate this agreement at anytime. This MMMP designation formand designation cardis my property, and any authorized activity conveyed to you through this designation form terminates upon my notice. You must either dispose of the excess marijuana in your possession on my behalf, or replace me with another qualified patient. You will have 10 days from the date of notice to return this form to me.</p>
+
+        <p>In the event I terminate this agreement and you do not return this designation form to me, I authorize the Maine Department of Health and Human Services to demand the return of this designation formand cardor take other action to enforce the Rules Governing the Maine Medical Use of Marijuana Program, which includes terminating the caregiver number that they assigned to you and that you have listed on this designation form.</p>
+        
         <form id="myAwesomeForm" method="post" action="" style="display: none">
             <input type="text" id="filename" name="filename" />  Filename 
         </form>

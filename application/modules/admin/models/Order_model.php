@@ -197,7 +197,7 @@ class Order_model extends CI_Model{
     public function selectOrderItemDetails(){
         $orderid = $this->getOrder_id();
        // echo $orderid;
-        $orders = $this->db->select("item_name,  group_concat(c.name) AS category_name, order_qty, price_eigth", false)
+        $orders = $this->db->select("item_name,  group_concat(c.name) AS category_name, order_qty, i.price_eigth", false)
                 ->from('order_items oi')
                 ->join('items i', 'i.item_id=oi.item_id')
                 ->join('item_category_mapping ic', 'ic.item_id=oi.item_id' )                

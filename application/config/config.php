@@ -1,5 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
+//date_default_timezone_set('US/Eastern');
 
 /*
 |--------------------------------------------------------------------------
@@ -23,16 +24,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$url = "instacraft";
-//$config['base_url'] = ""; 
-$config['base_url'] = "http://localhost/farris/git/instacraft/"; 
-//$config['base_url'] = "https://".$_SERVER["HTTP_HOST"]."/$url/";
+$url = "";
+$config['base_url'] = ""; // http://".$_SERVER["HTTP_HOST"]."/$url/
 $config['customer']	= 'customer';
 $config['customerassets']	= $config['base_url'].'assets/'.$config['customer'].'/';
 
 $config['customer']	= 'customer';
-$config['customerassets']	= $config['base_url'].'assets/'.$config['customer'].'/';
+$config['website']	= 'website';
 $config['flashPhoner']	= 'flashPhoner';
+$config['customerassets']	= $config['base_url'].'assets/'.$config['customer'].'/';
 $config['flashPhonerAssets']	= $config['base_url'].'assets/'.$config['flashPhoner'].'/';
 /*
 |--------------------------------------------------------------------------
@@ -223,7 +223,7 @@ $config['directory_trigger'] = 'd';
 | your log files will fill up very fast.
 |
 */
-$config['log_threshold'] = 4;
+$config['log_threshold'] = 0;
 
 /*
 |--------------------------------------------------------------------------

@@ -66,6 +66,7 @@ class Customer extends MX_Controller {
         if ($this->session->userdata('CUSTOMER-SL') != '') {
             redirect('cus-profile-view');
         }
+        $failure = false;
         $custObj = new Customer_model();
         $output['authUrl'] = $this->facebook->login_url();
         $output['title'] = 'Register';
@@ -80,6 +81,8 @@ class Customer extends MX_Controller {
             $password = md5($this->input->post('password'));
             $email = $this->input->post('email');
             $reffered_by = $this->input->post('referrel_code');
+            $fingerprint = $this->input->post('fingerprint');
+            $ip = $this->input->post('ip');
 
             if ($this->form_validation->run()) {
 
@@ -89,7 +92,8 @@ class Customer extends MX_Controller {
                 //$custObj->set_refferal_code($refferel_code);
                 $custObj->set_is_termcondition_accepted(1);
                 $custObj->set_reffered_by($reffered_by);
-
+                $custObj->set_fingerprint($fingerprint);
+                $custObj->set_ip($ip);
 
                 /*                 * ****** Insert user record ***************** */
                 $res = $custObj->register();
@@ -124,7 +128,7 @@ class Customer extends MX_Controller {
     }
 
     public function login() {
-         $proObj = new Products_model();
+        $proObj = new Products_model();
         if ($this->session->userdata('CUSTOMER-SL') != '') {
             //redirect('cus-home');
              redirect('cus-our-products');
@@ -155,8 +159,8 @@ class Customer extends MX_Controller {
                         $errorMsg = 'Sorry, your Account is Blocked by admin.';
                         $failure = true;
                     } else {
-                           $totalQuantity = $proObj->checkAddToCartProductQuantity();
-                            $this->session->set_userdata('total_item',$totalQuantity);
+                        $totalQuantity = $proObj->checkAddToCartProductQuantity();
+                        $this->session->set_userdata('total_item',$totalQuantity);
                         $success_message = 'Login success';
                     }
                 } else {
@@ -195,7 +199,7 @@ class Customer extends MX_Controller {
         checkMemberLogin();
         $custObj = new Customer_model();
         $output['title'] = 'Edit Profile';
-        $output['pageName'] = 'My Profile';
+        $output['pageName'] = 'Edit Profile';
         $output['header_class'] = 'icon-back-arrow,'.base_url().'cus-profile-view';
 
         /*         * ***** get user record *************** */
@@ -216,6 +220,7 @@ class Customer extends MX_Controller {
                 $custObj->set_last_name($this->input->post('last_name'));
                 $custObj->set_dob($this->input->post('dob'));
                 $custObj->set_gender($this->input->post('gender'));
+                $custObj->set_address($this->input->post('location'));
 
                 $isUpdated = $custObj->updateProfile();
                 if ($isUpdated) {
@@ -279,7 +284,7 @@ class Customer extends MX_Controller {
         /*         * ***** get user record *************** */
         $output['userRecord'] = $custObj->getUserRecordBySlug();
         $output['upcomingAppointment'] = $custObj->checkUpcomingAppointment();
-
+        //print_r($output['upcomingAppointment']);
         $this->load->view($this->config->item('customer') . '/mobile/header', $output);
         $this->load->view($this->config->item('customer') . '/mobile/my_profile');
         $this->load->view($this->config->item('customer') . '/mobile/footer');
@@ -339,7 +344,7 @@ class Customer extends MX_Controller {
         $custObj = new Customer_model();
         $output['title'] = 'Change Password';
         $output['pageName'] = 'Change Password';
-        $output['header_class'] = 'icon-back-arrow,' .base_url().'cus-profile-view';
+        $output['header_class'] = 'icon-back-arrow,' .base_url().'cus-settings';
 
         if (!empty($_POST)) {
             $this->form_validation->set_rules('current_password', 'Current Password', 'trim|required');
@@ -409,15 +414,13 @@ class Customer extends MX_Controller {
         $output['title'] = 'Settings';
         $output['pageName'] = 'Settings';
         $output['header_class'] = 'icon-back-arrow,' . base_url().'cus-home';
-        $output['header_class_right'][0] = ',javascript:;,skip';
+        //$output['header_class_right'][0] = ',javascript:;,skip';
         
         $this->load->view($this->config->item('customer') . '/mobile/header', $output);
         $this->load->view($this->config->item('customer') . '/mobile/settings');
         $this->load->view($this->config->item('customer') . '/mobile/footer');
     }
     
-    
-
     function logout() {
         $custObj = new Customer_model();
         $custObj->logout();
@@ -436,17 +439,17 @@ class Customer extends MX_Controller {
             'charset' => 'iso-8859-1',
             'smtp_crypto' => 'ssl',
         );*/
-//        $config = Array(
-//    'protocol'  => 'smtp',
-//    'smtp_host' => 'ssl://email-smtp.us-east-1.amazonaws.com',
-//    'smtp_port' => '465',
-//    'smtp_user' => 'AKIAIS665GVV52BJEPTA',
-//    'smtp_pass' => 'AgHSltp490y5jMqZw+aUqkSTceaVcCBupXq1GAmv6dvm',
-//    'mailtype'  => 'html',
-//    'starttls'  => true,
-//    'newline'   => "\r\n",
-//     'smtp_crypto' => 'ssl',        
-//);
+        //        $config = Array(
+        //    'protocol'  => 'smtp',
+        //    'smtp_host' => 'ssl://email-smtp.us-east-1.amazonaws.com',
+        //    'smtp_port' => '465',
+        //    'smtp_user' => 'AKIAIS665GVV52BJEPTA',
+        //    'smtp_pass' => 'AgHSltp490y5jMqZw+aUqkSTceaVcCBupXq1GAmv6dvm',
+        //    'mailtype'  => 'html',
+        //    'starttls'  => true,
+        //    'newline'   => "\r\n",
+        //     'smtp_crypto' => 'ssl',        
+        //);
 
 
         $this->load->library('email');
@@ -459,10 +462,80 @@ class Customer extends MX_Controller {
         // echo"<pre/>"; print_r($this->email); die;
         $result = $this->email->send();
         
- echo $this->email->print_debugger();
+        echo $this->email->print_debugger();
         echo"<pre/>"; print_r($result); die;
     }
+    
+    public function uploadDocs() {
+        $cusObj = new Customer_model();
+        $output['title'] = 'Proof Upload';
+        $output['pageName'] = 'Proof Upload';
+        $output['header_class'] = 'icon-back-arrow,' . base_url().'cus-new-prescription';
 
+        if (!empty($_FILES)) {
+            $cusObj->set_id($this->session->userdata('CUSTOMER-ID'));
+
+            /******* Insert medical license record ***************** */
+            $res = $cusObj->uploadProofs();
+            if($res){
+                $success_message = 'Proofs uploaded success.';
+            }else{
+                $errorMsg   =   'Something went wrong, Please try again';
+                $failure    =   true;
+            }
+            if ($this->input->is_ajax_request()) {
+                if ($failure) {
+                    $data['success'] = false;
+                    $data['error_message'] = $errorMsg;
+                } else {
+                    $data['success'] = true;
+                    $data['url'] = site_url('cus-new-prescription');
+                    $data['resetForm'] = false;
+                    $data['success_message'] = $success_message;
+                }
+                $data['scrollToThisForm'] = true;
+                echo json_encode($data);
+                die;
+            }
+        }
+        $this->load->view($this->config->item('customer') . '/mobile/header', $output);
+        $this->load->view($this->config->item('customer') . '/mobile/proof_upload');
+        $this->load->view($this->config->item('customer') . '/mobile/footer');
+    }
+
+    public function checkIfNewVisitor()
+    {
+        $customerModel = new Customer_model();
+        $result = array();
+
+        if ( true )
+        {
+            $fingerprint = $this->input->get('fp');
+            $ip = $this->input->get('ip');
+
+            // set the params
+            $customerModel->set_ip($ip);
+            $customerModel->set_fingerprint($fingerprint);
+
+            // query results and see if a customer does really exist
+            $result['visitor'] = $customerModel->getUserDetailsByFingerPrintAndIP();
+            // set header response
+            $this->output->set_header('HTTP/1.0 200 OK');
+            $this->output->set_header('HTTP/1.1 200 OK');
+            $this->output->set_header('Last-Modified: '.gmdate('D, d M Y H:i:s', time()).' GMT');
+            $this->output->set_header('Cache-Control: no-store, no-cache, must-revalidate');
+            $this->output->set_header('Cache-Control: post-check=0, pre-check=0');
+            $this->output->set_header('Pragma: no-cache');
+            // send result alongside with headers
+            $this->output
+                    ->set_status_header(200)
+                    ->set_content_type('application/json', 'utf-8')
+                    ->set_output(json_encode($result, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES))
+                    ->_display();
+
+            exit(); // stop the process
+        }
+    }
 }
 
 

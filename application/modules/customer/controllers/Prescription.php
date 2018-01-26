@@ -11,6 +11,7 @@ class Prescription extends MX_Controller {
     public function __construct() {
         parent::__construct();
         $this->load->model('customer/Cus_prescription_model');
+        $this->load->model('customer/Customer_model');
         $this->load->helper('common_helper');
         $this->load->helper('user_helper');
         $this->load->helper('url');
@@ -59,7 +60,7 @@ class Prescription extends MX_Controller {
         $output['pageName'] = 'Medical License Info';
         $output['header_class'] = 'icon-back-arrow,' . base_url().'cus-home';
 
-        $output['header_class_right'][0] = ',javascript:;,skip';
+        $output['header_class_right'][0] = ','.base_url().'cus-new-prescription'.',skip';
 
         if (!empty($_POST)) {
 
@@ -92,10 +93,22 @@ class Prescription extends MX_Controller {
     }
 
     public function saveSelectedConsultations() {
-        $selectedConsultations = implode(',', $this->input->post('selectedValues'));
-        $otherReason = $this->input->post('other_reason');
-        $this->session->set_userdata('selectedConsultations', $selectedConsultations);
-        $this->session->set_userdata('other_reason', $otherReason);
+        $cusObj = new Customer_model();
+        // check for verification document against user
+        $res = $cusObj->checkVerfificationDoc();
+        if($res) { 
+            $selectedConsultations = implode(',', $this->input->post('selectedValues'));
+            $otherReason = $this->input->post('other_reason');
+            $this->session->set_userdata('selectedConsultations', $selectedConsultations);
+            $this->session->set_userdata('other_reason', $otherReason);
+            $this->session->set_userdata('other_prescription', $this->input->post('other_prescription'));
+            $this->session->set_userdata('other_doctor', $this->input->post('other_doctor'));
+            $data['success']    =   $res;
+            echo json_encode($data);die;
+        }else {
+            $data['success']    =   $res;
+            echo json_encode($data);die;
+        }
     }
 
     public function saveSelectedTime() {

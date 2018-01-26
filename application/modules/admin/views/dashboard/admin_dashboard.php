@@ -35,7 +35,7 @@ input.datetime{
 }
 
 /*----------------- Main Dashboard fields css----------------*/
-//@import url(http://weloveiconfonts.com/api/?family=fontawesome);
+//@import url(https://weloveiconfonts.com/api/?family=fontawesome);
 //@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300);
 
 /* fontawesome */

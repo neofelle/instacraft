@@ -21,7 +21,7 @@ function init_page() {
 
 function onJoined(room) {
     $("#joinBtn").off('click').click(function(){
-        $(this).prop('disabled', true);
+        //$(this).prop('disabled', true);
         room.leave().then(onLeft, onLeft);
     }).prop('disabled', false);
     $('#sendMessageBtn').off('click').click(function(){
@@ -43,7 +43,7 @@ function onLeft() {
     });
     $("#joinBtn").off('click').click(function(){
         if (validateForm()) {
-            $(this).prop('disabled', true);
+            //$(this).prop('disabled', true);
             muteConnectInputs();
             start();
         }
@@ -58,8 +58,8 @@ function onLeft() {
 function start() {
     //var url = $('#url').val();
     //var url = 'wss://wcs5-eu.flashphoner.com:8443';
-    //var url = 'wss://wcs5-us.flashphoner.com:8443';
-    var url = 'wss://52.38.76.236:8443';
+    var url = 'wss://wcs5-us.flashphoner.com:8443';
+    //var url = 'ws://52.38.76.236:8080';
     var username = $('#login').val();
     if (connection && connection.status() == SESSION_STATUS.ESTABLISHED) {
         //check url and username
@@ -72,10 +72,11 @@ function start() {
             return;
         }
     }
-    if (Browser.isSafariWebRTC() && Flashphoner.getMediaProviders()[0] === "WebRTC") {
-        Flashphoner.playFirstVideo(document.getElementById("participant1Display"), false);
-        Flashphoner.playFirstVideo(document.getElementById("participant2Display"), false);
-    }
+//    if (Browser.isSafariWebRTC() && Flashphoner.getMediaProviders()[0] === "WebRTC") {
+//        alert('bakwas');
+//        Flashphoner.playFirstVideo(document.getElementById("participant1Display"), false);
+//        Flashphoner.playFirstVideo(document.getElementById("participant2Display"), false);
+//    }
 
     connection = Flashphoner.roomApi.connect({urlServer: url, username: username}).on(SESSION_STATUS.FAILED, function(session){
         setStatus('#status', session.status());
@@ -180,10 +181,10 @@ function removeParticipant(participant) {
                 alert('Doctor Ended The Call');
             }else{
                 appointment_id  =   $('#appointment_id').val();
-                redirect_url    =    siteurl+'dashboard';
+                //redirect_url    =    siteurl+'dashboard';
+                redirect_url    =    siteurl+'clientDetail/'+appointment_id;
                 alert('Patient Ended The Call');
             }
-            
             $.ajax({
                 type: 'POST',
                 data: {appointment_id: appointment_id},

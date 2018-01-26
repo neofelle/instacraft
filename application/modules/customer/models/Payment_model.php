@@ -40,6 +40,8 @@ class Payment_model extends CI_Model {
         $data['paid_amount']    =   '';
         $data['transaction_no']    =   '';
         $data['consultation_for']    =   $this->session->userdata('selectedConsultations');
+        $data['other_prescription']    =   $this->session->userdata('other_prescription');
+        $data['other_doctor']    =   $this->session->userdata('other_doctor');
         //$data['videoRoomId'] =   $this->generateRandomString();
         $this->db->insert('appointment_details',$data);
         $lastInsertedId =   $this->db->insert_id();
@@ -51,6 +53,8 @@ class Payment_model extends CI_Model {
             $this->db->set('transaction_id',$stripeData['balance_transaction']);
             $this->db->set('amount_refunded',$stripeData['amount_refunded']);
             $this->db->set('paid_amount',$stripeData['amount']);
+            $this->db->set('card_type',$stripeData['card_type']);
+            $this->db->set('processing_fee',$stripeData['processing_fee']);
             $this->db->set('captured',$stripeData['captured']);
             $this->db->set('currency',$stripeData['currency']);
             $this->db->set('description',$stripeData['description']);
@@ -68,6 +72,8 @@ class Payment_model extends CI_Model {
             
             $this->session->unset_userdata('selectedConsultations');
             $this->session->unset_userdata('other_reason');
+            $this->session->unset_userdata('other_prescription');
+            $this->session->unset_userdata('other_doctor');
 
             $this->session->unset_userdata('selectedTime');
             $this->session->unset_userdata('selectedDate');

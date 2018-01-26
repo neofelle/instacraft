@@ -98,7 +98,7 @@ class Admin_model extends CI_Model {
                             ->where('password', md5($password))
                             ->where('active', '1')
                             ->get();
-        
+
         if ($query->num_rows() > 0) {
             
             if($remember){
@@ -113,7 +113,7 @@ class Admin_model extends CI_Model {
             }
             
             $data = $query->row_array();
-           
+            
             return $data;
         } else {
             return FALSE;

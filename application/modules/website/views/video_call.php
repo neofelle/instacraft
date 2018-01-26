@@ -17,6 +17,17 @@
         var _participants = 2;
         var siteurl = "<?= site_url(); ?>";
     </script>
+    <style>
+        /*Video Call*/
+.main_video_container{width: 90%; margin:0 auto;}
+.main_video_container .fp-remoteVideo{width: 100%; height: 400px; position: relative !important; padding: 0 10px; border-radius:30px; overflow: hidden; }
+.main_video_container .fp-localVideo{width: 125px; height: 156px; bottom: -10px; right: -10px; border-radius:15px; overflow: hidden;}
+#joinBtn{width: 70px; height: 70px; margin:15px auto 15px auto; border-radius: 50%; border:5px solid #e4f3fa; font-size: 30px;}
+.appointment_info{ color: #444444; width: 90%; margin: 0 auto 15px auto; }
+.appointment_info h2{font-size: 20px;}
+.appointment_info h2 + p{margin:10px 0; text-align: left;}
+.main_video_container video{width: auto; height: 100%;}
+        </style>
 </head>
 <body onload="init_page()">
 <div class="container">
@@ -54,7 +65,7 @@
                     <div id="localDisplay" class="display"></div>
                 </div>
             </div>
-            <!--<div id="participant1Name" class="text-center text-muted">NONE</div>-->
+            <div id="participant1Name" class="text-center text-muted">NONE</div>
             <div class="text-center" style="margin-top: 20px">
                 <div id="participant1Status"></div>
             </div>

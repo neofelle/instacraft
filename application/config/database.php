@@ -75,16 +75,16 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	//'hostname' => '203.123.36.134',
+	// 'hostname' => '203.123.36.134',
 	'hostname' => 'localhost',
 	'username' => 'root',
 	//'password' => 'Ev@s!0n#zO16',
-	'password' => 'p@ssw0rd',
-	'database' => 'instacraft',
+	'password' => '',
+	'database' => 'instacraft_db',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
-	'db_debug' => FALSE,
+	'db_debug' => true,
 	'cache_on' => FALSE,
 	'cachedir' => '',
 	'char_set' => 'utf8',
@@ -94,5 +94,5 @@ $db['default'] = array(
 	'compress' => FALSE,
 	'stricton' => FALSE,
 	'failover' => array(),
-	'save_queries' => TRUE
+	'save_queries' => TRUE 
 );

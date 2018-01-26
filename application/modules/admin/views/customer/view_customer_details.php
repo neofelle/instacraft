@@ -68,7 +68,7 @@ if ($personalDetail['gender'] == '1') {
                             <span class="form-control">Contact number   : <b><?php echo $personalDetail['phone_number']; ?></b></span>
                         </div>
                         <div class="col-md-5">
-                            <!--<span class="form-control">SSN : <b><?php echo $personalDetail['ssn']; ?></b></span>-->
+                            <!--<span class="form-control">SSN : <b><?php // echo $personalDetail['ssn']; ?></b></span>-->
                             <span class="form-control">Gender : <b><?php echo $status; ?></b></span>
                             <span class="form-control">Date of Birth : <b><?php echo date("d-m-Y", strtotime($personalDetail['dob'])); ?></b></span>
                             <span class="form-control">Date of Birth : <b><?php echo $personalDetail['address']; ?></b></span>
@@ -107,7 +107,6 @@ if ($personalDetail['gender'] == '1') {
                                     </thead>
                                     <?php
                                     if (count($personalOrdersDetail) > 0) {
-//                                   echo "<pre>"; print_r($personalOrdersDetail);exit;
                                         foreach ($personalOrdersDetail as $index => $val) {
                                             ?>
                                             <tr>
@@ -152,18 +151,12 @@ if ($personalDetail['gender'] == '1') {
                                                     }
                                                     ?>
                                                 </td>
-            <!--                                    <td>
                                                 <?php
-//                                          if($val['pay_status']=='0'){
-//                                              echo "Pending";
-//                                          }else{
-//                                              echo "Paid";
-//                                          }  
                                                 ?>
                                                 </td>-->
                                                 <td><a href="#"><?php echo $val['driverFirstName'] . ' ' . $val['driverLastName']; ?></a></td>
                                                 <td><?php echo $val['amount']; ?></td>
-                                                <td><a href="<?php echo base_url() . 'order-detail/' . $val[order_id] ?>">View Detail</a></td>
+                                                <td><a href="<?php echo base_url() . 'order-detail/' . $val['order_id'] ?>">View Detail</a></td>
                                             </tr>
                                         <?php }
                                     } else {
@@ -514,7 +507,7 @@ if ($personalDetail['gender'] == '1') {
         interval: 60,
         minTime: '0',
         maxTime: '11:00pm',
-        defaultTime: '<?php echo $from; ?>',
+        defaultTime: '<?php echo isset($from) ? $from : "00:00am"; ?>',
         startTime: '12:00am',
         dynamic: false,
         dropdown: true,
@@ -526,7 +519,7 @@ if ($personalDetail['gender'] == '1') {
         interval: 60,
         minTime: '0',
         maxTime: '11:00pm',
-        defaultTime: '<?php echo $to; ?>',
+        defaultTime: '<?php echo isset($to) ? $to : "00:00am"; ?>',
         startTime: '12:00am',
         dynamic: false,
         dropdown: true,

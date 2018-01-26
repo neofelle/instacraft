@@ -3652,7 +3652,7 @@ label {
 .input-circle-top {
   border-radius: 25px 25px 0 0 !important;
 }
-
+.help-block{ color:red !important; }
 /***
 Custom icon buttons
 ***/
@@ -14520,4 +14520,13 @@ Transparent Button
     
     margin-left: 0px !important;
     padding-left: 0px !important;
+}
+
+/**
+ * Google map components
+ */
+.mapAutoComplete{
+  padding: 10px;
+  margin: 7px;
+  width: 250px;
 }

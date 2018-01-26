@@ -9,6 +9,7 @@ class Login_model extends CI_Model {
                             ->where('email', $emailId)
                             ->where('password', md5($password))
                             ->get();
+                            
         if ($query->num_rows() > 0) {
             $data['doctor'] = $query->row_array();
             return $data;

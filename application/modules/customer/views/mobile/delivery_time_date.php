@@ -1,7 +1,6 @@
-<script type="text/javascript" src="https://iitism.ac.in/assets/datetimepick/jquery.simple-dtpicker.js"></script>
-<link type="text/css" href="https://iitism.ac.in/assets/datetimepick/jquery.simple-dtpicker.css" rel="stylesheet" />
-
-<section class="container">
+<link type="text/css" href="<?= $this->config->item('base_url').'assets/' ?>js/datetimepicker/jquery.simple-dtpicker.css" rel="stylesheet" />
+<script src="<?= $this->config->item('base_url').'assets/' ?>js/datetimepicker/jquery.simple-dtpicker.js"></script>
+<section class="container mobile-view-container">
     <div class="delivery_container">
         <div class="map_container">
             <div class="map_box" id="map_delivery">
@@ -13,7 +12,38 @@
             </div>
         </div>
         <div class="total_delivery">
+            <div class="alert alert-container alert-danger alert-info">
+                <div class="alert-content">
+                    <div class="alert-body">
+                        <p class="alert-text">$12 will be applicable as re-delivery fee if you fail to pick up your order within three minutes after the arrival of delivery person.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="new_consultation">
+                <ul class="clearfix diseases">
+                    <li>
+                        <label>
+                            <input type="radio" name="order_type" id="scheduled_type" value="asap" >
+                            <span class="txt">On demand</span>
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="radio" name="order_type" id="scheduled_type" value="scheduled" >
+                            <span class="txt">Scheduled</span>
+                        </label>
+                    </li>
+                </ul>
+            </div>
             <ul class="opposite_detail">
+                <li id="asap" style="display: none">
+                    <span class="label"><strike>On-demand delivery charges:</strike></span>
+                    <span class="value"><strike>3%</strike></span>
+                </li>
+                <li id="scheduled" style="display: none">
+                    <span class="label"><strike>Scheduled deleivery charges:</strike></span>
+                    <span class="value"><strike>1%</strike></span>
+                </li>
                 <li>
                     <span class="label">Total:</span>
                     <span class="value">$<?=$cartTotal?></span>
@@ -23,6 +53,21 @@
         </div>
     </div>
 </section>
+<div id="notificationModal" class="modal fade" hidden role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-contact">
+            <div class="modal-body">
+                <div id="content">
+                    <div id="siteNotice">
+                    </div> 
+                    <div id="bodyContent">
+                        <p>`The more app downloads we have in the area, the sooner we can expand there. So share the app with friends and we may get there this month. We’re expanding to new towns every week. We love our InstaCraft Pioneers and we hope to expand to your area soon. We’re very sorry that we don’t currently deliver in your area.`</p>
+                    </div> 
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>-->
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCxPoiZ1JSZYu_NqSqIGFcRRFEQnzo3yBA&libraries=places&callback=initMap">
 </script>
@@ -66,6 +111,15 @@
     
     $(function(){
         $('*[name=date_time]').appendDtpicker();
+        // show the alert
+        swal({
+            text: "The more app downloads we have in the area, the sooner we can expand there. So share the app with friends and we may get there this month. We’re expanding to new towns every week. We love our InstaCraft Pioneers and we hope to expand to your area soon. We’re very sorry that we don’t currently deliver in your area.",
+            showCloseButton: false,
+            customClass: "alertMap",
+            showConfirmButton: true,
+            width: "320px",
+            confirmButtonClass: "simpleButton"
+        });
     });
     
     
@@ -95,17 +149,17 @@
         anchorPoint: new google.maps.Point(0, -29)
     });
 
-    infowindow.setContent('<div id="content">' +
+    /*infowindow.setContent('<div id="content">' +
         '<div id="siteNotice">' +
         '</div>' +
         '<div id="bodyContent">' +
         `<p> The more app downloads we have in the area, the sooner we can expand there. So share the app with friends and we may get there this month. We’re expanding to new towns every week. We love our InstaCraft Pioneers and we hope to expand to your area soon. We’re very sorry that we don’t currently deliver in your area. </p>` +
         '</div>' +
-        '</div>');
-    infowindow.open(map, marker);
+        '</div>');*/
+    //infowindow.open(map, marker);
 
     autocomplete.addListener('place_changed', function() {
-        infowindow.close();
+        //infowindow.close();
         marker.setVisible(false);
         var place = autocomplete.getPlace();
         
@@ -138,14 +192,14 @@
             }
 
             //infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + address);
-            infowindow.setContent('<div id="content">' +
+            /*infowindow.setContent('<div id="content">' +
                 '<div id="siteNotice">' +
                 '</div>' +
                 '<div id="bodyContent">' +
                 `<p> The more app downloads we have in the area, the sooner we can expand there. So share the app with friends and we may get there this month. We’re expanding to new towns every week. We love our InstaCraft Pioneers and we hope to expand to your area soon. We’re very sorry that we don’t currently deliver in your area. </p>` +
                 '</div>' +
-                '</div>');
-            infowindow.open(map, marker);
+                '</div>');*/
+            //infowindow.open(map, marker);
 
             var inLatLng = place.geometry.location.lat().toFixed(8) +','+ place.geometry.location.lng().toFixed(8);
             //-- Ftech Address
@@ -172,7 +226,7 @@
                 }
             });
         }
-        $('.gm-style-iw').parent('div').addClass('map_model')
+        //$('.gm-style-iw').parent('div').addClass('map_model')
     });
     
     //Listen for drag events!
@@ -310,7 +364,15 @@ function appendMarker(latitude, longitude, text) {
     
 }
 
+$(document).on('click','#scheduled_type',function(){
+    var type    =   $(this).val();
+    if(type ==  'asap'){
+        $('#asap').show();
+        $('#scheduled').hide();
+    }else{
+        $('#scheduled').show();
+        $('#asap').hide();
+    }
     
-    
-    
+});
 </script>

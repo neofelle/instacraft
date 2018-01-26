@@ -30,5 +30,14 @@ class Pages extends MX_Controller {
         $this->load->view($this->config->item('customer') . '/mobile/footer');
     }
     
-    
+    public function privacy()
+    {
+        $output['title'] = "Privacy Policy";
+        $output['pageName'] = "Privacy";
+        $output['header_class'] = 'icon-back-arrow,' . base_url().'cus-home';
+        
+        $this->load->view($this->config->item('customer') . '/mobile/header', $output);
+        $this->load->view($this->config->item('customer') . '/mobile/privacy');
+        $this->load->view($this->config->item('customer') . '/mobile/footer');
+    }
 }

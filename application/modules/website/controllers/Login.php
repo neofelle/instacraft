@@ -22,6 +22,7 @@ class Login extends MX_Controller {
     }
     
     public function signIn() {
+        
         $webObj = new Login_model();
         $emailId = trim($this->input->post('email'));
         $password = trim($this->input->post('password'));
@@ -40,7 +41,7 @@ class Login extends MX_Controller {
                                     'gender'=>$data['doctor']['gender']
                                 );
 
-
+                
                 $this->session->set_userdata($session);
                 redirect(base_url().'dashboard');
 
@@ -56,6 +57,7 @@ class Login extends MX_Controller {
             $this->session->flashdata('error');
             redirect(base_url().'login');
         }
+
         
         
     }
@@ -81,8 +83,6 @@ class Login extends MX_Controller {
         $data['main_content'] = array('view' => 'Studentlogin/StudLogin', 'data' => $data);//calls main content/body
         $data['footer'] = array('view' => 'templates/footer', 'data' => $data);//calls footer.php file
         $this->load->view('templates/common_templates', $data);//load all the three sections in view from here
-        
-        
     }
 
     

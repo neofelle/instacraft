@@ -12,6 +12,7 @@ class Caregiver extends MX_Controller {
         parent::__construct();
         $this->load->model('customer/Customer_model');
         $this->load->model('customer/Caregiver_model');
+        $this->load->model('customer/Products_model');
         $this->load->helper('user_helper');
         $this->load->helper('url');
         $this->load->helper('download');
@@ -49,12 +50,15 @@ class Caregiver extends MX_Controller {
     
     public function caregiverFirst() {
         if($this->session->userdata('delivery_date_time') != '' && $this->session->userdata('delivery_address') != '') {
+            $proObj = new Products_model();
             $custObj = new Customer_model();
             $careObj = new Caregiver_model();
             $output['title'] = 'Caregiver Details';
             $output['pageName'] = 'Caregiver Details';
             $output['header_class'] = 'icon-back-arrow,' . base_url().'cus-add-tocart';
             $output['userDetail'] = $custObj->getUserRecordBySlug();
+            $output['firstOrder'] = $proObj->checkIfFirstOrder();
+            $output['minimumDeliveryAmount'] = $proObj->getMinimumDeliveryAmount();
 
             if (!empty($_POST)) {
 
@@ -65,8 +69,11 @@ class Caregiver extends MX_Controller {
                 $this->form_validation->set_rules('city', 'City', 'required');
                 $this->form_validation->set_rules('state', 'State', 'required');
                 $this->form_validation->set_rules('zip', 'Zip', 'required');
-                $this->form_validation->set_rules('country', 'Country', 'required');
-                $this->form_validation->set_rules('medical_certification', 'Medical certification', 'required');
+                //$this->form_validation->set_rules('country', 'Country', 'required');
+                //$this->form_validation->set_rules('medical_certification', 'Medical certification', 'required');
+
+                $failure = false;
+                $errorMsg = "";
 
                 if ($this->form_validation->run()) {
 
@@ -80,10 +87,10 @@ class Caregiver extends MX_Controller {
                     $careObj->set_country($this->input->post('country'));
                     $careObj->set_medical_certification($this->input->post('medical_certification'));
 
-
                     /*                 * ****** Insert user record ***************** */
                     $res = $careObj->caregiverFirstStep();
-                    if ($res != '') {
+                    
+                    if ($res === true) {
                         $success_message = 'First step completed successfully.';
                     } else {
                         $errorMsg = 'Something went wrong, Please try again later.';
@@ -127,14 +134,14 @@ class Caregiver extends MX_Controller {
             if (!empty($_FILES)) {
                 $new_name = time() . $_FILES["image"]['name'];
                 $fileTempName = $_FILES["image"]['tmp_name'];
-                $profile_image = uploadImageOnS3($new_name, $fileTempName, 'customer');
-                //$profile_image = 's3 image url';
+                //$profile_image = uploadImageOnS3($new_name, $fileTempName, 'customer');
+                $profile_image = 's3 image url';
                 $res = $careObj->caregiverSecondStep($profile_image);
                 
                 $success_message = 'Form submitted successfully.';
-                
+
                 if ($this->input->is_ajax_request()) {
-                    if ($failure) {
+                    if (!$res) {
                         $data['success'] = false;
                         $data['error_message'] = $errorMsg;
                     } else {
@@ -157,7 +164,7 @@ class Caregiver extends MX_Controller {
     }
     
     public function caregiverFinal() {
-        if ($this->session->userdata('caregiver_second') != '') {
+        //if ($this->session->userdata('caregiver_second') != '') {
             $careObj = new Caregiver_model();
             $custObj = new Customer_model();
             $output['title'] = 'Caregiver View';
@@ -193,9 +200,9 @@ class Caregiver extends MX_Controller {
             $this->load->view($this->config->item('customer') . '/mobile/header', $output);
             $this->load->view($this->config->item('customer') . '/mobile/caregiver_forms');
             $this->load->view($this->config->item('customer') . '/mobile/footer');
-        } else {
-            redirect('cus-caregiver-step2');
-        }
+//        } else {
+//            redirect('cus-caregiver-step2');
+//        }
     }
 
 }

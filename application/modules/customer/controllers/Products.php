@@ -23,29 +23,17 @@ class Products extends MX_Controller {
     }
 
     public function productListing() {
-
         $proObj = new Products_model();
         $output['title'] = 'Our Products';
         $output['pageName'] = 'Our Products';
-        //$output['header_class'] = 'icon-back-arrow,' . base_url() . 'cus-home';
+        $output['header_class'] = 'icon-back-arrow,' . base_url() . 'cus-home';
         //$output['header_class'] = 'icon-menu,javascript:;';
-        $output['header_class_right'][0] = 'icon-cart cart-badge,' . base_url() . 'cus-add-tocart';
-        $output['header_class_right'][1] = 'icon-search,javascript:;';
-        $output['allProducts'] = $proObj->getAllProducts();
+        $output['header_class_right'][0] = 'icon-search,javascript:;';
+        $output['header_class_right'][1] = 'icon-cart cart-badge,' . base_url() . 'cus-add-tocart';
+        //$output['allProducts'] = $proObj->getAllProducts();
         $output['category'] = $proObj->getAllParentCategory();
         $output['families'] = $proObj->getItemFamilies();
-//        $this->load->library('user_agent');
-//        if ($this->agent->is_referral()) {
-//            $refer = $this->agent->referrer();
-//        }
-        //echo $_SERVER['HTTP_REFERER'];
-         $previous_url= base_url()."cus-login";
-         if($previous_url==$_SERVER['HTTP_REFERER'] || ($_SERVER['HTTP_REFERER']==base_url()."cus-our-products") || ($_SERVER['HTTP_REFERER']==base_url()."cus-splash")){
-            $output['header_class'] = 'icon-menu,javascript:;'; 
-         }else{
-            $output['header_class'] = 'icon-back-arrow,' . base_url() . 'cus-home'; 
-         }
-             //   print_r($this->router->fetch_method()); exit;
+
         $this->load->view($this->config->item('customer') . '/mobile/header', $output);
         $this->load->view($this->config->item('customer') . '/mobile/our_products');
         $this->load->view($this->config->item('customer') . '/mobile/footer');
@@ -70,11 +58,15 @@ class Products extends MX_Controller {
         $proObj = new Products_model();
         $data['item_id'] = $this->input->post('item_id');
         $data['quantity'] = $this->input->post('quantity');
+        $data['type'] = $this->input->post('type');
         $data['user_id'] = $this->session->userdata('CUSTOMER-ID');
-        $proObj->productAddToCart($data);
+        $res    =   $proObj->productAddToCart($data);
         $totalQuantity = $proObj->checkAddToCartProductQuantity();
         $this->session->set_userdata('total_item', $totalQuantity);
-        redirect('cus-our-products');
+        checkCartQuantity();
+        $data['quantity']       =   $this->session->userdata('total_item');
+        $data['success']        =   $res;
+        echo json_encode($data);die;
     }
 
     public function addToCart() {
@@ -112,10 +104,19 @@ class Products extends MX_Controller {
     public function cartCheckout() {
         checkMemberLogin();
         $proObj = new Products_model();
-        $result = $proObj->createOrder();
-        if ($result) {
-            $data['status'] = '1';
-        } else {
+        $data = array("status" => false, "delivery" => true);
+        try
+        {
+            $result = $proObj->createOrder();
+             if ($result) {
+                $data['status'] = '1';
+            } else {
+                $data['status'] = '0';
+            }
+        }
+        catch (\Exception $e)
+        {
+            $data['delivery'] = false;
             $data['status'] = '0';
         }
         echo json_encode($data);

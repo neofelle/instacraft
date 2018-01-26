@@ -200,11 +200,16 @@ h2{font-size:16px;}
                         </thead>
                         <?php
                          if (count($result) > 0) {
-                            if ($_GET['page'] == '') {
+                            $i = 0;
+                            
+                            if ( isset($_GET['page']) )
+                            {
+                                if ($_GET['page'] == '') {
                                     $i = 0;
                                 } else {
                                     $i = ($_GET['page'] - 1 ) * RECORDS_PERPAGE;
                                 }
+                            }
                             foreach ($result as $key => $list) {
                                 $cdate  = new DateTime($list['category_created_date']);
                                 $subcat_list = '';

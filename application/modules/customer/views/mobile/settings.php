@@ -1,4 +1,4 @@
-<section class="container">
+<section class="container mobile-view-container">
     <div class="settings_container">
         <ul class="clearfix">
             <li>

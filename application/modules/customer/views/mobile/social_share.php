@@ -1,4 +1,4 @@
-<section class="container">
+<section class="container mobile-view-container">
     <div class="sharing_container">
         <h3>You’re now leading the way for others.</h3>
         <p>It’d really help us grow our service if you mentioned us more widely.</p>

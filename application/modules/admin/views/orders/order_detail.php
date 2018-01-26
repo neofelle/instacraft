@@ -57,26 +57,11 @@
         padding: 0px 3px !important;
         font-weight:bold;
     }
-/*    .modal.fade.in {
-        top: 10%;
-         padding-right: 15px; 
-        display: block;
-        width: 620px;
-        right: 84%;
-        left: 49%;
-    }
-    .modal{ width:670px; }
-
-    .modal-content {
-        box-shadow: none !Important;
-        border: none !Important;
-    }*/
     .paginate{     padding-left: 40px; }
 
     .modal-header{
 
     }
-
     input.datetime{
         display: inline-block;
         width: 100px;
@@ -246,212 +231,236 @@
                                 <div class="col-md-12">
                                     <span class="help-block hide colorshade" id="user_id-error" style="padding: 5px;color:white;"></span>
                                     <form class="form-horizontal" id="addRestrictedArea" name="addRestrictedArea" action=""  style="" role="form" enctype='multipart/form-data' method="post">                         
-                                        <div class="col-md-7">
-                                            <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-sm-7 col-xs-12">
+                                                <div class="form-group">
 
-                                                <fieldset class="" style=" width:95%;display: inline-block;   padding: 0px 5px 5px 5px;border: 1px solid #78beff;">
-                                                    <legend style="font-size:14px;margin-bottom: 5px;color:#666525;font-weight:bold;">  Customer Details  </legend>
-                                                    <!-- Image -->
-                                                    <div class="dsplyInBk" style="width:20%;vertical-align: top;">
-                                                        <img  class="" src="<?php echo base_url(); ?>assets/admin/images/no_hotlinking.png" />
-                                                    </div>
-                                                    <!-- Information -->
-                                                    <div class="dsplyInBk" style="width:79%;">
-                                                        <table style="width:100%;font-size:12px;">
-                                                            <tbody>
-                                                                <tr>
-                                                                    <th>Customer Name </th>
-                                                                    <td>: <?php echo $orderinfo['user_fname'] ? $orderinfo['user_fname'] : ''; ?> <a class="btn btn-primary btn-xs pull-right" id="prescription-view-btn" data-toggle="modal" data-target="#prescription-model">View Prescription</a></td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <th>Email</th>
-                                                                    <td>: <?php echo $orderinfo['user_email'] ? $orderinfo['user_email'] : ''; ?>m </td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <th>Contact Number </th>
-                                                                    <td>: <?php echo $orderinfo['user_contact'] ? $orderinfo['user_contact'] : ''; ?> </td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <th>Address </th>
-                                                                    <td>: 
-                                                                        <?php
-                                                                        $address = '';
-                                                                        if ($orderinfo['city'] != '') {
-                                                                            $address .= ucfirst($orderinfo['city']);
-                                                                        }
-                                                                        if ($orderinfo['state'] != '') {
-                                                                            $address != '' ? $address .= ', ' : $address .= '';
-                                                                            $address .= ucfirst($orderinfo['state']);
-                                                                        }
-                                                                        if ($orderinfo['country'] != '') {
-                                                                            $address != '' ? $address .= ', ' : $address .= '';
-                                                                            $address .= ucfirst($orderinfo['country']);
-                                                                        }
-                                                                        ?>
-                                                                        <?php echo $address; ?> 
-                                                                    </td>
-                                                                </tr>
-                                                            </tbody>
-                                                        </table>
-                                                    </div>  
-                                                </fieldset>
-                                                <fieldset class="" style=" width:95%;display: inline-block; margin-top:10px;  padding: 0px 5px 5px 5px;border: 1px solid #78beff;min-height: 140px;">
-                                                    <legend style="font-size:14px;margin-bottom: 5px;color:#666525;font-weight:bold;">  Driver Details </legend>
-                                                    <!-- Image -->
-                                                    <div class="dsplyInBk" style="width:20%;vertical-align: top;">
-                                                        <?php if (isset($orderinfo['did']) && $orderinfo['did'] != '') { ?>
+                                                    <fieldset class="" style=" width:95%;display: inline-block;   padding: 0px 5px 5px 5px;border: 1px solid #78beff;">
+                                                        <legend style="font-size:14px;margin-bottom: 5px;color:#666525;font-weight:bold;">  Customer Details  </legend>
+                                                        <!-- Image -->
+                                                        <div class="dsplyInBk" style="width:20%;vertical-align: top;">
                                                             <img  class="" src="<?php echo base_url(); ?>assets/admin/images/no_hotlinking.png" />
-                                                        <?php } ?>
-                                                    </div>
-                                                    <!-- Information -->
-                                                    <div class="dsplyInBk" style="width:79%;">
-                                                        <table style="width:100%;font-size:12px;">
-                                                            <tbody>
-                                                                <?php if (isset($orderinfo['did']) && $orderinfo['did'] != '') { ?>
+                                                        </div>
+                                                        <!-- Information -->
+                                                        <div class="dsplyInBk" style="width:79%;">
+                                                            <table style="width:100%;font-size:12px;">
+                                                                <tbody>
                                                                     <tr>
-                                                                        <th>Driver Name </th>
-                                                                        <td>: <?php echo ucfirst($orderinfo['driver_fname'] . " " . $orderinfo['driver_lname']); ?>  <a class="btn btn-primary btn-xs pull-right assignDriver"><?php echo $orderinfo['did'] ? 'Assign Another Driver' : 'Assign Driver' ?></a></td>
+                                                                        <th>Customer Name </th>
+                                                                        <td>: <?php echo $orderinfo['user_fname'] ? $orderinfo['user_fname'] : ''; ?> <a class="btn btn-primary btn-xs pull-right" id="prescription-view-btn" data-toggle="modal" data-target="#prescription-model">View Prescription</a></td>
                                                                     </tr>
                                                                     <tr>
                                                                         <th>Email</th>
-                                                                        <td>: <?php echo $orderinfo['driver_email'] ? $orderinfo['driver_email'] : ''; ?> </td>
+                                                                        <td>: <?php echo $orderinfo['user_email'] ? $orderinfo['user_email'] : ''; ?>m </td>
                                                                     </tr>
                                                                     <tr>
                                                                         <th>Contact Number </th>
-                                                                        <td>: <?php echo $orderinfo['driver_contact'] ? $orderinfo['driver_contact'] : ''; ?> </td>
+                                                                        <td>: <?php echo $orderinfo['user_contact'] ? $orderinfo['user_contact'] : ''; ?> </td>
                                                                     </tr>
                                                                     <tr>
-                                                                        <th>Start Location </th>
-                                                                        <td >: <?php echo $orderinfo['driver_sloc'] ? $orderinfo['driver_sloc'] : ''; ?> </td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <th>Vehicle No </th>
-                                                                        <td >: <?php echo $orderinfo['driver_vehicleno'] ? $orderinfo['driver_vehicleno'] : ''; ?> </td>
-                                                                    </tr>
-                                                                    <!--
-                                                                    <tr>
-                                                                        <th>Max. Capacity </th>
-                                                                        <td >: <?php echo $orderinfo['driver_sloc'] ? $orderinfo['driver_sloc'] : ''; ?> </td>
-                                                                    </tr>
-                                                                    -->
-                                                                <?php } else { ?>
-                                                                    <tr>
-                                                                        <td><a class="btn btn-primary btn-xs pull-right assignDriver"><?php echo $orderinfo['did'] ? 'Assign Another Driver' : 'Assign Driver' ?></a></td>
-                                                                    </tr>
-
-                                                                <?php } ?>
-
-                                                            </tbody>
-                                                        </table>
-                                                    </div>                                                  
-                                                </fieldset>
-                                            </div>
-
-                                            <!-- Order Detail Display -->
-
-                                            <div class="form-group">
-                                                <fieldset class="" style=" width:95%;display: inline-block; margin-top:10px;  padding: 0px 5px 5px 5px;border: 1px solid #78beff;min-height: 140px;">
-                                                    <legend style="font-size:14px;margin-bottom: 5px;color:#666525;font-weight:bold;">  Order Details </legend>
-                                                    <div class="dsplyInBk" style="width:79%;">
-                                                        <table style="width:100%;font-size:12px;">
-                                                            <tbody>
-                                                                <?php if (isset($orderinfo['did']) && $orderinfo['did'] != '') { ?>
-                                                                    <tr>
-                                                                        <th>Order Id </th>
-                                                                        <td>: <?php echo $orderinfo['oid']; ?></td>
-                                                                        <th>Status </th>
-                                                                        <td>: <?php echo returnOrderStatusMenu($orderinfo['order_status']); ?></td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <th>Order Date</th>
-                                                                        <td>: <?php echo $orderinfo['created_at']; ?> </td>
-                                                                        <th>Order Time</th>
-                                                                        <td>: <?php echo $orderinfo['order_time']; ?> </td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <th>Order Type </th>
-                                                                        <td>: <?php
-                                                                            if ($orderinfo['order_type'] == '0') {
-                                                                                echo "Scheduled";
-                                                                            } else if ($orderinfo['order_type'] == '1') {
-                                                                                echo "ASAP";
-                                                                            } else {
-                                                                                echo "Pre-Order";
+                                                                        <th>Address </th>
+                                                                        <td>: 
+                                                                            <?php
+                                                                            $address = '';
+                                                                            if ($orderinfo['city'] != '') {
+                                                                                $address .= ucfirst($orderinfo['city']);
                                                                             }
-                                                                            ?> </td>
-                                                                        <th>Pick up </th>
-                                                                         <td>: <?php echo ($isPickup==TRUE)? "": "Warehouse" ; ?> </td>
+                                                                            if ($orderinfo['state'] != '') {
+                                                                                $address != '' ? $address .= ', ' : $address .= '';
+                                                                                $address .= ucfirst($orderinfo['state']);
+                                                                            }
+                                                                            if ($orderinfo['country'] != '') {
+                                                                                $address != '' ? $address .= ', ' : $address .= '';
+                                                                                $address .= ucfirst($orderinfo['country']);
+                                                                            }
+                                                                            ?>
+                                                                            <?php echo $address; ?> 
+                                                                        </td>
                                                                     </tr>
-                                                                    <tr>
-                                                                        <th>Delivery Date </th>
-                                                                        <td>: <?php echo $orderinfo['delivery_date']; ?> </td>
-                                                                        <th>Delivery Time </th>
-                                                                        <td>: <?php echo $orderinfo['delivery_time']; ?> </td>
-                                                                    </tr>
-<?php } ?>    
+                                                                </tbody>
+                                                            </table>
+                                                        </div>  
+                                                    </fieldset>
+                                                    <fieldset class="" style=" width:95%;display: inline-block; margin-top:10px;  padding: 0px 5px 5px 5px;border: 1px solid #78beff;min-height: 140px;">
+                                                        <legend style="font-size:14px;margin-bottom: 5px;color:#666525;font-weight:bold;">  Driver Details </legend>
+                                                        <!-- Image -->
+                                                        <div class="dsplyInBk" style="width:20%;vertical-align: top;">
+                                                            <?php if (isset($orderinfo['did']) && $orderinfo['did'] != '') { ?>
+                                                                <img  class="" src="<?php echo base_url(); ?>assets/admin/images/no_hotlinking.png" />
+                                                            <?php } ?>
+                                                        </div>
+                                                        <!-- Information -->
+                                                        <div class="dsplyInBk" style="width:79%;">
+                                                            <table style="width:100%;font-size:12px;">
+                                                                <tbody>
+                                                                    <?php if (isset($orderinfo['did']) && $orderinfo['did'] != '') { ?>
+                                                                        <tr>
+                                                                            <th>Driver Name </th>
+                                                                            <td>: <?php echo ucfirst($orderinfo['driver_fname'] . " " . $orderinfo['driver_lname']); ?>  <a class="btn btn-primary btn-xs pull-right assignDriver"><?php echo $orderinfo['did'] ? 'Assign Another Driver' : 'Assign Driver' ?></a></td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <th>Email</th>
+                                                                            <td>: <?php echo $orderinfo['driver_email'] ? $orderinfo['driver_email'] : ''; ?> </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <th>Contact Number </th>
+                                                                            <td>: <?php echo $orderinfo['driver_contact'] ? $orderinfo['driver_contact'] : ''; ?> </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <th>Start Location </th>
+                                                                            <td >: <?php echo $orderinfo['driver_sloc'] ? $orderinfo['driver_sloc'] : ''; ?> </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <th>Vehicle No </th>
+                                                                            <td >: <?php echo $orderinfo['driver_vehicleno'] ? $orderinfo['driver_vehicleno'] : ''; ?> </td>
+                                                                        </tr>
+                                                                        <!--
+                                                                        <tr>
+                                                                            <th>Max. Capacity </th>
+                                                                            <td >: <?php echo $orderinfo['driver_sloc'] ? $orderinfo['driver_sloc'] : ''; ?> </td>
+                                                                        </tr>
+                                                                        -->
+                                                                    <?php } else { ?>
+                                                                        <tr>
+                                                                            <td><a class="btn btn-primary btn-xs pull-right assignDriver"><?php echo $orderinfo['did'] ? 'Assign Another Driver' : 'Assign Driver' ?></a></td>
+                                                                        </tr>
 
-                                                            </tbody>
-                                                        </table>
-                                                    </div>  
-                                                </fieldset>
-                                            </div>  
-                                            <div class="form-group">
-                                                <fieldset class="" style=" width:95%;display: inline-block; margin-top:10px;  padding: 0px 5px 5px 5px;border: 1px solid #78beff;min-height: 140px;">
-                                                    <legend style="font-size:14px;margin-bottom: 5px;color:#666525;font-weight:bold;">  Order Item Details </legend>
-                                                    <div class="dsplyInBk" style="width:79%;">
-                                                        <table style="width:100%;font-size:12px;">
-                                                            <tbody>
-                                                            <th>Sr No</th>
-                                                            <th>Product Name</th>
-                                                            <th>Category</th>
-                                                            <th>Quantity</th>
-                                                            <th>Price</th>
-                                                            <th>Total ($)</th>
-                                                            <?php
-                                                            $cnt=0;
-                                                            $totalPrice = 0;
-                                                            foreach ($orderItemInfo as $itemInfo) {
-                                                                 ?>
-                                                            <tr>
-                                                                 <td><?php echo ++$cnt ?></td>
-                                                                <td><?php echo $itemInfo['item_name']; ?></td>
-                                                                <td><?php echo $itemInfo['category_name']; ?></td>
-                                                                 <td><?php echo $itemInfo['order_qty']; ?></td>
-                                                                <td><?php echo $itemInfo['price_eitgh']; ?></td>
-                                                                <td><?php echo round($itemInfo['price_eigth']*$itemInfo['order_qty']); ?></td>
-                                                            </tr>
-                                                                 <?php
-                                                                 $totalPrice = $totalPrice + round($itemInfo['price_eigth']*$itemInfo['order_qty']);
-                                                            }
-                                                            ?>                                                            
-                                                            </tbody>
-                                                        </table>
+                                                                    <?php } ?>
+
+                                                                </tbody>
+                                                            </table>
+                                                        </div>                                                  
+                                                    </fieldset>
+                                                </div>
+
+                                                <!-- Order Detail Display -->
+
+                                                <div class="form-group">
+                                                    <fieldset class="" style=" width:95%;display: inline-block; margin-top:10px;  padding: 0px 5px 5px 5px;border: 1px solid #78beff;min-height: 140px;">
+                                                        <legend style="font-size:14px;margin-bottom: 5px;color:#666525;font-weight:bold;">  Order Details </legend>
+                                                        <div class="dsplyInBk" style="width:79%;">
+                                                            <table style="width:100%;font-size:12px;">
+                                                                <tbody>
+                                                                    <?php if (isset($orderinfo['did']) && $orderinfo['did'] != '') { ?>
+                                                                        <tr>
+                                                                            <th>Order Id </th>
+                                                                            <td>: <?php echo $orderinfo['oid']; ?></td>
+                                                                            <th>Status </th>
+                                                                            <td>: <?php echo returnOrderStatusMenu($orderinfo['order_status']); ?></td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <th>Order Date</th>
+                                                                            <td>: <?php echo $orderinfo['created_at']; ?> </td>
+                                                                            <th>Order Time</th>
+                                                                            <td>: <?php echo $orderinfo['order_time']; ?> </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <th>Order Type </th>
+                                                                            <td>: <?php
+                                                                                if ($orderinfo['order_type'] == '0') {
+                                                                                    echo "Scheduled";
+                                                                                } else if ($orderinfo['order_type'] == '1') {
+                                                                                    echo "ASAP";
+                                                                                } else {
+                                                                                    echo "Pre-Order";
+                                                                                }
+                                                                                ?> </td>
+                                                                            <th>Pick up </th>
+                                                                             <td>: <?php echo ($isPickup==TRUE)? "": "Warehouse" ; ?> </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <th>Delivery Date </th>
+                                                                            <td>: <?php echo $orderinfo['delivery_date']; ?> </td>
+                                                                            <th>Delivery Time </th>
+                                                                            <td>: <?php echo $orderinfo['delivery_time']; ?> </td>
+                                                                        </tr>
+                                                                    <?php } ?>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>  
+                                                    </fieldset>
+                                                </div>  
+                                                <div class="form-group">
+                                                    <fieldset class="" style=" width:95%;display: inline-block; margin-top:10px;  padding: 0px 5px 5px 5px;border: 1px solid #78beff;min-height: 140px;">
+                                                        <legend style="font-size:14px;margin-bottom: 5px;color:#666525;font-weight:bold;">  Order Item Details </legend>
+                                                        <div class="dsplyInBk" style="width:79%;">
+                                                            <table style="width:100%;font-size:12px;">
+                                                                <tbody>
+                                                                <th>Sr No</th>
+                                                                <th>Product Name</th>
+                                                                <th>Category</th>
+                                                                <th>Quantity</th>
+                                                                <th>Price</th>
+                                                                <th>Total ($)</th>
+                                                                <?php
+                                                                $cnt=0;
+                                                                $totalPrice = 0;
+                                                                foreach ($orderItemInfo as $itemInfo) {
+                                                                     ?>
+                                                                <tr>
+                                                                     <td><?php echo ++$cnt ?></td>
+                                                                    <td><?php echo $itemInfo['item_name']; ?></td>
+                                                                    <td><?php echo $itemInfo['category_name']; ?></td>
+                                                                     <td><?php echo $itemInfo['order_qty']; ?></td>
+                                                                    <td><?php echo $itemInfo['price_eigth']; ?></td>
+                                                                    <td><?php echo round($itemInfo['price_eigth']*$itemInfo['order_qty']); ?></td>
+                                                                </tr>
+                                                                     <?php
+                                                                     $totalPrice = $totalPrice + round($itemInfo['price_eigth']*$itemInfo['order_qty']);
+                                                                }
+                                                                ?>                                                            
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </fieldset>
+                                                </div>
+                                                         <div class="form-group">
+                                                        Order Amount : <?php echo $totalPrice; ?><br/>
+                                                        Coupon Applied :   <br/>
+                                                            Coupon Benefit : <br/>
+                                                            Payable Amount : <br/>
+                                                         </div>
+                                                    
+                                              
+
+                                                <div class="form-group">
+                                                    <button type="submit" class="btn green" name="adddMessageBtn"><i class="fa fa-check"></i> Update </button>
+                                                    <a type="button" href="<?php echo base_url(); ?>restricted-areas" class="btn default "><i class="fa fa-remove"></i> Cancel</a> 
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-5 col-xs-12">
+                                                <div class="form-group">
+                                                    <!--map div-->
+                                                    <div class="col-sm-12 apadMarZero">
+                                                        <input id="searchInput" class="controls mapAutoComplete" type="text" placeholder="Enter a location">
+                                                        <div id="map" style="min-height:370px;"></div>
                                                     </div>
-                                                </fieldset>
-                                            </div>
-                                                     <div class="form-group">
-                                                    Order Amount : <?php echo $totalPrice; ?><br/>
-                                                    Coupon Applied :   <br/>
-                                                        Coupon Benefit : <br/>
-                                                        Payable Amount : <br/>
-                                                     </div>
-                                                
-                                          
-
-                                            <div class="form-group">
-                                                <button type="submit" class="btn green" name="adddMessageBtn"><i class="fa fa-check"></i> Update </button>
-                                                <a type="button" href="<?php echo base_url(); ?>restricted-areas" class="btn default "><i class="fa fa-remove"></i> Cancel</a> 
+                                                    <?php if ( isset($distance_maps) ): ?>
+                                                    <div class="col-sm-12 mapDistanceInfo no-padding">
+                                                        <div class="list row">
+                                                            <div class="col-sm-12">
+                                                                <span class="bold">Origin:</span>
+                                                                <span class="text"><?php echo array_shift($distance_maps['origin_addresses']) ?></span>
+                                                            </div>
+                                                            <div class="col-sm-12">
+                                                                <span class="bold">Destination:</span>
+                                                                <span class="text"><?php echo array_shift($distance_maps['destination_addresses']) ?></span>
+                                                            </div>
+                                                            <div class="col-sm-12">
+                                                                <span class="bold">Distance:</span>
+                                                                <span class="text"><?php echo $distance_maps['rows'][0]['elements'][0]['distance']['text'] ?></span>
+                                                            </div>
+                                                            <div class="col-sm-12">
+                                                                <span class="bold">Duration:</span>
+                                                                <span class="text"><?php echo $distance_maps['rows'][0]['elements'][0]['duration']['text'] ?></span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <?php endif; ?>
+                                                </div>
                                             </div>
                                         </div>
-                                        <div class="col-md-5 apadMarZero">
-                                            <div class="form-group">
-                                               <!-- <p>Click on a location on the map to select it.Drag the marker for other.</p> -->
-                                                <!--map div-->
-                                                <input id="searchInput" class="controls" type="text" placeholder="Enter a location">
-                                                <div id="map" style="min-height:370px;"></div>
-                                            </div>
-                                        </div>
-                                        <!------------------content end---------------------------------->            
+                                        <!--content end-->            
                                     </form>
                                 </div>
                             </div>
@@ -812,6 +821,11 @@
     }
     
     
+</script>
+<script type="text/javascript">
+    var driverLat = "<?php echo $orderinfo['driver_slat'] ?>";
+    var driverLan = "<?php echo $orderinfo['driver_slang'] ?>";
+    var driverAdd = "<?php echo $orderinfo['driver_saddr'] ?>";
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCxPoiZ1JSZYu_NqSqIGFcRRFEQnzo3yBA&libraries=places&callback=initMap" async defer></script>
 <script src="<?php echo base_url(); ?>assets/admin/pages/scripts/order-detail.js"  type="text/javascript" ></script>

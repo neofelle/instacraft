@@ -193,6 +193,7 @@ h2{font-size:16px;}
                                 <th class="numeric"> Delivery Type </th>
                                 <th class="numeric"> Delivery Date & Time </th>
                                 <th class="numeric"> Status </th>
+                                <th class="numeric"> First Order </th>
                                 <th class="numeric"> Driver </th>
                                 <th class="numeric"> Amount </th>
                                 <th class="numeric"> Action </th>
@@ -202,12 +203,16 @@ h2{font-size:16px;}
                             </tr>
                         </thead>
                         <?php
+                         $i = 0;
                          if (count($result) > 0) {
-                            if ($_GET['page'] == '') {
-                                        $i = 0;
-                                    } else {
-                                        $i = ($_GET['page'] - 1 ) * RECORDS_PERPAGE;
-                                    }
+                            if ( isset($_GET['page']) )
+                            {
+                                if ($_GET['page'] == '') {
+                                    $i = 0;
+                                } else {
+                                    $i = ($_GET['page'] - 1 ) * RECORDS_PERPAGE;
+                                }
+                            }
                             foreach ($result as $key => $list) {
                                 $bt = new DateTime($list['created_at']);
                                 $dt = new DateTime($list['created_at']);
@@ -227,6 +232,13 @@ h2{font-size:16px;}
                                         <td class="numeric editable"><?php echo ucfirst($orderType);   ?></td>
                                         <td class="numeric editable"><?php echo $dt->format('d-M-Y');?></td>
                                         <td class="numeric editable"><?php echo $status;?></td>
+                                        <td class="numeric editable text-center">
+                                            <?php if ( isset($list['first_time']) && $list['first_time'] == true ): ?>
+                                                <span class="fa fa-check text-success"></span>
+                                            <?php else: ?>
+                                                <span class="fa fa-times text-danger"></span>
+                                            <?php endif; ?>
+                                        </td>
                                         <td class="numeric editable"><b><a title="View this order details" id ="" href="order-detail/<?php echo $list['oid']; ?>"><small><?php echo ucfirst($list['driver_fname']." ".$list['driver_lname']);?></small></a></b></td>
                                         <td class="numeric editable"><?php echo $list['amount'];?></td>
                                         <!--
@@ -260,7 +272,7 @@ h2{font-size:16px;}
                             ?>
                             <tbody>
                                 <tr>
-                                    <td colspan="6" style="text-align: center"> No Record Found </td>
+                                    <td colspan="12" style="text-align: center"> No Record Found </td>
                                 </tr>
                             </tbody>
 <?php } ?>

@@ -16,7 +16,10 @@ class Login extends MX_Controller {
      * @function for : Show login View
      */
     public function login() {
-        
+        if ( sessionChk() === true )
+        {
+            redirect(base_url().'admin-dashboard');
+        }
         $data = array();
         $data['header'] = array('view' => 'templates/login_header',$data);
         $data['main_content'] = array('view' => 'login/login',$data);
@@ -41,7 +44,7 @@ class Login extends MX_Controller {
         if(count($data) > 1){
             //-- id,email,password,user_right,allowed_menus,created_from,deleted_from,created_date,deleted_time,active
             $session = array('logged_in'=>TRUE,'userdata'=>array('email'=>$data['email'],'loginId'=>$data['id'],'right'=>$data['user_right'],'menus'=>$data['allowed_menus']));
-           
+            
             $this->session->set_userdata($session);
             redirect(base_url().'admin-dashboard');
         }

@@ -28,10 +28,9 @@ h1.travel-head {
     color: #005596;
 }
 .login .logo img {
-        height: 180px;
-        width: 185px;
-        padding: 25px 0;
-    }
+  width: 185px;
+  padding: 25px 0;
+}
 .alert{
         padding: 5px;
         margin-bottom: 16px;

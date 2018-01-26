@@ -3,7 +3,7 @@
 <section class="splash_container">
     <div class="splash_logo"><img src="<?= $this->config->item('customerassets') ?>images/splash_logo.png" alt="logo"></div>
 </section>
-<section class="container">
+<section class="container hide">
     <div class="owl-carousel owl-theme demo">
         <div class="item">
             <div class="slide-cotent">
@@ -14,7 +14,7 @@
             </div>
             <img src="<?= $this->config->item('customerassets') ?>images/image_1@2x.png" alt="">
         </div>
-        <div class="item">
+        <!--<div class="item">
             <div class="slide-cotent">
                 <div class="slide-cotent-inner">
                     <p>We use a special drying &amp; curing method which boosts the flavor, essential oils, and medicinal value of our products.
@@ -22,7 +22,7 @@
                 </div>
             </div>
             <img src="<?= $this->config->item('customerassets') ?>images/image_2@2x.png" alt="">
-        </div>
+        </div>-->
         <div class="item">
             <div class="slide-cotent">
                 <div class="slide-cotent-inner">
@@ -32,7 +32,7 @@
             </div>
             <img src="<?= $this->config->item('customerassets') ?>images/image_3@2x.png" alt="">
         </div>
-        <div class="item">
+        <!--<div class="item">
             <div class="slide-cotent">
                 <div class="slide-cotent-inner">
                     <p>Like a craft beer bar, <br>We’ll feature "exotics of the month". New strains. New edibles. Rare items. 
@@ -40,7 +40,7 @@
                 </div>
             </div>
             <img src="<?= $this->config->item('customerassets') ?>images/image_4@2x.png" alt="">
-        </div>
+        </div>-->
         <div class="item">
             <div class="slide-cotent">
                 <div class="slide-cotent-inner">
@@ -59,7 +59,7 @@
             <img src="<?= $this->config->item('customerassets') ?>images/image_6@2x.png" alt="">
         </div>
     </div>
-    <P class="skip-btn"><a href="<?=base_url()?>cus-our-products">Skip</a></P>
+    <P class="skip-btn"><a href="<?=base_url()?>cus-our-products">Menu</a></P>
 </section>
 
 </div>
@@ -67,8 +67,61 @@
 </div>
 </section>
 <script type="text/javascript">
+    document.onreadystatechange = function(e)
+    {
+        if (document.readyState === 'complete')
+        {
+            var cookieValue = 'yes';
+            var cookieName = 'splash_shown';
+            var nDays = 30;
+            var today = new Date();
+            var expire = new Date();
+            if (nDays == null || nDays == 0)
+                nDays = 1;
+            expire.setTime(today.getTime() + 3600000 * 24 * nDays);
+            document.cookie = cookieName + "=" + escape(cookieValue) + ";expires=" + expire.toGMTString();
+
+            window.setTimeout(function () {
+                $(".splash_container").hide();
+                $(".container").removeClass('hide');
+            }, 3000);
+        }
+    };
+
+    // check if the current visitor is a new visitor or not
+    var currentCustomer = (event) => {
+        new Fingerprint2().get(function(result, components)
+        {
+            let fingerprint = result
+            let ip = ""
+            let item = event.item.index
+            let items = event.item.count
+
+            // get the url of menu
+            let menuUrl = $('.skip-btn a').attr('href')
+
+            if ( item + 1 < items )
+                return
+
+            // get the client IP first
+            axios.get('https://api.ipify.org/?format=json').then( _ => {
+                if ( typeof _.data.ip === "undefined" )
+                    return
+                // send an xhr request
+                axios.get(siteurl + "cus-visit?fp=" + fingerprint + "&ip=" + (_.ip || "0.0.0.0")).then( _ => {
+                    if ( _.data.visitor == "null" )
+                        window.location = menuUrl
+
+                    // redirect to register
+                    window.location.href = "cus-signup"
+                    
+                }).catch( _ => { console.log(_.error.message) })
+            })
+        })
+    }
+
     $('.owl-carousel').owlCarousel({
-        loop: true,
+        loop: false,
         margin: 20,
         nav: false,
         autoplay: true,
@@ -86,28 +139,13 @@
             1000: {
                 items: 1
             }
+        },
+        callbacks: true,
+        onDragged: function (event)
+        {
+            // call the xhr method and see to where this visitor should be redirected
+            currentCustomer(event)
         }
-    });
-
-    $(window).on('load', function () {
-        
-        var cookieValue = 'yes';
-        var cookieName = 'splash_shown';
-        var nDays = 30;
-        var today = new Date();
-        var expire = new Date();
-        if (nDays == null || nDays == 0)
-            nDays = 1;
-        expire.setTime(today.getTime() + 3600000 * 24 * nDays);
-        document.cookie = cookieName + "=" + escape(cookieValue) + ";expires=" + expire.toGMTString();
-        
-        window.setInterval(function () {
-            $(".splash_container").hide();
-//            $(".splash_container").slideDown("up", function () {
-//                // Animation complete.
-//            });
-
-        }, 3000);
     });
 </script>
 </body>

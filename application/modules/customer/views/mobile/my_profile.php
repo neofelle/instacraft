@@ -1,4 +1,4 @@
-<section class="container">
+<section class="container mobile-view-container">
     <div class="home_screen">
         <div class="profile_overview">
             <?php
@@ -26,35 +26,37 @@
             </div>
             <p>Earn reward points by completing your profile.</p>
         </div>
-        <?php
-            if ($upcomingAppointment->status == '0')
-                $status = 'Pending';
-            if ($upcomingAppointment->status == '1')
-                $status = 'Confirm';
-            if ($upcomingAppointment->status == '2')
-                $status = 'Rescheduled';
-            if ($upcomingAppointment->status == '3')
-                $status = 'Cancel';
-        ?>
-        <div id="upcoming_appointment" style="display: <?php if(sizeof($upcomingAppointment) > 0) {?>block<?php } else {?>none<?php }?>">
-            <p class="help_txt">Upcoming Appointment</p>
-            <div class="appointment_card gradient">
-                <h3 id="time_to_appointment">10 minutes to appointment</h3>
-                <p><b>Date: </b> <span id="appointment_date"> <?=$upcomingAppointment->appointment_date?></span></p>
-                <div class="half_input clearfix">
-                    <p class="left"><b>Time: </b><span id="appointment_time"> <?=$upcomingAppointment->appointment_time?></span></p>	
-                    <p class="right"><b>Status: </b><span id="status"> <?=$status?></span></p>
-                </div>
-                <form id="form_for_video_call" method="post" action="cus-video-consultation">            
-                    <div class="card_buttons clearfix">
-                        <a href="javascript:;" id="make_video_call" data-appointmentId="<?=$upcomingAppointment->appointment_id?>">Call Now</a>
-                        <input type="hidden" name="appointment_id" id="appointment_id_video" value="<?=$upcomingAppointment->appointment_id?>">
-                        <a href="javascript:;">View Details</a>
+        <?php if ( is_object($upcomingAppointment) ) : ?>
+            <?php
+                if ($upcomingAppointment->status == '0')
+                    $status = 'Pending';
+                if ($upcomingAppointment->status == '1')
+                    $status = 'Confirm';
+                if ($upcomingAppointment->status == '2')
+                    $status = 'Rescheduled';
+                if ($upcomingAppointment->status == '3')
+                    $status = 'Cancel';
+            ?>
+            <div id="upcoming_appointment" style="display: <?php if(sizeof($upcomingAppointment) > 0) {?>block<?php } else {?>none<?php }?>">
+                <p class="help_txt">Upcoming Appointment</p>
+                <div class="appointment_card gradient">
+                    <h3 id="time_to_appointment">10 minutes to appointment</h3>
+                    <p><b>Date: </b> <span id="appointment_date"> <?=$upcomingAppointment->appointment_date?></span></p>
+                    <div class="half_input clearfix">
+                        <p class="left"><b>Time: </b><span id="appointment_time"> <?=$upcomingAppointment->appointment_time?></span></p>	
+                        <p class="right"><b>Status: </b><span id="status"> <?=$status?></span></p>
                     </div>
-                </form>     
+                    <form id="form_for_video_call" method="post" action="cus-video-consultation">            
+                        <div class="card_buttons clearfix">
+                            <a href="javascript:;" id="make_video_call" data-appointmentId="<?=$upcomingAppointment->appointment_id?>">Call Now</a>
+                            <input type="hidden" name="appointment_id" id="appointment_id_video" value="<?=$upcomingAppointment->appointment_id?>">
+                            <a href="javascript:;">View Details</a>
+                        </div>
+                    </form>     
+                </div>
             </div>
-        </div>
-        
+        <?php endif; ?>
+
         <p class="help_txt">Recommended Products</p>
         <div class="product_list">
             <div class="product_card clearfix">

@@ -1,4 +1,4 @@
-<section class="container">
+<section class="container mobile-view-container">
     <div class="order_status_container">
         <ul class="opposite_detail">
             <?php

@@ -1,4 +1,13 @@
-<section class="container">
+<section class="container mobile-view-container">
+    <?php if ( isset($firstOrder) && $firstOrder == true ): ?>
+    <div class="alert alert-container alert-info">
+        <div class="alert-content">
+            <div class="alert-body">
+                <p class="alert-text">On your first order, you get a specially reduced $<?php echo isset($minimumDeliveryAmount) ? $minimumDeliveryAmount->rate : 35 ?> minimum order size to let you try things out.</p>
+            </div>
+        </div>
+    </div>
+    <?php endif; ?>
     <div class="caregiver-details">
         <p><b>Section 1:</b> Qualifying Patient Information</p>
         <div class="form-container">
@@ -21,7 +30,8 @@
                     <input type="text" name="phone_number" placeholder="Telephone Number" value="<?= $userDetail->phone_number ?>" required="">
                 </label>
                 <label class="txt_input">
-                    <textarea name="home_address" placeholder="Home Address" rows="5" required=""></textarea>
+                    <input type="text" name="home_address" placeholder="Home Address" value="" required="">
+                    <!--<textarea name="home_address" placeholder="Home Address" rows="5" required=""></textarea>-->
                 </label>
                 <div class="half_input clearfix">
                     <label class="txt_input left">
@@ -35,13 +45,13 @@
                     <label class="txt_input left">
                         <input type="number" min="0" name="zip" placeholder="ZIP" value="" maxlength="6" onKeyDown="if(this.value.length==6) return false;" required="">
                     </label>
-                    <label class="txt_input right">
+<!--                    <label class="txt_input right">
                         <input type="text" name="country" placeholder="Country" value="" required="">
-                    </label>
+                    </label>-->
                 </div>
-                <label class="txt_input">
+<!--                <label class="txt_input">
                     <input type="text" name="medical_certification" placeholder="Medical Provider Written Certification" value="" required="">
-                </label>
+                </label>-->
                 <!--                <div class="half_input clearfix">
                                     <label class="txt_input right_ico left">
                                         <input type="text" name="" placeholder="Issued Date">

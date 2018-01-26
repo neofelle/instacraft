@@ -1,7 +1,7 @@
 
 <!-- prescriptions uploaded by patient-->
 
-<section class="container">
+<section class="container mobile-view-container">
     <?php foreach($allPrescription['my_prescriptions'] as $prescription) { ?>
         <div class="prescription_container <?php if(strtotime($prescription->expire_date) < strtotime(date('Y-m-d'))){ echo 'inactive';}?>">
             <div class="prescription_card pad_20">

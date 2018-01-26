@@ -17,6 +17,7 @@
     margin: 0 auto;
     display: table;
     letter-spacing: 2px;
+    box-shadow: 0 0 61px 6px rgba(131, 129, 239, 0.61);
     border-radius: 42px;
     margin: 0px !important;
     

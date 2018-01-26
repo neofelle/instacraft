@@ -12,6 +12,8 @@
         <script src="<?= $this->config->item('customerassets') ?>js/formclass.js"></script>
         <script src="<?= $this->config->item('customerassets') ?>js/custom.js"></script>
 
+        <!-- OneSignal notifications -->
+        <link rel="manifest" href="<?= $this->config->item('base_url') ?>manifest.json" />
         <!-- CSS files -->
         <link rel="stylesheet" href="<?= $this->config->item('customerassets') ?>css/style.css">
         <!--<link rel="stylesheet" href="<?= $this->config->item('customerassets') ?>css/jquery-ui.css">-->
@@ -25,15 +27,42 @@
                 window.open(siteurl + 'cus-facebook-login', "popupWindow", ", top=500,left=500,width=600,height=600,scrollbars=yes");
             }
         </script>
+        
+        <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+        <script src="<?php echo $this->config->item('customerassets') ?>js/notifications.js" type="text/javascript"></script>
+        <script src="https://unpkg.com/sweetalert2@7.4.0/dist/sweetalert2.all.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/fingerprintjs2@1.6.1/dist/fingerprint2.min.js"></script>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <!-- Include a polyfill for ES6 Promises (optional) for IE11 and Android browser -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js"></script>
+        <!-- Facebook -->
+        <script>
+          window.fbAsyncInit = function() {
+            FB.init({
+              appId            : '1553864924904393',
+              autoLogAppEvents : true,
+              xfbml            : true,
+              version          : 'v2.11'
+            });
+          };
+
+          (function(d, s, id){
+             var js, fjs = d.getElementsByTagName(s)[0];
+             if (d.getElementById(id)) {return;}
+             js = d.createElement(s); js.id = id;
+             js.src = "https://connect.facebook.net/en_US/sdk.js";
+             fjs.parentNode.insertBefore(js, fjs);
+           }(document, 'script', 'facebook-jssdk'));
+        </script>
     </head>
     <body>
         <section class="mobile_wrapper">
             <img src="<?= $this->config->item('customerassets') ?>images/iPhone-Mockup.png" class="desk_img" alt="iphone">
-            <div class="mobile_elements <?=$bodyClass?>">
+            <div class="mobile_elements <?= isset($bodyClass) ? $bodyClass : '' ?>">
                 <div id="wait-div" class="wait-div">
                     <div class="wait-divin"><img src="<?= $this->config->item('customerassets'); ?>images/loading-x.gif"></div>
                 </div>
-                <nav class="side_menu" style="display:<?= $nav_display ?>">
+                <nav class="side_menu" style="display:<?= isset($nav_display) ?>">
                     <ul>
                         <li class="clearfix"><a href="<?= base_url() ?>cus-profile-view"><i class="icon-profile"></i><span>My Profile</span></a></li>
                         <li><a href="<?= base_url() ?>cus-my-prescription"><i class="icon-prescription"></i><span>My Prescriptions</span></a></li>
@@ -57,12 +86,12 @@
                     <header class="gradient main_header">
                         <a href="<?= $headerArr[1] ?>" class="back-screen <?= $headerArr[0] ?> left"></a>
                         <h1 id="page_name_header"><?= $pageName ?></h1>
-                            <?php if (sizeof($header_class_right) > 0) { ?>
+                            <?php if (isset($header_class_right) && sizeof($header_class_right) > 0) { ?>
                             <div class="header_panel right">
                                 <?php foreach ($header_class_right as $key => $right_class) {
                                     $arr = explode(',', $right_class);
                                     ?>
-                                <a href="<?= $arr[1] ?>" class="<?= $arr[0] ?>"> <?= $arr[2] ?></a>
+                                <a href="<?= $arr[1] ?>" class="<?= $arr[0] ?>"> <?= !isset($arr[2]) ?"": $arr[2] ?></a>
                             <?php } ?>
                             </div>
                     <?php } ?>

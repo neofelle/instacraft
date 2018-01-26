@@ -5,7 +5,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8"/>
-        <title><?php echo $title; ?> | InstaCraft Admin</title>
+        <title><?php echo isset($title) ? $title : ""; ?> | InstaCraft Admin</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
         <meta http-equiv="Content-type" content="text/html; charset=utf-8">
@@ -32,7 +32,7 @@
         <meta name="theme-color" content="#ffffff">
         
         <link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow" rel="stylesheet">
-        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css"/>
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css"/>
         <link href="<?php echo base_url(); ?>assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
         <link href="<?php echo base_url(); ?>assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css"/>
         <link href="<?php echo base_url(); ?>assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
@@ -45,6 +45,7 @@
         <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/global/plugins/bootstrap-select/bootstrap-select.min.css"/>
         <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/global/plugins/select2/select2.css"/>
         <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/global/plugins/jquery-multi-select/css/multi-select.css"/>
+
         <link href="<?php echo base_url(); ?>assets/global/css/components.css" id="style_components" rel="stylesheet" type="text/css"/>
         <link href="<?php echo base_url(); ?>assets/global/css/plugins.css" rel="stylesheet" type="text/css"/>
         <link href="<?php echo base_url(); ?>assets/admin/layout/css/layout.css" rel="stylesheet" type="text/css"/>
@@ -52,7 +53,7 @@
         <link href="<?php echo base_url(); ?>assets/admin/layout/css/style.css" rel="stylesheet" type="text/css"/>
         <link href="<?php echo base_url(); ?>assets/css/dev.css" rel="stylesheet" type="text/css"/>
         
-<?php if($requiredcss == 'setting'): ?>
+<?php if(isset($requiredcss) && $requiredcss == 'setting'): ?>
         <link href="<?php echo base_url(); ?>assets/admin/pages/css/setting.css" rel="stylesheet" type="text/css"/>
 <?php endif; ?>
      
@@ -83,15 +84,15 @@
               
      </head>
 
-    <body class="page-header-fixed page-quick-sidebar-over-content bg">
+    <body class="page-header page-quick-sidebar-over-content bg">
         <!-- BEGIN HEADER -->
 
-        <div class="page-header navbar navbar-fixed-top">
+        <div class="page-header navbar navbar-top">
             <!-- BEGIN HEADER INNER -->
             <div class="page-header-inner">
                 <!-- BEGIN LOGO -->
                 <div class="page-logo left">
-                    <img src="<?php echo base_url(); ?>assets/images/logo.png" alt="logo" height="45px" class="logo-default">
+                    <img src="<?php echo base_url(); ?>assets/images/logo.png" alt="logo" class="logo-default">
                     <div class="txt-cont">
                     <h2 class="theme-color">InstaCraft</h2>
                     <p class="theme-color">System Management Console</p>
@@ -109,8 +110,8 @@
                             </a>
                         </li>
                         <li>
-                            <a href="<?php echo base_url(); ?><?php echo $header['data']['requiredcss'] ? 'admin-dashboard' : 'manage-users'; ?>">
-                                <i class="<?php echo $header['data']['requiredcss'] ? 'glyphicon glyphicon-home' : 'fa fa-cog'; ?>" aria-hidden="true"></i>
+                            <a href="<?php echo base_url(); ?><?php echo isset($header['data']['requiredcss']) ? 'admin-dashboard' : 'manage-users'; ?>">
+                                <i class="<?php echo isset($header['data']['requiredcss']) ? 'glyphicon glyphicon-home' : 'fa fa-cog'; ?>" aria-hidden="true"></i>
                             </a>
                         </li>
                         <li>

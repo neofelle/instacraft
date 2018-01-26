@@ -126,9 +126,103 @@ Page Header
     box-shadow: 0px -6px 11px 3px #000;
 }
 .page-logo img.logo-default {
-    width: 140px;
+    width: 79px;
     float: left;
 }
+
+/*developer css*/
+.review-listing span.profile-image {
+    float: left;
+    width: 110px;
+    text-align: center;
+    padding-right: 20px;
+}
+.profile-details-memo{float:left;}
+.profile-details-memo span {
+    float: left;
+    width: 100%;
+    padding: 2px 0;
+}
+span.profile-rating {
+    float: right;
+}
+span.cust-name {
+    font-size: 16px;
+}
+span.cust-mail {
+    font-weight: bold;
+}
+span.cust-mail {
+    font-weight: 600;
+    font-size: 11px;
+    color: #8381ef;
+}
+.review-listing {
+    float: left;
+    width: 100%;
+    border-bottom: 1px solid;
+    padding: 14px 0 24px 0;
+    margin-bottom: 19px;
+}
+fieldset { margin: 0; padding: 0; }
+
+/****** Style Star Rating Widget *****/
+
+.rating { 
+  border: none;
+  float: left;
+}
+
+.rating > input { display: none; } 
+.rating > label:before { 
+  margin: 5px;
+  font-size: 1.25em;
+  font-family: FontAwesome;
+  display: inline-block;
+  content: "\f005";
+}
+
+.rating > .half:before { 
+  content: "\f089";
+  position: absolute;
+}
+
+.rating > label { 
+  color: #ddd; 
+ float: right; 
+}
+p.inner-tat {
+    float: left;
+    width: 100%;
+    padding: 25px 15px 0;
+}
+
+/***** CSS Magic to Highlight Stars on Hover *****/
+
+.rating > input:checked ~ label, /* show gold star when clicked */
+.rating:not(:checked) > label:hover, /* hover current star */
+.rating:not(:checked) > label:hover ~ label { color: #8280ef;  } /* hover previous stars in list */
+
+.rating > input:checked + label:hover, /* hover current star when changing rating */
+.rating > input:checked ~ label:hover,
+.rating > label:hover ~ input:checked ~ label, /* lighten current selection */
+.rating > input:checked ~ label:hover ~ label { color: #FFED85;  } 
+.review-listing .profile-image img {
+    width: 80px;
+    border-radius: 50% !important;
+    height: 80px;
+    box-shadow: 0px 0px 33px -9px rgba(0, 0, 0, 0.95);
+}
+
+
+
+
+profile-details-memo
+{
+     float: left;
+    width: 30%;
+}
+
 .page-logo .txt-cont {
     float: left;
     padding: 0 17px;
@@ -144,7 +238,7 @@ Page Header
   float: left;
 }
 .page-header.navbar .page-logo .logo-default {
-  margin: 16px 0 0 0;
+    margin: 2px 0 0 0;
 }
 .page-header.navbar .page-logo .logo-mini {
   display: none;
@@ -2142,7 +2236,7 @@ Page content
   font-family:'MuseoSansRounded-500', sans-serif !important;
 }
   /* subtitle */
-}
+
 .page-title small {
   font-size: 14px;
   letter-spacing: 0px;

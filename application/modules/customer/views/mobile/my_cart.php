@@ -1,18 +1,40 @@
-<section class="container">
+<section class="container mobile-view-container">
     
     
     <div class="my_cart product_list">
         <?php if(sizeof($products) > 0) {?>
         <?php $totalCartValue = 0; foreach($products as $product) {
-            $totalCartValue =   $product->total+$totalCartValue;
-            if ($product->item_unit == '1')
-                $weight_in = 'ounce';
-            if ($product->item_unit == '2')
-                $weight_in = 'gram';
-            if ($product->item_unit == '3')
-                $weight_in = 'ml';
-            if ($product->item_unit == '4')
-                $weight_in = 'piece';
+            // gram
+            if ($product->saved_type == 'gram'){
+                if($product->price_gram_off > 0){
+                    $product_price  =   $product->price_gram_off;
+                    $total  =    ($product->quantity*$product->price_gram_off);
+                }else{
+                    $product_price  =   $product->price_gram;
+                    $total  =    ($product->quantity*$product->price_gram);
+                }
+            }
+            // ounce
+            if ($product->saved_type == 'ounce'){
+                if($product->price_one_off > 0){
+                    $product_price  =   $product->price_one_off;
+                    $total  =    ($product->quantity*$product->price_one_off);
+                }else{
+                    $product_price  =   $product->price_one;
+                    $total  =    ($product->quantity*$product->price_one);
+                }
+            }
+            // eight
+            if ($product->saved_type == 'eight'){
+                if($product->price_eight_off > 0){
+                    $product_price  =   $product->price_eight_off;
+                    $total  =    ($product->quantity*$product->price_eight_off);
+                }else{
+                    $product_price  =   $product->price_eigth;
+                    $total  =    ($product->quantity*$product->price_eigth);
+                }
+            }
+            $totalCartValue =   $total+$totalCartValue;
         ?>
             <div class="product_card product_card_small clearfix" id="product_card_<?=$product->cart_id;?>">
                 <div class="product_detail clearfix" style="background:<?= $product->color_code ?> ">
@@ -20,9 +42,9 @@
                     <div class="pro_img left"><img src="<?= $product->item_image?>" alt="product"></div>					
                     <div class="product_info right">
                         <h3><?= $product->item_name?></h3>
-                        <p><b>Price:</b> $<?= $product->price_one ?>/1 <?= $weight_in?></p>
+                        <p><b>Price:</b> $<?= $product_price?>/1 <?= $product->saved_type?></p>
                         <div class="qty"><b>Qty :</b> <input type="text" name="quantity" value="<?= $product->quantity?>" disabled=""></div>
-                        <h4 class="right">$<?= $product->total?></h4>
+                        <h4 class="right total_val_<?=$product->cart_id;?>" data-value="<?= $total?>">$<?= $total?></h4>
                     </div>
                 </div>
             </div>
@@ -39,7 +61,7 @@
                 </li>
                 <li class="border_top">
                     <span class="label">Total:</span>
-                    <span class="right" id="total_cart_value">$<?= $totalCartValue?></span>
+                    <span class="right" id="total_cart_value" data-value="<?= $totalCartValue?>">$<?= $totalCartValue?></span>
                 </li>
             </ul>
             <div class="form-container">

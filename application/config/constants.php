@@ -8,7 +8,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 define('ROUTIFIC_AUTH', 'bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1OWMyMjdhYjRlMzVhYmMxMTY1YWQ0ODMiLCJpYXQiOjE1MDU4OTYzNjN9.13eOgGsjo_JKKIXUhs-OZ3_hl4VpZtqk95cNERMusss');
-define('ADMIN_EMAIL', 'niraj@techaheadcorp.com');
 define('SUPPORT_EMAIL', 'support@techaheadcorp.com');
 
 
@@ -30,7 +29,7 @@ define('FILE_READ_MODE', 0644);
 define('FILE_WRITE_MODE', 0666);
 define('DIR_READ_MODE', 0755);
 define('DIR_WRITE_MODE', 0755);
-//define("ADMIN_EMAIL","sonakshi.srivastav@techaheadcorp.com");
+define("ADMIN_EMAIL","sonakshi.srivastav@techaheadcorp.com");
 define('TOWING_PUSH_TYPE',"8");
 define('BATTERY_SERVICE_TYPE',"9");
 define('JOB_ASSIGNED',"7");
@@ -70,7 +69,7 @@ define('FOPEN_READ_WRITE_CREATE_STRICT', 'x+b');
 |
 */
 define('SHOW_DEBUG_BACKTRACE', TRUE);
-define('MENU', array('1'=>'Dashboard'));
+define('MENU', 'Dashboard');
 
 /*
 |--------------------------------------------------------------------------

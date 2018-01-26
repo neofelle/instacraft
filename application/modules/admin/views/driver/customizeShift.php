@@ -21,7 +21,7 @@
                             </tr>
                             <tr>
                                 <td><b>Day</b></td>
-                                <td><b><?php echo date(D, strtotime($driverShift['date'])); ?></b></td>
+                                <td><b><?php echo date("D", strtotime($driverShift['date'])); ?></b></td>
                             </tr>
                             <tr>
                                 <td><b>Total Work Hours</b></td>

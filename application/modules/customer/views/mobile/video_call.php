@@ -34,6 +34,9 @@
                 </div>
         <?php } ?>
     </header>
+    <div id="wait-div" class="wait-div">
+        <div class="wait-divin"><img src="<?= $this->config->item('customerassets'); ?>images/loading-x.gif"></div>
+    </div>
 <div class="container">
     <h2 id="notifyFlash" class="text-danger"></h2>
     
@@ -72,7 +75,7 @@
                     <div id="localDisplay" class="display"></div>
                 </div>
             </div>
-            <!--<div id="participant1Name" class="text-center text-muted">NONE</div>-->
+            <div id="participant1Name" class="text-center text-muted">NONE</div>
             <div class="text-center" style="margin-top: 20px">
                 <div id="participant1Status"></div>
             </div>
@@ -83,16 +86,29 @@
             <label id="statuss"></label>
         </div>
 
-        <div class="appointment_info">
+<!--        <div class="appointment_info">
             <h2>Doctor Name</h2>
             <p>Appointment Date: July 23rd, 2017</p>
             <p>Appointment Time: 10:30 to 10:45</p>
-        </div>
+        </div>-->
 
 </div>
     <script>
         $(document).on('click',".owner",function(){
-            window.location = siteurl+'cus-home';
+            $.ajax({
+                type: 'POST',
+                data: {},
+                url: siteurl + 'end-call-status',
+                dataType: "json",
+                beforeSend: function () {
+                    $('.wait-div').show();
+                },
+                success: function (data) {
+                    $('.wait-div').hide();
+                    window.location = siteurl+'cus-home';
+                }
+            });
+            
         });
     </script>
 </body>

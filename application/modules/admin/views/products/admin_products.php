@@ -185,7 +185,12 @@ h2{font-size:16px;}
                                 <th width="50px"> S No.</th>
                                 <th style="width:250px;"> Name & Description </th>
                                 <th class="numeric" style="width:140px;"> Category </th>
-                                <th class="numeric" style="width:65px;"> Price </th>
+                                <th class="numeric" style="width:65px;"> One Price </th>
+                                <th class="numeric" style="width:65px;"> One Off Price </th>
+                                <th class="numeric" style="width:65px;"> Eight Price </th>
+                                <th class="numeric" style="width:65px;"> Eight Off Price </th>
+                                <th class="numeric" style="width:65px;"> Gram Price </th>
+                                <th class="numeric" style="width:65px;"> Gram Off Price </th>
                                 <th class="numeric" style="width:65px;"> Unit </th>
                                 <th class="numeric" style="width:65px;"> Inventory </th>
                                 <th class="numeric" style="width:65px;"> Total Sales </th>
@@ -196,14 +201,20 @@ h2{font-size:16px;}
                         </thead>
                         <?php
                          if (count($result) > 0) {
-                            if ($_GET['page'] == '') {
+                            $i = 0;
+
+                            if ( isset($_GET['page']) )
+                            {
+                                if ($_GET['page'] == '') {
                                     $i = 0;
                                 } else {
                                     $i = ($_GET['page'] - 1 ) * RECORDS_PERPAGE;
                                 }
+                            }
+
                             foreach ($result as $key => $list) {
-                                $a = $list['status'];
-                                $status =  $a != '0' ? ($a != '1' ? "In-Call" : "Online") : 'Offline';
+                                // $a = $list['status'];
+                                // $status =  $a != '0' ? ($a != '1' ? "In-Call" : "Online") : 'Offline';
                                 
                                 $special = '';
                                 $commaCount1 = 0;
@@ -216,10 +227,7 @@ h2{font-size:16px;}
                                 
                                 $special .= ($commaCount1 > 0 && $list['is_luxurious_item'] != '0')? ",<br>" : '';
                                 $special .= $list['is_luxurious_item'] != '0' ? 'Most Luxurious' : "";
-                                if($list['is_luxurious_item'] != '0')$commaCount1++;
-                                
-                                    
-                                       
+                                if($list['is_luxurious_item'] != '0') $commaCount1++;
                                 
                         ?>
                                     <tr>
@@ -227,6 +235,11 @@ h2{font-size:16px;}
                                         <td class="numeric editable"><b><?php echo ucfirst($list['itemname'])."</b><br/>".ucfirst($list['itemdsc']); ?></td>
                                         <td class="numeric editable"><?php echo $list['categoryname']; ?> </td>
                                         <td class="numeric editable"><?php echo $list['price_one'];   ?></td>
+                                        <td class="numeric editable"><?php echo $list['price_one_off'];   ?></td>
+                                        <td class="numeric editable"><?php echo $list['price_eigth'];   ?></td>
+                                        <td class="numeric editable"><?php echo $list['price_eight_off'];   ?></td>
+                                        <td class="numeric editable"><?php echo $list['price_gram'];   ?></td>
+                                        <td class="numeric editable"><?php echo $list['price_gram_off'];   ?></td>
                                         <td class="numeric editable"><?php echo $list['itemunit']; ?> </td>
                                         <td class="numeric editable">*<?php echo 20; ?></td>
                                         <td class="numeric editable">*<b><?php echo 5000; ?></b></td>

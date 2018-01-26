@@ -102,7 +102,8 @@
                                                         </tr>
                                                     </thead>
                                                     <?php
-                                                    if (count($result) > 0) {
+                                                    if (count($result) > 0 && isset($_GET['page'])) {
+                                                        $i = 0;
                                                         if ($_GET['page'] == '') {
                                                             $i = 0;
                                                         } else {

@@ -21,6 +21,10 @@ module.exports={
     'SMTP_HOST':"smtp.gmail.com",
     'SMTP_SSL':true,
     
+    //ios push setting
+    IOS_APN_KEY_ID:454554,
+    IOS_APN_KEY_TEAM_ID:5454545
+    
  
  
     

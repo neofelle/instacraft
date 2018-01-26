@@ -716,7 +716,7 @@ class CI_Session {
 			{
 				$_SESSION[$key] = $value;
 			}
-
+			
 			return;
 		}
 
