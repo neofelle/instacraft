@@ -34,9 +34,9 @@ app.get('/', function(req, res) {
 });
 
 // for api docs documentation for driver
-app.get('/doc',function(req,res){
-    res.sendFile('./public/doc/index.html');
-})
+//app.get('/doc',function(req,res){
+//    res.sendFile('./public/doc/index.html');
+//})
 
 
 // for api docs documentation for User
@@ -47,9 +47,9 @@ app.get('/userdoc',function(req,res){
 
 
 // define api for version v1 api routes and require routes based file for driver
-var api = require('./routes/v1/driver/index')(app, express, db_client);
-//adding middleware for api v1
-app.use('/api/v1',api);
+//var api = require('./routes/v1/driver/index')(app, express, db_client);
+////adding middleware for api v1
+//app.use('/api/v1',api);
 
 
 // define api for version v1 api routes and require routes based file for user

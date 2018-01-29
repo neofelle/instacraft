@@ -89,7 +89,7 @@ function generateAuthTokenSession($url,$params=""){
 }
 
 
-   function sendEmailGlobal($from_email_subject, $email,$name,$subject, $emailMessage, $attachment) {
+function sendEmailGlobal($from_email_subject, $email,$name,$subject, $emailMessage, $attachment) {
 	//ini_set('max_execution_time', '0');
     $CI = & get_instance();
     $config['wordwrap'] = TRUE;

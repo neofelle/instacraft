@@ -25,15 +25,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 $url = "";
-$config['base_url'] = ""; // http://".$_SERVER["HTTP_HOST"]."/$url/
+$config['base_url'] = "http://".$_SERVER["HTTP_HOST"]."/".(empty($url) ? "" : $url."/");
 $config['customer']	= 'customer';
 $config['customerassets']	= $config['base_url'].'assets/'.$config['customer'].'/';
 
-$config['customer']	= 'customer';
 $config['website']	= 'website';
 $config['flashPhoner']	= 'flashPhoner';
 $config['customerassets']	= $config['base_url'].'assets/'.$config['customer'].'/';
 $config['flashPhonerAssets']	= $config['base_url'].'assets/'.$config['flashPhoner'].'/';
+$config['webrtc'] = 'webrtc';
+$config['webrtc-dist'] = $config['base_url'].'assets/'.$config['webrtc'].'/';
 /*
 |--------------------------------------------------------------------------
 | Index File

@@ -1,11 +1,15 @@
 <section class="container mobile-view-container">
-    <ul class="product_filters cats-container clearfix">
+    <ul class="product_filters cats-container clearfix align-items-center">
         <?php foreach ($category as $cat) { 
             if($cat->category_id != '37') {
         ?>
-            <li class="main-cat <?php if($cat->category_id == '39') {?>all_products<?php }?> <?php if($cat->category_id == '38') {?>rare_products<?php }?>" data-value="<?= $cat->category_id ?>"><?= $cat->name ?></li> 
+            <li class="col-4 main-cat <?php if($cat->category_id == '39') {?>all_products<?php }?> <?php if($cat->category_id == '38') {?>rare_products<?php }?>" data-value="<?= $cat->category_id ?>">
+                <span class="cbc"><?= $cat->name ?></span>
+            </li> 
         <?php }else { ?> 
-            <li class="by-purpose" data-value="<?= $cat->category_id ?>"><?= $cat->name ?></li>
+            <li class="col-4 by-purpose" data-value="<?= $cat->category_id ?>">
+                <span class="cbc"><?= $cat->name ?></span>
+            </li>
         <?php } }?>
     </ul>
     <ul class="product_filters sub-cats clearfix" style="display:none">

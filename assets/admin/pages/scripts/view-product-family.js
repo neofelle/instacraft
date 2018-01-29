@@ -184,12 +184,12 @@ function VehicleImageURL(input,val,imgTagId) {
             setFeedError('familyname-error','required field');
             error['familyname'] = true;
         }
-        else if(familyname.length < 5){
-            setFeedError('familyname-error','can\'t be less than 5 chars');
+        else if(familyname.length < 1){
+            setFeedError('familyname-error','can\'t be less than 1 chars');
             error['familyname'] = true;
         }
-        else if(familyname.length > 25){
-            setFeedError('familyname-error','can\'t exceed 25 chars');
+        else if(familyname.length > 50){
+            setFeedError('familyname-error','can\'t exceed 50 chars');
             error['familyname'] = true;
         }
         else{

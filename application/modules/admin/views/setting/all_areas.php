@@ -41,7 +41,7 @@
                         </div>
                         <div class="panel-body padMarZero">
                             <div class="tab-content ">
-                                <div class="tab-pane fade in active ofX" id="manageUsers">
+                                <div class="tab-pane fade in active o" id="manageUsers">
 
                                     <?php echo validation_errors(); ?>
 
@@ -103,10 +103,14 @@
                                                     </thead>
                                                     <?php
                                                     if (count($result) > 0) {
-                                                        if ($_GET['page'] == '') {
-                                                            $i = 0;
-                                                        } else {
-                                                            $i = ($_GET['page'] - 1 ) * RECORDS_PERPAGE;
+                                                        $i = 0;
+                                                        if ( isset($_GET['page']) )
+                                                        {
+                                                            if ($_GET['page'] == '') {
+                                                                $i = 0;
+                                                            } else {
+                                                                $i = ($_GET['page'] - 1 ) * RECORDS_PERPAGE;
+                                                            }
                                                         }
                                                         foreach ($result as $key => $list) {
                                                             $cdate = new DateTime($list['created_at']);
@@ -131,7 +135,7 @@
                                                             if ($list['sun'] == 1)
                                                                 array_push($days, 'Sun');
                                                             ?>
-                                                            <tr id="row<?php echo $list['user_id'] ?>">
+                                                            <tr id="row<?php echo $list['id'] ?>">
                                                                 <td> <?php echo $i + 1; ?></td>
                                                                 <td class="numeric editable"><b title=""><?php echo ucfirst($list['area_name']); ?></b></td>
                                                                 <td class="numeric editable"><b title=""><?php echo ucfirst($permission); ?></b></td>

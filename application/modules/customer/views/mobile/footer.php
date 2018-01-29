@@ -579,8 +579,8 @@
     $(document).on('click', '.main-cat', function () {
         var all_products     =   'no';
         var rare_products    =   'no';
-        $('.main-cat').removeClass('gradient');
-        $(this).addClass('gradient');
+        $('.main-cat').removeClass('active');
+        $(this).addClass('active');
         if($(this).hasClass('all_products')){
             all_products =   'yes';
         }
@@ -607,7 +607,7 @@
                 if (data.subCats.length > 0) {
                     $.each(data.subCats, function (i, j) {
                         if (i == 0) {
-                            isSelected = 'gradient';
+                            isSelected = 'active';
                         } else {
                             isSelected = '';
                         }
@@ -616,7 +616,7 @@
                         }else{
                             is_main =   'no';
                         }
-                        cat_html += '<li class="sub-cat ' + isSelected + '" data-value=' + j.category_id + ' data-is-main='+is_main+'>' + j.name + '</li>';
+                        cat_html += '<li class="col-4 sub-cat ' + isSelected + '" data-value=' + j.category_id + ' data-is-main='+is_main+'><span class="cbc">' + j.name + '</span></li>';
                     });
                 } else {
                     cat_html += 'No further categories...';
@@ -680,14 +680,14 @@
 
     $(document).on('click', '.sub-cat', function () {
         var cat_id = '';
-        $('.sub-cat').removeClass('gradient');
-        $(this).addClass('gradient');
+        $('.sub-cat').removeClass('active');
+        $(this).addClass('active');
         var is_main = $(this).attr('data-is-main');
         if(is_main == 'no'){
             cat_id = $(this).attr('data-value');
         }
         var family_id = $('#search_product_family').val();
-        var main_cat_id = $('.main-cat.gradient').attr('data-value');
+        var main_cat_id = $('.main-cat.active').attr('data-value');
         $.ajax({
             type: 'POST',
             data: {cat_id: main_cat_id, sub_cat_id: cat_id, family_id: family_id, is_main: is_main,all_products:'no'},
@@ -758,10 +758,10 @@
             by_mood =   'yes';
         }
         var cat_id  =   '';
-        var main_cat_id = $('.main-cat.gradient').attr('data-value');
-        var is_main = $('.sub-cat.gradient').attr('data-is-main');
+        var main_cat_id = $('.main-cat.active').attr('data-value');
+        var is_main = $('.sub-cat.active').attr('data-is-main');
         if(is_main == 'no'){
-            cat_id = $('.sub-cat.gradient').attr('data-value');
+            cat_id = $('.sub-cat.active').attr('data-value');
         }
         
         var family_id = $(this).val();
@@ -865,7 +865,8 @@
     $(function () {
         var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
         if (!isMobile) {
-            $('.container').enscroll({scrollIncrement:140});
+            $('.container').enscroll({scrollIncrement:40});
+            $('.container').width('auto');
         }
 
     })

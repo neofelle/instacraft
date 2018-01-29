@@ -41,7 +41,7 @@
                         </div>
                         <div class="panel-body padMarZero">
                             <div class="tab-content ">
-                                <div class="tab-pane fade in active ofX" id="manageUsers">
+                                <div class="tab-pane fade in active o" id="manageUsers">
 
                                     <?php echo validation_errors(); ?>
 
@@ -105,7 +105,7 @@
                                                 <div class="col-md-8 padLeftZero">
 
                                                 </div>
-                                                <!------------------content end---------------------------------->            
+                                                <!--content end-->            
                                             </form>
                                         </div>
                                     </div>

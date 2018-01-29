@@ -13,8 +13,8 @@ class Fblogin extends MX_Controller {
     function index() {
         $custObj = new Customer_model();
         $fb_config = array(
-            'appId' => '859390964134399', // $this->config->item('facebook_api_key'),
-            'secret' => 'a6681099e59cbc8727157beed748979b' // $this->config->item('facebook_api_secret')
+            'appId' => $this->config->item('facebook_api_key'), // $this->config->item('facebook_api_key'),
+            'secret' => $this->config->item('facebook_api_secret') // $this->config->item('facebook_api_secret')
         );
         
         $this->load->library('facebook', $fb_config);

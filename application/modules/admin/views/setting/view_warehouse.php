@@ -43,7 +43,7 @@
                         </div>
                         <div class="panel-body padMarZero">
                             <div class="tab-content ">
-                                <div class="tab-pane fade in active ofX" id="manageUsers">
+                                <div class="tab-pane fade in active o" id="manageUsers">
 
                                     <?php echo validation_errors(); ?>
 
@@ -109,10 +109,11 @@
                                                     </div>
                                                     <div class="form-group">
                                                         <button type="submit" class="btn green" name="newWareHouse"><i class="fa fa-check"></i> Update </button>
-                                                        <a type="button" href="<?php echo base_url(); ?>manage-warehouses" class="btn default "><i class="fa fa-remove"></i> Cancel</a> 
+                                                        <a type="button" href="<?php echo base_url(); ?>manage-warehouses" class="btn default "><i class="fa fa-remove"></i> Cancel</a>
+                                                        <a type="button" href="<?php echo base_url(); ?>delete-warehouse/<?php echo $whinfo['warehouse_id'] ?>" class="btn btn-danger"><i class="fa fa-remove"></i> Delete</a> 
                                                     </div>
                                                 </div>
-                                                <!------------------content end---------------------------------->            
+                                                <!--content end-->            
                                             </form>
                                         </div>
                                     </div>
