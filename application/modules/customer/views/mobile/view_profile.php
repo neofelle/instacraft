@@ -1,5 +1,5 @@
 <section class="container mobile-view-container">
-    <div class="pro-view_container">
+    <div class="view_container">
         <div class="main_img">
             <?php if($userRecord->profile_pic == '') {
                 $profile_pic    =   $this->config->item('customerassets').'images/user.jpg';

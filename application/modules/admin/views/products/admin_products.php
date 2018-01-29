@@ -247,7 +247,12 @@ h2{font-size:16px;}
                                         <td class="numeric editable"><b><?php echo $special; ?></b></td>
                                         <td class="action">
                                             <span class="no_wrap">
-                                                <a title="" id ="viewItem" href="product-details/<?php echo $list['itemid']; ?>" class="btn btn-default btn-xs"> <i class="fa fa-eye" style="color:red;"></i> </a>
+                                                <a title="" id="viewItem" href="product-details/<?php echo $list['itemid']; ?>" class="btn btn-default btn-xs text-primary">
+                                                    <i class="fa fa-eye"></i>
+                                                </a>
+                                                <a title="" href="javscript:void;" data-href="delete-product/<?php echo $list['itemid']; ?>" class="btn btn-default btn-xs text-danger btn-delete-item">
+                                                    <i class="fa fa-trash"></i>
+                                                </a>
                                             </span>
                                         </td>
                                     </tr>                                
@@ -428,7 +433,23 @@ h2{font-size:16px;}
             });
         });
         
-        
+        // Delete one product
+        $('.btn-delete-item').on('click', function(e){
+            e.preventDefault()
+            let deleteUrl = $(this).data('href')
+
+            axios.get(deleteUrl).then(_ => {
+                if ( _.data.error )
+                    swal('Error..!', _.data.error, 'error').then(_ => { return false })
+
+                swal('Success..!', 'This product has been deleted alongside the records related with this product.', 'success')
+                .then(_ => { window.location.reload() })
+            })
+            .catch(_ => {
+                swal('Error..!', _.error.message, 'warning').then(_ => { return false })
+            })
+        })
+
         //--- Validate Date Range Form 
         /*
         $("#searchData").validate({

@@ -12,7 +12,7 @@
 Rounded corners reset
 ***/
 /* Reset rounded corners for all elements */
-div,
+/*div,
 input,
 select,
 textarea,
@@ -32,7 +32,7 @@ li {
   -webkit-border-radius: 0 !important;
   -moz-border-radius: 0 !important;
   border-radius: 0 !important;
-}
+}*/
 
 /* except below bootstrap elements */
 .img-circle {
@@ -2064,9 +2064,9 @@ Customized Bootstrap Buttons
   color: #fff;
   background-color: #333;
 }
-.btn-default > i {
+/*.btn-default > i {
   color: #aaa;
-}
+}*/
 .btn-default > i[class^="icon-"],
 .btn-default > i[class*="icon-"] {
   color: #8c8c8c;

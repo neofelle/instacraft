@@ -1151,18 +1151,18 @@ class Manager extends MX_Controller{
                     $pic_url = '';
                     //- Uploading Profile Pic 
                     if(isset($_FILES['item_pic']['tmp_name']) && $_FILES['item_pic']['tmp_name'] != '' && $_POST['pic_exiting'] != ''){
-                        
+                        $filename = explode('.',$_FILES['item_pic']['name']);
                         $file_size = $_FILES['item_pic']['size'];
                         $file_tmp  = $_FILES['item_pic']['tmp_name'];
                         $file_type = $_FILES['item_pic']['type'];
-                        $file_name = strtolower(array_shift(explode('.',$_FILES['item_pic']['name'])));
-                        $file_ext  = strtolower(end(explode('.',$_FILES['item_pic']['name'])));
+                        $file_name = strtolower(array_shift($filename));
+                        $file_ext  = strtolower(end($filename));
                         $expensions1= array("jpg", "jpeg","jpg","png");
                         $expensions2= array("pdf","doc","docx");
                         //echo "Profile pic Extension is $file_ext and Size is $file_size in byte<br/>";
                         if(in_array($file_ext,$expensions1)!== false){
                             $filename = $file_name.rand(11,99)."_".time().".".$file_ext;
-                            $pic_url = uploadImageOnS3($filename,$file_tmp);
+                            $pic_url = uploadImageOnS3($filename,$file_tmp, "products");
                         } 
                     }else{
                         $pic_url = $_POST['pic_exiting'];
@@ -1238,6 +1238,52 @@ class Manager extends MX_Controller{
             
     }
     
+    public function deleteProduct()
+    {
+        $response = array('error' => null, 'success' => false, 'status' => 200);
+
+        $managerModel = new Manager_model();
+        
+        // catch the item ID
+        $itemID = $this->uri->segment('2');
+
+        // delete the product
+        try
+        {
+            $affectedRows = $managerModel->deleteProduct($itemID);
+
+            if ( $affectedRows >= 1 )
+            {
+                $response['success'] = true;
+            }
+            else
+            {
+                $response['error'] = "Now items has been deleted, if you think this is wrong please report it to our support.";
+                $response['status'] = 304;
+            }
+        }
+        catch (\Exception $e)
+        {
+            $response['error'] = $e->getMessage();
+            $response['success'] = false;
+            $response['status'] = 500;
+        }
+
+        // set header response
+        $this->output->set_header('HTTP/1.0 200 OK');
+        $this->output->set_header('HTTP/1.1 200 OK');
+        $this->output->set_header('Last-Modified: '.gmdate('D, d M Y H:i:s', time()).' GMT');
+        $this->output->set_header('Cache-Control: no-store, no-cache, must-revalidate');
+        $this->output->set_header('Cache-Control: post-check=0, pre-check=0');
+        $this->output->set_header('Pragma: no-cache');
+        // send result alongside with headers
+        $this->output
+        ->set_status_header(200)
+        ->set_content_type('application/json', 'utf-8')
+        ->set_output(json_encode($response, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES))
+        ->_display();
+        exit();
+    }
     
     public function edit_care_giver_details(){
         sessionChk();                        //-- Validating session

@@ -41,7 +41,7 @@
                         </div>
                         <div class="panel-body padMarZero">
                             <div class="tab-content ">
-                                <div class="tab-pane fade in active ofX" id="manageUsers">
+                                <div class="tab-pane fade in active o" id="manageUsers">
 
                                     <?php echo validation_errors(); ?>
 
@@ -102,18 +102,22 @@
                                                         </tr>
                                                     </thead>
                                                     <?php
-                                                    if (count($result) > 0 && isset($_GET['page'])) {
+                                                    if (count($result) > 0) {
                                                         $i = 0;
-                                                        if ($_GET['page'] == '') {
-                                                            $i = 0;
-                                                        } else {
-                                                            $i = ($_GET['page'] - 1 ) * RECORDS_PERPAGE;
+                                                        if ( isset($_GET['page']) )
+                                                        {
+                                                            if ($_GET['page'] == '') {
+                                                                $i = 0;
+                                                            } else {
+                                                                $i = ($_GET['page'] - 1 ) * RECORDS_PERPAGE;
+                                                            }
                                                         }
+                                                        
                                                         foreach ($result as $key => $list) {
-                                                            $cdate = new DateTime($list['created_at']);
+                                                            $cdate = new DateTime($list['family_created_at']);
                                                             if ($list['family_updated_at'] !== '0000-00-00 00:00:00') {
                                                                 $udate = new DateTime($list['family_updated_at']);
-                                                                $udate = $ldate->format('Y-M-d H:i:s');
+                                                                $udate = $udate->format('Y-M-d H:i:s');
                                                             } else {
                                                                 $udate = '<i style="color:red;">Not updated </i>';
                                                             }
@@ -122,7 +126,7 @@
                                                             $actBtnTitle = $list['family_status'] == 1 ? 'Inactivate' : 'Activate';
                                                             $actBtnId = $list['family_status'] == 1 ? 'familyDeactivator' : 'familyActivator';
                                                             ?>
-                                                            <tr id="row<?php echo $list['user_id'] ?>">
+                                                            <tr id="row<?php echo $list['family_id'] ?>">
                                                                 <td> <?php echo $i + 1; ?></td>
                                                                 <td class="numeric editable"><b title=""><?php echo ucfirst($list['family_name']); ?></b></td>
                                                                 <td class="numeric editable"><b title=""><?php echo $actTitle; ?></b></td>

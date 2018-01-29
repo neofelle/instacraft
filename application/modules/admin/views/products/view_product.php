@@ -473,9 +473,17 @@
                                                                 <td class="numeric editable"><?php echo $status; ?> </td>
                                                                 <td class="numeric editable"><?php echo $whT->format('d-M-Y');?></td>
                                                                 <td class="numeric">
-                                                                    <span><a class="btnsmall btn-primary" onclick="inOutQnty('whQnty_<?php echo $list['warehouse_id']; ?>', 1, 'plus')"><i class="fa fa-plus"></i></a></span>
-                                                                        <input type="text" value="<?php echo $list['quantity'] ? $list['quantity'] : 0 ; ?>" class="form-control" style="display:inline-block;width:50px;margin-right:2px;" name="whQnty_<?php echo $list['warehouse_id'] ?>" id="whQnty_<?php echo $list['warehouse_id']; ?>" onkeypress="return isNumberKey(event)"  />
-                                                                        <span><a class="btnsmall btn-info" onclick="inOutQnty('whQnty_<?php echo $list['warehouse_id']; ?>', 1, 'minus')"><i class="fa fa-minus"></i></a></span>
+                                                                    <span>
+                                                                      <a class="btnsmall btn-primary" onclick="inOutQnty('whQnty_<?php echo $list['warehouse_id']; ?>', 1, 'plus')">
+                                                                        <i class="fa fa-plus"></i>
+                                                                      </a>
+                                                                    </span>
+                                                                    <input type="text" value="<?php echo $list['quantity'] ? $list['quantity'] : 0 ; ?>" class="form-control" style="display:inline-block;width:50px;margin-right:2px;" name="whQnty_<?php echo $list['warehouse_id'] ?>" id="whQnty_<?php echo $list['warehouse_id']; ?>" onkeypress="return isNumberKey(event)"  />
+                                                                        <span>
+                                                                          <a class="btnsmall btn-info" onclick="inOutQnty('whQnty_<?php echo $list['warehouse_id']; ?>', 1, 'minus')">
+                                                                            <i class="fa fa-minus"></i>
+                                                                          </a>
+                                                                        </span>
                                                                 </td>
                                                             </tr>                                
                                                 <?php  $i++; }  } else { ?>

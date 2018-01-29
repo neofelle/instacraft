@@ -47,8 +47,8 @@ class S3 {
 	const SSE_AES256 = 'AES256';
 	public static $use_ssl = false;
 	public static $verify_peer = true;
-	private static $__access_key = 'AKIAIOR3O642D2G4QERA'; // AWS Access key
-	private static $__secret_key = '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'; // AWS Secret key
+	private static $__access_key = 'AKIAIENT7JVURRONTY4A'; // AWS Access key
+	private static $__secret_key = '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'; // AWS Secret key
 	function __construct($config = array())
 	{
 		if ( ! empty($config))
@@ -373,8 +373,7 @@ class S3 {
 		if ($rest->response->error === false && $rest->response->code !== 200)
 			$rest->response->error = array('code' => $rest->response->code, 'message' => 'Unexpected HTTP status');
 		if ($rest->response->error !== false)
-		{                    
-
+		{
 			trigger_error(sprintf("S3::putObject(): [%s] %s", $rest->response->error['code'], $rest->response->error['message']), E_USER_WARNING);
 			return false;
 		}

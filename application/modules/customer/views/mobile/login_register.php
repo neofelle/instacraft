@@ -2,7 +2,9 @@
     <header class="clearfix post">
         <a href="javascript:;" id="login" class="left <?php if ($pageName == 'Login') { ?>active<?php }?>">Sign In</a>
         <a href="javascript:;" id="register" class="right <?php if ($pageName == 'Register') { ?>active<?php }?>">Register</a>
-        <img src="<?= $this->config->item('customerassets') ?>images/new_logo.png" alt="logo" class="logo_img">
+        <div class="logo_img">
+            <img src="<?= $this->config->item('customerassets') ?>images/new_logo.png" alt="logo" class="col">
+        </div>
     </header>
     
     

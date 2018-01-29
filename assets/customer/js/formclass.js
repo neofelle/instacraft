@@ -35,14 +35,15 @@ $(document).ready(function () {
                 }
 
 
-                if (response.url)
+                /*if (response.url)
                 {
                     setTimeout(function ()
                     {
                         window.location.href = response.url;
                     }, 1000)
 
-                }
+                }*/
+
                 if (response.resetForm)
                     $(formClass).resetForm();
 

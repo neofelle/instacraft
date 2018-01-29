@@ -1,18 +1,17 @@
 <link rel="stylesheet" href="<?= $this->config->item('customerassets') ?>css/owl.carousel.min.css">
 <script src="<?= $this->config->item('customerassets') ?>js/owl.carousel.min.js" type="text/javascript"></script>
-<section class="splash_container">
-    <div class="splash_logo"><img src="<?= $this->config->item('customerassets') ?>images/splash_logo.png" alt="logo"></div>
-</section>
-<section class="container hide">
+<section class="container hidden position-absolute d-flex flex-wrap splash-content-slider align-items-center justify-content-end gradient-bg">
     <div class="owl-carousel owl-theme demo">
         <div class="item">
-            <div class="slide-cotent">
+            <div class="slide-cotent px-0">
                 <div class="slide-cotent-inner">
                     <h3>After 10pm?</h3>
                     <p>We’ll still deliver <br>Right to you :) <br>See our driver on the way <br>Just like an Uber.</p>
                 </div>
             </div>
-            <img src="<?= $this->config->item('customerassets') ?>images/image_1@2x.png" alt="">
+            <div>
+                <img class="col-11 mx-auto" src="<?= $this->config->item('customerassets') ?>images/image_1@2x.png" alt="">
+            </div>
         </div>
         <!--<div class="item">
             <div class="slide-cotent">
@@ -24,13 +23,15 @@
             <img src="<?= $this->config->item('customerassets') ?>images/image_2@2x.png" alt="">
         </div>-->
         <div class="item">
-            <div class="slide-cotent">
+            <div class="slide-cotent px-0">
                 <div class="slide-cotent-inner">
                     <p>Tired of bad weed? <br>That’s weak, old, harsh, or ineffective? <br>We got the good stuff. All lab-tested, fresh
                         Craft Cannabis... <br>Like craft beer, made in small batches <br>By caring true craftsmen, <br>Not cold corporations. <br>It’s Farm to Table, made with pride.</p>
                 </div>
             </div>
-            <img src="<?= $this->config->item('customerassets') ?>images/image_3@2x.png" alt="">
+            <div>
+                <img class="col-11 mx-auto" src="<?= $this->config->item('customerassets') ?>images/image_3@2x.png" alt="">
+            </div>
         </div>
         <!--<div class="item">
             <div class="slide-cotent">
@@ -42,33 +43,47 @@
             <img src="<?= $this->config->item('customerassets') ?>images/image_4@2x.png" alt="">
         </div>-->
         <div class="item">
-            <div class="slide-cotent">
+            <div class="slide-cotent px-0">
                 <div class="slide-cotent-inner">
                     <p>Like a craft beer bar, <br>We’ll feature "exotics of the month". New strains. New edibles. Rare items. 
                         Brought to you by pastry chefs with culinary degrees &amp; years of experience.</p>
                 </div>
             </div>
-            <img src="<?= $this->config->item('customerassets') ?>images/image_5@2x.png" alt="">
+            <div>
+                <img class="col-11 mx-auto" src="<?= $this->config->item('customerassets') ?>images/image_5@2x.png" alt="">
+            </div>
         </div>
         <div class="item">
-            <div class="slide-cotent">
+            <div class="slide-cotent px-0">
                 <div class="slide-cotent-inner">
-                    <p>We believe in challenging the status quo. 1% of profits will go to charity, funding cancer research &amp; making the world better. <br><br>We want to set the industry standard for quality, customer service, and social responsibility. Help us make that dream a reality…</p>
+                    <p>We believe in challenging the status quo. 1% of profits will go to charity, funding cancer research &amp; making the world better.<br>We want to set the industry standard for quality, customer service, and social responsibility. Help us make that dream a reality…</p>
                 </div>
             </div>
-            <img src="<?= $this->config->item('customerassets') ?>images/image_6@2x.png" alt="">
+            <div>
+                <img class="col-11 mx-auto" src="<?= $this->config->item('customerassets') ?>images/image_6@2x.png" alt="">
+            </div>
         </div>
     </div>
-    <P class="skip-btn"><a href="<?=base_url()?>cus-our-products">Menu</a></P>
+    <div class="skip-btn hide">
+        <a class="d-flex align-items-center flex-wrap justify-content-center" href="<?=base_url()?>cus-our-products">
+            <i class="fas fa-arrow-right col-6 px-0 d-block mr-1"></i>
+            <span class="text px-0 col-6 d-block">Menu</span>
+        </a>
+    </div>
 </section>
-
+<section class="splash_container">
+    <div class="splash_logo col-8">
+        <img class="rounded mx-auto d-block" src="<?= $this->config->item('customerassets') ?>images/splash_logo.png" alt="logo">
+    </div>
+</section>
 </div>
-
 </div>
 </section>
 <script type="text/javascript">
     document.onreadystatechange = function(e)
     {
+        window.dragcount = 0
+
         if (document.readyState === 'complete')
         {
             var cookieValue = 'yes';
@@ -82,8 +97,8 @@
             document.cookie = cookieName + "=" + escape(cookieValue) + ";expires=" + expire.toGMTString();
 
             window.setTimeout(function () {
-                $(".splash_container").hide();
-                $(".container").removeClass('hide');
+                $(".splash_container").addClass('d-none');
+                $(".container").removeClass('hidden');
             }, 3000);
         }
     };
@@ -94,13 +109,11 @@
         {
             let fingerprint = result
             let ip = ""
-            let item = event.item.index
-            let items = event.item.count
 
             // get the url of menu
             let menuUrl = $('.skip-btn a').attr('href')
 
-            if ( item + 1 < items )
+            if ( window.dragcount < 4 )
                 return
 
             // get the client IP first
@@ -143,8 +156,18 @@
         callbacks: true,
         onDragged: function (event)
         {
-            // call the xhr method and see to where this visitor should be redirected
-            currentCustomer(event)
+            let iti = event.item.index
+            let itc = event.item.count
+
+            // increment
+            window.dragcount += 1
+
+            if ( iti + 1 === itc )
+            {
+                // call the xhr method and see to where this visitor should be redirected
+                currentCustomer(event)
+                $('.skip-btn').removeClass('hide')
+            }
         }
     });
 </script>

@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>InstaCraft</title>
-        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
         <script src="<?= $this->config->item('customerassets') ?>js/jquery-1.11.1.min.js"></script>
         <script src="<?= $this->config->item('customerassets') ?>js/jquery-ui.js"></script>
@@ -15,6 +15,8 @@
         <!-- OneSignal notifications -->
         <link rel="manifest" href="<?= $this->config->item('base_url') ?>manifest.json" />
         <!-- CSS files -->
+        <link href="https://use.fontawesome.com/releases/v5.0.4/css/all.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link rel="stylesheet" href="<?= $this->config->item('customerassets') ?>css/style.css">
         <!--<link rel="stylesheet" href="<?= $this->config->item('customerassets') ?>css/jquery-ui.css">-->
 

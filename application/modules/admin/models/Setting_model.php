@@ -454,7 +454,7 @@ class Setting_model extends CI_Model {
      * author   : Niraj
      * Function : Acivate/ Inactivate Family Status
      */
-    public function changeFamilyStatus($familyId){
+    public function changeFamilyStatus($familyId = ""){
         if($familyId != ''){
             $this->set_customid($familyId);
             $familyInfo = $this->chkUserId('item_familly');
@@ -868,7 +868,7 @@ class Setting_model extends CI_Model {
      * author   : Niraj
      * function : Fetch Admin User Details
      */
-    public function fetch_restricted_area_details($resAreaid){
+    public function fetch_restricted_area_details($resAreaid = ''){
         if($resAreaid != ''){
             $data = array();
             $query = $this->db->select('area_name as serchname')->from('restricted_areas')->where('id =', $resAreaid)->get();

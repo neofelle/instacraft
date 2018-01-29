@@ -135,6 +135,7 @@ $route['category-details/(:any)'] = 'admin/Manager/view_details/$1';      //get 
 $route['products']                = 'admin/Manager/products';             //get all products
 $route['add-product']             = 'admin/Manager/add_product';          //Add Product Details
 $route['product-details/(:any)']  = 'admin/Manager/view_product/$1';      //View/EditProducts Details
+$route['delete-product/(:num)'] = "admin/Manager/deleteProduct/$1"; // View/Edit Care Giver
 
 $route['doctors']                 = 'admin/Manager/doctors';              //get all doctors
 $route['add-doctor']              = 'admin/Manager/add_doctor';           //Doctor Details
@@ -297,3 +298,9 @@ $route['delete-tax/(:num)'] = 'admin/Setting/delete_tax/$1';
  * Privacy policy, terms of use
  */
 $route['privacy'] = 'customer/Pages/privacy';
+
+/**
+ * WebRTC - video & audio calls
+ */
+$route['call'] = 'webrtc/Webrtc/index';
+$route['rtc'] = 'webrtc/Webrtc/rtc';

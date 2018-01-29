@@ -1869,12 +1869,6 @@ class Manager_model extends CI_Model {
             'cbn' => '0',
             'cbd' => '0',
             'thcv' => '0',
-//            'thc' => $this->get_itemthc(),
-//            'cbg' => $this->get_itemcbg(),
-//            'cbc' => $this->get_itemcbc(),
-//            'cbn' => $this->get_itemcbn(),
-//            'cbd' => $this->get_itemcbd(),
-//            'thcv' => $this->get_itemthcv(),
             'is_biweekly' => $this->get_itembiweekly(),
             'is_hot_item' => $this->get_itemhot(),
             'status' => 1,
@@ -1885,12 +1879,10 @@ class Manager_model extends CI_Model {
             'moods' => $selected_sizes_comma_seprated_moods,
             'medicals' => $selected_sizes_comma_seprated_medicals
         );
-//        echo "<pre>";
-//        print_r($in_data);
-//        exit;
+
         $res = $this->db->insert('items', $in_data);
-//        echo $this->db->last_query();exit;
         $data = $this->db->affected_rows();
+
         if ($data) {
             $insert_id = $this->db->insert_id();
 
@@ -1939,6 +1931,29 @@ class Manager_model extends CI_Model {
         }
 
         return $data;
+    }
+
+    public function deleteProduct($item_id)
+    {
+        $result = false;
+
+        // as long as there are no constraints we have to delete all records that has the item id as foreign key.
+        try
+        {
+            $this->db->where(array('item_id' => $item_id))->delete('item_category_mapping');
+            $this->db->where(array('item_id' => $item_id))->delete('manage_warehouse_items');
+            $this->db->where(array('item_id' => $item_id))->delete('order_items');
+            $this->db->where(array('item_id' => $item_id))->delete('cart');
+            $this->db->where(array('item_id' => $item_id))->delete('items');
+            
+            $result = $this->db->affected_rows();
+        }
+        catch (\Exception $e)
+        {
+            $result = false;
+        }
+
+        return $result;
     }
 
     /*

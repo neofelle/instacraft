@@ -61,7 +61,7 @@
                     <div id="siteNotice">
                     </div> 
                     <div id="bodyContent">
-                        <p>`The more app downloads we have in the area, the sooner we can expand there. So share the app with friends and we may get there this month. We’re expanding to new towns every week. We love our InstaCraft Pioneers and we hope to expand to your area soon. We’re very sorry that we don’t currently deliver in your area.`</p>
+                        <p>`The more app downloads we have in the area, the sooner we can expand there. Share the app with friends and we may get there this month. We’re expanding to new towns every week.`</p>
                     </div> 
                 </div>
             </div>
@@ -89,7 +89,7 @@
 //                '<div id="siteNotice">' +
 //                '</div>' +
 //                '<div id="bodyContent">' +
-//                `<p> The more app downloads we have in the area, the sooner we can expand there. So share the app with friends and we may get there this month. We’re expanding to new towns every week. We love our InstaCraft Pioneers and we hope to expand to your area soon. We’re very sorry that we don’t currently deliver in your area. </p>` +
+//                `<p> The more app downloads we have in the area, the sooner we can expand there. Share the app with friends and we may get there this month. We’re expanding to new towns every week. </p>` +
 //                '</div>' +
 //                '</div>';
 //
@@ -113,7 +113,7 @@
         $('*[name=date_time]').appendDtpicker();
         // show the alert
         swal({
-            text: "The more app downloads we have in the area, the sooner we can expand there. So share the app with friends and we may get there this month. We’re expanding to new towns every week. We love our InstaCraft Pioneers and we hope to expand to your area soon. We’re very sorry that we don’t currently deliver in your area.",
+            text: "The more app downloads we have in the area, the sooner we can expand there. Share the app with friends and we may get there this month. We’re expanding to new towns every week.",
             showCloseButton: false,
             customClass: "alertMap",
             showConfirmButton: true,
@@ -153,7 +153,7 @@
         '<div id="siteNotice">' +
         '</div>' +
         '<div id="bodyContent">' +
-        `<p> The more app downloads we have in the area, the sooner we can expand there. So share the app with friends and we may get there this month. We’re expanding to new towns every week. We love our InstaCraft Pioneers and we hope to expand to your area soon. We’re very sorry that we don’t currently deliver in your area. </p>` +
+        `<p> The more app downloads we have in the area, the sooner we can expand there. Share the app with friends and we may get there this month. We’re expanding to new towns every week. </p>` +
         '</div>' +
         '</div>');*/
     //infowindow.open(map, marker);
@@ -196,7 +196,7 @@
                 '<div id="siteNotice">' +
                 '</div>' +
                 '<div id="bodyContent">' +
-                `<p> The more app downloads we have in the area, the sooner we can expand there. So share the app with friends and we may get there this month. We’re expanding to new towns every week. We love our InstaCraft Pioneers and we hope to expand to your area soon. We’re very sorry that we don’t currently deliver in your area. </p>` +
+                `<p> The more app downloads we have in the area, the sooner we can expand there. Share the app with friends and we may get there this month. We’re expanding to new towns every week. </p>` +
                 '</div>' +
                 '</div>');*/
             //infowindow.open(map, marker);

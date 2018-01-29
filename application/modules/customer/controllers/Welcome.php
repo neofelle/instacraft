@@ -24,6 +24,11 @@ class Welcome extends MX_Controller {
         }else{
             $output['nav_display'] = 'none';
         }
+        // redirect to splash
+        if ( !isset($_COOKIE['splash_shown']) || $_COOKIE['splash_shown'] == 'no' )
+        {
+            redirect('cus-splash');
+        }
         //echo sizeof($output['header_class_right']);die;
         //$output['allProducts']		= $this->banner_model->getAllBannersForFront('linker-front');
         $this->load->view($this->config->item('customer') . '/mobile/header', $output);

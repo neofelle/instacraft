@@ -185,24 +185,24 @@ class Setting extends MX_Controller{
         sessionChk();                        //-- Validating session
         $setting_model = new Setting_model();//-- Model Object 
         //-- IF SEARCH TEXT EXIST 
-            if($this->input->post('searchText') != ''){ 
-                $setting_model->setSearchData(strtolower(trim($this->input->post('searchText'))));
-            }
-            
-            $totalPage      = $setting_model->productFamilyCount();
-            $baseUrl        = base_url() ."manage-products";
-            $pageFrom       = globalPagination($totalPage,$baseUrl,RECORDS_PERPAGE);
-            //echo $totalPage;die;
-            if($this->input->post('all') != ''){ 
-                $all = true;
-                $body['result'] = $setting_model->getAllProductFamily(RECORDS_PERPAGE,$pageFrom,$all);
-            }elseif($this->input->get('searchText') != ''){
-                $all = false;
-                $body['result'] = $setting_model->getAllProductFamily(RECORDS_PERPAGE,$pageFrom,$all);
-            }
-            else{
-                $body['result'] = $setting_model->getAllProductFamily(RECORDS_PERPAGE,$pageFrom,false);
-            }
+        if($this->input->post('searchText') != ''){ 
+            $setting_model->setSearchData(strtolower(trim($this->input->post('searchText'))));
+        }
+        
+        $totalPage      = $setting_model->productFamilyCount();
+        $baseUrl        = base_url() ."manage-products";
+        $pageFrom       = globalPagination($totalPage,$baseUrl,RECORDS_PERPAGE);
+        //echo $totalPage;die;
+        if($this->input->post('all') != ''){ 
+            $all = true;
+            $body['result'] = $setting_model->getAllProductFamily(RECORDS_PERPAGE,$pageFrom,$all);
+        }elseif($this->input->get('searchText') != ''){
+            $all = false;
+            $body['result'] = $setting_model->getAllProductFamily(RECORDS_PERPAGE,$pageFrom,$all);
+        }
+        else{
+            $body['result'] = $setting_model->getAllProductFamily(RECORDS_PERPAGE,$pageFrom,false);
+        }
         //echo $setting_model->fetchItemCount(1);die;
         //echo"<pre>";print_r($body['result']);die;
         $data['title']          = 'Messages Products';
@@ -225,7 +225,7 @@ class Setting extends MX_Controller{
             $setting_model = new Setting_model();
             
             $setting_model->set_familyId($userId);
-            $resData = $setting_model->changeFamilyStatus();
+            $resData = $setting_model->changeFamilyStatus($userId);
             if($resData == '-1'){
                 echo "<script type='text/javascript'>alert('Something went wrong, please try later.')</script>";
                 redirect('manage-products','refresh');
@@ -293,7 +293,7 @@ class Setting extends MX_Controller{
         $data['requiredcss']    = 'setting';
         $data['header']         = array('view' => 'templates/header', 'data' => $data);
         //$data['sidebar']        = array('view' => 'templates/common_sidebar', 'data' => $body);
-        $data['main_content']   = array('view' => 'setting/add_product_family', 'data' => $body);
+        $data['main_content']   = array('view' => 'setting/add_product_family', 'data' => []);
         $data['footer']         = array('view' => 'templates/footer', 'data' => $data);
         $this->load->view('templates/common_template', $data); 
     }
@@ -309,7 +309,7 @@ class Setting extends MX_Controller{
         $setting_model = new Setting_model();//-- Model Object  
         
         $setting_model->set_familyId($this->uri->segment('2'));
-        $body['productinfo'] = $setting_model->fetch_product_family_details();
+        $body['productinfo'] = $setting_model->fetch_product_family_details($this->uri->segment('2'));
         if(isset($body['productinfo']['family_id']) && $body['productinfo']['family_id'] != ''){
             
             //-- Add Doctor If Post Data  
@@ -479,7 +479,7 @@ class Setting extends MX_Controller{
         $setting_model = new Setting_model();//-- Model Object  
         
         $setting_model->set_whid($this->uri->segment('2'));
-        $body['whinfo'] = $setting_model->fetch_warehouse_details();
+        $body['whinfo'] = $setting_model->fetch_warehouse_details($this->uri->segment('2'));
         if(isset($body['whinfo']['warehouse_id']) && $body['whinfo']['warehouse_id'] != ''){
             //-- Add Ware House  If Post Data  
             if($this->input->post('address') && $this->input->post('warename') && $this->input->post('latlng') && $this->input->post('whid')){ 
@@ -529,7 +529,7 @@ class Setting extends MX_Controller{
             $setting_model = new Setting_model();
             
             $setting_model->set_whid($warehouseId);
-            $resData = $setting_model->delete_wareHouse();
+            $resData = $setting_model->delete_wareHouse($this->uri->segment('2'));
             if($resData == '-1'){
                 echo "<script type='text/javascript'>alert('Something went wrong, please try later.')</script>";
                 redirect('manage-warehouses','refresh');
@@ -555,24 +555,24 @@ class Setting extends MX_Controller{
         sessionChk();                        //-- Validating session
         $setting_model = new Setting_model();//-- Model Object 
         //-- IF SEARCH TEXT EXIST 
-            if($this->input->post('searchText') != ''){ 
-                $setting_model->setSearchData(strtolower(trim($this->input->post('searchText'))));
-            }
-            
-            $totalPage      = $setting_model->RestrictedAreasCount();
-            $baseUrl        = base_url() ."restricted-areas";
-            $pageFrom       = globalPagination($totalPage,$baseUrl,RECORDS_PERPAGE);
-            //echo $totalPage;die;
-            if($this->input->post('all') != ''){ 
-                $all = true;
-                $body['result'] = $setting_model->getAllRestrictedAreas(RECORDS_PERPAGE,$pageFrom,$all);
-            }elseif($this->input->get('searchText') != ''){
-                $all = false;
-                $body['result'] = $setting_model->getAllRestrictedAreas(RECORDS_PERPAGE,$pageFrom,$all);
-            }
-            else{
-                $body['result'] = $setting_model->getAllRestrictedAreas(RECORDS_PERPAGE,$pageFrom,false);
-            }
+        if($this->input->post('searchText') != ''){ 
+            $setting_model->setSearchData(strtolower(trim($this->input->post('searchText'))));
+        }
+        
+        $totalPage      = $setting_model->RestrictedAreasCount();
+        $baseUrl        = base_url() ."restricted-areas";
+        $pageFrom       = globalPagination($totalPage,$baseUrl,RECORDS_PERPAGE);
+        //echo $totalPage;die;
+        if($this->input->post('all') != ''){ 
+            $all = true;
+            $body['result'] = $setting_model->getAllRestrictedAreas(RECORDS_PERPAGE,$pageFrom,$all);
+        }elseif($this->input->get('searchText') != ''){
+            $all = false;
+            $body['result'] = $setting_model->getAllRestrictedAreas(RECORDS_PERPAGE,$pageFrom,$all);
+        }
+        else{
+            $body['result'] = $setting_model->getAllRestrictedAreas(RECORDS_PERPAGE,$pageFrom,false);
+        }
         //echo $setting_model->fetchItemCount(1);die;
         //echo"<pre>";print_r($body['result']);die;
         $data['title']          = 'Reastricted Areas';
@@ -666,7 +666,7 @@ class Setting extends MX_Controller{
             } 
 
         }
-
+        $body['areainfo'] = $setting_model->fetch_restricted_area_details();
         //echo"<pre>";print_r($body['result']);die;
         $data['title']          = 'Add Ware House';
         $data['requiredcss']    = 'setting';
@@ -688,7 +688,7 @@ class Setting extends MX_Controller{
         $setting_model = new Setting_model();//-- Model Object  
         
         $setting_model->set_customid($this->uri->segment('2'));
-        $body['areainfo'] = $setting_model->fetch_restricted_area_details();
+        $body['areainfo'] = $setting_model->fetch_restricted_area_details($this->uri->segment('2'));
         if(isset($body['areainfo']) && count(['areainfo']) > 0){
             //-- Add Ware House  If Post Data  
             if($this->input->post('resname')){ 
@@ -898,7 +898,7 @@ class Setting extends MX_Controller{
         $data['requiredcss']    = 'setting';
         $data['header']         = array('view' => 'templates/header', 'data' => $data);
         //$data['sidebar']        = array('view' => 'templates/common_sidebar', 'data' => $body);
-        $data['main_content']   = array('view' => 'setting/add_tax', 'data' => $body);
+        $data['main_content']   = array('view' => 'setting/add_tax', 'data' => []);
         $data['footer']         = array('view' => 'templates/footer', 'data' => $data);
         $this->load->view('templates/common_template', $data); 
     }
