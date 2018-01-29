@@ -24,13 +24,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-<<<<<<< HEAD
 $url = "instacraft";
 $config['base_url'] = "http://localhost/farris/git/instacraft/"; 
-=======
 $url = "";
-$config['base_url'] = "http://".$_SERVER["HTTP_HOST"]."/".(empty($url) ? "" : $url."/");
->>>>>>> 74378191f7db19354a695c47b872ab281f341a0f
+//$config['base_url'] = "http://".$_SERVER["HTTP_HOST"]."/".(empty($url) ? "" : $url."/");
 $config['customer']	= 'customer';
 $config['customerassets']	= $config['base_url'].'assets/'.$config['customer'].'/';
 

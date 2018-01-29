@@ -32,7 +32,7 @@ class CI_Email {
 	var	$mailpath		= "/usr/sbin/sendmail";	// Sendmail path
 	var	$protocol		= "smtp"; //"smtp";		// mail/sendmail/smtp
 	//var	$smtp_host		= "smtp.emailsrvr.com";					// SMTP Server.  Example: mail.earthlink.net
-        var	$smtp_host              = "email-smtp.us-east-1.amazonaws.com";				// SMTP Server.  Example: mail.earthlink.net
+    var	$smtp_host      = "email-smtp.us-east-1.amazonaws.com";				// SMTP Server.  Example: mail.earthlink.net
 	var	$smtp_user		= "AKIAI2F3LAGYFMK4FLMA";							// SMTP Username
 	var	$smtp_pass		= "AtDsAk4yT4KP8SvgCZSQTQEGrfq3Wz3jnH4KnxamhJ/K";		// SMTP Password
         

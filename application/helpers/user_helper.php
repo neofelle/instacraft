@@ -1,7 +1,8 @@
 <?php
 require APPPATH . 'third_party/jwt/vendor/autoload.php';
 use \Firebase\JWT\JWT;
-define('FROM_EMAIL', "support@getinstacraft.com");
+//define('FROM_EMAIL', "support@getinstacraft.com");
+define('FROM_EMAIL', "staff@getinstacraft.com");
 
 
     function authenticate_get() {
@@ -95,7 +96,8 @@ function sendEmailGlobal($from_email_subject, $email,$name,$subject, $emailMessa
     $config['wordwrap'] = TRUE;
     $config['mailtype'] = 'html';
     $CI->load->library('email');
-    //$CI->email->initialize($config);
+    $config['protocol'] = 'mail';
+    $CI->email->initialize($config);
     $CI->email->from(FROM_EMAIL, $from_email_subject);
     $CI->email->to($email, $name);
     $CI->email->subject($subject);
