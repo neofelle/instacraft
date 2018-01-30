@@ -72,8 +72,51 @@
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCxPoiZ1JSZYu_NqSqIGFcRRFEQnzo3yBA&libraries=places&callback=initMap">
 </script>
 <script>
-    ilat = 45.513609;
-    ilng = -122.681460;
+
+    var ilat;
+    var ilng;
+
+    ilat = 45.358080;
+    ilng =  -122.606220;
+
+    
+
+    function getLocation() {
+    if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition);
+        } else { 
+             ilat = 45.513609;
+             ilng = -122.681460;
+             alert("no get location");
+        }
+    }
+
+    function showPosition(position) {
+        ilat =  position.coords.latitude;
+        ilng =  position.coords.longitude;
+    }
+
+    getLocation();
+     
+    
+
+    // function codeAddress() {
+    //     var address = document.getElementById('address').value;
+    //     geocoder.geocode( { 'address': address}, function(results, status) {
+    //       if (status == 'OK') {
+    //         map.setCenter(results[0].geometry.location);
+    //         var marker = new google.maps.Marker({
+    //             map: map,
+    //             position: results[0].geometry.location
+    //         });
+    //       } else {
+    //         alert('Geocode was not successful for the following reason: ' + status);
+    //       }
+    //     });
+    //   }
+
+
+    
 //    function initMap() {
 //        var uluru = {lat: 45.513609, lng: -122.681460};
 //        var map = new google.maps.Map(document.getElementById('map_delivery'), {
@@ -120,11 +163,15 @@
             width: "320px",
             confirmButtonClass: "simpleButton"
         });
+
+        
     });
     
     
     
     function initMap() {
+       
+
     map = new google.maps.Map(document.getElementById('map_delivery'), {
         center: {lat: parseFloat(ilat), lng: parseFloat(ilng)},  // -21.772488, 131.564276
         zoom: 12,
@@ -144,7 +191,7 @@
     var markerPos = new google.maps.LatLng(parseFloat(ilat), parseFloat(ilng));
     var marker = new google.maps.Marker({
         map: map,
-        position: {lat: 45.513609, lng: -122.681460},
+        position: {lat: ilat, lng: ilng},
         draggable: true, //make it draggable
         anchorPoint: new google.maps.Point(0, -29)
     });
@@ -226,6 +273,12 @@
                 }
             });
         }
+
+
+
+       
+
+        
         //$('.gm-style-iw').parent('div').addClass('map_model')
     });
     
