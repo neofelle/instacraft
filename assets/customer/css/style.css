@@ -824,7 +824,7 @@ span.cart_valu {
   justify-content: center;
   align-items: center;
 }
-.skip-btn {text-align:  right;position: absolute;bottom: .5em;}
+.skip-btn {text-align:  right;position: absolute;bottom: 0.5em;}
 .skip-btn a {color: #fff; text-decoration: none;display: block;}
 .skip-btn a span{display: block;}
 
@@ -853,4 +853,7 @@ span.cart_valu {
 }
 .mobile-view-container{
   margin-top: 55px;
+}
+@media(max-width: 568px){
+  .skip-btn {text-align:  right;position: absolute;bottom: 0.5em;right: 3vw;display: flex;justify-content: right;}
 }

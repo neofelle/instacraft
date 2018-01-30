@@ -45,7 +45,7 @@
         <div class="item">
             <div class="slide-cotent px-0">
                 <div class="slide-cotent-inner">
-                    <p>Like a craft beer bar, <br>We’ll feature "exotics of the month". New strains. New edibles. Rare items. 
+                    <p style="font-size: 18px;">Like a craft beer bar, <br>We’ll feature "exotics of the month". New strains. New edibles. Rare items. 
                         Brought to you by pastry chefs with culinary degrees &amp; years of experience.</p>
                 </div>
             </div>
@@ -56,7 +56,7 @@
         <div class="item">
             <div class="slide-cotent px-0">
                 <div class="slide-cotent-inner">
-                    <p>We believe in challenging the status quo. 1% of profits will go to charity, funding cancer research &amp; making the world better.<br>We want to set the industry standard for quality, customer service, and social responsibility. Help us make that dream a reality…</p>
+                    <p style="font-size: 17px;">We believe in challenging the status quo. 1% of profits will go to charity, funding cancer research &amp; making the world better.<br>We want to set the industry standard for quality, customer service, and social responsibility. Help us make that dream a reality…</p>
                 </div>
             </div>
             <div>
