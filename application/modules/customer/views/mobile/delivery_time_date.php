@@ -222,9 +222,8 @@
                         count=value.length;
                         country=value[count-1];
                         state=value[count-2];
-                        city=value[count-3];                        
-                        $("#start_address").val(city);
-                        x.innerHTML = city;
+                        city=value[count-3];                                  
+                        $("#start_address").val(city + ' ' + state + ' ' + country);                        
                     }
                     else  {
                         $("#start_address").val('');                        
