@@ -10,6 +10,7 @@
                 <input class="txt-field" type="text" name="address" id="delivery_address" placeholder="Destination Address">
                 <input class="txt-field" type="text" name="date_time" id="delivery_date_time" placeholder="Select Delivery Date & Time">
                 <input class="txt-field" type="hidden" name="delivery_lat_lng" id="delivery_lat_lng">
+                <input class="txt-field" type="hidden" name="start_lat_lng" id="start_lat_lng">
             </div>
         </div>
         <div class="total_delivery">
@@ -80,9 +81,80 @@
     ilat = 45.358080;
     ilng =  -122.606220;
 
+    //Custom     
+    $(function(){
+        getLocation();
+    });    
+
+    var x=document.getElementById("start_address");
+    function getLocation(){        
+        if (navigator.geolocation){
+            navigator.geolocation.getCurrentPosition(showPosition,showError);
+        }
+        else{
+            x.innerHTML="Geolocation is not supported by this browser.";
+        }
+    }
+
+    function showPosition(position){
+        lat = position.coords.latitude;
+        lon = position.coords.longitude;
+        ilat =  position.coords.latitude;
+        ilng =  position.coords.longitude;        
+        displayLocation(lat,lon);        
+    }
+
+    function showError(error){
+        switch(error.code){
+            case error.PERMISSION_DENIED:
+                x.innerHTML="User denied the request for Geolocation."
+            break;
+            case error.POSITION_UNAVAILABLE:
+                x.innerHTML="Location information is unavailable."
+            break;
+            case error.TIMEOUT:
+                x.innerHTML="The request to get user location timed out."
+            break;
+            case error.UNKNOWN_ERROR:
+                x.innerHTML="An unknown error occurred."
+            break;
+        }
+    }
+
+    function displayLocation(latitude,longitude){        
+        var geocoder;
+        geocoder = new google.maps.Geocoder();
+        var latlng = new google.maps.LatLng(latitude, longitude);
+
+        geocoder.geocode(
+            {'latLng': latlng}, 
+            function(results, status) {
+                if (status == google.maps.GeocoderStatus.OK) {
+                    if (results[0]) {
+                        var add= results[0].formatted_address ;
+                        var  value=add.split(",");
+
+                        count=value.length;
+                        country=value[count-1];
+                        state=value[count-2];
+                        city=value[count-3];                                  
+                        $("#start_address").val(city + ' ' + state + ' ' + country);                        
+                    }
+                    else  {
+                        $("#start_address").val('');                        
+                    }
+                }
+                else {
+                    $("#start_address").val('');                                            
+                }
+            }
+        );
+    }
+    //
+
     
 
-    function getLocation() {
+    /*function getLocation() {
     if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(showPosition);
         } else { 
@@ -95,10 +167,7 @@
     function showPosition(position) {
         ilat =  position.coords.latitude;
         ilng =  position.coords.longitude;
-    }
-
-    getLocation();
-     
+    }*/     
     
 
     // function codeAddress() {
@@ -168,78 +237,7 @@
         
     });
     
-    
-    //Custom
-    $(function(){
-        getLocation();
-    });    
-    var x=document.getElementById("start_address");
-    function getLocation(){        
-        if (navigator.geolocation){
-            navigator.geolocation.getCurrentPosition(showPosition,showError);
-        }
-        else{
-            x.innerHTML="Geolocation is not supported by this browser.";
-        }
-    }
-
-    function showPosition(position){
-        lat=position.coords.latitude;
-        lon=position.coords.longitude;
-        displayLocation(lat,lon);
-    }
-
-    function showError(error){
-        switch(error.code){
-            case error.PERMISSION_DENIED:
-                x.innerHTML="User denied the request for Geolocation."
-            break;
-            case error.POSITION_UNAVAILABLE:
-                x.innerHTML="Location information is unavailable."
-            break;
-            case error.TIMEOUT:
-                x.innerHTML="The request to get user location timed out."
-            break;
-            case error.UNKNOWN_ERROR:
-                x.innerHTML="An unknown error occurred."
-            break;
-        }
-    }
-
-    function displayLocation(latitude,longitude){        
-        var geocoder;
-        geocoder = new google.maps.Geocoder();
-        var latlng = new google.maps.LatLng(latitude, longitude);
-
-        geocoder.geocode(
-            {'latLng': latlng}, 
-            function(results, status) {
-                if (status == google.maps.GeocoderStatus.OK) {
-                    if (results[0]) {
-                        var add= results[0].formatted_address ;
-                        var  value=add.split(",");
-
-                        count=value.length;
-                        country=value[count-1];
-                        state=value[count-2];
-                        city=value[count-3];                                  
-                        $("#start_address").val(city + ' ' + state + ' ' + country);                        
-                    }
-                    else  {
-                        $("#start_address").val('');                        
-                    }
-                }
-                else {
-                    $("#start_address").val('');                                            
-                }
-            }
-        );
-    }
-    //
-    
     function initMap() {
-       
-
     map = new google.maps.Map(document.getElementById('map_delivery'), {
         center: {lat: parseFloat(ilat), lng: parseFloat(ilng)},  // -21.772488, 131.564276
         zoom: 12,
@@ -346,12 +344,58 @@
                 }
             });
         }
+        //$('.gm-style-iw').parent('div').addClass('map_model')
+    });
 
-
-
-       
-
+    autocompleteB.addListener('place_changed', function() {
+        //infowindow.close();
+        marker.setVisible(false);
+        var placeB = autocompleteB.getPlace();
         
+        if (!placeB.geometry) { window.alert("Autocomplete's returned place contains no geometry"); }
+        if (!placeB.geometry) {
+            $('#whaddress').html('<i style="font-weight:200 !important;"> Not set yet </i>');
+            $('#address').val('');
+        }
+  
+        if(placeB.geometry){
+            // If the place has a geometry, then present it on a map.
+            if (placeB.geometry.viewport) {
+                map.fitBounds(placeB.geometry.viewport);
+            } else {
+                map.setCenter(placeB.geometry.location);
+                map.setZoom(8);
+            }
+
+            marker.setPosition(placeB.geometry.location);
+            marker.setVisible(true);
+
+
+            var address = '';
+            if (placeB.address_components) {
+                address = [
+                  (placeB.address_components[0] && placeB.address_components[0].short_name || ''),
+                  (placeB.address_components[1] && placeB.address_components[1].short_name || ''),
+                  (placeB.address_components[2] && placeB.address_components[2].short_name || '')
+                ].join(' ');
+            }
+
+            var inLatLng = placeB.geometry.location.lat().toFixed(8) +','+ placeB.geometry.location.lng().toFixed(8);            
+            geocoder.geocode({
+                'latLng': placeB.geometry.location
+                }, function(results, status) {
+                if (status == google.maps.GeocoderStatus.OK) {
+                  if (results[0]) {
+                    //-- Fetch Address 
+                    //alert(results[0].formatted_address);
+                    $('#start_lat_lng').val(inLatLng);
+                  }
+                  else{                      
+                      $('#start_lat_lng').val('');
+                  }
+                }
+            });
+        }
         //$('.gm-style-iw').parent('div').addClass('map_model')
     });
     
