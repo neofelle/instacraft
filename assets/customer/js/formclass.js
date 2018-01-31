@@ -1,10 +1,10 @@
 $(document).ready(function () {
     $(".ajaxform").submit(function (event)
     {
-	if(pageckeditor)
-	{
-		CKupdate();
-	}
+    	if(pageckeditor)
+    	{
+    		CKupdate();
+    	}
         var formId = $(this).attr('id');
         if (formId)
             var formClass = '#' + formId;
@@ -33,16 +33,21 @@ $(document).ready(function () {
                 {
                     $(formClass).find('#jGrowl .jGrowl-notification').addClass('alert alert-danger alert-dismissable').children('.ajax_message').html(response.error_message);
                 }
-
-
-                /*if (response.url)
+                
+                if (!response.forgot && response.url)
                 {
                     setTimeout(function ()
                     {
                         window.location.href = response.url;
                     }, 1000)
-
-                }*/
+                }
+                else if (response.url)
+                {
+                    setTimeout(function ()
+                    {
+                        window.location.href = response.url;
+                    }, 7000)
+                }
 
                 if (response.resetForm)
                     $(formClass).resetForm();

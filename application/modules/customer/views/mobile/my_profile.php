@@ -59,10 +59,10 @@
 
         <p class="help_txt">Recommended Products</p>
         <div class="product_list">
-            <div class="product_card clearfix">
-                <div class="product_detail clearfix green">
-                    <div class="pro_img left"><img src="<?= $this->config->item('customerassets') ?>images/pro.jpg" alt="product"></div>					
-                    <div class="product_info right">
+            <div class="product_card">
+                <div class="product_detail  d-flex flex-nowrap align-items-center justify-content-start green">
+                    <div class="pro_img col-5 px-0"><img src="<?= $this->config->item('customerassets') ?>images/pro.jpg" alt="product"></div>					
+                    <div class="product_info col-7 px-0 pl-2">
                         <h3>Product Name</h3>
                         <p><b>Price:</b> $200</p>
                         <p class="about">Lorem Ipsum is simply dummy text of the printing and typesetting industry.  </p>
@@ -76,7 +76,7 @@
         </div>
 
     </div> 
-    <button class="btn gradient change_pass get_cannabis_now">
+    <button class="btn gradient change_pass py-3 get_cannabis_now">
         <span class="btn-txt">Shop & Get Cannabis Now</span>
     </button>
 </section>

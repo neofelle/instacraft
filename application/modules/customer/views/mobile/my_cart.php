@@ -1,6 +1,4 @@
 <section class="container mobile-view-container">
-    
-    
     <div class="my_cart product_list">
         <?php if(sizeof($products) > 0) {?>
         <?php $totalCartValue = 0; foreach($products as $product) {
@@ -76,4 +74,13 @@
             Nothing in cart...
         <?php }?>
     </div>
+    <?php if ( isset($firstOrder) && $firstOrder == true ): ?>
+    <div class="alert alert-container alert-info float-left">
+        <div class="alert-content">
+            <div class="alert-body">
+                <p class="alert-text">The first order has a specially reduced minimum order size of $<?php echo isset($minimumDeliveryAmount) ? $minimumDeliveryAmount->rate : 35 ?>, so you can try out the best of craft cannabis. After that, we still maintain a reasonable order minimum of $70. That saves gas fumes and preserves the earth.</p>
+            </div>
+        </div>
+    </div>
+    <?php endif; ?>
 </section>

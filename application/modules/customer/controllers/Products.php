@@ -76,6 +76,7 @@ class Products extends MX_Controller {
         $output['pageName'] = 'My Cart';
         $output['header_class'] = 'icon-back-arrow,' . base_url() . 'cus-our-products';
         $output['header_class_right'][1] = 'icon-delete empty-cart,javascript:;';
+        $output['firstOrder'] = $proObj->checkIfFirstOrder();
         $output['products'] = $proObj->AddToCart();
 
         $this->load->view($this->config->item('customer') . '/mobile/header', $output);

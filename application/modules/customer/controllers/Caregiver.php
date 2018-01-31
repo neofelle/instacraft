@@ -57,7 +57,6 @@ class Caregiver extends MX_Controller {
             $output['pageName'] = 'Caregiver Details';
             $output['header_class'] = 'icon-back-arrow,' . base_url().'cus-add-tocart';
             $output['userDetail'] = $custObj->getUserRecordBySlug();
-            $output['firstOrder'] = $proObj->checkIfFirstOrder();
             $output['minimumDeliveryAmount'] = $proObj->getMinimumDeliveryAmount();
 
             if (!empty($_POST)) {

@@ -17,6 +17,8 @@
         <!-- CSS files -->
         <link href="https://use.fontawesome.com/releases/v5.0.4/css/all.css" rel="stylesheet">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link href="<?= $this->config->item('globalassets') ?>plugins/icheck/skins/line/blue.css" rel="stylesheet">
+        <link type="text/css" href="<?= $this->config->item('globalassets') ?>plugins/datetimepicker-master/build/jquery.datetimepicker.min.css" rel="stylesheet" />
         <link rel="stylesheet" href="<?= $this->config->item('customerassets') ?>css/style.css">
         <!--<link rel="stylesheet" href="<?= $this->config->item('customerassets') ?>css/jquery-ui.css">-->
 
@@ -35,6 +37,8 @@
         <script src="https://unpkg.com/sweetalert2@7.4.0/dist/sweetalert2.all.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/fingerprintjs2@1.6.1/dist/fingerprint2.min.js"></script>
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script src="<?= $this->config->item('globalassets') ?>plugins/icheck/icheck.min.js"></script>
+        <script src="<?= $this->config->item('globalassets') ?>plugins/datetimepicker-master/build/jquery.datetimepicker.full.min.js"></script>
         <!-- Include a polyfill for ES6 Promises (optional) for IE11 and Android browser -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js"></script>
         <!-- Facebook -->

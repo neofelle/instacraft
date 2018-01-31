@@ -539,14 +539,14 @@
                             product_html += '<p class="help_txt">'+j.cat_name+'</p>';
                         }
                         
-                        product_html += '<div class="product_card clearfix">';
-                        product_html += '<div class="product_detail clearfix" style="background:' + j.color_code + '">';
+                        product_html += '<div class="product_card">';
+                        product_html += '<div class="product_detail d-flex flex-nowrap align-items-center justify-content-start" style="background:' + j.color_code + '">';
                         if(j.limited != 0 && j.limited != '' && j.limited != null){
-                            product_html += '<div class="pro_img left"><img src="' + j.item_image + '" alt="product"><span class="limite_tag">LIMITED SUPPLY</span></div>';
+                            product_html += '<div class="pro_img col-5 px-0"><img src="' + j.item_image + '" alt="product"><span class="limite_tag">LIMITED SUPPLY</span></div>';
                         }else{
-                            product_html += '<div class="pro_img left"><img src="' + j.item_image + '" alt="product"></div>';
+                            product_html += '<div class="pro_img col-5 px-0"><img src="' + j.item_image + '" alt="product"></div>';
                         }
-                        product_html += '<div class="product_info right">';
+                        product_html += '<div class="product_info col-7 px-0 pl-2">';
                         product_html += '<h3>' + j.item_name + '</h3>';
                         product_html += '<div class="about_prdo clearfix">';
                         product_html += '<p><b>Effect : </b><span class="txt_description">'+j.effect+'</span></p>';
@@ -624,6 +624,8 @@
                 if (data.products.length > 0) {
                     var weight_in = '';
                     var previous = '';
+                    var cssClass = '';
+
                     $.each(data.products, function (i, j) {
                         if (j.item_unit == '1')
                             weight_in = 'ounce';
@@ -636,20 +638,24 @@
                         if (previous != j.cat_name) { 
                             product_html += '<p class="help_txt">'+j.cat_name+'</p>';
                         }
-                        
-                        product_html += '<div class="product_card clearfix">';
-                        product_html += '<div class="product_detail clearfix" style="background:' + j.color_code + '">';
-                        if(j.limited != 0 && j.limited != '' && j.limited != null){
-                            product_html += '<div class="pro_img left"><img src="' + j.item_image + '" alt="product"><span class="limite_tag">LIMITED SUPPLY</span></div>';
-                        }else{
-                            product_html += '<div class="pro_img left"><img src="' + j.item_image + '" alt="product"></div>';
+                        if(j.limited != 0 && j.limited != '' && j.limited != null)
+                        {
+                            cssClass = "limited";
                         }
-                        product_html += '<div class="product_info right">';
+
+                        product_html += '<div class="product_card position-relative '+ cssClass +'">';
+                        //product_html += '<i class="far fa-clock text-danger ico"></i>';
+                        product_html += '<div class="product_detail d-flex flex-nowrap align-items-center justify-content-start" style="background:' + j.color_code + '">';
+
+                        product_html += '<div class="pro_img col-5 px-0"><img src="' + j.item_image + '" alt="product"></div>';
+                        product_html += '<div class="product_info col-7 px-0 pl-2">';
                         product_html += '<h3>' + j.item_name + '</h3>';
                         product_html += '<div class="about_prdo clearfix">';
-                        product_html += '<p><b>Effect : </b><span class="txt_description">'+j.effect+'</span></p>';
-                        product_html += '<p><b>Flavor : </b><span class="txt_description">'+j.flavor+'</span> </p>';
-                        product_html += '<p class="price_product">$'+j.price_one+' /'+weight_in+'</p>';
+                        /*product_html += '<p><b>Effect : </b><span class="txt_description text-truncate">'+j.effect+'</span></p>';
+                        product_html += '<p><b>Flavor : </b><span class="txt_description text-truncate">'+j.flavor+'</span> </p>';*/
+                        product_html += '<p class="price_product mb-0">Price : $'+j.price_one+'/'+weight_in+'</p>';
+                        product_html += '<p class="mb-0"><span class="txt_description text-truncate">'+j.effect+'</span></p>';
+                        product_html += '<p class="mb-0 text-white font-weight-bold">In Stock</p>';
                         product_html += '</div>';
                         product_html += '</div>';
                         product_html += '</div>';
@@ -839,28 +845,37 @@
         var delivery_date_time = $('#delivery_date_time').val();
         var delivery_address = $('#delivery_address').val();
         var delivery_lat_lng = $('#delivery_lat_lng').val();
+        var delivery_type = $('input[name=order_type]:checked').val();
 
-        if (delivery_date_time != '' && delivery_address != '') {
-            $.ajax({
-                type: 'POST',
-                data: {delivery_date_time: delivery_date_time, delivery_address: delivery_address, delivery_lat_lng: delivery_lat_lng},
-                url: siteurl + 'cus-delivery-datetime',
-                dataType: "json",
-                beforeSend: function () {
-                    $('.wait-div').show();
-                },
-                success: function (data) {
-                    $('.wait-div').hide();
-                    if (data.success == '1') {
-                        window.location.href = 'cus-caregiver-step1';
-                    } else {
-                        alert('Something went wrong, Please try again.');
+        if ( delivery_type == "scheduled"  && delivery_address != '' )
+        {
+            if (delivery_date_time != '') {
+                $.ajax({
+                    type: 'POST',
+                    data: {delivery_date_time: delivery_date_time, delivery_address: delivery_address, delivery_lat_lng: delivery_lat_lng},
+                    url: siteurl + 'cus-delivery-datetime',
+                    dataType: "json",
+                    beforeSend: function () {
+                        $('.wait-div').show();
+                    },
+                    success: function (data) {
+                        $('.wait-div').hide();
+                        if (data.success == '1') {
+                            window.location.href = 'cus-caregiver-step1';
+                        } else {
+                            swal('Something went wrong, Please try again.', 'error');
+                        }
                     }
-                }
-            });
-        } else {
-            alert('Please select Delivery address and date time.');
+                });
+            } else {
+                swal('Warning..!','Please select Delivery address and date time.', 'warning');
+            }
         }
+        else
+        {
+            swal('Warning..!','Please select Delivery address, date time and delivery type.', 'warning');
+        }
+
     });
     $(function () {
         var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);

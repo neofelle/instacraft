@@ -330,7 +330,8 @@ class Customer extends MX_Controller {
                     $data['success'] = true;
                     $data['url'] = site_url('cus-login');
                     $data['resetForm'] = false;
-                    $data['success_message'] = $success_message;
+                    $data['success_message'] = $success_message." The window will reload in 5 seconds.";
+                    $data['forgot'] = true;
                 }
                 $data['scrollToThisForm'] = true;
                 echo json_encode($data);

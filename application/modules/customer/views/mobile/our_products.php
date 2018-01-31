@@ -27,7 +27,6 @@
     <div class="product_list">
         
     </div>
-    
     <div id="moods_purpose" style="display:none">
         <div class="activity-sec mood-sec">
             <h2>Moods & Activities</h2>

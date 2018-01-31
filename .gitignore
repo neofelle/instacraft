@@ -1,11 +1,6 @@
 .DS_Store
 .svn/*
 .htaccess
-<<<<<<< HEAD
-application/config/
-WebRTC/node_modules
-=======
 application/config/database.php
 application/modules/webrtc/views/node_modules
 assets/webrtc/node_modules
->>>>>>> 74378191f7db19354a695c47b872ab281f341a0f

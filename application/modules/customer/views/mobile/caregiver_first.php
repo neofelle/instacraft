@@ -1,13 +1,4 @@
 <section class="container mobile-view-container">
-    <?php if ( isset($firstOrder) && $firstOrder == true ): ?>
-    <div class="alert alert-container alert-info">
-        <div class="alert-content">
-            <div class="alert-body">
-                <p class="alert-text">On your first order, you get a specially reduced $<?php echo isset($minimumDeliveryAmount) ? $minimumDeliveryAmount->rate : 35 ?> minimum order size to let you try things out.</p>
-            </div>
-        </div>
-    </div>
-    <?php endif; ?>
     <div class="caregiver-details">
         <p><b>Section 1:</b> Qualifying Patient Information</p>
         <div class="form-container">

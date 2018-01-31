@@ -1,38 +1,26 @@
-<link type="text/css" href="<?= $this->config->item('base_url').'assets/' ?>js/datetimepicker/jquery.simple-dtpicker.css" rel="stylesheet" />
-<script src="<?= $this->config->item('base_url').'assets/' ?>js/datetimepicker/jquery.simple-dtpicker.js"></script>
 <section class="container mobile-view-container">
     <div class="delivery_container">
         <div class="map_container">
             <div class="map_box" id="map_delivery">
             </div>
-            <div class="delivery_form" style="bottom:1px;">
-                <input class="txt-field" type="text" name="address" id="start_address" placeholder="Current Address">
-                <input class="txt-field" type="text" name="address" id="delivery_address" placeholder="Destination Address">
-                <input class="txt-field" type="text" name="date_time" id="delivery_date_time" placeholder="Select Delivery Date & Time">
+            <div class="delivery_form">
+                <input class="txt-field" type="text" name="address" id="delivery_address" placeholder="Current Address">
                 <input class="txt-field" type="hidden" name="delivery_lat_lng" id="delivery_lat_lng">
-                <input class="txt-field" type="hidden" name="start_lat_lng" id="start_lat_lng">
             </div>
         </div>
         <div class="total_delivery">
-            <div class="alert alert-container alert-danger alert-info">
-                <div class="alert-content">
-                    <div class="alert-body">
-                        <p class="alert-text">$12 will be applicable as re-delivery fee if you fail to pick up your order within three minutes after the arrival of delivery person.</p>
-                    </div>
-                </div>
-            </div>
             <div class="new_consultation">
-                <ul class="clearfix diseases">
-                    <li>
-                        <label>
-                            <input type="radio" name="order_type" id="scheduled_type" value="asap" >
-                            <span class="txt">On demand</span>
+                <ul class="d-flex flex-wrap">
+                    <li class="col-12">
+                        <label class="col-12">
+                            <input type="radio" name="order_type" class="scheduled_type" value="asap" >
+                            <span class="txt">Get Now In 30-60 Min.</span>
                         </label>
                     </li>
-                    <li>
-                        <label>
-                            <input type="radio" name="order_type" id="scheduled_type" value="scheduled" >
-                            <span class="txt">Scheduled</span>
+                    <li class="col-12">
+                        <label class="col-12">
+                            <input type="radio" name="order_type" class="scheduled_type" value="scheduled" >
+                            <span class="txt">Schedule This Week.</span>
                         </label>
                     </li>
                 </ul>
@@ -45,6 +33,7 @@
                 <li id="scheduled" style="display: none">
                     <span class="label"><strike>Scheduled deleivery charges:</strike></span>
                     <span class="value"><strike>1%</strike></span>
+                    <input class="txt-field" type="text" name="date_time" id="delivery_date_time" placeholder="Select Delivery Date & Time">
                 </li>
                 <li>
                     <span class="label">Total:</span>
@@ -63,7 +52,7 @@
                     <div id="siteNotice">
                     </div> 
                     <div id="bodyContent">
-                        <p>`The more app downloads we have in the area, the sooner we can expand there. Share the app with friends and we may get there this month. We’re expanding to new towns every week.`</p>
+                        <p>`The more app downloads we have in the area, the sooner we can expand there. Share the app with friends and we may get there this month. We're expanding to new towns every week.`</p>
                     </div> 
                 </div>
             </div>
@@ -74,170 +63,50 @@
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCxPoiZ1JSZYu_NqSqIGFcRRFEQnzo3yBA&libraries=places&callback=initMap">
 </script>
 <script>
+ilat = 45.513609;
+ilng = -122.681460;
 
-    var ilat;
-    var ilng;
-
-    ilat = 45.358080;
-    ilng =  -122.606220;
-
-    //Custom     
-    $(function(){
-        getLocation();
-    });    
-
-    var x=document.getElementById("start_address");
-    function getLocation(){        
-        if (navigator.geolocation){
-            navigator.geolocation.getCurrentPosition(showPosition,showError);
-        }
-        else{
-            x.innerHTML="Geolocation is not supported by this browser.";
-        }
-    }
-
-    function showPosition(position){
-        lat = position.coords.latitude;
-        lon = position.coords.longitude;
-        ilat =  position.coords.latitude;
-        ilng =  position.coords.longitude;        
-        displayLocation(lat,lon);        
-    }
-
-    function showError(error){
-        switch(error.code){
-            case error.PERMISSION_DENIED:
-                x.innerHTML="User denied the request for Geolocation."
-            break;
-            case error.POSITION_UNAVAILABLE:
-                x.innerHTML="Location information is unavailable."
-            break;
-            case error.TIMEOUT:
-                x.innerHTML="The request to get user location timed out."
-            break;
-            case error.UNKNOWN_ERROR:
-                x.innerHTML="An unknown error occurred."
-            break;
-        }
-    }
-
-    function displayLocation(latitude,longitude){        
-        var geocoder;
-        geocoder = new google.maps.Geocoder();
-        var latlng = new google.maps.LatLng(latitude, longitude);
-
-        geocoder.geocode(
-            {'latLng': latlng}, 
-            function(results, status) {
-                if (status == google.maps.GeocoderStatus.OK) {
-                    if (results[0]) {
-                        var add= results[0].formatted_address ;
-                        var  value=add.split(",");
-
-                        count=value.length;
-                        country=value[count-1];
-                        state=value[count-2];
-                        city=value[count-3];                                  
-                        $("#start_address").val(city + ' ' + state + ' ' + country);                        
-                    }
-                    else  {
-                        $("#start_address").val('');                        
-                    }
-                }
-                else {
-                    $("#start_address").val('');                                            
-                }
-            }
-        );
-    }
-    //
-
-    
-
-    /*function getLocation() {
-    if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(showPosition);
-        } else { 
-             ilat = 45.513609;
-             ilng = -122.681460;
-             alert("no get location");
-        }
-    }
-
-    function showPosition(position) {
-        ilat =  position.coords.latitude;
-        ilng =  position.coords.longitude;
-    }*/     
-    
-
-    // function codeAddress() {
-    //     var address = document.getElementById('address').value;
-    //     geocoder.geocode( { 'address': address}, function(results, status) {
-    //       if (status == 'OK') {
-    //         map.setCenter(results[0].geometry.location);
-    //         var marker = new google.maps.Marker({
-    //             map: map,
-    //             position: results[0].geometry.location
-    //         });
-    //       } else {
-    //         alert('Geocode was not successful for the following reason: ' + status);
-    //       }
-    //     });
-    //   }
-
-
-    
-//    function initMap() {
-//        var uluru = {lat: 45.513609, lng: -122.681460};
-//        var map = new google.maps.Map(document.getElementById('map_delivery'), {
-//            zoom: 12,
-//            center: uluru,
-//            zoomControl: false,
-//            mapTypeControl: false,
-//            streetViewControl: false,
-//            fullscreenControl: false
-//        });
-//
-//        var contentString = '<div id="content">' +
-//                '<div id="siteNotice">' +
-//                '</div>' +
-//                '<div id="bodyContent">' +
-//                `<p> The more app downloads we have in the area, the sooner we can expand there. Share the app with friends and we may get there this month. We’re expanding to new towns every week. </p>` +
-//                '</div>' +
-//                '</div>';
-//
-//        var infowindow = new google.maps.InfoWindow({
-//            content: contentString
-//        });
-//
-//        var marker = new google.maps.Marker({
-//            position: uluru,
-//            map: map,
-//            title: 'Uluru (Ayers Rock)'
-//        });
-//        marker.addListener('click', function () {
-//            infowindow.open(map, marker);
-//            $('.gm-style-iw').parent('div').addClass('map_model')
-//        });
-//
-//    }
-    
-    $(function(){
-        $('*[name=date_time]').appendDtpicker();
-        // show the alert
-        swal({
-            text: "The more app downloads we have in the area, the sooner we can expand there. Share the app with friends and we may get there this month. We’re expanding to new towns every week.",
-            showCloseButton: false,
-            customClass: "alertMap",
-            showConfirmButton: true,
-            width: "320px",
-            confirmButtonClass: "simpleButton"
-        });
-
-        
+$(function(){
+    jQuery.datetimepicker.setLocale('en');
+    $('input[name=date_time]').datetimepicker();
+    // show the alert
+    swal({
+        text: "The more app downloads we have in the area, the sooner we can expand there. Share the app with friends and we may get there this month. We're expanding to new towns every week.",
+        showCloseButton: false,
+        customClass: "alertMap",
+        showConfirmButton: true,
+        width: "320px",
+        confirmButtonClass: "simpleButton"
     });
+
+    // icheck
+    $('input[type=radio]').each(function(){
+        var self = $(this),
+        label = self.next(),
+        label_text = label.text();
+
+        label.remove();
+        self.iCheck({
+            checkboxClass: 'icheckbox_line-blue',
+            radioClass: 'iradio_line-blue',
+            insert: '<div class="icheck_line-icon"></div>' + label_text
+        });
+    });
+    $('input[type=radio]').on('ifChecked', function(event){
+        var type =  $(event.currentTarget).val();
+        if(type ==  'asap'){
+            $('#asap').show();
+            $('#scheduled').hide();
+        }else{
+            $('#scheduled').show();
+            $('#asap').hide();
+        }
+    });
+});
     
-    function initMap() {
+    
+    
+function initMap() {
     map = new google.maps.Map(document.getElementById('map_delivery'), {
         center: {lat: parseFloat(ilat), lng: parseFloat(ilng)},  // -21.772488, 131.564276
         zoom: 12,
@@ -247,15 +116,10 @@
     });
     var geocoder = new google.maps.Geocoder();
     var input = document.getElementById('delivery_address');
-    var input_from = document.getElementById('start_address');
     map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
-    //map.controls[google.maps.ControlPosition.TOP_LEFT].push(input_from);
 
     var autocomplete = new google.maps.places.Autocomplete(input);
     autocomplete.bindTo('bounds', map);
-
-    var autocompleteB = new google.maps.places.Autocomplete(input_from);
-    //autocompleteB.bindTo('bounds', map);
 
     var infowindow = new google.maps.InfoWindow();
     
@@ -266,15 +130,6 @@
         draggable: true, //make it draggable
         anchorPoint: new google.maps.Point(0, -29)
     });
-
-    /*infowindow.setContent('<div id="content">' +
-        '<div id="siteNotice">' +
-        '</div>' +
-        '<div id="bodyContent">' +
-        `<p> The more app downloads we have in the area, the sooner we can expand there. Share the app with friends and we may get there this month. We’re expanding to new towns every week. </p>` +
-        '</div>' +
-        '</div>');*/
-    //infowindow.open(map, marker);
 
     autocomplete.addListener('place_changed', function() {
         //infowindow.close();
@@ -309,19 +164,8 @@
                 ].join(' ');
             }
 
-            //infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + address);
-            /*infowindow.setContent('<div id="content">' +
-                '<div id="siteNotice">' +
-                '</div>' +
-                '<div id="bodyContent">' +
-                `<p> The more app downloads we have in the area, the sooner we can expand there. Share the app with friends and we may get there this month. We’re expanding to new towns every week. </p>` +
-                '</div>' +
-                '</div>');*/
-            //infowindow.open(map, marker);
-
             var inLatLng = place.geometry.location.lat().toFixed(8) +','+ place.geometry.location.lng().toFixed(8);
             //-- Ftech Address
-            //alert(inLatLng);
             geocoder.geocode({
                 'latLng': place.geometry.location
                 }, function(results, status) {
@@ -344,59 +188,6 @@
                 }
             });
         }
-        //$('.gm-style-iw').parent('div').addClass('map_model')
-    });
-
-    autocompleteB.addListener('place_changed', function() {
-        //infowindow.close();
-        marker.setVisible(false);
-        var placeB = autocompleteB.getPlace();
-        
-        if (!placeB.geometry) { window.alert("Autocomplete's returned place contains no geometry"); }
-        if (!placeB.geometry) {
-            $('#whaddress').html('<i style="font-weight:200 !important;"> Not set yet </i>');
-            $('#address').val('');
-        }
-  
-        if(placeB.geometry){
-            // If the place has a geometry, then present it on a map.
-            if (placeB.geometry.viewport) {
-                map.fitBounds(placeB.geometry.viewport);
-            } else {
-                map.setCenter(placeB.geometry.location);
-                map.setZoom(8);
-            }
-
-            marker.setPosition(placeB.geometry.location);
-            marker.setVisible(true);
-
-
-            var address = '';
-            if (placeB.address_components) {
-                address = [
-                  (placeB.address_components[0] && placeB.address_components[0].short_name || ''),
-                  (placeB.address_components[1] && placeB.address_components[1].short_name || ''),
-                  (placeB.address_components[2] && placeB.address_components[2].short_name || '')
-                ].join(' ');
-            }
-
-            var inLatLng = placeB.geometry.location.lat().toFixed(8) +','+ placeB.geometry.location.lng().toFixed(8);            
-            geocoder.geocode({
-                'latLng': placeB.geometry.location
-                }, function(results, status) {
-                if (status == google.maps.GeocoderStatus.OK) {
-                  if (results[0]) {
-                    //-- Fetch Address 
-                    //alert(results[0].formatted_address);
-                    $('#start_lat_lng').val(inLatLng);
-                  }
-                  else{                      
-                      $('#start_lat_lng').val('');
-                  }
-                }
-            });
-        }
-        //$('.gm-style-iw').parent('div').addClass('map_model')
     });
     
     //Listen for drag events!
@@ -457,9 +248,32 @@
             }
         });
     });
+
+    // Try HTML5 geolocation.
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(function(position) {
+        var pos = {
+          lat: position.coords.latitude,
+          lng: position.coords.longitude
+        };
+        
+        map.setCenter(pos);
+      }, function() {
+        handleLocationError(true, infowindow, map.getCenter());
+      });
+    } else {
+      // Browser doesn't support Geolocation
+      handleLocationError(false, infowindow, map.getCenter());
+    }
 }
 
-
+function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+    infoWindow.setPosition(pos);
+    infoWindow.setContent(browserHasGeolocation ?
+                          'Error: The Geolocation service failed.' :
+                          'Error: Your browser doesn\'t support geolocation.');
+    infoWindow.open(map);
+}
 ///+++ Add Marker for users 
 function initMarker(){
     var aCenter=$('#alertCenter').val();
@@ -533,16 +347,4 @@ function appendMarker(latitude, longitude, text) {
     markers.push(marker);
     
 }
-
-$(document).on('click','#scheduled_type',function(){
-    var type    =   $(this).val();
-    if(type ==  'asap'){
-        $('#asap').show();
-        $('#scheduled').hide();
-    }else{
-        $('#scheduled').show();
-        $('#asap').hide();
-    }
-    
-});
 </script>

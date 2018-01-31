@@ -18,10 +18,9 @@
             <p class="prod-cat"><?=$productDetail->category_name?></p>
             <span class="prod-price"><label>Price</label><span> $<?=$productDetail->price_gram_off > 0?$productDetail->price_gram_off:$productDetail->price_gram?> /gram</span></span>
         </div>
-        <ul class="tabs_menu three-tabs">
-            <li class="active">Info</li>
-            <li>Effects</li>
-<!--            <li>Family</li>-->
+        <ul class="tabs_menu three-tabs d-flex flex-nowrap align-items-center justify-content-start">
+            <li class="col active">Info</li>
+            <li class="col">Effects</li>
         </ul>
         <div class="detail_tab">
             <div class="product_container">
