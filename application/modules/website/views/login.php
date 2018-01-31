@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>Instacraft</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
     <link href="<?php echo base_url() ?>assets/css/instastyle.css" rel="stylesheet" />
     <link href="<?php echo base_url() ?>assets/css/developer.css" rel="stylesheet" />
     <link href="<?php echo base_url() ?>assets/css/mobile.css" rel="stylesheet" />

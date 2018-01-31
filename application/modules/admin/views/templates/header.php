@@ -7,7 +7,7 @@
         <meta charset="utf-8"/>
         <title><?php echo isset($title) ? $title : ""; ?> | InstaCraft Admin</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
         <meta http-equiv="Content-type" content="text/html; charset=utf-8">
         <meta content="" name="description"/>
         <meta content="" name="author"/>
