@@ -31,7 +31,7 @@
                     <span class="value"><strike>3%</strike></span>
                 </li>
                 <li id="scheduled" style="display: none">
-                    <span class="label"><strike>Scheduled deleivery charges:</strike></span>
+                    <span class="label"><strike>Scheduled delivery charges:</strike></span>
                     <span class="value"><strike>1%</strike></span>
                     <input class="txt-field" type="text" name="date_time" id="delivery_date_time" placeholder="Select Delivery Date & Time">
                 </li>
@@ -146,9 +146,10 @@ function initMap() {
             // If the place has a geometry, then present it on a map.
             if (place.geometry.viewport) {
                 map.fitBounds(place.geometry.viewport);
+                map.setZoom(12);
             } else {
                 map.setCenter(place.geometry.location);
-                map.setZoom(8);
+                map.setZoom(12);
             }
 
             marker.setPosition(place.geometry.location);
