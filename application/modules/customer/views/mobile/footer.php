@@ -847,8 +847,8 @@
         var delivery_lat_lng = $('#delivery_lat_lng').val();
         var delivery_type = $('input[name=order_type]:checked').val();
 
-        if ( delivery_type == "scheduled"  && delivery_address != '' )
-        {
+        //if ( delivery_type == "scheduled"  && delivery_address != '' ) 
+        if ( delivery_type == "scheduled"  && delivery_address != '' ){
             if (delivery_date_time != '') {
                 $.ajax({
                     type: 'POST',
@@ -868,14 +868,31 @@
                     }
                 });
             } else {
-                swal('Warning..!','Please select Delivery address and date time.', 'warning');
+                swal('Warning..!','Please select Delivery address and date time.', 'warning');                
+            }
+        }else{
+            if ( delivery_address != '' ){
+                $.ajax({
+                    type: 'POST',
+                    data: {delivery_date_time: delivery_date_time, delivery_address: delivery_address, delivery_lat_lng: delivery_lat_lng},
+                    url: siteurl + 'cus-delivery-datetime',
+                    dataType: "json",
+                    beforeSend: function () {
+                        $('.wait-div').show();
+                    },
+                    success: function (data) {
+                        $('.wait-div').hide();
+                        if (data.success == '1') {
+                            window.location.href = 'cus-caregiver-step1';
+                        } else {
+                            swal('Something went wrong, Please try again.', 'error');
+                        }
+                    }
+                });
+            }else{
+                swal('Warning..!','Please select Delivery address', 'warning');
             }
         }
-        else
-        {
-            swal('Warning..!','Please select Delivery address, date time and delivery type.', 'warning');
-        }
-
     });
     $(function () {
         var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
