@@ -1,7 +1,7 @@
 <section class="container mobile-view-container">
     <div class="caregiver_container accordion">
         <div class="card_style">
-            <h2><?php echo "Caregiver" ?></h2>
+            <h2><?php echo "Caregiver Form" ?></h2>
             <div class="data_form">
 
                 <div class="card_style clearfix">
