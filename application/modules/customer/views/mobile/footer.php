@@ -872,6 +872,7 @@
             }
         }else{
             if ( delivery_address != '' ){
+                delivery_date_time = "0000-00-00";
                 $.ajax({
                     type: 'POST',
                     data: {delivery_date_time: delivery_date_time, delivery_address: delivery_address, delivery_lat_lng: delivery_lat_lng},
