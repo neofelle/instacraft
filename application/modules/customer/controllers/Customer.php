@@ -537,6 +537,14 @@ class Customer extends MX_Controller {
             exit(); // stop the process
         }
     }
+
+    public function caregiverDesignationForm() 
+    {
+        $cusObj = new Customer_model();
+        //$this->load->view($this->config->item('customer') . '/mobile/header');
+        $this->load->view($this->config->item('customer') . '/mobile/caregiver_designation_forms');
+        //$this->load->view($this->config->item('customer') . '/mobile/footer');
+    }
 }
 
 

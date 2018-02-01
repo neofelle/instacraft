@@ -60,7 +60,7 @@
         <p class="help_txt">Recommended Products</p>
         <div class="product_list">
             <div class="product_card">
-                <div class="product_detail  d-flex flex-nowrap align-items-center justify-content-start green">
+                <div class="product_detail d-flex flex-nowrap align-items-center justify-content-start green">
                     <div class="pro_img col-5 px-0"><img src="<?= $this->config->item('customerassets') ?>images/pro.jpg" alt="product"></div>					
                     <div class="product_info col-7 px-0 pl-2">
                         <h3>Product Name</h3>

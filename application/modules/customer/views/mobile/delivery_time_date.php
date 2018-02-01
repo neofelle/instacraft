@@ -10,7 +10,7 @@
         </div>
         <div class="total_delivery">
             <div class="new_consultation">
-                <ul class="d-flex flex-wrap">
+                <ul class="d-flex flex-wrap mb-0">
                     <li class="col-12">
                         <label class="col-12">
                             <input type="radio" name="order_type" class="scheduled_type" value="asap" >
@@ -87,8 +87,8 @@ $(function(){
 
         label.remove();
         self.iCheck({
-            checkboxClass: 'icheckbox_line-blue',
-            radioClass: 'iradio_line-blue',
+            checkboxClass: 'icheckbox_line-blue inactive',
+            radioClass: 'iradio_line-blue inactive',
             insert: '<div class="icheck_line-icon"></div>' + label_text
         });
     });

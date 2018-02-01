@@ -34,15 +34,15 @@
             }
             $totalCartValue =   $total+$totalCartValue;
         ?>
-            <div class="product_card product_card_small clearfix" id="product_card_<?=$product->cart_id;?>">
-                <div class="product_detail clearfix" style="background:<?= $product->color_code ?> ">
+            <div class="product_card product_card_small" id="product_card_<?=$product->cart_id;?>">
+                <div class="product_detail d-flex flex-nowrap align-items-center justify-content-start" style="background:<?= $product->color_code ?> ">
                     <a class="delete_ico icon-delete delete_cart_item" data-value="<?= $product->cart_id;?>"></a>
-                    <div class="pro_img left"><img src="<?= $product->item_image?>" alt="product"></div>					
-                    <div class="product_info right">
+                    <div class="pro_img col-5 px-0"><img src="<?= $product->item_image?>" alt="product"></div>					
+                    <div class="product_info col-7 px-0 pl-2">
                         <h3><?= $product->item_name?></h3>
                         <p><b>Price:</b> $<?= $product_price?>/1 <?= $product->saved_type?></p>
                         <div class="qty"><b>Qty :</b> <input type="text" name="quantity" value="<?= $product->quantity?>" disabled=""></div>
-                        <h4 class="right total_val_<?=$product->cart_id;?>" data-value="<?= $total?>">$<?= $total?></h4>
+                        <h4 class="total_val_<?=$product->cart_id;?>" data-value="<?= $total?>">Total : $<?= $total?></h4>
                     </div>
                 </div>
             </div>

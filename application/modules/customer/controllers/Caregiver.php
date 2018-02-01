@@ -164,6 +164,7 @@ class Caregiver extends MX_Controller {
     
     public function caregiverFinal() {
         //if ($this->session->userdata('caregiver_second') != '') {
+            $failure = false;
             $careObj = new Caregiver_model();
             $custObj = new Customer_model();
             $output['title'] = 'Caregiver View';

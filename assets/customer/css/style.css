@@ -139,7 +139,7 @@ span.icon-close {position: absolute; right: 12px; top: 16px;}
 .main_header + *{margin-top: 70px;}
 .main_header .header_panel > *{float: left; margin-left: 15px; line-height: 22px; position: relative; padding:0 3px;}
 .main_header .header_panel > *:first-child{margin-left: 0;}
-.change_pass{width: 100%; margin:0 auto; text-align: center;}
+.change_pass{width: 80%; margin:0 auto; text-align: center;padding: 15px;}
 
 /*poup new style changes*/
 .mb-30{margin-bottom: 30px;}
@@ -488,7 +488,7 @@ h2.description-head
   margin: 0 0 15px;
 }
 /*Select Dlivery*/
-#map_delivery{height: 350px; width: 100%;}
+#map_delivery{height: 320px; width: 100%;}
 .delivery_container {width: 90%; margin: auto;}
 .map_container {border-radius: 27px; overflow: hidden; position: relative;}
 .delivery_form {position: absolute; bottom: 50px; left: 5%; width: 90%;}
@@ -498,10 +498,10 @@ h2.description-head
 .delivery_form textarea:-ms-input-placeholder {padding-top: 15px; font-size: 15px;}
 .delivery_form textarea:-moz-placeholder { padding-top: 15px; font-size: 15px;}
 .delivery_form input , #delivery_address{height: 50px; margin-top: 10px; border-radius: 25px; padding: 0 16px;}
-#delivery_address {top: initial !important; bottom: 114px !important; width: 90%; left: 5% !important}
+#delivery_address {top: initial !important; bottom: 85px !important; width: 90%; left: 5% !important}
 .delivery_container .opposite_detail li span{width: auto;}
 .delivery_container .opposite_detail li span.value{float: right;}
-.delivery_container .opposite_detail{margin:25px 0 0}
+.delivery_container .opposite_detail{margin:0}
 .map_model > div:first-child{display: none;}
 #content{min-width: 200px;}
 img[src*='https://maps.gstatic.com/mapfiles/api-3/images/google4']{display: none !important;}
@@ -880,4 +880,10 @@ span.cart_valu {
 }
 .mobile-view-container{
   margin-top: 70px;
+}
+.inactive{
+  background: #aba8a8;
+}
+.iradio_line-blue.checked{
+  background: #2489c5;
 }

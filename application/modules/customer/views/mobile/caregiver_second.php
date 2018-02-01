@@ -19,9 +19,6 @@
         <div class="signature">
             <h2>Patient Name</h2>
             <span class="date_signature"><?= date('Y-m-d')?></span>
-            <!--            <div class="signature_area">
-            
-                        </div>-->
             <div class="signature-view">
                 
                 <div id="signature-pad" class="signature-pad">
@@ -32,10 +29,10 @@
                         <div class="description">Sign above</div>
 
                         <div class="signature-pad--actions">
-                            <div>
-                                <button type="button" class="button" data-action="clear">Clear</button>
-                                <button type="button" class="button" data-action="change-color" style="display: none">Change color</button>
-                                <button type="button" class="button" data-action="undo">Undo</button>
+                            <div class="d-felx align-items-center justify-content-start flex-nowrap px-2">
+                                <button type="button" class="btn col rounded-0 mb-2" data-action="clear">Clear</button>
+                                <button type="button" class="btn col rounded-0 mb-2" data-action="change-color" style="display: none">Change color</button>
+                                <button type="button" class="btn col rounded-0" data-action="undo">Undo</button>
                             </div>
                             <div>
                                 <button type="button" class="button save save_png" data-action="save-png" style="display: none">Save as PNG</button>
