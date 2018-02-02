@@ -133,6 +133,17 @@ class Products extends MX_Controller {
         die;
     }
 
+    public function updateQtyFromCart() {
+        checkMemberLogin();
+        $cart_id = $this->input->post('cart_item_id');
+        $qty     = $this->input->post('cart_item_qty');
+        $proObj = new Products_model();
+        $proObj->updateItemQtyFromCart($cart_id, $qty);
+        $data = TRUE;
+        echo json_encode($data);
+        die;
+    }
+
     public function emptyCart() {
         checkMemberLogin();
         $proObj = new Products_model();

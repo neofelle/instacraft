@@ -953,6 +953,35 @@
         });
     });
 
+    $(document).on('click', '.edit-cart-item', function () {
+        var dataKey = $(this).attr('data-key');
+        $("#cart-qty-" + dataKey).removeAttr('disabled');
+        $("#cart-qty-" + dataKey).focus();
+        $(".edit-" + dataKey).removeClass("icon-edit");
+        $(".edit-" + dataKey).addClass("icon-checked");
+        $(this).find("span").html("Save");
+        $(this).removeClass('edit-cart-item');
+        $(this).addClass('update-cart-item');
+    });
+
+    $(document).on('click', '.update-cart-item', function () {
+        var cart_id  = $(this).attr('data-key');
+        var cart_qty = $("#cart-qty-" + cart_id).val();
+        $.ajax({
+            type: 'POST',
+            data: {cart_item_id: cart_id, cart_item_qty: cart_qty },
+            url: siteurl + 'cus-edit-qty-from-cart',
+            dataType: "json",
+            beforeSend: function () {
+                $('.wait-div').show();
+            },
+            success: function (data) {
+                $('.wait-div').hide();//                
+                location.reload();
+            }
+        });
+    });
+
     $(document).on('click', '.empty-cart', function () {
         $.ajax({
             type: 'POST',

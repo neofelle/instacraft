@@ -147,6 +147,13 @@ class Products_model extends CI_Model {
         $this->db->where('id',$this->input->post('cart_item_id'));
         $this->db->delete('cart');
     }
+
+    public function updateItemQtyFromCart($id, $qty){
+        $this->db->set('quantity', $qty);
+        $this->db->where('id', $id);
+        $this->db->update('cart');
+        
+    }
     
     public function emptyCart(){
         $this->db->empty_table('cart');

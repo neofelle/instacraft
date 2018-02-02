@@ -281,6 +281,7 @@ $route['cus-my-orders']               = 'customer/Orders/myOrders';
 $route['cus-order-detail']            = 'customer/Orders/orderDetail';
 $route['cus-order-status']            = 'customer/Orders/orderStatus';
 $route['cus-delete-from-cart']        = 'customer/Products/removeItemFromCart';
+$route['cus-edit-qty-from-cart']      = 'customer/Products/updateQtyFromCart';
 $route['cus-delete-all-cart']         = 'customer/Products/emptyCart';
 
 /******************** static pages ****************************************/
