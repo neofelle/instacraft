@@ -837,11 +837,9 @@
     });
 
     $(document).on('click', '.cart_checkout', function () {
-        var total_amount = $('#total_cart_value').text();
+        var total_amount =  $('#total_cart_value').attr('data-value');
         if (total_amount <= 35){
-           window.location.href = 'cus-delivery-datetime'; 
-        }else{
-            var msg_text = $('#msg_text').val();
+           var msg_text = $('#msg_text').val();
                 swal({
                     text: msg_text,
                     showCloseButton: false,
@@ -850,6 +848,9 @@
                     width: "320px",
                     confirmButtonClass: "simpleButton"
                 });
+
+        }else{
+            window.location.href = 'cus-delivery-datetime'; 
         }
         
     });
