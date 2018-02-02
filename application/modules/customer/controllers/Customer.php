@@ -543,7 +543,7 @@ class Customer extends MX_Controller {
         $cusObj = new Customer_model();
         $output['title'] = 'Caregiver Designation Form';
         $output['pageName'] = 'Caregiver Designation Form';
-        $output['header_class'] = 'icon-back-arrow,' . base_url().'customer/Customer/caregiverDesignationForm';
+        $output['header_class'] = 'icon-back-arrow,' . base_url().'cus-designation-form';
         $this->load->view($this->config->item('customer') . '/mobile/header', $output);
         $this->load->view($this->config->item('customer') . '/mobile/caregiver_designation_forms');
         $this->load->view($this->config->item('customer') . '/mobile/footer');

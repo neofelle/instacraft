@@ -237,6 +237,7 @@ $route['cus-social-share']      = "customer/Customer/socialShare";
 $route['cus-settings']          = "customer/Customer/settings";
 $route['mail-test']             = 'customer/Customer/mailTest';
 $route['cus-upload-proof']      = 'customer/Customer/uploadDocs';
+$route['cus-designation-form']      = 'customer/Customer/caregiverDesignationForm';
 
 /************ prescription routes *************************/
 $route['cus-new-prescription']                  = "customer/Prescription/consultations";

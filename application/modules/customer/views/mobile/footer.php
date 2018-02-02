@@ -838,7 +838,20 @@
 
     $(document).on('click', '.cart_checkout', function () {
         var total_amount = $('#total_cart_value').text();
-        window.location.href = 'cus-delivery-datetime';
+        if (total_amount <= 35){
+           window.location.href = 'cus-delivery-datetime'; 
+        }else{
+            var msg_text = $('#msg_text').val();
+                swal({
+                    text: msg_text,
+                    showCloseButton: false,
+                    customClass: "alertMap",
+                    showConfirmButton: true,
+                    width: "320px",
+                    confirmButtonClass: "simpleButton"
+                });
+        }
+        
     });
 
     $(document).on('click', '.redirect_to_caregiver', function () {
