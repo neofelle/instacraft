@@ -22,13 +22,17 @@ function create_unique_slug_for_common($app_title, $table) {
     return $app_title;
 }
 
-function checkMemberLogin() {
+function checkMemberLogin($bool = false) {
     $CI = & get_instance();
     if ($CI->session->userdata('CUSTOMER-ID') == '' || $CI->session->userdata('CUSTOMER-SL') == '') {
         $CI->session->set_userdata('REDIRECT_URL', current_url());
         $CI->session->set_userdata('PAGE_ERROR_MESSAGE', "Please login to access this page");
-        redirect('cus-login');
+        if ( !$bool )
+            redirect('cus-login');
+        $bool = false;
     }
+
+    return $bool;
 }
 
 function checkCartQuantity() {

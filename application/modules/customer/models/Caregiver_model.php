@@ -110,15 +110,15 @@ class Caregiver_model extends CI_Model {
     public function caregiverFinal() {
         $dateTime           =   explode(' ',$this->session->userdata('delivery_date_time'));
         $deliveryLatLng     =   explode(',',$this->session->userdata('delivery_lat_lng'));
-        var_dump($_SESSION);die();
+        
         /********* create entry in order table and (order items and order_caregiver ) table against this order ********************/
         $this->db->set('user_id',$this->session->userdata('CUSTOMER-ID'));
         $this->db->set('order_type','1');
         $this->db->set('drop_location',$this->session->userdata('delivery_address'));
         $this->db->set('delivery_date',isset($dateTime[0]) ? $dateTime[0] : '');
         $this->db->set('delivery_time',isset($dateTime[1]) ? $dateTime[1] : '');
-        $this->db->set('drop_location_lat',$deliveryLatLng[0]);
-        $this->db->set('drop_location_lang',$deliveryLatLng[1]);
+        $this->db->set('drop_location_lat',isset($deliveryLatLng[0]) ? $deliveryLatLng[0] : "0");
+        $this->db->set('drop_location_lang',isset($deliveryLatLng[1]) ? $deliveryLatLng[1] : "0");
         $this->db->set('pay_status','0');
         $this->db->set('order_status','0');
         //$this->db->set('amount',$this->input->post('total_amount'));

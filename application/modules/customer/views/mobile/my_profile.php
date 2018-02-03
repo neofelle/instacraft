@@ -76,14 +76,14 @@
         </div>
 
     </div> 
-    <button class="btn gradient change_pass py-3 get_cannabis_now">
+    <button class="btn gradient change_pass py-3 get_cannabis_now mt-3">
         <span class="btn-txt">Shop & Get Cannabis Now</span>
     </button>
 </section>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript">
     $(function () {
-        if ($('.profile_img img').width() > $('.profile_img img').height()) {
+        if ($('.profile_img img').length &&  $('.profile_img img').width() > $('.profile_img img').height()) {
             $('.profile_img').addClass('vertical');
         } else {
             $('.profile_img').addClass('horizontal');

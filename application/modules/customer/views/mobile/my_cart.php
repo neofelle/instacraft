@@ -74,22 +74,13 @@
             Nothing in cart...
         <?php }?>
     </div>
-    <?php if ( isset($firstOrder) && $firstOrder == true ): ?>
-        <?php echo $firstOrder; ?>
-    <div class="alert alert-container alert-info float-left">
-        <div class="alert-content">
-            <div class="alert-body">
-                <p class="alert-text">The first order has a specially reduced minimum order size of $<?php echo isset($minimumDeliveryAmount) ? $minimumDeliveryAmount->rate : 35 ?>, so you can try out the best of craft cannabis. After that, we still maintain a reasonable order minimum of $70. That saves gas fumes and preserves the earth.</p>
-            </div>
-        </div>
-    </div>
-    <?php endif; ?>
 
-    <div class="alert alert-container hide alert-info float-left">
+    <div class="alert alert-container alert-info float-left d-none">
         <div class="alert-content">
             <div class="alert-body">
-                <input type="text"  id="msg_text"  value="The first order has a specially reduced minimum order size of $<?php echo isset($minimumDeliveryAmount) ? $minimumDeliveryAmount->rate : 35 ?>, so you can try out the best of craft cannabis. After that, we still maintain a reasonable order minimum of $70. That saves gas fumes and preserves the earth." />
+                <p class="alert-text" id="msg_text">The first order has a specially reduced minimum order size of $<?php echo isset($minimumDeliveryAmount) ? $minimumDeliveryAmount->rate : 35 ?>, so you can try out the best of craft cannabis. After that, we still maintain a reasonable order minimum of $70. That saves gas fumes and preserves the earth.</p>
             </div>
         </div>
     </div>
+
 </section>

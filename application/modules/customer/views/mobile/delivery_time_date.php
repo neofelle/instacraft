@@ -1,3 +1,5 @@
+<script type="text/javascript"> window.areas = JSON.parse('<?php echo json_encode($restrictedAreas); ?>') </script>
+<script type="text/javascript"> window.products = JSON.parse('<?php echo json_encode($products); ?>') </script>
 <section class="container mobile-view-container">
     <div class="delivery_container">
         <div class="map_container">
@@ -11,28 +13,28 @@
         <div class="total_delivery">
             <div class="new_consultation">
                 <ul class="d-flex flex-wrap mb-0">
-                    <li class="col-12">
-                        <label class="col-12">
-                            <input type="radio" name="order_type" class="scheduled_type" value="asap" >
-                            <span class="txt">Get Now In 30-60 Min.</span>
+                    <li class="col-6 d-flex flex-nowrap align-items-center justify-content-start">
+                        <input type="radio" name="order_type" class="scheduled_type" value="asap" >
+                        <label class="col-8 pl-2 pr-0 m-0">
+                            <span class="txt">Get Now.</span>
                         </label>
                     </li>
-                    <li class="col-12">
-                        <label class="col-12">
-                            <input type="radio" name="order_type" class="scheduled_type" value="scheduled" >
-                            <span class="txt">Schedule This Week.</span>
+                    <li class="col-6 d-flex flex-nowrap align-items-center justify-content-start">
+                        <input type="radio" name="order_type" class="scheduled_type" value="scheduled" >
+                        <label class="col-8 pl-2 pr-0 m-0">
+                            <span class="txt">Schedule.</span>
                         </label>
                     </li>
                 </ul>
             </div>
             <ul class="opposite_detail">
                 <li id="asap" style="display: none">
-                    <span class="label"><strike>On-demand delivery charges:</strike></span>
-                    <span class="value"><strike>3%</strike></span>
+                    <span class="label"><span>On-demand delivery charges:</span></span>
+                    <span class="value"><span>3%</span></span>
                 </li>
                 <li id="scheduled" style="display: none">
-                    <span class="label"><strike>Scheduled delivery charges:</strike></span>
-                    <span class="value"><strike>1%</strike></span>
+                    <span class="label"><span>Scheduled delivery charges:</span></span>
+                    <span class="value"><span>1%</span></span>
                     <input class="txt-field" type="text" name="date_time" id="delivery_date_time" placeholder="Select Delivery Date & Time">
                 </li>
                 <li>
@@ -69,27 +71,15 @@ ilng = -122.681460;
 $(function(){
     jQuery.datetimepicker.setLocale('en');
     $('input[name=date_time]').datetimepicker();
-    // show the alert
-    swal({
-        text: "The more app downloads we have in the area, the sooner we can expand there. Share the app with friends and we may get there this month. We're expanding to new towns every week.",
-        showCloseButton: false,
-        customClass: "alertMap",
-        showConfirmButton: true,
-        width: "320px",
-        confirmButtonClass: "simpleButton"
-    });
 
     // icheck
     $('input[type=radio]').each(function(){
-        var self = $(this),
-        label = self.next(),
-        label_text = label.text();
+        var self = $(this)
 
-        label.remove();
         self.iCheck({
-            checkboxClass: 'icheckbox_line-blue inactive',
-            radioClass: 'iradio_line-blue inactive',
-            insert: '<div class="icheck_line-icon"></div>' + label_text
+            checkboxClass: 'icheckbox_square-purple',
+            radioClass: 'iradio_square-purple',
+            increaseArea: '20%'
         });
     });
     $('input[type=radio]').on('ifChecked', function(event){
@@ -157,12 +147,45 @@ function initMap() {
 
 
             var address = '';
+
             if (place.address_components) {
                 address = [
                   (place.address_components[0] && place.address_components[0].short_name || ''),
                   (place.address_components[1] && place.address_components[1].short_name || ''),
                   (place.address_components[2] && place.address_components[2].short_name || '')
                 ].join(' ');
+
+                let zipCode = place.address_components[5].short_name
+                for(area of window.areas)
+                {
+                    let zipCodes = area.zip_codes.split(',')
+
+                    if ( zipCodes.includes(zipCode) )
+                    {
+                        // show the alert
+                        // this should be done on v1.1 to only show if an THC product exists
+                        // in checkout page
+                        // check if there is a THC product
+                        for(product of products)
+                        {
+                            if ( product.category_name.toLowerCase() == "thc" )
+                            {
+                                swal({
+                                    html: "<p class='text-left'>We're working around the clock to expand THC delivery to new towns every week and we can mail you CBD products now. But we're very sorry that we don't hand deliver non-CBD products in your area currently. We'll likely expand to your town this month if you share the app with friends because we only need a few dozen customers to launch hand delivery of THC in a town. Help pioneer the next big thing in the cannabis.</p><div class='col-sm-12'> <p class='mb-2'>Sincerely,</p> <p class='mb-2'>Your friends at InstaCraft</p> <p class='mb-2'>Email us anytime at</p> <p class='mb-0'><a href='javascript:;'>staff@getinstacraft.com</a></p> </div>",
+                                    showCloseButton: false,
+                                    customClass: "alertMap",
+                                    showConfirmButton: true,
+                                    width: "320px",
+                                    confirmButtonClass: "simpleButton"
+                                }).then(_ => {
+                                    //$('.redirect_to_caregiver').attr('disabled', true)
+                                })
+
+                                return false
+                            }
+                        }
+                    }
+                }
             }
 
             var inLatLng = place.geometry.location.lat().toFixed(8) +','+ place.geometry.location.lng().toFixed(8);
@@ -207,14 +230,14 @@ function initMap() {
                 //-- Fetch/Set Address 
                 $('#whaddress').html(results[0].formatted_address);
                 $('#address').val(results[0].formatted_address);
-                $('#latlng'). val(inLatLng);
-                $('#delivery_lat_lng'). val(inLatLng);
+                $('#latlng').val(inLatLng);
+                $('#delivery_lat_lng').val(inLatLng);
               }
               else{
                   $('#whaddress').html('<i style="font-weight:200 !important;"> Not set yet </i>');
                   $('#address').val('');
-                  $('#latlng'). val('');
-                  $('#delivery_lat_lng'). val('');
+                  $('#latlng').val('');
+                  $('#delivery_lat_lng').val('');
               }
             }
         });
@@ -236,15 +259,15 @@ function initMap() {
                 //-- Fetch Address 
                 //alert(results[0].formatted_address);
                 $('#whaddress').html(results[0].formatted_address);
-                $('#address'). val(results[0].formatted_address);
-                $('#latlng'). val(inLatLng);
-                $('#delivery_lat_lng'). val(inLatLng);
+                $('#address').val(results[0].formatted_address);
+                $('#latlng').val(inLatLng);
+                $('#delivery_lat_lng').val(inLatLng);
               }
               else{
                   $('#whaddress').html('<i style="font-weight:200 !important;"> Not set yet </i>');
                   $('#address').val('');
-                  $('#latlng'). val('');
-                  $('#delivery_lat_lng'). val('');
+                  $('#latlng').val('');
+                  $('#delivery_lat_lng').val('');
               }
             }
         });
@@ -257,7 +280,18 @@ function initMap() {
           lat: position.coords.latitude,
           lng: position.coords.longitude
         };
-        
+        var location = new google.maps.LatLng(position.coords.latitude, position.coords.longitude)
+
+        geocoder.geocode({
+            'location': location
+        }, function(results, status) {
+            if (status == google.maps.GeocoderStatus.OK) {
+                $("#delivery_address").val(results[0].formatted_address)
+            } else {
+                console.log('Geocode was not successful for the following reason: ' + status)
+            }
+        })
+
         map.setCenter(pos);
       }, function() {
         handleLocationError(true, infowindow, map.getCenter());

@@ -124,7 +124,7 @@
             $(this).addClass('active').siblings().removeClass('active');
             $(".detail_tab > div").eq($(this).index()).show().siblings().hide()
         });
-        if ($('.profile_img img').get(0).naturalWidth > $('.profile_img img').get(0).naturalHeight) {
+        if ($('.profile_img img').length && $('.profile_img img').get(0).naturalWidth > $('.profile_img img').get(0).naturalHeight) {
             $('.profile_img').addClass('vertical');
         } else {
             $('.profile_img').addClass('horizontal');

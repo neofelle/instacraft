@@ -82,7 +82,7 @@
 <script type="text/javascript">
     document.onreadystatechange = function(e)
     {
-        window.dragcount = 0
+        window.redirect = false
         window.client = {ip: "0.0.0.0", fp: ""}
 
         if (document.readyState === 'complete')
@@ -123,7 +123,7 @@
             // get the url of menu
             let menuUrl = $('.skip-btn a').attr('href')
 
-            if ( window.dragcount < 4 )
+            if ( !window.redirect )
                 return
 
             // redirect to register
@@ -141,7 +141,8 @@
         })
     }
 
-    $('.owl-carousel').owlCarousel({
+    var owl = $('.owl-carousel')
+    owl.owlCarousel({
         loop: false,
         margin: 20,
         nav: false,
@@ -164,20 +165,27 @@
         callbacks: true,
         onDragged: function (event)
         {
-            let iti = event.item.index
-            let itc = event.item.count
+            let item  = event.item.index
+            let items = event.item.count
 
-            // increment
-            window.dragcount += 1
+            currentCustomer(event)
 
-            if ( iti + 1 === itc )
+            if ( item + 1 == items )
             {
-                // call the xhr method and see to where this visitor should be redirected
-                currentCustomer(event)
-                $('.skip-btn').removeClass('hide')
+                window.redirect = true
             }
         }
     });
+
+    owl.on('changed.owl.carousel', function (e) {
+        let item  = e.item.index
+        let items = e.item.count
+
+        if ( item + 1 == items )
+        {
+            $('.skip-btn').removeClass('hide')
+        }
+    })
 </script>
 </body>
 </html>

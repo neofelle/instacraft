@@ -67,12 +67,14 @@
 <script>
     $('#dob').datepicker({
         dateFormat: 'yy-m-d',
-        value: '<?php echo date('Y-m-d'); ?>',
+        defaultDate: '1980-01-01',
         mask: '',
         timepicker: false,
         //autoSize:true,
         //changeMonth: true,
         //changeYear: true
     });
-
+    $('input').on('keydown', function(event) {
+        alert(event.keyCode)
+    })
 </script>

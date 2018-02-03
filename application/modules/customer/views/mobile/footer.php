@@ -56,7 +56,7 @@
                         <span class="item-number">(1)</span>
                         <span class="item-minus icon icon-plus"></span>
                       </div>
-                      <button class="btn btn-lg btn-purle save-add-to-cart">Add to Cart</button>
+                      <button class="btn btn-lg btn-purle save-add-to-cart pop-up-purple-btn">Add to Cart</button>
                   </div>
               </div>
           </div>
@@ -65,7 +65,7 @@
 
 <script>
     $(document).on('click', '.add_add_to_cart', function () {
-        checkUserLogin();
+        //checkUserLogin();
         var productId = $(this).data('productid');
         var productPriceOunce = $(this).data('productprice');
         var productPriceEigth = $(this).data('productpriceeigth');
@@ -388,7 +388,7 @@
     });
 
     $(document).on('click', '#add_to_cart', function () {
-        checkUserLogin();
+        //checkUserLogin();
     });
 
     $(document).on('click', '#more_info', function () {
@@ -651,11 +651,11 @@
                         product_html += '<div class="product_info col-7 px-0 pl-2">';
                         product_html += '<h3>' + j.item_name + '</h3>';
                         product_html += '<div class="about_prdo clearfix">';
-                        /*product_html += '<p><b>Effect : </b><span class="txt_description text-truncate">'+j.effect+'</span></p>';
-                        product_html += '<p><b>Flavor : </b><span class="txt_description text-truncate">'+j.flavor+'</span> </p>';*/
-                        product_html += '<p class="price_product mb-0">Price : $'+j.price_one+'/'+weight_in+'</p>';
-                        product_html += '<p class="mb-0"><span class="txt_description text-truncate">'+j.effect+'</span></p>';
-                        product_html += '<p class="mb-0 text-white font-weight-bold">In Stock</p>';
+                        product_html += '<p class="text-truncate mb-2"><b>Effect : </b><span class="txt_description text-truncate">'+j.effect+'</span></p>';
+                        product_html += '<p class="text-truncate mb-2"><b>Flavor : </b><span class="txt_description text-truncate">'+j.flavor+'</span> </p>';
+                        product_html += '<p class="price_product mt-2 pr-1 text-right mb-0">Price : $'+j.price_one+'/'+weight_in+'</p>';
+                        //product_html += '<p class="mb-0"><span class="txt_description text-truncate">'+j.effect+'</span></p>';
+                        //product_html += '<p class="mb-0 text-white font-weight-bold">In Stock</p>';
                         product_html += '</div>';
                         product_html += '</div>';
                         product_html += '</div>';
@@ -708,6 +708,8 @@
                 if (data.products.length > 0) {
                     var weight_in = '';
                     var previous = '';
+                    var cssClass = '';
+
                     $.each(data.products, function (i, j) {
                         if (j.item_unit == '1')
                             weight_in = 'ounce';
@@ -720,20 +722,24 @@
                         if (previous != j.cat_name) { 
                             product_html += '<p class="help_txt">'+j.cat_name+'</p>';
                         }
-                        product_html += '<div class="product_card clearfix">';
-                        product_html += '<div class="product_detail clearfix" style="background:' + j.color_code + '">';
-                        if(j.limited != 0 && j.limited != '' && j.limited != null){
-                            product_html += '<div class="pro_img left"><img src="' + j.item_image + '" alt="product"><span class="limite_tag">LIMITED SUPPLY</span></div>';
-                        }else{
-                            product_html += '<div class="pro_img left"><img src="' + j.item_image + '" alt="product"></div>';
+                        if(j.limited != 0 && j.limited != '' && j.limited != null)
+                        {
+                            cssClass = "limited";
                         }
-                        //product_html += '<div class="pro_img left"><img src="' + j.item_image + '" alt="product"></div>';
-                        product_html += '<div class="product_info right">';
+
+                        product_html += '<div class="product_card position-relative '+ cssClass +'">';
+                        //product_html += '<i class="far fa-clock text-danger ico"></i>';
+                        product_html += '<div class="product_detail d-flex flex-nowrap align-items-center justify-content-start" style="background:' + j.color_code + '">';
+
+                        product_html += '<div class="pro_img col-5 px-0"><img src="' + j.item_image + '" alt="product"></div>';
+                        product_html += '<div class="product_info col-7 px-0 pl-2">';
                         product_html += '<h3>' + j.item_name + '</h3>';
                         product_html += '<div class="about_prdo clearfix">';
-                        product_html += '<p><b>Effect : </b><span class="txt_description">'+j.effect+'</span></p>';
-                        product_html += '<p><b>Flavor : </b><span class="txt_description">'+j.flavor+'</span> </p>';
-                        product_html += '<p class="price_product">$'+j.price_one+' /'+weight_in+'</p>';
+                        product_html += '<p class="text-truncate mb-2"><b>Effect : </b><span class="txt_description text-truncate">'+j.effect+'</span></p>';
+                        product_html += '<p class="text-truncate mb-2"><b>Flavor : </b><span class="txt_description text-truncate">'+j.flavor+'</span> </p>';
+                        product_html += '<p class="price_product mt-2 pr-1 text-right mb-0">Price : $'+j.price_one+'/'+weight_in+'</p>';
+                        //product_html += '<p class="mb-0"><span class="txt_description text-truncate">'+j.effect+'</span></p>';
+                        //product_html += '<p class="mb-0 text-white font-weight-bold">In Stock</p>';
                         product_html += '</div>';
                         product_html += '</div>';
                         product_html += '</div>';
@@ -744,7 +750,6 @@
                         product_html += '</div>';
                         
                         previous = j.cat_name;
-
                     });
                     $('#moods_purpose').show();
                 } else {
@@ -785,6 +790,8 @@
                 if (data.products.length > 0) {
                     var weight_in = '';
                     var previous = '';
+                    var cssClass = '';
+
                     $.each(data.products, function (i, j) {
                         if (j.item_unit == '1')
                             weight_in = 'ounce';
@@ -797,20 +804,24 @@
                         if (previous != j.cat_name) { 
                             product_html += '<p class="help_txt">'+j.cat_name+'</p>';
                         }
-                        product_html += '<div class="product_card clearfix">';
-                        product_html += '<div class="product_detail clearfix" style="background:' + j.color_code + '">';
-                        if(j.limited != 0 && j.limited != '' && j.limited != null){
-                            product_html += '<div class="pro_img left"><img src="' + j.item_image + '" alt="product"><span class="limite_tag">LIMITED SUPPLY</span></div>';
-                        }else{
-                            product_html += '<div class="pro_img left"><img src="' + j.item_image + '" alt="product"></div>';
+                        if(j.limited != 0 && j.limited != '' && j.limited != null)
+                        {
+                            cssClass = "limited";
                         }
-                        //product_html += '<div class="pro_img left"><img src="' + j.item_image + '" alt="product"></div>';
-                        product_html += '<div class="product_info right">';
+
+                        product_html += '<div class="product_card position-relative '+ cssClass +'">';
+                        //product_html += '<i class="far fa-clock text-danger ico"></i>';
+                        product_html += '<div class="product_detail d-flex flex-nowrap align-items-center justify-content-start" style="background:' + j.color_code + '">';
+
+                        product_html += '<div class="pro_img col-5 px-0"><img src="' + j.item_image + '" alt="product"></div>';
+                        product_html += '<div class="product_info col-7 px-0 pl-2">';
                         product_html += '<h3>' + j.item_name + '</h3>';
                         product_html += '<div class="about_prdo clearfix">';
-                        product_html += '<p><b>Effect : </b><span class="txt_description">'+j.effect+'</span></p>';
-                        product_html += '<p><b>Flavor : </b><span class="txt_description">'+j.flavor+'</span> </p>';
-                        product_html += '<p class="price_product">$'+j.price_one+' /'+weight_in+'</p>';
+                        product_html += '<p class="text-truncate mb-2"><b>Effect : </b><span class="txt_description text-truncate">'+j.effect+'</span></p>';
+                        product_html += '<p class="text-truncate mb-2"><b>Flavor : </b><span class="txt_description text-truncate">'+j.flavor+'</span> </p>';
+                        product_html += '<p class="price_product mt-2 pr-1 text-right mb-0">Price : $'+j.price_one+'/'+weight_in+'</p>';
+                        //product_html += '<p class="mb-0"><span class="txt_description text-truncate">'+j.effect+'</span></p>';
+                        //product_html += '<p class="mb-0 text-white font-weight-bold">In Stock</p>';
                         product_html += '</div>';
                         product_html += '</div>';
                         product_html += '</div>';
@@ -821,7 +832,6 @@
                         product_html += '</div>';
                         
                         previous = j.cat_name;
-
                     });
                     if(by_mood == 'no'){
                         $('#moods_purpose').show();
@@ -839,7 +849,7 @@
     $(document).on('click', '.cart_checkout', function () {
         var total_amount =  $('#total_cart_value').attr('data-value');
         if (total_amount <= 35){
-           var msg_text = $('#msg_text').val();
+           var msg_text = $('#msg_text').text();
                 swal({
                     text: msg_text,
                     showCloseButton: false,

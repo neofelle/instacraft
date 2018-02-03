@@ -5,10 +5,10 @@
         <p>People love hearing about new technology. Share the app with a friend and both of you will get 100 discount points. It takes just seconds.</p>
 
     </div>
-    <button class="btn change_pass btn-white mb-30">
+    <button class="btn change_pass btn-white py-1 mb-30">
         <span class="btn-txt social_share"><img src="<?= $this->config->item('customerassets') ?>images/shareShave.png"/> Share & Save</span>
     </button>
-    <button class="btn gradient change_pass get_cannabis_now">
+    <button class="btn gradient change_pass get_cannabis_now mt-3">
         <span class="btn-txt">Shop &amp; Get Cannabis Now</span>
     </button>
 </section>

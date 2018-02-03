@@ -4,7 +4,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */ 
-class Setting_model extends CI_Model {
+class Settings_model extends CI_Model {
 
     private $_searchData = "", $_unit = "", $_category = "", $_subCategory = "", $_productUnit = "";
     private $_firstname, $_lastname, $_email, $_phone, $_picUrl, $_customid, $_customname, $_customarray;

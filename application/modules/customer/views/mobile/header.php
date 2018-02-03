@@ -17,7 +17,7 @@
         <!-- CSS files -->
         <link href="https://use.fontawesome.com/releases/v5.0.4/css/all.css" rel="stylesheet">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        <link href="<?= $this->config->item('globalassets') ?>plugins/icheck/skins/line/blue.css" rel="stylesheet">
+        <link href="<?= $this->config->item('globalassets') ?>plugins/icheck/skins/all.css" rel="stylesheet">
         <link type="text/css" href="<?= $this->config->item('globalassets') ?>plugins/datetimepicker-master/build/jquery.datetimepicker.min.css" rel="stylesheet" />
         <link rel="stylesheet" href="<?= $this->config->item('customerassets') ?>css/style.css">
         <!--<link rel="stylesheet" href="<?= $this->config->item('customerassets') ?>css/jquery-ui.css">-->
@@ -89,18 +89,18 @@
 
                 <?php if ($pageName != 'Register' && $pageName != 'Login' && $pageName != 'Splash') {
                     $headerArr = explode(',', $header_class); ?>
-                    <header class="gradient main_header">
-                        <a href="<?= $headerArr[1] ?>" class="back-screen <?= $headerArr[0] ?> left"></a>
-                        <h1 id="page_name_header"><?= $pageName ?></h1>
-                            <?php if (isset($header_class_right) && sizeof($header_class_right) > 0) { ?>
-                            <div class="header_panel right">
-                                <?php foreach ($header_class_right as $key => $right_class) {
-                                    $arr = explode(',', $right_class);
-                                    ?>
+                    <header class="gradient main_header d-flex flex-nowrap justify-content-start align-items-center">
+                        <a href="<?= $headerArr[1] ?>" class="back-screen px-0 col-1 <?= $headerArr[0] ?> left"></a>
+                        <h1 id="page_name_header" class="m-0 pl-0 col-7"><?= $pageName ?></h1>
+                        <?php if (isset($header_class_right) && sizeof($header_class_right) > 0) { ?>
+                        <div class="header_panel col-4 d-flex justify-content-end">
+                            <?php foreach ($header_class_right as $key => $right_class) {
+                                $arr = explode(',', $right_class);
+                            ?>
                                 <a href="<?= $arr[1] ?>" class="<?= $arr[0] ?>"> <?= !isset($arr[2]) ?"": $arr[2] ?></a>
                             <?php } ?>
-                            </div>
-                    <?php } ?>
+                        </div>
+                        <?php } ?>
                     </header>
-<?php } ?>
+                <?php } ?>
         

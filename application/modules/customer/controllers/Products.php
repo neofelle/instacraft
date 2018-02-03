@@ -53,18 +53,55 @@ class Products extends MX_Controller {
     }
 
     public function productAddToCart() {
-        checkMemberLogin();
+        $res = false;
+        //cart list
+        $cartData = array();
+        // the list of products
         $data = array();
-        $proObj = new Products_model();
         $data['item_id'] = $this->input->post('item_id');
         $data['quantity'] = $this->input->post('quantity');
         $data['type'] = $this->input->post('type');
-        $data['user_id'] = $this->session->userdata('CUSTOMER-ID');
-        $res    =   $proObj->productAddToCart($data);
-        $totalQuantity = $proObj->checkAddToCartProductQuantity();
-        $this->session->set_userdata('total_item', $totalQuantity);
-        checkCartQuantity();
-        $data['quantity']       =   $this->session->userdata('total_item');
+
+        // check if the user is logged in or not
+        // without redirecting
+        if ( !checkMemberLogin(true) )
+        {
+            if ( isset($_COOKIE['cart_ci']) )
+            {
+                $cartData = unserialize($_COOKIE['cart_ci']);
+            }
+            $cartData[] = $data;
+            setcookie("cart_ci", serialize($cartData), time()+60*60*24*7, '/', "instacraft.io", false, false);
+            $res= true;
+        }
+        else
+        {
+            // check if there is already a cookie or not
+            $cartCI = isset($_COOKIE['cart_ci']) ? unserialize($_COOKIE['cart_ci']) : [];
+
+            $proObj = new Products_model();
+
+            $data['user_id'] = $this->session->userdata('CUSTOMER-ID');
+            if ( !empty($cartCI) && is_array($cartCI) )
+            {
+                foreach ($cartCI as $key => $product)
+                {
+                    $product['user_id'] = $data['user_id'];
+                    $proObj->productAddToCart($product);
+                }
+
+                // once done we need to delete the cookie
+                setcookie("cart_ci", '', time()-3600);
+            }
+            
+            $res = $proObj->productAddToCart($data);
+            $totalQuantity = $proObj->checkAddToCartProductQuantity();
+            $this->session->set_userdata('total_item', $totalQuantity);
+            checkCartQuantity();
+            $data['quantity']       =   $this->session->userdata('total_item');
+            $data['success']        =   $res;
+        }
+
         $data['success']        =   $res;
         echo json_encode($data);die;
     }

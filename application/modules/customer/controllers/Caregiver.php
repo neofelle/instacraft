@@ -13,6 +13,7 @@ class Caregiver extends MX_Controller {
         $this->load->model('customer/Customer_model');
         $this->load->model('customer/Caregiver_model');
         $this->load->model('customer/Products_model');
+        $this->load->model('customer/Settings_model');
         $this->load->helper('user_helper');
         $this->load->helper('url');
         $this->load->helper('download');
@@ -27,12 +28,15 @@ class Caregiver extends MX_Controller {
 
         $custObj = new Customer_model();
         $careObj = new Caregiver_model();
+        $setting = new Settings_model();
+        $prodObj = new Products_model();
         if($careObj->AddToCartTotalAmount() <= 0){
             redirect('cus-our-products');
         }
         $output['title'] = 'Caregiver Form';
         $output['pageName'] = 'Caregiver Form';
         $output['header_class'] = 'icon-back-arrow,' . base_url().'cus-add-tocart';
+        $output['products'] = $prodObj->AddToCart();
         if ($this->input->is_ajax_request()) {
             $this->session->set_userdata('delivery_date_time',$this->input->post('delivery_date_time'));
             $this->session->set_userdata('delivery_address',$this->input->post('delivery_address'));
@@ -42,6 +46,7 @@ class Caregiver extends MX_Controller {
             die;
         }
         $output['cartTotal']  =   $careObj->AddToCartTotalAmount();
+        $output['restrictedAreas'] = $setting->getAllRestrictedAreas();
         $this->load->view($this->config->item('customer') . '/mobile/header', $output);
         $this->load->view($this->config->item('customer') . '/mobile/delivery_time_date');
         $this->load->view($this->config->item('customer') . '/mobile/footer');
@@ -205,4 +210,14 @@ class Caregiver extends MX_Controller {
 //        }
     }
 
+    public function caregiverDesignationForm() 
+    {
+        $cusObj = new Customer_model();
+        $output['title'] = 'Caregiver Designation Form';
+        $output['pageName'] = 'Caregiver Designation Form';
+        $output['header_class'] = 'icon-back-arrow,' . base_url().'customer/Customer/caregiverDesignationForm';
+        $this->load->view($this->config->item('customer') . '/mobile/header', $output);
+        $this->load->view($this->config->item('customer') . '/mobile/caregiver_designation_forms');
+        $this->load->view($this->config->item('customer') . '/mobile/footer');
+    }
 }
