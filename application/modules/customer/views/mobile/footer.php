@@ -520,7 +520,7 @@
                 $('.wait-div').show();
             },
             success: function (data) {
-                $('.wait-div').hide();
+                $('.wait-div').hide();                
                 var product_html = '';
                 
                 if (data.products.length > 0) {
@@ -647,7 +647,7 @@
                         //product_html += '<i class="far fa-clock text-danger ico"></i>';
                         product_html += '<div class="product_detail d-flex flex-nowrap align-items-center justify-content-start" style="background:' + j.color_code + '">';
 
-                        product_html += '<div class="pro_img col-5 px-0"><img src="' + j.item_image + '" alt="product"></div>';
+                        product_html += '<div class="pro_img col-5 px-0"><a class="inline" href="' + j.item_image + '"><img src="' + j.item_image + '" alt="product"></a></div>';
                         product_html += '<div class="product_info col-7 px-0 pl-2">';
                         product_html += '<h3>' + j.item_name + '</h3>';
                         product_html += '<div class="about_prdo clearfix">';
@@ -680,6 +680,7 @@
                 }
                 $('.product_list').html();
                 $('.product_list').html(product_html);
+                $(".inline").colorbox();
             }
         });
     });
