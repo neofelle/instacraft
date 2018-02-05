@@ -75,6 +75,9 @@
         //changeYear: true
     });
     $('input').on('keydown', function(event) {
-        alert(event.keyCode)
+        if ( event.keyCode == 13 )
+        {
+            $('#dob').datepicker("hide")
+        }
     })
 </script>

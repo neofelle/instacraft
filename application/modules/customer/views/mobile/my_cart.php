@@ -38,7 +38,7 @@
                 <div class="product_detail d-flex flex-nowrap align-items-center justify-content-start" style="background:<?= $product->color_code ?> ">
                     <a class="delete_ico icon-delete delete_cart_item" data-value="<?= $product->cart_id;?>"></a>
                     <div class="pro_img col-5 px-0"><img src="<?= $product->item_image?>" alt="product"></div>					
-                    <div class="product_info col-7 px-0 pl-2">
+                    <div class="product_info col-7 px-0 pl-2 pt-2">
                         <h3><?= $product->item_name?></h3>
                         <p><b>Price:</b> $<?= $product_price?>/1 <?= $product->saved_type?></p>
                         <div class="qty"><b>Qty :</b> <input type="text" name="quantity" id="cart-qty-<?=$product->cart_id;?>" value="<?= $product->quantity?>" disabled=""><a class="edit-cart-item" href="javascript:void(0);" data-key="<?=$product->cart_id;?>"><i class="icon-edit edit-<?=$product->cart_id;?>" style="margin-left:10px;"></i> <span>Edit</span></a></div>

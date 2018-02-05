@@ -5,8 +5,9 @@
         <title>InstaCraft</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
         <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
-        <script src="<?= $this->config->item('customerassets') ?>js/jquery-1.11.1.min.js"></script>
+        <script src="<?= $this->config->item('customerassets') ?>js/jquery-min.js"></script>
         <script src="<?= $this->config->item('customerassets') ?>js/jquery-ui.js"></script>
+        <script src="<?= $this->config->item('customerassets') ?>js/jquery.colorbox-min.js"></script>
         <script src="<?= $this->config->item('customerassets') ?>js/enscroll.min.js"></script>
         <script src="<?= $this->config->item('customerassets'); ?>js/jquery.form.js" type="text/javascript"></script>
         <script src="<?= $this->config->item('customerassets') ?>js/formclass.js"></script>
@@ -18,6 +19,7 @@
         <link href="https://use.fontawesome.com/releases/v5.0.4/css/all.css" rel="stylesheet">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link href="<?= $this->config->item('globalassets') ?>plugins/icheck/skins/all.css" rel="stylesheet">
+        <link type="text/css" href="<?= $this->config->item('customerassets'); ?>css/colorbox.css" rel="stylesheet" />
         <link type="text/css" href="<?= $this->config->item('globalassets') ?>plugins/datetimepicker-master/build/jquery.datetimepicker.min.css" rel="stylesheet" />
         <link rel="stylesheet" href="<?= $this->config->item('customerassets') ?>css/style.css">
         <!--<link rel="stylesheet" href="<?= $this->config->item('customerassets') ?>css/jquery-ui.css">-->

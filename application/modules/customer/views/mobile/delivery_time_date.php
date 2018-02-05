@@ -35,7 +35,7 @@
                 <li id="scheduled" style="display: none">
                     <span class="label"><span>Scheduled delivery charges:</span></span>
                     <span class="value"><span>1%</span></span>
-                    <input class="txt-field" type="text" name="date_time" id="delivery_date_time" placeholder="Select Delivery Date & Time">
+                    <input class="txt-field" type="text" name="date_time" id="delivery_date_time" placeholder="Select Delivery Date & Time" readonly="true" >
                 </li>
                 <li>
                     <span class="label">Total:</span>
