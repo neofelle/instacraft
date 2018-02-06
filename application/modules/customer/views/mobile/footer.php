@@ -123,7 +123,186 @@
         $("#limit").val(limit);
 
     });
-    
+    var trigger1 = 0;
+    var animation_speed = 150;
+    $(document).on('click', '.bt-1', function () {
+        $('.bt-1').css("z-index", 9999);
+        $('.bt-2').css("z-index", 9998);
+        $('.bt-3').css("z-index", 9997);
+        $('.bt-4').css("z-index", 9996);
+        $('.bt-5').css("z-index", 9995);
+        $('.bt-6').css("z-index", 9994);
+        if(trigger1 == 0){
+            $('.bt-2').animate({ left: "-=112px",}, animation_speed);
+            $('.bt-3').animate({ left: "-=224px",}, animation_speed);
+            $('.bt-4').animate({ top: "-=61px",}, animation_speed);
+            $('.bt-5').animate({ top: "-=61px", left: "-=112px",}, animation_speed);
+            $('.bt-6').animate({ top: "-=61px", left: "-=224px"}, animation_speed, function() {
+                $('.menu-container').animate({ left: "+=230px",}, animation_speed);
+            });
+            trigger1++
+        }
+        else{
+            $('.menu-container').animate({ left: "-=230px",}, animation_speed, function() {
+                $('.bt-2').animate({ left: "+=112px",}, animation_speed);
+                $('.bt-3').animate({ left: "+=224px",}, animation_speed);
+                $('.bt-4').animate({ top: "+=61px",}, animation_speed);
+                $('.bt-5').animate({ top: "+=61px", left: "+=112px",}, animation_speed);
+                $('.bt-6').animate({ top: "+=61px", left: "+=224px",}, animation_speed);
+                trigger1--
+            });
+        }
+    });
+    $(document).on('click', '.bt-4', function () {
+        $('.bt-4').css("z-index", 9999);
+        $('.bt-2').css("z-index", 9998);
+        $('.bt-3').css("z-index", 9997);
+        $('.bt-1').css("z-index", 9996);
+        $('.bt-5').css("z-index", 9995);
+        $('.bt-6').css("z-index", 9994);
+        if(trigger1 == 0){
+            $('.bt-5').animate({ left: "-=112px",}, animation_speed);
+            $('.bt-6').animate({ left: "-=224px",}, animation_speed);
+            $('.bt-1').animate({ top: "+=61px",}, animation_speed);
+            $('.bt-2').animate({ top: "+=61px", left: "-=112px",}, animation_speed);
+            $('.bt-3').animate({ top: "+=61px", left: "-=224px"}, animation_speed, function() {
+                $('.menu-container').animate({ left: "+=230px"}, animation_speed, function() {
+                    $('.menu-container').animate({ bottom: "+=61px"}, animation_speed);
+                });
+            });
+            trigger1++
+        }
+        else{
+            $('.menu-container').animate({ bottom: "-=0px",}, animation_speed, function() {
+                $('.menu-container').animate({ left: "-=230px",}, animation_speed, function() {
+                    $('.bt-2').animate({ left: "+=112px",}, animation_speed);
+                    $('.bt-3').animate({ left: "+=224px",}, animation_speed);
+                    $('.bt-4').animate({ top: "+=61px",}, animation_speed);
+                    $('.bt-5').animate({ top: "+=61px", left: "+=112px",}, animation_speed);
+                    $('.bt-6').animate({ top: "+=61px", left: "+=224px",}, animation_speed);
+                    trigger1--
+                });
+            });
+        }
+    });
+    $(document).on('click', '.bt-2', function () {
+        $('.bt-2').css("z-index", 9999);
+        $('.bt-1').css("z-index", 9998);
+        $('.bt-3').css("z-index", 9997);
+        $('.bt-4').css("z-index", 9996);
+        $('.bt-5').css("z-index", 9995);
+        $('.bt-6').css("z-index", 9994);
+        if(trigger1 == 0){
+            $('.bt-1').animate({ left: "+=112px",}, animation_speed);
+            $('.bt-3').animate({ left: "-=112px",}, animation_speed);
+            $('.bt-4').animate({ top: "-=61px", left: "+=112px",}, animation_speed);
+            $('.bt-5').animate({ top: "-=61px",}, animation_speed);
+            $('.bt-6').animate({ top: "-=61px", left: "-=112px",}, animation_speed, function() {
+                $('.menu-container').animate({ left: "+=115px",}, animation_speed);
+            });
+            trigger1++
+        }
+        else{
+            $('.menu-container').animate({ left: "-=115px",}, animation_speed, function() {
+                $('.bt-1').animate({ left: "-=112px",}, animation_speed);
+                $('.bt-3').animate({ left: "+=112px",}, animation_speed);
+                $('.bt-4').animate({ top: "+=61px", left: "-=112px",}, animation_speed);
+                $('.bt-5').animate({ top: "+=61px",}, animation_speed);
+                $('.bt-6').animate({ top: "+=61px", left: "+=112px",}, animation_speed);
+                trigger1--
+            });
+        }
+    });
+    $(document).on('click', '.bt-5', function () {
+        $('.bt-5').css("z-index", 9999);
+        $('.bt-6').css("z-index", 9998);
+        $('.bt-1').css("z-index", 9997);
+        $('.bt-2').css("z-index", 9996);
+        $('.bt-3').css("z-index", 9995);
+        $('.bt-4').css("z-index", 9994);
+        if(trigger1 == 0){
+            $('.bt-6').animate({ left: "-=112px",}, animation_speed);
+            $('.bt-4').animate({ left: "+=112px",}, animation_speed);
+            $('.bt-1').animate({ top: "+=61px", left: "+=112px",}, animation_speed);
+            $('.bt-2').animate({ top: "+=61px",}, animation_speed);
+            $('.bt-3').animate({ top: "+=61px", left: "-=112px",}, animation_speed, function() {
+                $('.menu-container').animate({ left: "+=115px",}, animation_speed, function() {
+                    $('.menu-container').animate({ bottom: "+=61px",}, animation_speed);
+                });
+            });
+            trigger1++
+        }
+        else{
+            $('.menu-container').animate({ bottom: "-=61px",}, animation_speed, function() {
+                $('.menu-container').animate({ left: "-=115px",}, animation_speed, function() {
+                    $('.bt-6').animate({ left: "+=112px",}, animation_speed);
+                    $('.bt-4').animate({ left: "-=112px",}, animation_speed);
+                    $('.bt-1').animate({ top: "-=61px", left: "-=112px",}, animation_speed);
+                    $('.bt-2').animate({ top: "-=61px",}, animation_speed);
+                    $('.bt-3').animate({ top: "-=61px", left: "+=112px",}, animation_speed);
+                    trigger1--
+                });
+            });
+        }
+    });
+    $(document).on('click', '.bt-3', function () {
+        $('.bt-3').css("z-index", 9999);
+        $('.bt-1').css("z-index", 9998);
+        $('.bt-2').css("z-index", 9997);
+        $('.bt-4').css("z-index", 9996);
+        $('.bt-5').css("z-index", 9995);
+        $('.bt-6').css("z-index", 9994);
+        if(trigger1 == 0){
+            $('.bt-2').animate({ left: "+=112px",}, animation_speed);
+            $('.bt-1').animate({ left: "+=224px",}, animation_speed);
+            $('.bt-4').animate({ top: "-=61px", left: "+=224px",}, animation_speed);
+            $('.bt-5').animate({ top: "-=61px", left: "+=112px",}, animation_speed);
+            $('.bt-6').animate({ top: "-=61px",}, animation_speed, function() {
+                $('.menu-container').animate({ left: "0px",}, animation_speed);
+            });   
+            trigger1++
+        }
+        else{
+            $('.menu-container').animate({ left: "0px",}, animation_speed, function() {
+                $('.bt-2').animate({ left: "-=112px",}, animation_speed);
+                $('.bt-1').animate({ left: "-=224px",}, animation_speed);
+                $('.bt-4').animate({ top: "+=61px", left: "-=224px",}, animation_speed);
+                $('.bt-5').animate({ top: "+=61px", left: "-=112px",}, animation_speed);
+                $('.bt-6').animate({ top: "+=61px",}, animation_speed);
+                trigger1--
+            });
+        }
+    });
+    $(document).on('click', '.bt-6', function () {
+        $('.bt-6').css("z-index", 9999);
+        $('.bt-5').css("z-index", 9998);
+        $('.bt-4').css("z-index", 9997);
+        $('.bt-3').css("z-index", 9996);
+        $('.bt-2').css("z-index", 9995);
+        $('.bt-1').css("z-index", 9994);
+        if(trigger1 == 0){
+            $('.bt-5').animate({ left: "+=112px",}, animation_speed);
+            $('.bt-4').animate({ left: "+=224px",}, animation_speed);
+            $('.bt-1').animate({ top: "+=61px", left: "+=224px",}, animation_speed);
+            $('.bt-2').animate({ top: "+=61px", left: "+=112px",}, animation_speed);
+            $('.bt-3').animate({ top: "+=61px",}, animation_speed, function() {
+                $('.menu-container').animate({ left: "0px",}, animation_speed, function() {
+                    $('.menu-container').animate({ bottom: "+=61px",}, animation_speed);
+                });
+            });   
+            trigger1++
+        }
+        else{
+            $('.menu-container').animate({ bottom: "-=61px",}, animation_speed, function() {
+                $('.bt-5').animate({ left: "-=112px",}, animation_speed);
+                $('.bt-4').animate({ left: "-=224px",}, animation_speed);
+                $('.bt-1').animate({ top: "-=61px", left: "-=224px",}, animation_speed);
+                $('.bt-2').animate({ top: "-=61px", left: "-=112px",}, animation_speed);
+                $('.bt-3').animate({ top: "-=61px",}, animation_speed);
+                trigger1--
+            });
+        }
+    });
     $(document).on('click', '.icon-plus', function () {
         var quantity   =   $('input[name=price]:checked').closest('div.price-row').find('span.sale-price').attr('data-quantity');
         var type   =   $('input[name=price]:checked').closest('div.price-row').find('span.sale-price').attr('data-type');

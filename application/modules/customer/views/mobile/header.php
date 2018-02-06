@@ -16,8 +16,9 @@
         <!-- OneSignal notifications -->
         <link rel="manifest" href="<?= $this->config->item('base_url') ?>manifest.json" />
         <!-- CSS files -->
+
         <link href="https://use.fontawesome.com/releases/v5.0.4/css/all.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="<?= $this->config->item('customerassets') ?>css/bootstrap.css">
         <link href="<?= $this->config->item('globalassets') ?>plugins/icheck/skins/all.css" rel="stylesheet">
         <link type="text/css" href="<?= $this->config->item('customerassets'); ?>css/colorbox.css" rel="stylesheet" />
         <link type="text/css" href="<?= $this->config->item('globalassets') ?>plugins/datetimepicker-master/build/jquery.datetimepicker.min.css" rel="stylesheet" />

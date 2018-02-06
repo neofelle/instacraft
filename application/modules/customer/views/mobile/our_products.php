@@ -12,6 +12,30 @@
             </li>
         <?php } }?>
     </ul>
+    <br/><br/>
+    <br/><br/>
+    <div class="menu-container">
+        <ul class="product_filters cats-container clearfix align-items-center">
+            <li class="col-4 bt-1">
+                <span class="">Button A</span>
+            </li> 
+            <li class="col-4 bt-2">
+                <span class="">Button B</span>
+            </li> 
+            <li class="col-4 bt-3">
+                <span class="">Button C</span>
+            </li> 
+            <li class="col-4 bt-4">
+                <span class="">Button D</span>
+            </li> 
+            <li class="col-4 bt-5">
+                <span class="">Button E</span>
+            </li> 
+            <li class="col-4 bt-6">
+                <span class="">Button F</span>
+            </li> 
+        </ul>
+    </div>
     <ul class="product_filters sub-cats clearfix" style="display:none">
 
     </ul>
