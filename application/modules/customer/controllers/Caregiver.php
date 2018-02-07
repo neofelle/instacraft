@@ -54,7 +54,7 @@ class Caregiver extends MX_Controller {
 
     
     public function caregiverFirst() {
-        if($this->session->userdata('delivery_date_time') != '' && $this->session->userdata('delivery_address') != '') {
+        if($this->session->userdata('delivery_date_time') != '' && $this->session->userdata('delivery_address') != '') {            
             $proObj = new Products_model();
             $custObj = new Customer_model();
             $careObj = new Caregiver_model();
@@ -63,6 +63,7 @@ class Caregiver extends MX_Controller {
             $output['header_class'] = 'icon-back-arrow,' . base_url().'cus-add-tocart';
             $output['userDetail'] = $custObj->getUserRecordBySlug();
             $output['minimumDeliveryAmount'] = $proObj->getMinimumDeliveryAmount();
+            $output['delivery_address'] = $this->session->userdata('delivery_address');
 
             if (!empty($_POST)) {
 
@@ -119,7 +120,7 @@ class Caregiver extends MX_Controller {
                     die;
                 }
             }
-
+            
             $this->load->view($this->config->item('customer') . '/mobile/header', $output);
             $this->load->view($this->config->item('customer') . '/mobile/caregiver_first');
             $this->load->view($this->config->item('customer') . '/mobile/footer');

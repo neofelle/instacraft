@@ -523,10 +523,10 @@ img[src*='https://maps.gstatic.com/mapfiles/api-3/images/google4']{display: none
 .input_container input {-moz-box-shadow: none; -ms-box-shadow: none; -webkit-box-shadow: none; box-shadow: none; height: 22px; border-bottom: dashed #444444; border-width: 0 0 1px 0; width: 130px; padding: 0; color: #444444}
 
 .checkout_container > p, .checkout_container > div{margin-bottom: 15px; color: #444444}
-.signature .signature-view{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;height:524px;width:100%;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;margin:0;padding:0;}
+.signature .signature-view{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;height:437px;width:100%;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;margin:0;padding:0;}
 .signature .signature-view .signature-pad{box-shadow:none;padding:0;}
 .checkout_container > p:first-child{color: #000;}
-.signature{margin-top: 20px;}
+.signature{margin-top: 0px;}
 .signature h2{font-size: 16px;}
 .signature_area{-moz-box-shadow: 0 1.5px 9px rgba(0,0,0,0.22); -ms-box-shadow: 0 1.5px 9px rgba(0,0,0,0.22); -webkit-box-shadow: 0 1.5px 9px rgba(0,0,0,0.22); box-shadow: 0 1.5px 9px rgba(0,0,0,0.22); width: 100%; margin-top: 10px; background: #fff; height: 100px; padding: 5px; }
 .signature_area > *{height: 100%; width: 100%;}

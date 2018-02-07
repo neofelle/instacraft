@@ -81,6 +81,7 @@
     
     $('#dob_med').datepicker({
         dateFormat: 'yy-m-d',
+        changeYear: true,
         value: new Date(),
         mask: '',
         timepicker: false,

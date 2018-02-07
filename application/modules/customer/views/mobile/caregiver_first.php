@@ -2,14 +2,14 @@
     <div class="caregiver-details">
         <p><b>Section 1:</b> Qualifying Patient Information</p>
         <div class="form-container">
-            <?= form_open_multipart('cus-caregiver-step1', array('class' => 'clearfix ajaxform', 'id' => '')) ?>    
+            <?= form_open_multipart('cus-caregiver-step', array('class' => 'clearfix ajaxform', 'id' => '')) ?>    
                 <div class="alert alert-info wait-div " style="display:none;"> <strong>Please wait! </strong> Your action is in proccess... </div>
                 <div id="jGrowl" class="top-right jGrowl col-md-12"  style="display: none;">
                     <button class="close" aria-hidden="true" data-dismiss="alert" style="padding:10px;" type="button">&times;</button>
                     <div class="jGrowl-notification ">
                         <div class="jGrowl-message ajax_message"></div>
                     </div>
-                </div>
+                </div>                
                 <label class="txt_input">
                     <input type="text" name="full_name" placeholder="full name on your ID" value="<?= $userDetail->first_name ?> <?= $userDetail->last_name ?>" required="">
                 </label>
@@ -21,7 +21,7 @@
                     <input type="text" name="phone_number" placeholder="Telephone Number" value="<?= $userDetail->phone_number ?>" required="">
                 </label>
                 <label class="txt_input">
-                    <input type="text" name="home_address" placeholder="Home Address" value="" required="">
+                    <input type="text" name="home_address" placeholder="Home Address" value="<?= $delivery_address ?>" required="">
                     <!--<textarea name="home_address" placeholder="Home Address" rows="5" required=""></textarea>-->
                 </label>
                 <div class="half_input clearfix">

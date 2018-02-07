@@ -15,10 +15,9 @@
 </script>
 <section class="container mobile-view-container">
     <div class="checkout_container">
-        <p class="fs_15"><b>Section 5:</b> Patient Rights &nbsp; Responsibilities</p>
+        <p class="fs_15" style="margin-bottom:12px;"><b>Section 5:</b> Patient Rights &nbsp; Responsibilities</p>
+        <p class="fs_15" style="margin-bottom:8px;">By signing here, you sign the attached caregiver designation documents, which allows the caregiver to provide you with the medical marijuana you selected.</p>
         <div class="signature">
-            <h2>Patient Name</h2>
-            <span class="date_signature"><?= date('Y-m-d')?></span>
             <div class="signature-view">
                 
                 <div id="signature-pad" class="signature-pad">
