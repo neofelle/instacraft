@@ -1162,6 +1162,25 @@
         $(this).addClass('update-cart-item');
     });
 
+    function update_cart_item(id)
+    {
+        var cart_id  = id;
+        var cart_qty = $("#cart-qty-" + cart_id).val();
+        $.ajax({
+            type: 'POST',
+            data: {cart_item_id: cart_id, cart_item_qty: cart_qty },
+            url: siteurl + 'cus-edit-qty-from-cart',
+            dataType: "json",
+            beforeSend: function () {
+                $('.wait-div').show();
+            },
+            success: function (data) {
+                $('.wait-div').hide();//                
+                location.reload();
+            }
+        });
+    }
+
     $(document).on('click', '.update-cart-item', function () {
         var cart_id  = $(this).attr('data-key');
         var cart_qty = $("#cart-qty-" + cart_id).val();

@@ -41,7 +41,7 @@
                     <div class="product_info col-7 px-0 pl-2 pt-2">
                         <h3><?= $product->item_name?></h3>
                         <p><b>Price:</b> $<?= $product_price?>/1 <?= $product->saved_type?></p>
-                        <div class="qty"><b>Qty :</b> <input type="text" name="quantity" id="cart-qty-<?=$product->cart_id;?>" value="<?= $product->quantity?>" disabled=""><a class="edit-cart-item" href="javascript:void(0);" data-key="<?=$product->cart_id;?>"><i class="icon-edit edit-<?=$product->cart_id;?>" style="margin-left:10px;"></i> <span>Edit</span></a></div>
+                        <div class="qty"><b>Qty :</b> <input type="text" onfocusout="javascript:update_cart_item(<?=$product->cart_id;?>)" name="quantity" id="cart-qty-<?=$product->cart_id;?>" value="<?= $product->quantity?>" disabled=""><a class="edit-cart-item" href="javascript:void(0);" data-key="<?=$product->cart_id;?>"><i class="icon-edit edit-<?=$product->cart_id;?>" style="margin-left:10px;"></i> <span>Edit</span></a></div>
                         <h4 class="total_val_<?=$product->cart_id;?>" data-value="<?= $total?>">Total : $<?= $total?></h4>
                     </div>
                 </div>
