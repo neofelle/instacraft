@@ -54,109 +54,112 @@
     .btnbg2{
         background: red;
     }
-    
-    
-    
-.dropdown {
-  width:100%;
-  margin: 0px;
-  padding: 0px;
-}
+    .dropdown {
+      width:100%;
+      margin: 0px;
+      padding: 0px;
+    }
 
-.dropdown a {
-  color: #fff;
-}
+    .dropdown a {
+      color: #fff;
+    }
 
-.dropdown dd,
-.dropdown dt {
-  margin: 0px;
-  padding: 0px;
-}
+    .dropdown dd,
+    .dropdown dt {
+      margin: 0px;
+      padding: 0px;
+    }
 
-.dropdown ul {
-  margin: -1px 0 0 0;
-}
+    .dropdown ul {
+      margin: -1px 0 0 0;
+    }
 
-.dropdown dd {
-  position: relative;
-}
+    .dropdown dd {
+      position: relative;
+    }
 
-.dropdown a,
-.dropdown a:visited {
-  color: #fff;
-  text-decoration: none;
-  outline: none;
-  font-size: 12px;
-}
+    .dropdown a,
+    .dropdown a:visited {
+      color: #fff;
+      text-decoration: none;
+      outline: none;
+      font-size: 12px;
+    }
 
-.dropdown dt a {
-  background-color: #4F6877;
-  display: block;
-  padding: 4px 10px 5px 6px;
-  min-height: 15px;
-  line-height: 18px;
-  overflow: hidden;
-  border: 0;
-  
-}
+    .dropdown dt a {
+      background-color: #4F6877;
+      display: block;
+      padding: 4px 10px 5px 6px;
+      min-height: 15px;
+      line-height: 18px;
+      overflow: hidden;
+      border: 0;
+      
+    }
 
-.dropdown dt a span,
-.multiSel span {
-  cursor: pointer;
-  display: inline-block;
-  padding: 0 3px 2px 0;
-}
+    .dropdown dt a span,
+    .multiSel span {
+      cursor: pointer;
+      display: inline-block;
+      padding: 0 3px 2px 0;
+    }
 
-.dropdown dd ul {
-  background-color: #4F6877;
-  border: 0;
-  color: #fff;
-  display: none;
-  left: 0px;
-  padding: 2px 15px 2px 5px;
-  position: absolute;
-  z-index:111;
-  top: 2px;
-  width:100%;
-  list-style: none;
-  height: 200px;
-  overflow: auto;
-}
+    .dropdown dd ul {
+      background-color: #4F6877;
+      border: 0;
+      color: #fff;
+      display: none;
+      left: 0px;
+      padding: 2px 15px 2px 5px;
+      position: absolute;
+      z-index:111;
+      top: 2px;
+      width:100%;
+      list-style: none;
+      height: 200px;
+      overflow: auto;
+    }
 
-.dropdown span.value {
-  display: none;
-}
+    .dropdown span.value {
+      display: none;
+    }
 
-.dropdown dd ul li a {
-  padding: 5px;
-  display: block;
-}
+    .dropdown dd ul li a {
+      padding: 5px;
+      display: block;
+    }
 
-.dropdown dd ul li a:hover {
-  background-color: #fff;
-}
+    .dropdown dd ul li a:hover {
+      background-color: #fff;
+    }
 
-.subcat{
-    margin-left: 15px;
-}
-.cat{
-    background: #4b4040;
-    font-size: 14px;
-    font-weight: bold;
-    padding: 3px;
-    margin-bottom: 3px;
-}
-.cathr{
-    padding: 0px;
-    display: block;
-    border-bottom: 2px solid #dbd0d0;
-    margin-top: -15px;
-    width: 50%;
-    margin-left: 10px;
-}
-#choosedItems{
-    display:none;
-}
+    .subcat{
+        margin-left: 15px;
+    }
+    .cat{
+        background: #4b4040;
+        font-size: 14px;
+        font-weight: bold;
+        padding: 3px;
+        margin-bottom: 3px;
+    }
+    .cathr{
+        padding: 0px;
+        display: block;
+        border-bottom: 2px solid #dbd0d0;
+        margin-top: -15px;
+        width: 50%;
+        margin-left: 10px;
+    }
+    #choosedItems{
+        display:none;
+    }
+    .optional-field{
+        border-color: #8e39c3;
+    }
+    .text-purple{
+        color: #8e39c3;
+    }
 </style>
 <div class="page-content-wrapper">
     <div class="page-content" style="min-height:895px"> 
@@ -180,13 +183,13 @@
                 ?>
             </div>
         <?php } ?>
-        <!------------------content start ------------------------------>
+        <!--content start-->
         
         <!-- BEGIN FORM-->
         <form class="form-horizontal" id="addProduct" name="addDoctor" action="" style="min-height:495px;" role="form" enctype='multipart/form-data' method="post">
             <h3 class="page-title ">Add Product </h3>
             <div class="col-sm-12 note-message">
-                <span class="text-danger">NOTE: All fields are required.</span> 
+                Purple border: <span class="text-purple">Optional fields.</span> 
             </div>
             <div class="portlet-body form">
                         <div class="form-body padLeftZero">                  
@@ -309,9 +312,8 @@
                                         </div>
 
                                         <div class="col-md-6 customCol">
-                                            <input type="text" id="onegramoffprice" name="onegramoffprice" class="form-control font12px" onkeypress="return isNumberKey(event)" placeholder="One gram off price" value="<?php if(isset($_POST['dctrFname'])) echo $_POST['dctrFname']; ?>">
+                                            <input type="text" id="onegramoffprice" name="onegramoffprice" class="form-control font12px optional-field" onkeypress="return isNumberKey(event)" placeholder="One gram off price" value="<?php if(isset($_POST['dctrFname'])) echo $_POST['dctrFname']; ?>">
                                             <span id="onegramoffprice-error" class="help-block hide"></span>
-
                                         </div>
 
                                     </div>
@@ -321,7 +323,7 @@
                                             <span id="ounce8price-error" class="help-block hide"></span>
                                         </div>
                                         <div class="col-md-6 customCol">
-                                            <input type="text" id="ounce8offprice" name="ounce8offprice" class="form-control font12px" onkeypress="return isNumberKey(event)" placeholder="1/8 ounce off price" value="<?php if(isset($_POST['dctrFname'])) echo $_POST['dctrFname']; ?>">
+                                            <input type="text" id="ounce8offprice" name="ounce8offprice" class="form-control font12px optional-field" onkeypress="return isNumberKey(event)" placeholder="1/8 ounce off price" value="<?php if(isset($_POST['dctrFname'])) echo $_POST['dctrFname']; ?>">
                                             <span id="ounce8offprice-error" class="help-block hide"></span>
                                         </div>
                                     </div>
@@ -331,7 +333,7 @@
                                             <span id="anounceprice-error" class="help-block hide"></span>
                                         </div>
                                         <div class="col-md-6 customCol">
-                                            <input type="text" id="anounceoffprice" name="anounceoffprice" class="form-control font12px" onkeypress="return isNumberKey(event)" placeholder="An ounce off price" value="<?php if(isset($_POST['dctrFname'])) echo $_POST['dctrFname']; ?>">
+                                            <input type="text" id="anounceoffprice" name="anounceoffprice" class="form-control font12px optional-field" onkeypress="return isNumberKey(event)" placeholder="An ounce off price" value="<?php if(isset($_POST['dctrFname'])) echo $_POST['dctrFname']; ?>">
                                             <span id="anounceoffprice-error" class="help-block hide"></span>
                                         </div>
                                         
@@ -340,7 +342,7 @@
                                     
                                     <div class="form-group">
                                       <div class="col-md-12 customCol">
-                                          <textarea class="form-control font12px" id="itemrecommends" name="itemrecommends" placeholder="Recommended usages" ><?php if(isset($_POST['dctrEmail'])) echo $_POST['dctrEmail']; ?></textarea>
+                                          <textarea class="form-control font12px" id="itemrecommends" name="itemrecommends" placeholder="Use Cases" ><?php if(isset($_POST['dctrEmail'])) echo $_POST['dctrEmail']; ?></textarea>
                                           <span id="itemrecommends-error" class="help-block hide"></span>
                                       </div>
                                     </div>
@@ -352,7 +354,7 @@
                                     </div>
                                     <div class="form-group">
                                       <div class="col-md-12 customCol">
-                                          <textarea class="form-control font12px" id="itemreview" rows="2" name="itemreview" placeholder="Connoisseur's Review" ><?php if(isset($_POST['itemreview'])) echo $_POST['itemreview']; ?></textarea>
+                                          <textarea class="form-control font12px optional-field" id="itemreview" rows="2" name="itemreview" placeholder="Connoisseur's Review" ><?php if(isset($_POST['itemreview'])) echo $_POST['itemreview']; ?></textarea>
                                           <span id="itemreview-error" class="help-block hide"></span>
                                       </div>
                                     </div>
@@ -426,19 +428,23 @@
                                     <div class="form-group padLeftZero">
                                         <div class="col-md-12 padLeftZero">
                                             <fieldset class="customFieldset">
-                                                <legend style="font-size:13px;margin-bottom: 5px;"> Choose for Specials</legend>
+                                                <legend style="font-size:13px;margin-bottom: 5px;"> Special Type</legend>
                                                 <div class="form-group textAlignMiddle">
 <!--                                                    <div class="col-md-4 customCol ">
                                                         <input class="customChkBtn" type="checkbox" name="biweekly" id="biweekly" value="biweekly" />Biweekly 
                                                         <span id="biweekly-error" class="help-block hide"></span>
                                                     </div>-->
-                                                    <div class="col-md-6 customCol ">
-                                                        <input class="customChkBtn" type="radio" name="luxurious" id="luxurious" value="1" />Most Luxurious (Rare Items) 
+                                                    <div class="col-md-4 customCol ">
+                                                        <input class="customChkBtn" type="radio" name="luxurious" id="luxurious" value="1" />Regular
                                                         <span id="luxurious-error" class="help-block hide"></span>
                                                     </div>
                                                     <div class="col-md-4 customCol ">
-                                                        <input class="customChkBtn" type="radio" name="luxurious" id="hot" value="2" />Hot item 
+                                                        <input class="customChkBtn" type="radio" name="luxurious" id="hot" value="2" />Rare Item 
                                                         <span id="hot-error" class="help-block hide"></span>
+                                                    </div>
+                                                    <div class="col-md-4 customCol ">
+                                                        <input class="customChkBtn" type="radio" name="luxurious" id="shelf" value="3" />Top Shelf 
+                                                        <span id="top-error" class="help-block hide"></span>
                                                     </div>
                                                 </div>
                                                 <div class="form-group textAlignMiddle">

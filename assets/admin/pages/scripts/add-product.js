@@ -219,14 +219,14 @@ function VehicleImageURL(input,val,imgTagId) {
         }
         
         //--- One gram off price Validation
-        if(onegramoffprice == '' || onegramoffprice == undefined){
+        /*if(onegramoffprice == '' || onegramoffprice == undefined){
             setFeedError('onegramoffprice-error','required field');
             error['onegramoffprice'] = true;
         }
         else{
             washFeedError('onegramoffprice-error');
             error['onegramoffprice'] = false;
-        }
+        }*/
         
         //--- Ounces eight price Validation
         if(ounce8price == '' || ounce8price == undefined){
@@ -239,14 +239,14 @@ function VehicleImageURL(input,val,imgTagId) {
         }
         
         //--- Ounces eight price Validation
-        if(ounce8offprice == '' || ounce8offprice == undefined){
+        /*if(ounce8offprice == '' || ounce8offprice == undefined){
             setFeedError('ounce8offprice-error','required field');
             error['ounce8offprice'] = true;
         }
         else{
             washFeedError('ounce8offprice-error');
             error['ounce8offprice'] = false;
-        }
+        }*/
         
         //--- an ounce price  Validation
         if(anounceprice == '' || anounceprice == undefined){
@@ -259,17 +259,17 @@ function VehicleImageURL(input,val,imgTagId) {
         } 
         
         //--- an ounce off price  Validation
-        if(anounceoffprice == '' || anounceoffprice == undefined){
+        /*if(anounceoffprice == '' || anounceoffprice == undefined){
             setFeedError('anounceoffprice-error','required field');
             error['anounceoffprice'] = true;
         }
         else{
             washFeedError('anounceoffprice-error');
             error['anounceoffprice'] = false;
-        } 
+        }*/
         
         //--- Item Recommended Validation
-        if(itemrecommends == '' || itemrecommends == undefined){
+        /*if(itemrecommends == '' || itemrecommends == undefined){
             setFeedError('itemrecommends-error','Please add a recommends');
             error['itemrecommends'] = true;
         }
@@ -284,10 +284,10 @@ function VehicleImageURL(input,val,imgTagId) {
         else{
             washFeedError('itemrecommends-error');
             error['itemrecommends'] = false;
-        }
+        }*/
         
         //--- Item Effects Validation  
-        if(itemeffects == '' || itemeffects == undefined){
+        /*if(itemeffects == '' || itemeffects == undefined){
             setFeedError('itemeffects-error','required field');
             error['itemeffects'] = true;
         }
@@ -302,10 +302,10 @@ function VehicleImageURL(input,val,imgTagId) {
         else{
             washFeedError('itemeffects-error');
             error['itemeffects'] = false;
-        }
+        }*/
         
         //--- Item Review Validation  
-        if(itemreview == '' || itemreview == undefined){
+        /*if(itemreview == '' || itemreview == undefined){
             setFeedError('itemreview-error','Please add a review');
             error['itemreview'] = true;
         }
@@ -320,7 +320,7 @@ function VehicleImageURL(input,val,imgTagId) {
         else{
             washFeedError('itemreview-error');
             error['itemreview'] = false;
-        }
+        }*/
         
         // itemcolor itemflavour biweekly luxurious hot thc cbg cbc cbn cbd thcv
         

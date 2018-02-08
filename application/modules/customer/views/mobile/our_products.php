@@ -12,30 +12,6 @@
             </li>
         <?php } }?>
     </ul>
-    <br/><br/>
-    <br/><br/>
-    <div class="menu-container">
-        <ul class="product_filters cats-container clearfix align-items-center">
-            <li class="col-4 bt-1">
-                <span class="">Button A</span>
-            </li> 
-            <li class="col-4 bt-2">
-                <span class="">Button B</span>
-            </li> 
-            <li class="col-4 bt-3">
-                <span class="">Button C</span>
-            </li> 
-            <li class="col-4 bt-4">
-                <span class="">Button D</span>
-            </li> 
-            <li class="col-4 bt-5">
-                <span class="">Button E</span>
-            </li> 
-            <li class="col-4 bt-6">
-                <span class="">Button F</span>
-            </li> 
-        </ul>
-    </div>
     <ul class="product_filters sub-cats clearfix" style="display:none">
 
     </ul>
@@ -91,6 +67,26 @@
                 <div class="activity-img" data-value="8" data-text="Manage Migraines">
                     <img src="<?= $this->config->item('customerassets') ?>images/pic8.png">
                     <p>Manage Migraines</p>
+                </div>
+                <div class="activity-img" data-value="9" data-text="Crub Depression">
+                    <img src="<?= $this->config->item('customerassets') ?>images/pic9.png">
+                    <p>Crub Depression</p>
+                </div>
+                <div class="activity-img" data-value="10" data-text="Fight Your Cramps">
+                    <img src="<?= $this->config->item('customerassets') ?>images/pic10.png">
+                    <p>Fight Your Cramps</p>
+                </div>
+                <div class="activity-img" data-value="11" data-text="Treat Arthritis">
+                    <img src="<?= $this->config->item('customerassets') ?>images/pic11.png">
+                    <p>Treat Arthritis</p>
+                </div>
+                <div class="activity-img" data-value="12" data-text="Remedy Stomach Pain">
+                    <img src="<?= $this->config->item('customerassets') ?>images/pic12.png">
+                    <p>Remedy Stomach Pain</p>
+                </div>
+                <div class="activity-img" data-value="13" data-text="Crush Anxiety">
+                    <img src="<?= $this->config->item('customerassets') ?>images/pic13.png">
+                    <p>Crush Anxiety</p>
                 </div>
             </div>
         </div>

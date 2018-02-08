@@ -12,12 +12,14 @@
         <script src="<?= $this->config->item('customerassets'); ?>js/jquery.form.js" type="text/javascript"></script>
         <script src="<?= $this->config->item('customerassets') ?>js/formclass.js"></script>
         <script src="<?= $this->config->item('customerassets') ?>js/custom.js"></script>
+        <script src="<?= $this->config->item('customerassets') ?>js/jquery.cookie.js"></script>
 
         <!-- OneSignal notifications -->
         <link rel="manifest" href="<?= $this->config->item('base_url') ?>manifest.json" />
         <!-- CSS files -->
 
         <link href="https://use.fontawesome.com/releases/v5.0.4/css/all.css" rel="stylesheet">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link rel="stylesheet" href="<?= $this->config->item('customerassets') ?>css/bootstrap.css">
         <link href="<?= $this->config->item('globalassets') ?>plugins/icheck/skins/all.css" rel="stylesheet">
         <link type="text/css" href="<?= $this->config->item('customerassets'); ?>css/colorbox.css" rel="stylesheet" />
@@ -100,7 +102,7 @@
                             <?php foreach ($header_class_right as $key => $right_class) {
                                 $arr = explode(',', $right_class);
                             ?>
-                                <a href="<?= $arr[1] ?>" class="<?= $arr[0] ?>"> <?= !isset($arr[2]) ?"": $arr[2] ?></a>
+						        <a href="<?= $arr[1] ?>" class="ico-c <?= $arr[0] ?>"> <?= !isset($arr[2]) ?"": $arr[2] ?></a>
                             <?php } ?>
                         </div>
                         <?php } ?>

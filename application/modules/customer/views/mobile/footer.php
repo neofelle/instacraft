@@ -356,6 +356,11 @@
         var quantity    =   $('input[name=price]:checked').closest('div.price-row').find('span.sale-price').attr('data-quantity');
         var price       =   $('input[name=price]:checked').closest('div.price-row').find('span.sale-price').attr('data-price');
         var type        =   $('input[name=price]:checked').closest('div.price-row').find('span.sale-price').attr('data-type');
+        var badgeVal = $('.cart_valu').text(); 
+        
+        if (typeof badgeVal == "undefined" || badgeVal == "") {
+            badgeVal = 0;
+        }
         $.ajax({
             type: 'POST',
             data: {item_id: item_id, quantity:quantity, type:type},
@@ -369,7 +374,8 @@
                 $('.wait-div').hide();
                 if (data != null) {
                     if(data.success){
-                       $('.cart_valu').html(data.quantity); 
+                        let qty = parseInt(data.quantity) + parseInt(badgeVal);
+                       $('.cart-badge').html('<span class="cart_valu">'+qty+'</span>'); 
                        $('.main_header').click(); 
                     }
                 }
@@ -465,6 +471,7 @@
     $(document).ready(function () {
         //$('.icon-cart').attr('cart-value',<?= $this->session->userdata('total_item') ?>); 
         var cart_val    =   "<?php echo $this->session->userdata('total_item'); ?>";
+        console.log(cart_val);
         if(cart_val > 0){
             $('.cart-badge').html('<span class="cart_valu">'+cart_val+'</span> ');
         }
@@ -830,10 +837,10 @@
                         product_html += '<div class="product_info col-7 px-0 pl-2">';
                         product_html += '<h3>' + j.item_name + '</h3>';
                         product_html += '<div class="about_prdo clearfix">';
-                        product_html += '<p class="text-truncate mb-2"><b>Effect : </b><span class="txt_description text-truncate">'+j.effect+'</span></p>';
-                        product_html += '<p class="text-truncate mb-2"><b>Flavor : </b><span class="txt_description text-truncate">'+j.flavor+'</span> </p>';
+                        product_html += '<p class="mb-2"><b>Effect : </b><span class="txt_description ">'+j.effect+'</span></p>';
+                        product_html += '<p class="mb-2"><b>Flavor : </b><span class="txt_description ">'+j.flavor+'</span> </p>';
                         product_html += '<p class="price_product mt-2 pr-1 text-right mb-0">Price : $'+j.price_one+'/'+weight_in+'</p>';
-                        //product_html += '<p class="mb-0"><span class="txt_description text-truncate">'+j.effect+'</span></p>';
+                        //product_html += '<p class="mb-0"><span class="txt_description ">'+j.effect+'</span></p>';
                         //product_html += '<p class="mb-0 text-white font-weight-bold">In Stock</p>';
                         product_html += '</div>';
                         product_html += '</div>';
@@ -915,10 +922,10 @@
                         product_html += '<div class="product_info col-7 px-0 pl-2">';
                         product_html += '<h3>' + j.item_name + '</h3>';
                         product_html += '<div class="about_prdo clearfix">';
-                        product_html += '<p class="text-truncate mb-2"><b>Effect : </b><span class="txt_description text-truncate">'+j.effect+'</span></p>';
-                        product_html += '<p class="text-truncate mb-2"><b>Flavor : </b><span class="txt_description text-truncate">'+j.flavor+'</span> </p>';
+                        product_html += '<p class=" mb-2"><b>Effect : </b><span class="txt_description ">'+j.effect+'</span></p>';
+                        product_html += '<p class=" mb-2"><b>Flavor : </b><span class="txt_description ">'+j.flavor+'</span> </p>';
                         product_html += '<p class="price_product mt-2 pr-1 text-right mb-0">Price : $'+j.price_one+'/'+weight_in+'</p>';
-                        //product_html += '<p class="mb-0"><span class="txt_description text-truncate">'+j.effect+'</span></p>';
+                        //product_html += '<p class="mb-0"><span class="txt_description ">'+j.effect+'</span></p>';
                         //product_html += '<p class="mb-0 text-white font-weight-bold">In Stock</p>';
                         product_html += '</div>';
                         product_html += '</div>';
@@ -997,10 +1004,10 @@
                         product_html += '<div class="product_info col-7 px-0 pl-2">';
                         product_html += '<h3>' + j.item_name + '</h3>';
                         product_html += '<div class="about_prdo clearfix">';
-                        product_html += '<p class="text-truncate mb-2"><b>Effect : </b><span class="txt_description text-truncate">'+j.effect+'</span></p>';
-                        product_html += '<p class="text-truncate mb-2"><b>Flavor : </b><span class="txt_description text-truncate">'+j.flavor+'</span> </p>';
+                        product_html += '<p class=" mb-2"><b>Effect : </b><span class="txt_description ">'+j.effect+'</span></p>';
+                        product_html += '<p class=" mb-2"><b>Flavor : </b><span class="txt_description ">'+j.flavor+'</span> </p>';
                         product_html += '<p class="price_product mt-2 pr-1 text-right mb-0">Price : $'+j.price_one+'/'+weight_in+'</p>';
-                        //product_html += '<p class="mb-0"><span class="txt_description text-truncate">'+j.effect+'</span></p>';
+                        //product_html += '<p class="mb-0"><span class="txt_description ">'+j.effect+'</span></p>';
                         //product_html += '<p class="mb-0 text-white font-weight-bold">In Stock</p>';
                         product_html += '</div>';
                         product_html += '</div>';

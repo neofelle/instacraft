@@ -42,7 +42,7 @@ class Caregiver extends MX_Controller {
             $this->session->set_userdata('delivery_address',$this->input->post('delivery_address'));
             $this->session->set_userdata('delivery_lat_lng',$this->input->post('delivery_lat_lng'));
             $data['success'] = true;
-            echo json_encode($data);
+            echo json_encode($data, JSON_HEX_APOS);
             die;
         }
         $output['cartTotal']  =   $careObj->AddToCartTotalAmount();

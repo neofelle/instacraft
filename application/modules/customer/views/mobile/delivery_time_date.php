@@ -1,5 +1,5 @@
 <script type="text/javascript"> window.areas = JSON.parse('<?php echo json_encode($restrictedAreas); ?>') </script>
-<script type="text/javascript"> window.products = JSON.parse('<?php echo json_encode($products); ?>') </script>
+<script type="text/javascript"> window.products = JSON.parse('<?php echo json_encode($products, JSON_HEX_APOS); ?>') </script>
 <section class="container mobile-view-container">
     <div class="delivery_container">
         <div class="map_container">
@@ -42,7 +42,7 @@
                     <span class="value">$<?=$cartTotal?></span>
                 </li>
             </ul>
-            <button class="btn gradient change_pass redirect_to_caregiver"><span class="btn-txt">Make Payment</span></button>
+            <button onclick="saveAdd();" class="btn gradient change_pass redirect_to_caregiver"><span class="btn-txt">Make Payment</span></button>
         </div>
     </div>
 </section>
@@ -94,6 +94,12 @@ $(function(){
     });
 });
     
+
+function saveAdd() {
+    var delAdd = document.getElementById("delivery_address").value;
+    console.log(delAdd);
+    $.cookie('deliveryAdd', delAdd);
+}
     
     
 function initMap() {
@@ -281,12 +287,25 @@ function initMap() {
           lng: position.coords.longitude
         };
         var location = new google.maps.LatLng(position.coords.latitude, position.coords.longitude)
+        console.log(position)
+        //Get the location that the user clicked.
+        /*var clickedLocation = position.coords.latitude + ',' + position.coords.longitude;
+        marker.setPosition(clickedLocation);*/
 
         geocoder.geocode({
             'location': location
         }, function(results, status) {
             if (status == google.maps.GeocoderStatus.OK) {
-                $("#delivery_address").val(results[0].formatted_address)
+                console.log($.cookie('deliveryAdd'), results[0])
+                if (typeof $.cookie('deliveryAdd') != 'undefined' && $.cookie('deliveryAdd') != "") {
+                    $("#delivery_address").val($.cookie('deliveryAdd'))    
+                } else {
+                    $("#delivery_address").val(results[0].formatted_address)
+                }
+                marker = new google.maps.Marker({
+                  map: map,
+                  position: results[0].geometry.location
+                });
             } else {
                 console.log('Geocode was not successful for the following reason: ' + status)
             }

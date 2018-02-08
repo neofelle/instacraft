@@ -278,8 +278,8 @@ class Customer extends MX_Controller {
         $output['title'] = 'Home';
         $output['pageName'] = 'Home';
         $output['header_class'] = 'icon-menu,javascript:;';
-        $output['header_class_right'][0] = 'icon-cart cart-badge,'. base_url().'cus-add-tocart';
-        $output['header_class_right'][1] = 'icon-bell,javascript:;';
+        $output['header_class_right'][0] = 'icon-bell,javascript:;';
+        $output['header_class_right'][1] = 'icon-cart cart-badge,'. base_url().'cus-add-tocart';
 
         /*         * ***** get user record *************** */
         $output['userRecord'] = $custObj->getUserRecordBySlug();

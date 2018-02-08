@@ -67,9 +67,9 @@
                                             <form action='' id="searchData" method="post" >  
                                                 <ol class="breadcrumb breadcrumb-arrow">
                                                     <li><a href="<?php echo base_url();  ?>admin-dashboard" ><i class="glyphicon glyphicon-home"></i></a></li>
-                                                    <li><a href="<?php echo base_url(); ?>restricted-areas">Restricted areas</a></li>
+                                                    <li><a href="<?php echo base_url(); ?>restricted-areas">Delivery areas</a></li>
                                                     <!-- <li ><a href="#">Add-Users</a></li> -->
-                                                    <li class="active"><span>Add Restricted Area </span></li>
+                                                    <li class="active"><span>Add Delivery Area </span></li>
                                                 </ol>
                                                 
                                               <!-- <input type="text" class="search-custom" style="width:32%;" value="<?php echo $this->input->post('searchText')!= '' ? $this->input->post('searchText'):'';?>" name="searchText"  placeholder="Search by message">
@@ -87,74 +87,40 @@
                                                 <span class="help-block hide colorshade" id="user_id-error" style="padding: 5px;color:white;"></span>
                                             <form class="form-horizontal" id="addRestrictedArea" name="addRestrictedArea" action=""  role="form" enctype='multipart/form-data' method="post">                         
                                                         <div class="col-md-6 ">
-                                                            <?php 
-                                                                $allowed = array();
-                                                                foreach ($areainfo AS $row){
-                                                                    if(isset($row['area_permission']) &&  $row['area_permission'] == 1){
-                                                                        $allowed = $row;
-                                                                    } 
-                                                                }
-                                                            ?>
                                                             <div class="form-group">
-                                                                <label for="resname" style="color:#666525;">Area Name </label>
-                                                                <input type="text" id="resname" name="resname" class="form-control" placeholder="First Name" style="width:90%;display: inline-block;" maxlength="50 " value="<?php echo isset($allowed['area_name']) ? $allowed['area_name'] : ''; ?>" >
+                                                                <label for="resname" style="color:#666525;">Area Type </label>
+                                                                <select id="resname" name="resname" class="form-control" onchange="areaType();">
+                                                                    <option selected disabled>Select your choice</option>
+                                                                    <option value="1">On-demand</option>
+                                                                    <option value="2">Scheduled</option>
+                                                                </select>
                                                                 <span id="resname-error" class="help-block hide"></span>
                                                             </div>
                                                             <div class="form-group">
                                                                
                                                                 <fieldset class="" style=" width:90%;display: inline-block;   padding: 0px 5px 5px 5px;border: 1px solid #78beff;">
-                                                                <legend style="font-size:14px;margin-bottom: 5px;color:#666525;">  Allowed Area Satatics </legend>
+                                                                <legend style="font-size:14px;margin-bottom: 5px;color:#666525;">  Feature coming soon </legend>
                                                                     
-                                                                    <label class="width73" for="week_1"><input class="groupchk" type="checkbox" id="week_1" name="week1[]" value="1" <?php echo isset($allowed['mon']) == 1 ? 'checked' : ''; ?> > Mon </label>
-                                                                    <label class="width73" for="week_2"><input class="groupchk" type="checkbox" id="week_2" name="week1[]" value="2" <?php echo isset($allowed['tue']) == 1 ? 'checked' : ''; ?> > Tue </label>
-                                                                    <label class="width73" for="week_3"><input class="groupchk" type="checkbox" id="week_3" name="week1[]" value="3" <?php echo isset($allowed['wed']) == 1 ? 'checked' : ''; ?> > Wed </label>
-                                                                    <label class="width73" for="week_4"><input class="groupchk" type="checkbox" id="week_4" name="week1[]" value="4" <?php echo isset($allowed['thu']) == 1 ? 'checked' : ''; ?> > Thu </label>
-                                                                    <label class="width73" for="week_5"><input class="groupchk" type="checkbox" id="week_5" name="week1[]" value="5" <?php echo isset($allowed['fri']) == 1 ? 'checked' : ''; ?> > Fri </label>
-                                                                    <label class="width73" for="week_6"><input class="groupchk" type="checkbox" id="week_6" name="week1[]" value="6" <?php echo isset($allowed['sat']) == 1 ? 'checked' : ''; ?> > Sat </label>
-                                                                    <label class="width73" for="week_7"><input class="groupchk" type="checkbox" id="week_7" name="week1[]" value="7" <?php echo isset($allowed['sun']) == 1 ? 'checked' : ''; ?> > Sun </label>
-                                                                    <input type="hidden" id="allowedid" name="allowedid" value="<?php echo isset($allowed['id']) ? $allowed['id'] : ''; ?>">
-                                                                    <span id="week-error" class="help-block hide"></span>
-                                                                    
-                                                                    <textarea id="allowedCode" name="allowedCode" rows="4" placeholder="Enter zip codes(comma separated) e:g; 111111, 222222" style="margin-top: 0px !important;"><?php echo isset($allowed['zip_codes']) ? $allowed['zip_codes'] : '' ;?></textarea>
-                                                                    <span id="allowedCode-error" class="help-block hide"></span>
+                                                                    <div id="googleMap" style="width:100%;height:400px;"></div> 
                                                                     
                                                                 </fieldset>
                                                             </div>
                                                             
                                                             <div class="form-group">
-                                                                <button type="submit" class="btn green" name="adddMessageBtn"><i class="fa fa-check"></i> Update </button>
+                                                                <button type="submit" class="btn green" name="adddMessageBtn"><i class="fa fa-check"></i> Add </button>
                                                                 <a type="button" href="<?php echo base_url(); ?>restricted-areas" class="btn default "><i class="fa fa-remove"></i> Cancel</a> 
                                                             </div>
                                                         </div>
                                                         <div class="col-md-6 ">
-                                                            <div class="form-group">
-                                                                <?php 
-                                                                    $resArea = array();
-                                                                    foreach ($areainfo AS $row){
-                                                                        if(isset($row['area_permission']) &&  $row['area_permission'] == '2'){
-                                                                            $resArea = $row;
-                                                                        } 
-                                                                    }
-                                                                ?>
+                                                            <div id="onDemandBox" style="display: none;" class="form-group">
+                                                                
                                                                 <fieldset class="" style=" width:90%;display: inline-block;   padding: 0px 5px 5px 5px;border: 1px solid #78beff;">
-                                                                <legend style="font-size:14px;margin-bottom: 5px;color:#666525;"> Restricted Area Satatics</legend>
-                                                                    
-                                                                    <label class="width73" for="week2_1"><input class="groupchk" type="checkbox" id="week2_1" name="week2[]" value="1" <?php echo isset($resArea['mon']) == 1 ? 'checked' : ''; ?> > Mon </label>
-                                                                    <label class="width73" for="week2_2"><input class="groupchk" type="checkbox" id="week2_2" name="week2[]" value="2" <?php echo isset($resArea['tue']) == 1 ? 'checked' : ''; ?> > Tue </label>
-                                                                    <label class="width73" for="week2_3"><input class="groupchk" type="checkbox" id="week2_3" name="week2[]" value="3" <?php echo isset($resArea['wed']) == 1 ? 'checked' : ''; ?> > Wed </label>
-                                                                    <label class="width73" for="week2_4"><input class="groupchk" type="checkbox" id="week2_4" name="week2[]" value="4" <?php echo isset($resArea['thu']) == 1 ? 'checked' : ''; ?> > Thu </label>
-                                                                    <label class="width73" for="week2_5"><input class="groupchk" type="checkbox" id="week2_5" name="week2[]" value="5" <?php echo isset($resArea['fri']) == 1 ? 'checked' : ''; ?> > Fri </label>
-                                                                    <label class="width73" for="week2_6"><input class="groupchk" type="checkbox" id="week2_6" name="week2[]" value="6" <?php echo isset($resArea['sat']) == 1 ? 'checked' : ''; ?> > Sat </label>
-                                                                    <label class="width73" for="week2_7"><input class="groupchk" type="checkbox" id="week2_7" name="week2[]" value="7" <?php echo isset($resArea['sun']) == 1 ? 'checked' : ''; ?> > Sun </label>
-                                                                    <input type="hidden" id="restrictedid" name="restrictedid" value="<?php echo isset($resArea['id']) ? $resArea['id'] : ''; ?>">
-                                                                    <span id="week2-error" class="help-block hide"></span>
-                                                                    
+                                                                <legend style="font-size:14px;margin-bottom: 5px;color:#666525;"> On-demand delivery areas</legend>
                                                                     <textarea id="restrictedCode" name="restrictedCode" rows="3" placeholder="Enter zip codes(comma separated) e:g; 111111, 222222" style="margin-top: 0px !important;"><?php echo isset($resArea['zip_codes']) ? $resArea['zip_codes'] : '' ;?></textarea>
                                                                     <span id="restrictedCode-error" class="help-block hide"></span>
-                                                                    
                                                                 </fieldset>
                                                             </div>
-                                                            <div class="form-group">
+                                                            <div id="scheduledBox" style="display: none;" class="form-group">
                                                                 <?php 
                                                                     $resAreaDel = array();
                                                                     foreach ($areainfo AS $row){
@@ -164,7 +130,7 @@
                                                                     }
                                                                 ?>
                                                                 <fieldset class="" style=" width:90%;display: inline-block;   padding: 0px 5px 5px 5px;border: 1px solid #78beff;">
-                                                                <legend style="font-size:14px;margin-bottom: 5px;color:#666525;"> Restricted Delivery Area Satatics</legend>
+                                                                <legend style="font-size:14px;margin-bottom: 5px;color:#666525;"> Scheduled deleveries</legend>
                                                                     
                                                                     <label class="width73" for="week3_1"><input class="groupchk" type="checkbox" id="week3_1" name="week3[]" value="1" <?php echo isset($resAreaDel['mon']) == 1 ? 'checked' : ''; ?> > Mon </label>
                                                                     <label class="width73" for="week3_2"><input class="groupchk" type="checkbox" id="week3_2" name="week3[]" value="2" <?php echo isset($resAreaDel['tue']) == 1 ? 'checked' : ''; ?> > Tue </label>
@@ -313,3 +279,27 @@ jQuery(document).ready(function () {
     
 });
 </script>
+<script type="text/javascript">
+    function areaType() {
+        if (document.getElementById("resname").value == "1") {
+            document.getElementById("onDemandBox").style.display = "initial";
+            document.getElementById("scheduledBox").style.display = "none";
+        } else if (document.getElementById("resname").value == "2") {
+            document.getElementById("onDemandBox").style.display = "none";
+            document.getElementById("scheduledBox").style.display = "initial";
+        } else {
+            document.getElementById("onDemandBox").style.display = "none";
+            document.getElementById("scheduledBox").style.display = "none";
+        }
+    }
+</script>
+<script>
+    function myMap() {
+        var mapProp= {
+            center:new google.maps.LatLng(51.508742,-0.120850),
+            zoom:5,
+        };
+        var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+    }
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script>
