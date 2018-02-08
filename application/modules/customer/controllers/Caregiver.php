@@ -45,7 +45,8 @@ class Caregiver extends MX_Controller {
             echo json_encode($data, JSON_HEX_APOS);
             die;
         }
-        $output['cartTotal']  =   $careObj->AddToCartTotalAmount();
+        //$output['cartTotal']  =   $careObj->AddToCartTotalAmount();
+        $output['cartTotal']  =   $careObj->computeCartTotalAmount();
         $output['restrictedAreas'] = $setting->getAllRestrictedAreas();
         $this->load->view($this->config->item('customer') . '/mobile/header', $output);
         $this->load->view($this->config->item('customer') . '/mobile/delivery_time_date');
