@@ -194,13 +194,65 @@ class Caregiver_model extends CI_Model {
         $result  =   $this->db->get()->result();
         return $result;
     }
+
+    public function productAddToCart(){
+   
+        $this->db->select('i.*,c.id as cart_id, c.item_id,c.quantity,c.type as saved_type,category.name as category_name,item_familly.name as family');
+        $this->db->from('cart as c');
+        $this->db->join('items as i','i.item_id = c.item_id','left');
+        $this->db->join('category','category.category_id=i.category_id','left');
+        $this->db->join('item_familly','item_familly.id=i.item_familly','left');
+        $this->db->where('c.user_id',$this->session->userdata('CUSTOMER-ID'));
+        $result  =   $this->db->get()->result();
+        return $result;
+    }
     
     public function AddToCartTotalAmount(){
    
         $result =   $this->AddToCart();
-        $totalCartValue = 0;
+        $totalCartValue = 0;        
         foreach($result as $key=>$item){
             $totalCartValue =   $item->total+$totalCartValue;
+        }
+        return $totalCartValue;
+    }
+
+    public function computeCartTotalAmount(){
+   
+        $result =   $this->productAddToCart();
+        $totalCartValue = 0;                
+        foreach($result as $key=>$product){            
+            // gram
+            if ($product->saved_type == 'gram'){
+                if($product->price_gram_off > 0){
+                    $product_price  =   $product->price_gram_off;
+                    $total  =    ($product->quantity*$product->price_gram_off);
+                }else{
+                    $product_price  =   $product->price_gram;
+                    $total  =    ($product->quantity*$product->price_gram);
+                }
+            }
+            // ounce
+            if ($product->saved_type == 'ounce'){
+                if($product->price_one_off > 0){
+                    $product_price  =   $product->price_one_off;
+                    $total  =    ($product->quantity*$product->price_one_off);
+                }else{
+                    $product_price  =   $product->price_one;
+                    $total  =    ($product->quantity*$product->price_one);
+                }
+            }
+            // eight
+            if ($product->saved_type == 'eight'){
+                if($product->price_eight_off > 0){
+                    $product_price  =   $product->price_eight_off;
+                    $total  =    ($product->quantity*$product->price_eight_off);
+                }else{
+                    $product_price  =   $product->price_eigth;
+                    $total  =    ($product->quantity*$product->price_eigth);
+                }
+            }
+            $totalCartValue =   $total+$totalCartValue;
         }
         return $totalCartValue;
     }

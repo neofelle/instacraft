@@ -2,7 +2,7 @@
     <div class="caregiver-details">
         <p><b>Section 1:</b> Qualifying Patient Information</p>
         <div class="form-container">
-            <?= form_open_multipart('cus-caregiver-step', array('class' => 'clearfix ajaxform', 'id' => '')) ?>    
+            <?= form_open_multipart('cus-caregiver-step1', array('class' => 'clearfix ajaxform', 'id' => '')) ?>    
                 <div class="alert alert-info wait-div " style="display:none;"> <strong>Please wait! </strong> Your action is in proccess... </div>
                 <div id="jGrowl" class="top-right jGrowl col-md-12"  style="display: none;">
                     <button class="close" aria-hidden="true" data-dismiss="alert" style="padding:10px;" type="button">&times;</button>

@@ -30,11 +30,11 @@
             <ul class="opposite_detail">
                 <li id="asap" style="display: none">
                     <span class="label"><span>On-demand delivery charges:</span></span>
-                    <span class="value"><span>3%</span></span>
+                    <span class="value"><span>0%</span></span>
                 </li>
                 <li id="scheduled" style="display: none">
                     <span class="label"><span>Scheduled delivery charges:</span></span>
-                    <span class="value"><span>1%</span></span>
+                    <span class="value"><span>0%</span></span>
                     <input class="txt-field" type="text" name="date_time" id="delivery_date_time" placeholder="Select Delivery Date & Time" readonly="true" >
                 </li>
                 <li>
