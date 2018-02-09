@@ -16,7 +16,6 @@ class Customer extends MX_Controller {
         $this->load->helper('common_helper');
         $this->load->helper('user_helper');
         $this->load->helper('url');
-        $this->load->library('s3');
         $this->load->library('facebook');
         checkCartQuantity();
     }

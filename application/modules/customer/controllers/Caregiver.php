@@ -68,7 +68,8 @@ class Caregiver extends MX_Controller {
 
             if (!empty($_POST)) {
 
-                $this->form_validation->set_rules('full_name', 'Full Name', 'required');
+                $this->form_validation->set_rules('first_name', 'First Name', 'required');
+                $this->form_validation->set_rules('last_name', 'Last Name', 'required');
                 //$this->form_validation->set_rules('dob', 'dob', 'required');
                 $this->form_validation->set_rules('phone_number', 'phone_number', 'required');
                 $this->form_validation->set_rules('home_address', 'Home Address', 'required');
@@ -83,7 +84,7 @@ class Caregiver extends MX_Controller {
 
                 if ($this->form_validation->run()) {
 
-                    $careObj->set_full_name($this->input->post('full_name'));
+                    $careObj->set_full_name($this->input->post('first_name').' '.$this->input->post('last_name'));
                     $careObj->set_dob($this->input->post('dob'));
                     $careObj->set_phone_number($this->input->post('phone_number'));
                     $careObj->set_home_address($this->input->post('home_address'));
@@ -134,6 +135,7 @@ class Caregiver extends MX_Controller {
         /******* check if caregiver form first is filled or not. If no then redirect to first caregiver form *********** */
         if (sizeof($this->session->userdata('caregiver_first')) > 0) {
             $careObj = new Caregiver_model();
+            $custObj = new Customer_model();
             $output['title'] = 'Caregiver Details';
             $output['pageName'] = 'Caregiver Details';
             $output['header_class'] = 'icon-back-arrow,' . base_url().'cus-caregiver-step1';
@@ -160,7 +162,8 @@ class Caregiver extends MX_Controller {
                     die;
                 }
             }
-
+            $output['careGivers'] = $careObj->getAllCaregiversAgainstCart();
+            $output['userRecord'] = $custObj->getUserRecordBySlug();
             $this->load->view($this->config->item('customer') . '/mobile/header', $output);
             $this->load->view($this->config->item('customer') . '/mobile/caregiver_second');
             $this->load->view($this->config->item('customer') . '/mobile/footer');

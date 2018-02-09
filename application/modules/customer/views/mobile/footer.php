@@ -19,7 +19,7 @@
 
 <!--popup add to cart-->
   <section class="popup_overlay" data-pop="addtocart-pop">
-      <div class="popup popup-new">
+      <div class="popup popup-new" style="overflow: auto;">
           <div class="pop_head">
               <div class="popup-title cart-popup"></div>
               <span class="icon-close"></span>
@@ -375,8 +375,8 @@
                 if (data != null) {
                     if(data.success){
                         let qty = parseInt(data.quantity) + parseInt(badgeVal);
-                       $('.cart-badge').html('<span class="cart_valu">'+qty+'</span>'); 
-                       $('.main_header').click(); 
+                        $('.cart-badge').html('<span class="cart_valu">'+qty+'</span>');
+                        $('.main_header').click(); 
                     }
                 }
             }
@@ -471,7 +471,6 @@
     $(document).ready(function () {
         //$('.icon-cart').attr('cart-value',<?= $this->session->userdata('total_item') ?>); 
         var cart_val    =   "<?php echo $this->session->userdata('total_item'); ?>";
-        console.log(cart_val);
         if(cart_val > 0){
             $('.cart-badge').html('<span class="cart_valu">'+cart_val+'</span> ');
         }

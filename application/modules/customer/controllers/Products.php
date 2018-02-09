@@ -34,6 +34,28 @@ class Products extends MX_Controller {
         $output['category'] = $proObj->getAllParentCategory();
         $output['families'] = $proObj->getItemFamilies();
 
+        if ( checkMemberLogin(true) )
+        {
+            // check if there is already a cookie or not
+            $cartCI = isset($_COOKIE['cart_ci']) ? unserialize($_COOKIE['cart_ci']) : [];
+
+            $user_id = $this->session->userdata('CUSTOMER-ID');
+            if ( !empty($cartCI) && is_array($cartCI) )
+            {
+                // once done we need to delete the cookie
+                setcookie("cart_ci", '', time()-3600, '/', $_SERVER["HTTP_HOST"], false, false); 
+
+                foreach ($cartCI as $key => $product)
+                {
+                    $product['user_id'] = $user_id;
+                    $proObj->productAddToCart($product);
+                }
+            }
+        }
+
+        $totalQuantity = $proObj->checkAddToCartProductQuantity();
+        $this->session->set_userdata('total_item', $totalQuantity);
+
         $this->load->view($this->config->item('customer') . '/mobile/header', $output);
         $this->load->view($this->config->item('customer') . '/mobile/our_products');
         $this->load->view($this->config->item('customer') . '/mobile/footer');
@@ -71,29 +93,13 @@ class Products extends MX_Controller {
                 $cartData = unserialize($_COOKIE['cart_ci']);
             }
             $cartData[] = $data;
-            setcookie("cart_ci", serialize($cartData), time()+60*60*24*7, '/', "instacraft.io", false, false);
+            setcookie("cart_ci", serialize($cartData), time()+60*60*24*7, '/', $_SERVER["HTTP_HOST"], false, false);
             $res= true;
         }
         else
         {
-            // check if there is already a cookie or not
-            $cartCI = isset($_COOKIE['cart_ci']) ? unserialize($_COOKIE['cart_ci']) : [];
-
+            $data['user_id'] = $this->session->userdata('CUSTOMER-ID');;
             $proObj = new Products_model();
-
-            $data['user_id'] = $this->session->userdata('CUSTOMER-ID');
-            if ( !empty($cartCI) && is_array($cartCI) )
-            {
-                foreach ($cartCI as $key => $product)
-                {
-                    $product['user_id'] = $data['user_id'];
-                    $proObj->productAddToCart($product);
-                }
-
-                // once done we need to delete the cookie
-                setcookie("cart_ci", '', time()-3600);
-            }
-            
             $res = $proObj->productAddToCart($data);
             $totalQuantity = $proObj->checkAddToCartProductQuantity();
             $this->session->set_userdata('total_item', $totalQuantity);
@@ -116,6 +122,9 @@ class Products extends MX_Controller {
         $output['firstOrder'] = $proObj->checkIfFirstOrder();
         $output['products'] = $proObj->AddToCart();
 
+        $totalQuantity = $proObj->checkAddToCartProductQuantity();
+        $this->session->set_userdata('total_item', $totalQuantity);
+
         $this->load->view($this->config->item('customer') . '/mobile/header', $output);
         $this->load->view($this->config->item('customer') . '/mobile/my_cart');
         $this->load->view($this->config->item('customer') . '/mobile/footer');
@@ -124,8 +133,17 @@ class Products extends MX_Controller {
     public function getSubCategoriesAndProducts() {
         $proObj = new Products_model();
         $data['subCats'] = $proObj->getAllCategoriesByParent();
-        $proObj->set_sub_cat($data['subCats'][0]->category_id);
-        $data['products'] = $proObj->getAllProducts();
+
+        if ( isset($data['subCats'][0]) )
+        {
+            $proObj->set_sub_cat($data['subCats'][0]->category_id);
+            $data['products'] = $proObj->getAllProducts();
+        }
+        else
+        {
+            $data['products'] = [];
+        }
+
         echo json_encode($data);
         die;
     }

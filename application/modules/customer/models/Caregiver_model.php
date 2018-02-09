@@ -34,7 +34,7 @@ class Caregiver_model extends CI_Model {
         return $this->_home_address;
     }
 
-    function get_city() {
+    function get_city() { 
         return $this->_city;
     }
 
@@ -177,7 +177,7 @@ class Caregiver_model extends CI_Model {
         $this->db->join('items as i','i.item_id = c.item_id','left');
         $this->db->join('caregiver_details','caregiver_details.id = i.caregiver_id','left');
         $this->db->where('c.user_id',$this->session->userdata('CUSTOMER-ID'));
-        $this->db->group_by('i.caregiver_id');
+        $this->db->group_by('c.id');
         $result  =   $this->db->get()->result();
         return $result;
     }

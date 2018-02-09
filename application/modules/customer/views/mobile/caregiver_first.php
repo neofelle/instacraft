@@ -11,14 +11,17 @@
                     </div>
                 </div>                
                 <label class="txt_input">
-                    <input type="text" name="full_name" placeholder="full name on your ID" value="<?= $userDetail->first_name ?> <?= $userDetail->last_name ?>" required="">
+                    <input type="text" id="first_name" name="first_name" placeholder="first name on your ID"  required="">
+                </label>
+                <label class="txt_input">
+                    <input type="text" id="last_name" name="last_name" placeholder="last name on your ID"  required="">
                 </label>
                 <label class="txt_input right_ico">
-                    <input type="text" name="dob" id="dob" placeholder="Date of Birth" value="<?= $userDetail->dob ?>" required="">
+                    <input type="text" name="dob" id="dob" placeholder="Date of Birth"  required="">
                     <!--<span class="input_ico icon-calendar"></span>-->
                 </label>
                 <label class="txt_input">
-                    <input type="text" name="phone_number" placeholder="Telephone Number" value="<?= $userDetail->phone_number ?>" required="">
+                    <input type="text" id="phone_number" name="phone_number" placeholder="Telephone Number"  required="">
                 </label>
                 <label class="txt_input">
                     <input type="text" name="home_address" placeholder="Home Address" value="<?= $delivery_address ?>" required="">
@@ -26,15 +29,15 @@
                 </label>
                 <div class="half_input clearfix">
                     <label class="txt_input left">
-                        <input type="text" name="city" placeholder="City" value="" required="">
+                        <input type="text" id="city" name="city" placeholder="City"  required="">
                     </label>
                     <label class="txt_input right">
-                        <input type="text" name="state" placeholder="State" value="" required="">
+                        <input type="text" id="state" name="state" placeholder="State"  required="">
                     </label>
                 </div>
                 <div class="half_input clearfix">
                     <label class="txt_input left">
-                        <input type="number" min="0" name="zip" placeholder="ZIP" value="" maxlength="6" onKeyDown="if(this.value.length==6) return false;" required="">
+                        <input type="number" id="zip" min="0" name="zip" placeholder="ZIP"  maxlength="6" onKeyDown="if(this.value.length==6) return false;" required="">
                     </label>
 <!--                    <label class="txt_input right">
                         <input type="text" name="country" placeholder="Country" value="" required="">
@@ -57,13 +60,45 @@
                 </div>
 
                 <button class="btn gradient change_pass">
-                    <span class="btn-txt">Next</span>
+                    <span onclick="saveVals();" class="btn-txt">Next</span>
                 </button>
             <?= form_close();?>
 
         </div>
     </div>
 </section>
+<script type="text/javascript">
+    function saveVals() {
+        $.cookie('firstName', document.getElementById("first_name").value);
+        $.cookie('lastName', document.getElementById("last_name").value);
+        $.cookie('dateOB', document.getElementById("dob").value);
+        $.cookie('phno', document.getElementById("phone_number").value);
+        $.cookie('cityC', document.getElementById("city").value);
+        $.cookie('stateC', document.getElementById("state").value);
+        $.cookie('zipC', document.getElementById("zip").value);
+    }
+    if (typeof $.cookie('firstName') != 'undefined' && $.cookie('firstName') != "") {
+        document.getElementById("first_name").value = $.cookie('firstName');
+    }
+    if (typeof $.cookie('lastName') != 'undefined' && $.cookie('lastName') != "") {
+        document.getElementById("last_name").value = $.cookie('lastName');
+    }
+    if (typeof $.cookie('dateOB') != 'undefined' && $.cookie('dateOB') != "") {
+        document.getElementById("dob").value = $.cookie('dateOB');
+    }
+    if (typeof $.cookie('phno') != 'undefined' && $.cookie('phno') != "") {
+        document.getElementById("phone_number").value = $.cookie('phno');
+    }
+    if (typeof $.cookie('cityC') != 'undefined' && $.cookie('cityC') != "") {
+        document.getElementById("city").value = $.cookie('cityC');
+    }
+    if (typeof $.cookie('stateC') != 'undefined' && $.cookie('stateC') != "") {
+        document.getElementById("state").value = $.cookie('stateC');
+    }
+    if (typeof $.cookie('zipC') != 'undefined' && $.cookie('zipC') != "") {
+        document.getElementById("zip").value = $.cookie('zipC');
+    }
+</script>
 <script>
     $('#dob').datepicker({
         dateFormat: 'yy-m-d',
